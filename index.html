@@ -9,6 +9,13 @@
 <style>
 /* contentを画面幅いっぱいに強制 */
 .content{max-width:100% !important;padding:0 0 60px !important;margin:0 !important;width:100% !important}
+/* 巻頭言 */
+.preface{background:linear-gradient(135deg,#1a1a16 0%,#2C2C2A 60%,#1e1c14 100%);border-bottom:3px solid var(--gold);padding:52px 48px 48px;position:relative;overflow:hidden}
+.preface::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 40px,rgba(212,175,55,.03) 40px,rgba(212,175,55,.03) 41px);pointer-events:none}
+.preface-label{font-size:14px;letter-spacing:.3em;color:var(--gold);margin-bottom:32px;text-align:center;position:relative;opacity:.9}
+.preface-body{max-width:720px;margin:0 auto;position:relative}
+.preface-body p{font-size:15px;line-height:2.0;color:rgba(255,255,255,.82);margin-bottom:20px;padding:0}
+.preface-closing{font-size:16px;font-weight:700;color:var(--gold) !important;text-align:right;margin-top:32px;letter-spacing:.05em;border-top:1px solid rgba(212,175,55,.3);padding-top:20px}
 .hero{background:var(--sidebar-bg);color:#fff;padding:40px 24px 36px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(212,175,55,.05) 59px,rgba(212,175,55,.05) 60px),repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(212,175,55,.03) 59px,rgba(212,175,55,.03) 60px);pointer-events:none}
 .hero-label{font-size:14px;letter-spacing:.2em;color:var(--gold);margin-bottom:14px;position:relative}
@@ -81,6 +88,50 @@
     </div>
   </div>
   <div class="hero-rule"></div>
+
+  <div class="preface">
+    <div class="preface-label">── 巻頭言 ──</div>
+    <div class="preface-body">
+      <p>障害者雇用の現場を、身近な当事者を通じて他人事にできなかった人間として、待遇や賃金への不満よりも先に伝わってきたのは、もう少し言葉にしにくい感覚であった。</p>
+
+      <p>職場の方々は親切だった。<br>
+      体調への配慮も十分だった。<br>
+      与えられた作業をこなす時間は穏やかでさえあった。<br>
+      それでも、何とも言葉では表しにくい疲労が静かに積み上がっていったという。</p>
+
+      <p>たとえば、担当する作業が「この程度の作業なら依頼元の社員が自分でやった方が早い」と薄々わかっている場面。<br>
+      たとえば、仕事の合間の空き時間を、自己研鑽という形で埋めるよう求められる場面。</p>
+
+      <p>悪意はどこにもない。むしろ善意の配慮である。</p>
+
+      <p>しかしその配慮の中で、「非効率なことや本業とは違うことをやって時間の消費を促される」というモヤモヤだけが静かに残り続けた、と。</p>
+
+      <p>たとえるなら、混雑した病院の待合室に似ている。<br>
+      呼ばれるまでその場を離れるわけにはいかない。<br>
+      かといって、深く何かに集中できるわけでもない。<br>
+      ただ、これは誰も悪くない。<br>
+      病院が混んでいるのも、待たされるのも、構造上そうなっているだけだ。<br>
+      しかしその時間は、確実に何かを消耗させる。</p>
+
+      <p>障害者雇用の現場は、それと似ている。<br>
+      ただし、決定的に違う点がある。<br>
+      職場では、スマートフォンを弄り時間を潰すわけにも、うたた寝をするわけにもいかない。<br>
+      「真摯に何かをしている姿」を保ちながら、時間をやりすごさなければならないのだ。<br>
+      その時間は、確実に何かを消耗させる。<br>
+      現状の障害者雇用制度や特例子会社における過剰な人員配置はこのような閉塞感をどんどん加速させている。</p>
+
+      <p>本提言が求めるのは、慈善ではない。<br>
+      60年間の回避の清算である。</p>
+
+      <p>障害者雇用の義務を民間に転嫁し、公的な所得保障を先進国水準に満たさないまま放置し、当事者の自立よりも制度の存続を優先してきた。<br>
+      その不作為の積み重ねが、本提言を生んだ。</p>
+
+      <p>多少の非効率や業務の無駄を恐れて国が手をこまねき続けることは、もはや「慎重さ」ではなく「回避の継続」である。<br>
+      本制度の実現に伴うコストは、国が引き受けるべき正当な負債であり、民間や家族や当事者が長年肩代わりさせられてきたコストの返済である。</p>
+
+      <p class="preface-closing">この声は、願いではなく、請求である。</p>
+    </div>
+  </div>
 
   <div class="content">
 
