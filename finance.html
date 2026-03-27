@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>財源シミュレーション ─ 次世代型障害者雇用提言書</title>
+<link rel="stylesheet" href="style.css">
+<script src="nav.js"></script>
+<style>
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.scenario-box{border:1px solid var(--gold-border);background:#fff;overflow:hidden}
+.scenario-box.ok{border-top:4px solid #2C7A3A}
+.scenario-box.ng{border-top:4px solid #B8421A}
+.scenario-head{padding:14px 18px 10px}
+.scenario-head .stag{font-size:14px;font-weight:700;letter-spacing:.06em}
+.stag.ok{color:#2C7A3A}.stag.ng{color:#B8421A}
+.scenario-head h3{font-size:14px;font-weight:700;color:var(--text-dark);margin:4px 0 2px}
+.scenario-head p{font-size:14px;color:var(--text-muted)}
+.scenario-body{padding:0 18px 16px}
+.period-row{display:grid;grid-template-columns:76px 1fr 90px;align-items:center;gap:8px;margin:10px 0}
+.period-label{font-size:14px;color:var(--text-muted);line-height:1.4}
+.bar-wrap{background:#e8e8e8;border-radius:3px;height:18px;position:relative}
+.bar-fill{height:18px;border-radius:3px}
+.bar-fill.ok{background:#2C7A3A}.bar-fill.ng{background:#B8421A}
+.bar-note{font-size:14px;margin-top:3px}
+.ok-note{color:#2C7A3A;font-weight:600}.ng-note{color:#B8421A;font-weight:600}
+.bar-val{font-size:14px;font-weight:700;text-align:right;white-space:nowrap}
+.bar-val.ok{color:#2C7A3A}.bar-val.ng{color:#B8421A}
+.wf-header{display:grid;grid-template-columns:200px 1fr 72px 72px 72px;gap:8px;margin-bottom:4px}
+.wf-head{font-size:14px;color:var(--text-muted);text-align:right}
+.waterfall{display:flex;flex-direction:column;gap:5px;margin:16px 0}
+.wf-row{display:grid;grid-template-columns:200px 1fr 72px 72px 72px;align-items:center;gap:8px;font-size:14px}
+.wf-label{color:var(--text-mid);line-height:1.4}
+.wf-bar-cell{height:18px;position:relative}
+.wf-bar{height:18px;border-radius:3px;position:absolute;left:0;top:0}
+.c-income{background:rgba(44,122,58,.65)}.c-cost{background:rgba(184,66,26,.5)}
+.wf-num{font-size:14px;font-weight:600;text-align:right;white-space:nowrap}
+.cost-toggle{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:14px;color:var(--gold);cursor:pointer;margin:12px 0;font-family:var(--font)}
+.cost-toggle:hover{background:var(--gold-dim)}
+.hidden{display:none}
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.grade-card{background:#fff;border:1px solid var(--gold-border);padding:14px 12px;text-align:center}
+.grade-tag{font-size:14px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:4px}
+.grade-name{font-size:14px;color:var(--text-muted);margin-bottom:6px}
+.grade-val{font-size:15px;font-weight:700;color:var(--text-dark)}
+@media(max-width:680px){.scenario-grid{grid-template-columns:1fr}.grade-grid{grid-template-columns:1fr 1fr}.wf-header,.wf-row{grid-template-columns:120px 1fr 60px 60px 60px}}
+</style>
+</head>
+<body>
+<div class="main">
+  <div class="topbar">提言書 &rsaquo; <span class="current">財源シミュレーション</span></div>
+  <div class="content">
+    <div class="chapter-label">REFERENCE</div>
+    <h1 class="chapter-title">財源確保シミュレーション（10カ年・年額）</h1>
+    <p class="chapter-subtitle">順調シナリオ・停滞シナリオの双方で財源構造を検証。第2期から黒字転換を目指す自律循環モデル。</p>
+    <div class="gold-rule"></div>
+
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px">出典：厚生労働省「令和5年度 厚生年金保険・国民年金事業の概況」（令和6年12月）、就労継続支援A/B型給付費（厚生労働省・第112回社会保障審議会障害者部会資料）、JEED障害者雇用納付金制度（令和8年度版）</p>
+
+    <h2>両シナリオ比較：予算 vs 財源</h2>
+
+    <div class="scenario-grid">
+      <div class="scenario-box ok">
+        <div class="scenario-head">
+          <div class="stag ok">✅ 順調シナリオ</div>
+          <h3>既存施設・リース・民間連携を最大活用</h3>
+          <p>第2期から黒字転換</p>
+        </div>
+        <div class="scenario-body">
+          <div class="period-row">
+            <span class="period-label">第1期<br>1〜3年目</span>
+            <div>
+              <div class="bar-wrap"><div class="bar-fill ok" style="width:34%"></div></div>
+              <div class="bar-note ok-note">財源 2.69兆円（+MMT補完）</div>
+            </div>
+            <span class="bar-val ok">予算 2.31兆</span>
+          </div>
+          <div class="period-row">
+            <span class="period-label">第2期<br>4〜6年目</span>
+            <div>
+              <div class="bar-wrap"><div class="bar-fill ok" style="width:48%"></div></div>
+              <div class="bar-note ok-note">財源 5.57兆円 ＋2.28兆黒字</div>
+            </div>
+            <span class="bar-val ok">予算 3.29兆</span>
+          </div>
+          <div class="period-row">
+            <span class="period-label">第3期<br>7〜10年目</span>
+            <div>
+              <div class="bar-wrap"><div class="bar-fill ok" style="width:63%"></div></div>
+              <div class="bar-note ok-note">財源 7.20兆円 ＋2.94兆黒字</div>
+            </div>
+            <span class="bar-val ok">予算 4.26兆</span>
+          </div>
+        </div>
+      </div>
+      <div class="scenario-box ng">
+        <div class="scenario-head">
+          <div class="stag ng">⚠️ 停滞シナリオ</div>
+          <h3>老朽化・独自開発・採用難・移行遅延</h3>
+          <p>10年内に黒字転換せず</p>
+        </div>
+        <div class="scenario-body">
+          <div class="period-row">
+            <span class="period-label">第1期<br>1〜3年目</span>
+            <div>
+              <div class="bar-wrap"><div class="bar-fill ng" style="width:74%"></div></div>
+              <div class="bar-note ng-note">財源 2.69兆円 ▲2.34兆不足</div>
+            </div>
+            <span class="bar-val ng">予算 5.04兆</span>
+          </div>
+          <div class="period-row">
+            <span class="period-label">第2期<br>4〜6年目</span>
+            <div>
+              <div class="bar-wrap"><div class="bar-fill ng" style="width:76%"></div></div>
+              <div class="bar-note ng-note">財源 5.07兆円 ▲0.11兆不足</div>
+            </div>
+            <span class="bar-val ng">予算 5.18兆</span>
+          </div>
+          <div class="period-row">
+            <span class="period-label">第3期<br>7〜10年目</span>
+            <div>
+              <div class="bar-wrap"><div class="bar-fill ng" style="width:90%"></div></div>
+              <div class="bar-note ng-note">財源 6.70兆円 ▲1.20兆不足</div>
+            </div>
+            <span class="bar-val ng">予算 6.10兆</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">最大の変数は2点：<strong>「拠点整備コスト」</strong>と<strong>「企業の制度参加速度（＝拠出金収入）」</strong>。いずれのシナリオでも現行制度の「不作為のコスト」（年2.6〜3.2兆円）との比較では社会的に合理的な投資である。問われているのは「コストをかけるか否か」ではなく、「そのコストを誰が・どんな形で負担するか」という設計思想の問題である。</div>
+
+    <h2>財源の構成（年額推移）─ 順調シナリオ</h2>
+
+    <div class="wf-header">
+      <div></div><div></div>
+      <div class="wf-head">第1期</div><div class="wf-head">第2期</div><div class="wf-head">第3期</div>
+    </div>
+    <div class="waterfall">
+      <div class="wf-row">
+        <div class="wf-label"><strong>A</strong> 現行障害年金予算（流用）</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:100%"></div></div>
+        <div class="wf-num" style="color:#2C7A3A">2.4兆円</div>
+        <div class="wf-num" style="color:#2C7A3A">2.4兆円</div>
+        <div class="wf-num" style="color:#2C7A3A">2.5兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>B</strong> 補助金効率化・スライド</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:4%"></div></div>
+        <div class="wf-num" style="color:#2C7A3A">0.1兆円</div>
+        <div class="wf-num" style="color:#2C7A3A">0.8兆円</div>
+        <div class="wf-num" style="color:#2C7A3A">1.2兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>C</strong> 雇用代替拠出金（企業）</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:0%"></div></div>
+        <div class="wf-num" style="color:var(--text-muted)">0.0兆円</div>
+        <div class="wf-num" style="color:#2C7A3A">2.0兆円</div>
+        <div class="wf-num" style="color:#2C7A3A">3.0兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>D</strong> 既存手当・扶助費整理</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:8%"></div></div>
+        <div class="wf-num" style="color:#2C7A3A">0.2兆円</div>
+        <div class="wf-num" style="color:#2C7A3A">0.4兆円</div>
+        <div class="wf-num" style="color:#2C7A3A">0.5兆円</div>
+      </div>
+      <div class="wf-row" style="border-top:1px solid var(--gold-border);padding-top:6px;margin-top:4px;font-weight:700">
+        <div class="wf-label">財源合計（順調）</div>
+        <div class="wf-bar-cell"></div>
+        <div class="wf-num" style="color:#2C7A3A;font-size:14px">2.69兆円</div>
+        <div class="wf-num" style="color:#2C7A3A;font-size:14px">5.57兆円</div>
+        <div class="wf-num" style="color:#2C7A3A;font-size:14px">7.20兆円</div>
+      </div>
+    </div>
+
+    <h2>順調シナリオ ─ 費目別内訳</h2>
+    <button class="cost-toggle" onclick="this.nextElementSibling.classList.toggle('hidden');this.textContent=this.textContent.includes('展開')?'▲ 折りたたむ':'▼ 詳細を展開する'">▼ 詳細を展開する</button>
+    <div class="hidden">
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>費目</th><th>第1期</th><th>第2期</th><th>第3期</th><th>備考・根拠</th></tr></thead>
+      <tbody>
+        <tr><td>①</td><td>障害年金増額・新設分</td><td>約1.5兆円</td><td>約1.6兆円</td><td>約1.8兆円</td><td>1級35万人×月+6.7万円、2級残留161万人×月+5.4万円、新設3級流入（第1期平均5万人→第3期35万人）×月+9万円</td></tr>
+        <tr><td>②</td><td>準公務・準企業職員 給与</td><td>約0.2兆円（登録5万人）</td><td>約1.2兆円（登録30万人）</td><td>約2.0兆円（登録50万人）</td><td>時給1,200〜1,800円×週30h。段階的拡大</td></tr>
+        <tr><td>③</td><td>現場管理職員 人件費</td><td>約0.08兆円（8,000名）</td><td>約0.10兆円（15,000名）</td><td>約0.11兆円（17,500名）</td><td>G1:520〜580万／G2:600〜680万／G3:700〜800万／G4:650〜750万。現場・推進局で給与変動なし</td></tr>
+        <tr><td>④</td><td>現場管理職員 転換研修費</td><td>約0.003兆円</td><td>約0.001兆円</td><td>約0.000兆円</td><td>選考16億＋転換研修30億＋OJT26億＋認定1億＝計73億円を3年分割。年次更新3.5億円/年</td></tr>
+        <tr><td>⑤</td><td>拠点整備費（バリアフリー・耐震等）</td><td>約0.3兆円（1,072拠点×2.8億円）</td><td>約0.05兆円（軽微改修）</td><td>約0.02兆円（修繕）</td><td>1拠点あたり駐車32台分＋建物改修。都市規模別配置（政令市129・中核市93・一般市大150・一般市小450・町村合同250）</td></tr>
+        <tr><td>⑥</td><td>施設規模</td><td>全国1,072拠点</td><td>維持1,072拠点</td><td>維持〜約1,100拠点</td><td>従来想定（2,000〜2,800拠点）は過大。人口密度・障害者数・交通アクセスで算定</td></tr>
+        <tr><td>⑦</td><td>公用車（リース優先）</td><td>約0.05兆円</td><td>約0.01兆円</td><td>約0.01兆円</td><td>1,072拠点×屋外チーム約8台＝約8,576台。ファイナンスリース優先で初期費用を圧縮</td></tr>
+        <tr><td>⑧</td><td>公務ユニット運営費</td><td>約0.05兆円</td><td>約0.12兆円</td><td>約0.15兆円</td><td>燃料・保険・車検、タブレット端末・通信費、拠点光熱費・消耗品等</td></tr>
+        <tr><td>⑨</td><td>準職員 研修費</td><td>約0.02兆円（パイロット）</td><td>約0.08兆円（本格）</td><td>約0.04兆円（フォロー）</td><td>障害特性別業務習熟・安全管理・ICT操作。eラーニング活用で費用圧縮</td></tr>
+        <tr><td>⑩</td><td>ICT基盤整備費</td><td>約0.08兆円</td><td>約0.08兆円</td><td>約0.08兆円</td><td>既存自治体基盤をAPI連携で活用しフルスクラッチ開発を回避</td></tr>
+        <tr><td>⑪</td><td>推進局 設置・運営費</td><td>約0.01兆円</td><td>約0.03兆円</td><td>約0.03兆円</td><td>47都道府県ブロック×8名（順調）。PM・業務コーディネーター・企業対応担当等</td></tr>
+        <tr><td>⑫</td><td>不正受給防止・モニタリング</td><td>約0.01兆円</td><td>約0.01兆円</td><td>約0.01兆円</td><td>AI診断書照合・医療機関監査・生活実態調査体制。既存社会保障番号システムと連携</td></tr>
+        <tr><td>⑬</td><td>包括的準職員保険・補償基金</td><td>約0.01兆円</td><td>約0.01兆円</td><td>約0.01兆円</td><td>公務中事故・ケガへの補償原資。民間保険との折半を検討</td></tr>
+        <tr style="font-weight:700;background:#f7f4ee"><td colspan="2">合計予算（年額）</td><td>約2.31兆円</td><td>約3.29兆円</td><td>約4.26兆円</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    </div>
+
+    <h2>停滞シナリオ ─ 費目別内訳</h2>
+    <button class="cost-toggle" onclick="this.nextElementSibling.classList.toggle('hidden');this.textContent=this.textContent.includes('展開')?'▲ 折りたたむ':'▼ 詳細を展開する'">▼ 詳細を展開する</button>
+    <div class="hidden">
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>費目</th><th>第1期</th><th>第2期</th><th>第3期</th><th>備考・根拠</th></tr></thead>
+      <tbody>
+        <tr><td>①</td><td>障害年金増額・新設分</td><td>約2.0兆円</td><td>約2.2兆円</td><td>約2.5兆円</td><td>2級の25%を3級に再編。未申請者からの新規流入も多い停滞的前提。第3期に2.5兆円まで拡大するリスクあり</td></tr>
+        <tr><td>②</td><td>準公務・準企業職員 給与</td><td>約0.2兆円（5万人）</td><td>約1.2兆円（30万人）</td><td>約2.0兆円（50万人）</td><td>離職率が高く補充コスト追加発生。実稼働率が順調比▲20%低下を見込む</td></tr>
+        <tr><td>③</td><td>現場管理職員 人件費</td><td>約0.14兆円（10,705名）</td><td>約0.16兆円（22,000名）</td><td>約0.18兆円（26,400名）</td><td>採用難・公務員給与水準上昇・離職補填コスト重なり高騰。G1:600万・G2:700万・G3:800万水準</td></tr>
+        <tr><td>④</td><td>現場管理職員 転換研修費</td><td>約0.005兆円</td><td>約0.002兆円</td><td>約0.001兆円</td><td>選考19億＋転換研修43億＋OJT38億＋認定2億＝計102億円（3年分割）。離職補填の再研修が継続発生</td></tr>
+        <tr><td>⑤</td><td>拠点整備費（老朽化・耐震）</td><td>約1.6兆円（1,072拠点×8億円）</td><td>約0.4兆円</td><td>約0.2兆円</td><td>老朽化・耐震不適合施設が多く1拠点8億円に膨張。アスベスト除去・スプリンクラー・大規模構造改修が多数発生。順調比の約2.9倍</td></tr>
+        <tr><td>⑦</td><td>公用車（大量購入）</td><td>約0.4兆円（8,576台×400万円）</td><td>約0.1兆円</td><td>約0.1兆円</td><td>リース事業者の受け皿整わず購入対応。福祉車両の需給逼迫で単価上昇。維持費も順調比＋50%増</td></tr>
+        <tr><td>⑧</td><td>公務ユニット運営費</td><td>約0.15兆円</td><td>約0.35兆円</td><td>約0.45兆円</td><td>燃料高・端末調達コスト増・施設維持費高止まり。順調比＋50〜100%増</td></tr>
+        <tr><td>⑨</td><td>準職員 研修費</td><td>約0.05兆円</td><td>約0.3兆円</td><td>約0.2兆円</td><td>ミスマッチ多発で再研修・追加プログラムが必要。eラーニング定着に時間がかかり対面研修の割合が高い</td></tr>
+        <tr><td>⑩</td><td>ICT基盤整備費（フルスクラッチ）</td><td>約0.4兆円</td><td>約0.3兆円</td><td>約0.3兆円</td><td>民間クラウド活用が進まず独自開発が必要に。保守費用も高額で固定化。順調比で約4〜5倍のコスト</td></tr>
+        <tr><td>⑪</td><td>推進局 設置・運営費</td><td>約0.05兆円</td><td>約0.1兆円</td><td>約0.1兆円</td><td>47都道府県ブロック×15名（停滞）。組織肥大化・外部コンサル依存で間接費が高止まり</td></tr>
+        <tr><td>⑫</td><td>不正受給防止・モニタリング</td><td>約0.02兆円</td><td>約0.03兆円</td><td>約0.03兆円</td><td>不正受給件数が想定を超え個別調査・法的対応コストが増大</td></tr>
+        <tr><td>⑬</td><td>包括的準職員保険・補償基金</td><td>約0.02兆円</td><td>約0.04兆円</td><td>約0.04兆円</td><td>事故件数が順調比で2倍程度に増加。保険料率も上昇し基金積立不足が懸念される</td></tr>
+        <tr style="font-weight:700;background:#fff5f2"><td colspan="2">合計予算（年額）</td><td>約5.04兆円</td><td>約5.18兆円</td><td>約6.10兆円</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    </div>
+
+    <h2>職員給与グレード設計</h2>
+    <div class="grade-grid">
+      <div class="grade-card"><div class="grade-tag">G1</div><div class="grade-name">一般職員（1年ローテ対象）</div><div class="grade-val">520〜580万円</div></div>
+      <div class="grade-card"><div class="grade-tag">G2</div><div class="grade-name">主任（現場経験必須・原則固定）</div><div class="grade-val">600〜680万円</div></div>
+      <div class="grade-card"><div class="grade-tag">G3</div><div class="grade-name">拠点所長（固定）</div><div class="grade-val">700〜800万円</div></div>
+      <div class="grade-card"><div class="grade-tag">G4</div><div class="grade-name">推進局幹部（固定）</div><div class="grade-val">650〜750万円</div></div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted)">現場・推進局のいずれに配置されても給与は変動しない。平均年収：順調シナリオ626万円 / 停滞シナリオ680万円（採用難のため処遇改善幅が大きい）。現場管理職員 必要人数：順調17,500名 / 停滞26,400名（離職補填・人員増のため順調比＋51%）。</p>
+
+    <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国際比較データ集 ─ 次世代型障害者雇用提言書</title>
+<link rel="stylesheet" href="style.css">
+<script src="nav.js"></script>
+<style>
+.intl-bar-row{display:grid;grid-template-columns:220px 1fr 110px;align-items:center;gap:12px;padding:8px 12px;background:#fff;border:1px solid rgba(0,0,0,.07);margin-bottom:6px;font-size:14px}
+.intl-bar-row.highlight{border:1px solid var(--gold);background:#fffdf0}
+.intl-country{font-weight:600;color:var(--text-dark);font-size:14px}
+.intl-bar-wrap{background:#e8e8e8;border-radius:3px;height:16px;position:relative}
+.intl-bar-fill{height:16px;border-radius:3px;background:var(--sidebar-bg)}
+.intl-bar-row.highlight .intl-bar-fill{background:var(--gold)}
+.intl-amount{text-align:right;font-weight:700;font-size:14px;color:var(--text-mid);white-space:nowrap}
+.intl-bar-row.highlight .intl-amount{color:var(--gold)}
+.penalty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0}
+.penalty-card{background:#fff;border:1px solid var(--gold-border);padding:14px}
+.penalty-country{font-size:14px;color:var(--text-muted);margin-bottom:4px}
+.penalty-pension{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px}
+.penalty-fine{font-size:14px;color:var(--text-muted)}
+.penalty-fine strong{color:#B8421A}
+.struct-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.struct-box{background:#fff;border:1px solid var(--gold-border);padding:18px}
+.struct-box h4{font-size:14px;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--gold-border)}
+.struct-box ul{list-style:none;padding:0}
+.struct-box li{font-size:14px;color:var(--text-mid);padding:4px 0 4px 14px;position:relative;line-height:1.6}
+.struct-box li::before{content:"─";position:absolute;left:0;color:var(--gold)}
+.lazy-table-btn{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:14px;color:var(--gold);cursor:pointer;margin:12px 0;font-family:var(--font)}
+.lazy-table-btn:hover{background:var(--gold-dim)}
+.hidden{display:none}
+@media(max-width:680px){.intl-bar-row{grid-template-columns:1fr auto}.intl-bar-wrap{display:none}.struct-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="main">
+  <div class="topbar">提言書 &rsaquo; <span class="current">国際比較データ集</span></div>
+  <div class="content">
+    <div class="chapter-label">REFERENCE</div>
+    <h1 class="chapter-title">障害者所得保障・雇用制度　国際比較データ集</h1>
+    <p class="chapter-subtitle">障害年金1級（日本の最高額）でさえ、比較各国を大きく下回るという客観的根拠</p>
+    <div class="gold-rule"></div>
+
+    <h2>障害年金月額の国際比較</h2>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px">換算レートは参考値（1€≈163円、1£≈189円、1DKK≈20円、1SEK≈14円、1NOK≈13円、2026年3月時点概算）。最大値を100%としたバーで相対比較。</p>
+
+    <div class="intl-bar-row highlight">
+      <span class="intl-country">🇯🇵 日本（現行1級・最高額）</span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:26%"></div></div>
+      <span class="intl-amount">約 9.5万円</span>
+    </div>
+    <div class="intl-bar-row">
+      <span class="intl-country">🇫🇷 フランス（AAH・就労歴不要）</span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:46%"></div></div>
+      <span class="intl-amount">約 16.8万円</span>
+    </div>
+    <div class="intl-bar-row">
+      <span class="intl-country">🇬🇧 イギリス（PIP+ESA・就労歴不要）</span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:41%"></div></div>
+      <span class="intl-amount">約 13〜15万円</span>
+    </div>
+    <div class="intl-bar-row">
+      <span class="intl-country">🇩🇪 ドイツ（就労歴あり平均）</span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:47%"></div></div>
+      <span class="intl-amount">約 17.0万円</span>
+    </div>
+    <div class="intl-bar-row">
+      <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning等）</span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:52%"></div></div>
+      <span class="intl-amount">約 19〜33万円</span>
+    </div>
+    <div class="intl-bar-row">
+      <span class="intl-country">🇩🇰 デンマーク（単身最大・補足含む）</span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:90%"></div></div>
+      <span class="intl-amount">約 31万円</span>
+    </div>
+    <div class="intl-bar-row">
+      <span class="intl-country">🇳🇱 オランダ（WIA-IVA 前職75%）</span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:95%"></div></div>
+      <span class="intl-amount">約 34〜50万円</span>
+    </div>
+    <div class="intl-bar-row">
+      <span class="intl-country">🇳🇴 ノルウェー（最低保障・就労歴ゼロ可）</span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:100%"></div></div>
+      <span class="intl-amount">約 36〜50万円</span>
+    </div>
+
+    <div class="callout" style="margin-top:20px">
+      <strong>Key Finding①</strong>　日本の障害基礎年金1級（月額約9.5万円）は「最高額」でありながら、欧州主要国のいずれをPPP補正後で比較しても日本を上回る。この格差は財政規模の差ではなく、<strong>制度設計思想の根本的な違い</strong>が生んでいる。
+    </div>
+
+    <h2>障害年金・雇用義務ペナルティの国際比較</h2>
+    <div class="penalty-grid">
+      <div class="penalty-card">
+        <div class="penalty-country">🇯🇵 日本（現行）</div>
+        <div class="penalty-pension">年金 約9.5万円/月</div>
+        <div class="penalty-fine">未達ペナルティ <strong>月約5万円</strong></div>
+      </div>
+      <div class="penalty-card">
+        <div class="penalty-country">🇫🇷 フランス</div>
+        <div class="penalty-pension">年金 約17万円/月（AAH）</div>
+        <div class="penalty-fine">未達ペナルティ <strong>月約3万円〜</strong></div>
+      </div>
+      <div class="penalty-card">
+        <div class="penalty-country">🇩🇪 ドイツ</div>
+        <div class="penalty-pension">年金 約26万円/月（平均）</div>
+        <div class="penalty-fine">未達ペナルティ <strong>月最大€720（約12万円）</strong><br><span style="font-size:14px">日本の約2.4倍</span></div>
+      </div>
+      <div class="penalty-card">
+        <div class="penalty-country">🇩🇰 デンマーク</div>
+        <div class="penalty-pension">年金 約31万円/月（2025年）</div>
+        <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
+      </div>
+      <div class="penalty-card">
+        <div class="penalty-country">🇳🇴 ノルウェー</div>
+        <div class="penalty-pension">年金 約36万円/月（最低保障）</div>
+        <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
+      </div>
+      <div class="penalty-card">
+        <div class="penalty-country">🇸🇪 スウェーデン</div>
+        <div class="penalty-pension">年金 約19〜33万円/月</div>
+        <div class="penalty-fine">未達ペナルティ <strong>低額（就労統合型・雇用率制度なし）</strong></div>
+      </div>
+      <div class="penalty-card">
+        <div class="penalty-country">🇳🇱 オランダ</div>
+        <div class="penalty-pension">年金 約34〜50万円/月（前職75%）</div>
+        <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
+      </div>
+      <div class="penalty-card">
+        <div class="penalty-country">🇬🇧 イギリス</div>
+        <div class="penalty-pension">年金 約16〜19万円/月（PIP+ESA）</div>
+        <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Key Finding②</strong>　ドイツは日本と同水準の雇用率義務（5%）を課しながら、未達成企業への納付金を最大月額€720（約12万円）に設定しており、日本の納付金水準（月約5万円）の約2.4倍である。「義務を強化しながら納付金を低く抑える」日本の現行設計は、企業に「払えば済む」という抜け道を与えつつ、その収益を当事者の自立に還流させない最も非効率な構造である。
+    </div>
+
+    <h2>制度設計の構造比較</h2>
+    <div class="struct-grid">
+      <div class="struct-box">
+        <h4 style="color:#2C7A3A">欧州主要国（デンマーク・ノルウェー・ドイツ・フランス等）</h4>
+        <ul>
+          <li>「企業雇用」はあくまで付加的。生活の基盤は公的所得保障が先行して担う</li>
+          <li>ドイツ：20人以上の企業で5%の雇用義務。未達成企業への納付金は月最大€720（約12万円）</li>
+          <li>スウェーデン：追加費用手当（月最大3,430 SEK）を別途支給。ノルウェー・デンマークも住宅補助・移動補助を重層付加</li>
+          <li>OECD平均障害者就業率：約40〜50%。所得保障が充実した上で就労を「選択」できる環境</li>
+        </ul>
+      </div>
+      <div class="struct-box">
+        <h4 style="color:#B8421A">日本（現行）</h4>
+        <ul>
+          <li>障害年金（1級最高額でも月約9.5万円）が生活費を到底賄えず、企業雇用か家族が不足分を補填する構造</li>
+          <li>法定雇用率2.5%（2024年〜段階的引上げ）。未達成納付金は月約5万円。「払えば済む」構造</li>
+          <li>年金額内での自己負担が原則。追加コスト（移動費・医療費・バリアフリー住宅等）への別途補填は限定的</li>
+          <li>障害者の就業率：約18%（国際的に低水準）</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>各国制度の詳細データ</h2>
+    <button class="lazy-table-btn" onclick="this.nextElementSibling.classList.toggle('hidden');this.textContent=this.textContent.includes('展開')?'▲ 折りたたむ':'▼ 詳細を展開する'">▼ 詳細を展開する</button>
+    <div class="hidden">
+    <div class="table-wrap"><table>
+      <thead><tr><th>国</th><th>制度名</th><th>月額（基礎・下限）</th><th>月額目安（単身者）</th><th>円換算（概算）</th><th>就労要件</th></tr></thead>
+      <tbody>
+        <tr style="background:#fffdf0"><td><strong>🇯🇵 日本（現行1級・最高額）</strong></td><td>障害基礎年金【1級】</td><td>88,260円＋生活者支援給付金7,025円</td><td>月額約95,285円</td><td><strong style="color:var(--gold)">約9.5万円</strong></td><td>所得制限あり</td></tr>
+        <tr><td>🇩🇰 デンマーク</td><td>Førtidspension（早期退職年金）</td><td>基本額 約7,198 DKK/月（2025年）</td><td>単身最大 約15,527 DKK/月</td><td>約31万円</td><td>就労不可と認定が必要</td></tr>
+        <tr><td>🇳🇴 ノルウェー</td><td>Uføretrygd（障害給付）</td><td>単身者最低保障：月約27,431 NOK</td><td>前職収入の66%（最低保障以上）</td><td>約36〜50万円</td><td>就労能力の喪失を要件とするが部分受給・就労との併用可</td></tr>
+        <tr><td>🇸🇪 スウェーデン</td><td>Sjukersättning＋住宅補助＋追加費用手当</td><td>就労能力喪失率に応じ段階支給</td><td>住宅補助（家賃90%上限）・追加費用手当（最大3,430 SEK/月）が重層加算</td><td>約19〜33万円</td><td>25〜100%就労能力喪失で段階受給</td></tr>
+        <tr><td>🇩🇪 ドイツ</td><td>Erwerbsminderungsrente（稼得能力減少年金）</td><td>拠出実績により変動（最低€688/月〜）</td><td>2023年実績平均：約€1,550/月</td><td>約26万円（平均）</td><td>3時間/日未満の就労で全額受給</td></tr>
+        <tr><td>🇫🇷 フランス</td><td>AAH（成人障害者手当）</td><td>€1,033.32/月（2025年4月〜）</td><td>収入ゼロの場合はそのまま€1,033.32が上限。住宅補助（MVA）等の加算あり</td><td>約17万円</td><td>就労状況問わず（所得制限あり）</td></tr>
+        <tr><td>🇳🇱 オランダ</td><td>WIA-IVA（完全永続的就労不能所得保障）</td><td>前職月収の75%（上限：月額最大€6,617相当）</td><td>平均的受給者は月€2,000〜3,000相当</td><td>約34〜50万円（前職収入次第）</td><td>80〜100%就労不能かつ回復見込みなし</td></tr>
+        <tr><td>🇬🇧 イギリス</td><td>PIP＋ESA（個人自立払い＋就労支援手当）</td><td>PIP最低：£30.30/週〜（2026年4月〜）</td><td>PIP最高＋ESA計：約£750〜950/月</td><td>約15〜19万円</td><td>就労状況問わず受給可</td></tr>
+      </tbody>
+    </table></div>
+    </div>
+
+    <h2>「ずるい・怠けだ」論争の国際比較</h2>
+    <div class="callout">
+      <strong>Key Finding④</strong>　「ずるい・怠けだ」論争の規模は給付水準の高低と無関係である。最も激しく噴出したのは給付水準が低いイギリスであり（「Benefit scrounger（給付金たかり）」がメディアに定着）、給付水準が最も高いノルウェー・デンマークでは論争は限定的である。決定的な差は「審査の透明性」「段階的給付設計（就労すれば得をする構造）」「不正認定率の公開」の3点にある。本提言はAI判定・数値化審査・信頼スコア制によりこの3点を全て内包する。
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>国</th><th>「怠け論争」の有無</th><th>世論の傾向</th><th>論争の帰結・制度的対応</th></tr></thead>
+      <tbody>
+        <tr><td>🇬🇧 イギリス</td><td>★★★ 最も激しく噴出</td><td>障害者の83%が「給付金たかり報道が自分への社会的態度を悪化させた」と回答（Scope調査）</td><td>DWPへの不正通報のうち実際に不正と認定されたのは11%のみ。89%は行政コストだけが発生した無駄に終わった</td></tr>
+        <tr><td>🇩🇰 デンマーク</td><td>★★ 一定程度存在</td><td>労働可能な受給者と障害者への議論は社会的に区別されている。障害者への給付そのものへの批判は限定的</td><td>就労優先原則を強化しつつも、障害認定を受けた者への保障は維持。審査の透明性が社会的信頼を担保</td></tr>
+        <tr><td>🇳🇴 ノルウェー</td><td>★ 小規模</td><td>英国・ノルウェー比較研究（3,836人調査）で、ノルウェーの方が障害給付受給者への評価が有意に寛容</td><td>医師・専門家による客観的審査と「就労能力が戻れば給付が減額される」段階設計により「本当に必要な人がもらっている」という社会的信頼が維持</td></tr>
+        <tr><td>🇳🇱 オランダ</td><td>★★ 過去に噴出・制度改革で収束</td><td>1980〜90年代に「オランダ病（Dutch disease）」と呼ばれる社会問題に。当時は深刻な社会的論争となったが、WIA改革（2006年）以降は収束</td><td>審査基準の厳格化・就労リハビリの義務化・段階的給付設計の導入により「本当に必要な人だけが受給する」体制を再構築。論争の教科書的な解決例</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
+  </div>
+</div>
+</body>
+</html>

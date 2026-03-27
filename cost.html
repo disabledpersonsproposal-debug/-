@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不作為のコスト試算 ─ 次世代型障害者雇用提言書</title>
+<link rel="stylesheet" href="style.css">
+<script src="nav.js"></script>
+</head>
+<body>
+<div class="main">
+  <div class="topbar">提言書 &rsaquo; <span class="current">不作為のコスト試算</span></div>
+  <div class="content">
+    <div class="chapter-label">REFERENCE</div>
+    <h1 class="chapter-title">「やらない余裕」など、最初からなかった</h1>
+    <p class="chapter-subtitle">現行制度の不作為コストと「予算組み替え」による制度実現の論理</p>
+    <div class="gold-rule"></div>
+    
+<h2>試算サマリー</h2>
+<style>
+.cost-bar-row{display:grid;grid-template-columns:280px 1fr 160px 80px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border:1px solid rgba(0,0,0,.07);margin-bottom:5px;font-size:14px}
+.cost-bar-row.total{border:2px solid var(--gold);background:#fffdf0;font-weight:700}
+.cost-label{color:var(--text-mid);line-height:1.4}
+.cost-bar-wrap{background:#e8e8e8;border-radius:3px;height:14px}
+.cost-bar-fill{height:14px;border-radius:3px;background:var(--sidebar-bg)}
+.cost-bar-row.total .cost-bar-fill{background:var(--gold)}
+.cost-effect{font-size:14px;color:#2C7A3A;font-weight:600}
+.cost-amount{font-size:14px;font-weight:700;text-align:right;white-space:nowrap}
+.cost-bar-row.total .cost-amount{color:var(--gold);font-size:14px}
+.hidden{display:none}
+.toggle-btn{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:14px;color:var(--gold);cursor:pointer;margin:12px 0;font-family:var(--font)}
+.toggle-btn:hover{background:var(--gold-dim)}
+</style>
+<div class="cost-bar-row">
+  <span class="cost-label"><strong>①</strong> 家族介護者の就労損失（SCP年齢帯）</span>
+  <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:44%"></div></div>
+  <span class="cost-effect">◎ SCPで直接解消</span>
+  <span class="cost-amount">5,300〜7,100億円</span>
+</div>
+<div class="cost-bar-row">
+  <span class="cost-label"><strong>②</strong> 企業の形式的雇用コスト（管理工数＋特例子会社）</span>
+  <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:45%"></div></div>
+  <span class="cost-effect">◎ SCPで直接代替</span>
+  <span class="cost-amount">5,400〜7,200億円</span>
+</div>
+<div class="cost-bar-row">
+  <span class="cost-label"><strong>③</strong> A型・B型給付費の非効率（制度設計ミスによる損失）</span>
+  <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:100%"></div></div>
+  <span class="cost-effect">◎ SCPで直接組み替え</span>
+  <span class="cost-amount">1.2〜1.4兆円</span>
+</div>
+<div class="cost-bar-row">
+  <span class="cost-label"><strong>④</strong> 障害者本人の未就労による税収損失</span>
+  <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:25%"></div></div>
+  <span class="cost-effect">○ 就労促進で改善</span>
+  <span class="cost-amount">3,000〜4,000億円</span>
+</div>
+<div class="cost-bar-row total">
+  <span class="cost-label">合計（SCP直接解消分 ①〜④）</span>
+  <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:100%"></div></div>
+  <span></span>
+  <span class="cost-amount">約2.6〜3.2兆円/年</span>
+</div>
+<p style="font-size:14px;color:var(--text-muted);margin-top:8px">確度：★★★＝政府統計直接計算、★★☆＝統計＋合理的仮定。「SCP直接効果」はSCP制度が10年以内に解消に寄与できる損失の程度。</p>
+
+<div class="callout">
+<strong>重要な前置き：</strong>本試算の「不作為コスト」はSCP制度だけで解消できるものではない。障害児の親・高齢障害者の介護者・企業の管理コストなど、制度の射程を超えた損失も含む。「SCP制度が直接解決するもの」と「障害者政策全体の問題」を分けて論じる。
+</div>
+
+<h2>① 家族介護者の就労損失（SCP年齢帯）</h2>
+<p>前回試算から修正：在宅障害者全体（965万人）を母数とした前版から、SCP制度の対象年齢帯である<strong>18〜64歳の障害者を介護している家族に限定</strong>して試算し直した。</p>
+
+<button class="toggle-btn" onclick="this.nextElementSibling.classList.toggle('hidden');this.textContent=this.textContent.includes('展開')?'▲ 折りたたむ':'▼ 年齢別内訳を展開する'">▼ 年齢別内訳を展開する</button>
+<div class="hidden">
+<div class="table-wrap"><table>
+  <thead><tr><th>障害種別</th><th>在宅総数</th><th>18歳未満</th><th>18〜64歳（SCP対象）</th><th>65歳以上</th></tr></thead>
+  <tbody>
+    <tr><td>身体障害者</td><td>428万7千人</td><td>6万8千人（1.6%）</td><td>101万3千人（23.6%）</td><td>311万2千人（72.6%）</td></tr>
+    <tr><td>知的障害者</td><td>96万2千人</td><td>21万4千人（22.2%）</td><td>58万0千人（60.3%）</td><td>14万9千人（15.5%）</td></tr>
+    <tr><td>精神障害者</td><td>586万1千人</td><td>46万3千人（推計）</td><td>334万6千人（推計）</td><td>205万6千人（35.1%）</td></tr>
+    <tr style="font-weight:700;background:#f7f4ee"><td colspan="2">SCP年齢帯（18〜64歳）合計</td><td colspan="3">約435万人（重複調整後）</td></tr>
+  </tbody>
+</table></div>
+</div>
+
+<div class="card-grid" style="margin-top:16px">
+  <div class="card"><div class="card-label">SCP年齢帯 常時支援必要層</div><div class="card-value">約48万人</div><div class="card-desc">身体20万＋知的10万＋精神18万（推計）</div></div>
+  <div class="card"><div class="card-label">主介護者（就労可能年齢）</div><div class="card-value">約38万人</div><div class="card-desc">常時支援必要層×0.8人</div></div>
+  <div class="card"><div class="card-label">就労断念・大幅短縮の推計</div><div class="card-value">11.5〜15.4万人</div><div class="card-desc">×30〜40%。平均年収461万円（令和4年賃金構造基本統計）</div></div>
+  <div class="card"><div class="card-label">年間就労損失（SCP年齢帯限定）</div><div class="card-value" style="font-size:18px;">5,300〜7,100億円</div><div class="card-desc">SCP制度により直接解消可能</div></div>
+</div>
+
+<h2>② 企業の形式的雇用コスト</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>項目</th><th>推計額</th><th>根拠</th></tr></thead>
+  <tbody>
+    <tr><td>形式的雇用の管理コスト（機会費用）</td><td>1,440〜1,920億円</td><td>雇用障害者67.7万人のうち60%×管理工数36〜48万円/人</td></tr>
+    <tr><td>特例子会社の純維持コスト（管理費・役員派遣等）</td><td>1,860〜3,100億円</td><td>約620社×3〜5億円/社</td></tr>
+    <tr><td>法定雇用率未達成企業の納付金（間接コスト）</td><td>500〜600億円</td><td>JEED納付金収入より推計</td></tr>
+    <tr style="font-weight:700;background:#f7f4ee"><td>合計（②）</td><td>約5,400〜7,200億円</td><td>SCP制度移行により管理工数・特例子会社維持費が解消される</td></tr>
+  </tbody>
+</table></div>
+
+<h2>③ A型・B型給付費の非効率（制度設計ミスによる損失）</h2>
+<div class="callout-light">
+<strong>B型事業所に1年間通い続けても受け取る工賃は最低賃金フルタイムの約12%に過ぎない。</strong>給付費の大半は事業所の運営費・職員人件費に消えており、「障害者の所得保障」という本来の目的を果たしていない。同額の公費でSCP制度を運用すれば、利用者一人あたりの実収入を3〜5倍に増やせる。
+</div>
+<div class="table-wrap"><table>
+  <thead><tr><th>指標</th><th>現状値</th><th>出典</th></tr></thead>
+  <tbody>
+    <tr><td>障害福祉サービス等総給付費（令和6年度）</td><td>約4兆円超（国・地方合計）</td><td>厚労省・令和7年社会保障審議会資料</td></tr>
+    <tr><td>うち就労系サービス（A型・B型・移行支援等）</td><td>約1.2〜1.4兆円/年</td><td>全体の約30〜35%と推計</td></tr>
+    <tr><td>就労継続支援A型　平均月額賃金</td><td>約81,645円（令和4年度）</td><td>厚労省就労継続支援A型の収支実態調査</td></tr>
+    <tr><td>就労継続支援B型　平均月額工賃</td><td>約16,507円（令和4年度）</td><td>厚労省工賃向上計画</td></tr>
+    <tr><td>最低賃金（全国加重平均・令和5年10月〜）</td><td>1,004円/時（フルタイム換算167万円/年）</td><td>厚労省最低賃金審議会</td></tr>
+  </tbody>
+</table></div>
+<div class="card-grid">
+  <div class="card"><div class="card-label">利用者に届かない推計分（給付費の50%）</div><div class="card-value" style="font-size:18px;">6,000〜7,000億円/年</div></div>
+  <div class="card"><div class="card-label">同額をSCP制度に充当した場合</div><div class="card-value" style="font-size:16px;">約50〜60万人分</div><div class="card-desc">時給1,200円・週30hの就労原資に相当</div></div>
+  <div class="card"><div class="card-label">制度設計ミスによる損失（年間）</div><div class="card-value" style="font-size:18px;">約1.2〜1.4兆円/年</div></div>
+</div>
+
+<h2>④ 障害者本人の未就労・低賃金による税収損失</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>算出ステップ</th><th>数値</th><th>根拠</th></tr></thead>
+  <tbody>
+    <tr><td>現行B型工賃水準での実質的未就労層（潜在的就労可能）</td><td>50〜80万人</td><td>SCP年齢帯の障害者のうち就労障壁が制度的なものに限る者を推計</td></tr>
+    <tr><td>週20時間就労した場合の想定年収</td><td>約83万円/年</td><td>最低賃金1,004円×20h×52週</td></tr>
+    <tr><td>所得税・住民税・消費税誘発の実効税負担率（低所得帯）</td><td>約14〜19万円/人・年</td><td>低所得帯実効税率10〜15%＋消費誘発分</td></tr>
+    <tr><td>年間税収増加額（就労が実現した場合）</td><td>約700〜1,520億円/年</td><td>—</td></tr>
+    <tr><td>生活保護費・医療費の削減効果（参考）</td><td>約700〜1,000億円/年</td><td>就労による生活保護脱却・精神健康改善効果</td></tr>
+    <tr style="font-weight:700;background:#f7f4ee"><td>④合計（保守値）</td><td>約3,000〜4,000億円/年</td><td>—</td></tr>
+  </tbody>
+</table></div>
+
+    <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
+  </div>
+</div>
+</body>
+</html>
