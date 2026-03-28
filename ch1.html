@@ -77,21 +77,29 @@
     </div>
 
     <h2>先進諸国の障害年金との比較</h2>
-    <div class="table-wrap"><table>
-      <thead><tr><th>国名</th><th>① 基礎年金分（月額）</th><th>② 追加手当・補助（月額）</th><th>合計受給額（手取り）</th><th>課税区分</th><th>特徴</th></tr></thead>
+    <div class="table-wrap"><table style="table-layout:fixed;width:100%">
+      <colgroup>
+        <col style="width:130px">
+        <col style="width:110px">
+        <col style="width:110px">
+        <col style="width:120px">
+        <col style="width:130px">
+        <col>
+      </colgroup>
+      <thead><tr><th>国名</th><th>① 基礎年金分<br>（月額・税引き前）</th><th>② 追加手当・補助<br>（月額）</th><th>合計受給額<br>（税引き前）</th><th>手取り推計</th><th>特徴</th></tr></thead>
       <tbody>
-        <tr><td>🇸🇪 スウェーデン</td><td>約19.0万円</td><td>約8.0〜14.0万円</td><td>約19.0〜33.0万円</td><td><span style="color:#B8421A;font-weight:700;">☆課税対象</span></td><td>活動手当や住宅補助。生活実態に合わせ加算</td></tr>
-        <tr><td>🇳🇴 ノルウェー</td><td>約36.0万円</td><td>約0〜15.0万円</td><td>約36.0〜55.0万円</td><td><span style="color:#B8421A;font-weight:700;">☆課税対象</span></td><td>基本額が極めて高く、さらに介護・移動手当が付く</td></tr>
-        <tr><td>🇬🇧 イギリス</td><td>約9.5万円</td><td>約6.0〜16.0万円</td><td>約16.0〜25.0万円</td><td><span style="color:#888;font-weight:700;">★/☆混在</span></td><td>PIP（個人独立手当）が強力。障害コストを補填</td></tr>
-        <tr><td>🇫🇷 フランス</td><td>約17.0万円</td><td>約3.0〜6.5万円</td><td>約17.0〜21.0万円</td><td><span style="color:#2C7A3A;font-weight:700;">★非課税</span></td><td>AAH（障害大人手当）をベースに住宅補助が厚い</td></tr>
-        <tr><td>🇩🇪 ドイツ</td><td>約16.0万円</td><td>約4.0〜7.0万円</td><td>約20.0〜27.0万円</td><td><span style="color:#B8421A;font-weight:700;">☆課税対象</span></td><td>年金で足りない分を社会扶助（基礎保護）で上乗せ</td></tr>
-        <tr><td>🇩🇰 デンマーク</td><td>約31.0万円</td><td>約0〜2.0万円</td><td>約31.0〜33.0万円</td><td><span style="color:#B8421A;font-weight:700;">☆課税対象</span></td><td>Førtidspension（障害・早期退職年金）が基礎＋補足の二層構造</td></tr>
-        <tr><td>🇳🇱 オランダ</td><td>前職月収の75%（上限€290.67/日）</td><td>前職収入連動</td><td>約34.0〜50.0万円</td><td><span style="color:#B8421A;font-weight:700;">☆課税対象</span></td><td>WIA-IVA（完全永続的就労不能）は前職収入の75%</td></tr>
-        <tr style="background:#fffdf0"><td><strong>🇯🇵 日本（現状）</strong></td><td><strong style="color:var(--gold)">約9.5万円</strong></td><td>ほぼ0〜2.8万円</td><td><strong style="color:var(--gold)">約9.4〜12.2万円</strong></td><td><span style="color:#2C7A3A;font-weight:700;">★非課税</span></td><td>②は特別障害者手当だが認定が極めて厳しく受給者比率は低い</td></tr>
-        <tr style="background:#f7f4ee"><td><strong>🇯🇵 本提言書案</strong></td><td><strong>15.0万円</strong></td><td>準職員給与5〜10万円</td><td><strong style="color:#2C7A3A">20.0〜25.0万円</strong></td><td><span style="color:#2C7A3A;font-weight:700;">★非課税</span></td><td>欧州標準に肩を並べる、日本初の「真の自立」プラン</td></tr>
+        <tr><td>🇸🇪 スウェーデン<br><span style="color:#B8421A;font-size:13px;font-weight:700;">☆課税対象</span></td><td>約19.0万円</td><td>約8.0〜14.0万円</td><td>約19.0〜33.0万円</td><td><strong>約13〜23万円</strong><br><small>実効税率約30%</small></td><td>活動手当や住宅補助。生活実態に合わせ加算</td></tr>
+        <tr><td>🇳🇴 ノルウェー<br><span style="color:#B8421A;font-size:13px;font-weight:700;">☆課税対象</span></td><td>約36.0万円</td><td>約0〜15.0万円</td><td>約36.0〜55.0万円</td><td><strong>約26〜39万円</strong><br><small>実効税率約22%</small></td><td>基本額が極めて高く、さらに介護・移動手当が付く</td></tr>
+        <tr><td>🇬🇧 イギリス<br><span style="color:#888;font-size:13px;font-weight:700;">★/☆混在</span></td><td>約9.5万円</td><td>約6.0〜16.0万円</td><td>約16.0〜25.0万円</td><td><strong>約12〜14万円</strong><br><small>PIP非課税・ESA課税</small></td><td>PIP（個人独立手当）が強力。障害コストを補填</td></tr>
+        <tr><td>🇫🇷 フランス<br><span style="color:#2C7A3A;font-size:13px;font-weight:700;">★非課税</span></td><td>約17.0万円</td><td>約3.0〜6.5万円</td><td>約17.0〜21.0万円</td><td><strong>約17.0〜21.0万円</strong><br><small>非課税のため同額</small></td><td>AAH（障害大人手当）をベースに住宅補助が厚い</td></tr>
+        <tr><td>🇩🇪 ドイツ<br><span style="color:#B8421A;font-size:13px;font-weight:700;">☆課税対象</span></td><td>約16.0万円</td><td>約4.0〜7.0万円</td><td>約20.0〜27.0万円</td><td><strong>約18〜25万円</strong><br><small>実効税率約8%<br>（障害者控除充実）</small></td><td>年金で足りない分を社会扶助（基礎保護）で上乗せ</td></tr>
+        <tr><td>🇩🇰 デンマーク<br><span style="color:#B8421A;font-size:13px;font-weight:700;">☆課税対象</span></td><td>約31.0万円</td><td>約0〜2.0万円</td><td>約31.0〜33.0万円</td><td><strong>約19〜20万円</strong><br><small>実効税率約38%</small></td><td>Førtidspension（障害・早期退職年金）が基礎＋補足の二層構造</td></tr>
+        <tr><td>🇳🇱 オランダ<br><span style="color:#B8421A;font-size:13px;font-weight:700;">☆課税対象</span></td><td>前職月収の75%（上限€290.67/日）</td><td>前職収入連動</td><td>約34.0〜50.0万円</td><td><strong>約21〜31万円</strong><br><small>実効税率約37%</small></td><td>WIA-IVA（完全永続的就労不能）は前職収入の75%</td></tr>
+        <tr style="background:#fffdf0"><td><strong>🇯🇵 日本（現状）</strong><br><span style="color:#2C7A3A;font-size:13px;font-weight:700;">★非課税</span></td><td><strong style="color:var(--gold)">約9.5万円</strong></td><td>ほぼ0〜2.8万円</td><td>約9.4〜12.2万円</td><td><strong style="color:var(--gold)">約9.4〜12.2万円</strong><br><small>非課税のため同額</small></td><td>②は特別障害者手当だが認定が極めて厳しく受給者比率は低い</td></tr>
+        <tr style="background:#f7f4ee"><td><strong>🇯🇵 本提言書案</strong><br><span style="color:#2C7A3A;font-size:13px;font-weight:700;">★非課税</span></td><td><strong>15.0万円</strong></td><td>準職員給与5〜10万円</td><td><strong style="color:#2C7A3A">20.0〜25.0万円</strong></td><td><strong style="color:#2C7A3A">20.0〜25.0万円</strong><br><small>非課税のため同額</small></td><td>欧州標準に肩を並べる、日本初の「真の自立」プラン</td></tr>
       </tbody>
     </table></div>
-    <div class="callout-light">上表の数値と別冊「国際比較データ集」の数値が一部異なる場合があります。本表は年金本体に住宅補助・移動補助等の付随給付を加えた生活実態に近い総受給額、別冊は年金本体のみの詳細数値を掲載しています。いずれも「日本の障害基礎年金1級（約9.5万円）が欧州各国の3分の1以下」という事実認定は共通です。</div>
+    <div class="callout-light">本表は年金本体に住宅補助・移動補助等の付随給付を加えた生活実態に近い総受給額（税引き前）を掲載しています。手取り推計は各国の実効税率を適用した概算値です。別冊「国際比較データ集」は年金本体のみの詳細数値および手取り額をあわせて掲載しています。いずれも「日本の障害基礎年金1級（約9.5万円・非課税）が欧州各国の手取り額を大きく下回る」という事実認定は共通です。</div>
 
     <h2>2-2　障害者雇用制度が生む構造的疲弊</h2>
     <div class="table-wrap"><table>
