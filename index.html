@@ -280,37 +280,130 @@
       <p>本提言が求める年金増額は、国際標準から見て「過大な要求」ではなく「最低限の是正」である。以下の給付額の格差は、単なる財政規模の差ではなく、<strong>制度の設計思想の根本的な違い</strong>が生んでいる。</p>
       <p style="font-size:14px;color:var(--text-muted);">下記の金額はすべて<strong>PPP（購買力平価）換算後の推定額</strong>——「その金額を日本で受け取ったとしたら、どれだけの生活水準に相当するか」を示した値です。<span style="color:#2C7A3A;font-weight:600;">★非課税</span>はそのまま手取り、<span style="color:#B8421A;font-weight:600;">☆課税対象</span>は所得税等が引かれた手取りになります。</p>
 
-      <div class="intl-row hi"><span>🇯🇵 日本（1級・現行・最高額）<span style="color:#2C7A3A;font-size:13px;margin-left:6px;font-weight:700;">★非課税</span></span><div class="intl-bar"><div class="intl-fill" style="width:36%"></div></div><span class="intl-amt">約 9.5万円</span></div>
-      <div class="intl-row"><span>🇸🇪 スウェーデン（Sjukersättning等）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:40%"></div></div><span class="intl-amt">約 10.8万円〜</span></div>
-      <div class="intl-row"><span>🇬🇧 イギリス（PIP非課税／ESA課税）⚠️2026年〜大幅改革<span style="color:#888;font-size:13px;margin-left:6px;font-weight:700;">★/☆混在</span></span><div class="intl-bar"><div class="intl-fill" style="width:47%"></div></div><span class="intl-amt">約 12.5万円</span></div>
-      <div class="intl-row"><span>🇩🇪 ドイツ（就労歴あり平均・先天性は対象外）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:52%"></div></div><span class="intl-amt">約 13.8万円</span></div>
-      <div class="intl-row"><span>🇫🇷 フランス（AAH・就労歴不要）<span style="color:#2C7A3A;font-size:13px;margin-left:6px;font-weight:700;">★非課税</span></span><div class="intl-bar"><div class="intl-fill" style="width:55%"></div></div><span class="intl-amt">約 14.6万円</span></div>
-      <div class="intl-row"><span>🇳🇴 ノルウェー（最低保障・就労歴ゼロでも適用可）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:74%"></div></div><span class="intl-amt">約 19.7万円</span></div>
-      <div class="intl-row"><span>🇩🇰 デンマーク（就労歴不要・補足含む最大）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:78%"></div></div><span class="intl-amt">約 20.8万円</span></div>
+      <!-- バー表示：PPP換算②合計ベース・最大値26.7万円=100%で全行統一スケール -->
+      <!-- 各widthの算出根拠: 中央値÷26.7万円×100 (レンジは上限値採用) -->
+      <!-- 日本:12.2/26.7=45.7% SW:21.8/26.7=81.6% UK:12.5/26.7=46.8% DE:18/26.7=67.4% FR:19/26.7=71.2% NO:26/26.7=97.4% DK:20.8/26.7=77.9% NL:26.7/26.7=100% -->
+      <div class="intl-row hi"><span>🇯🇵 日本（1級・現行・最高額）<span style="color:#2C7A3A;font-size:13px;margin-left:6px;font-weight:700;">★非課税</span></span><div class="intl-bar"><div class="intl-fill" style="width:46%"></div></div><span class="intl-amt">約 9.5〜12.2万円</span></div>
+      <div class="intl-row"><span>🇸🇪 スウェーデン（Sjukersättning＋住宅補助＋追加費用手当）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:82%"></div></div><span class="intl-amt">約 15.2〜21.8万円</span></div>
+      <div class="intl-row"><span>🇬🇧 イギリス（PIP＋ESA合計）⚠️2026年〜大幅改革<span style="color:#888;font-size:13px;margin-left:6px;font-weight:700;">★/☆混在</span></span><div class="intl-bar"><div class="intl-fill" style="width:47%"></div></div><span class="intl-amt">約 12.5万円</span></div>
+      <div class="intl-row"><span>🇩🇪 ドイツ（年金＋社会扶助による基礎保護・就労歴あり平均）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:67%"></div></div><span class="intl-amt">約 16〜18万円</span></div>
+      <div class="intl-row"><span>🇫🇷 フランス（AAH＋住宅補助APL等）<span style="color:#2C7A3A;font-size:13px;margin-left:6px;font-weight:700;">★非課税</span></span><div class="intl-bar"><div class="intl-fill" style="width:71%"></div></div><span class="intl-amt">約 17〜19万円</span></div>
+      <div class="intl-row"><span>🇳🇴 ノルウェー（Uføretrygd＋介護・移動手当・最低保障）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:97%"></div></div><span class="intl-amt">約 19.7〜26万円</span></div>
+      <div class="intl-row"><span>🇩🇰 デンマーク（Førtidspension・基本＋補足含む最大）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:78%"></div></div><span class="intl-amt">約 20.8万円</span></div>
       <div class="intl-row"><span>🇳🇱 オランダ（WIA-IVA 前職75%・下限値）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:100%"></div></div><span class="intl-amt">約 26.7万円〜</span></div>
 
-      <div class="callout" style="margin-top:16px">
-        <strong>Key Finding</strong>　「ずるい・怠けだ」論争は給付水準が高い北欧ほど小さく、水準の低いイギリスで最も激化した。決定的な差は「①審査の透明性」「②就労すれば得をする設計」「③不正認定率の公開」の3点にある。本提言はAI判定・数値化審査・信頼スコア制によりこの3点を全て内包する。
-      </div>
-
       <div class="table-wrap" style="margin-top:16px"><table>
-        <thead><tr><th>国</th><th>課税区分</th><th>名目受給額（参考・円換算）</th><th>PPP換算後<br>日本の生活水準に置き換えた推定額</th><th>雇用義務未達ペナルティ（月額）</th></tr></thead>
+        <thead>
+          <tr>
+            <th>国</th>
+            <th>課税区分</th>
+            <th>名目受給額（参考・円換算）</th>
+            <th>PPP換算①<br><span style="font-weight:400;font-size:12px">年金本体のみ</span></th>
+            <th style="background:#1a3a1a;color:#fff;">PPP換算②<br><span style="font-weight:400;font-size:12px">住宅補助等含む合計</span><br><span style="font-weight:400;font-size:11px;opacity:.85">日本での実質生活水準</span></th>
+            <th>雇用義務未達<br>ペナルティ（月額）</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr style="background:#fffdf0"><td><strong>🇯🇵 日本（1級・現行）</strong></td><td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td><td>約9.5万円<br><small>障害基礎年金88,260円＋生活者支援給付金7,025円</small></td><td><strong style="color:var(--gold)">約9.5万円</strong></td><td>約5万円</td></tr>
-          <tr><td>🇸🇪 スウェーデン（Sjukersättning）</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>約19〜33万円</td><td>約10.8万円〜</td><td>低額（就労統合型・雇用率制度なし）</td></tr>
-          <tr><td>🇬🇧 イギリス（PIP＋ESA）⚠️2026年〜大幅改革</td><td><span style="color:#888;font-weight:700;">★/☆ 混在</span><br><small>PIP=非課税<br>ESA=課税対象</small></td><td>約16〜19万円</td><td>約12.5万円</td><td>高額（法的義務）</td></tr>
-          <tr><td>🇩🇪 ドイツ（平均・就労歴あり・先天性は対象外）</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span><br><small>※障害者控除が大きく<br>実質税負担は軽微</small></td><td>約26万円</td><td>約13.8万円</td><td>約12万円（日本の約2.4倍）</td></tr>
-          <tr><td>🇫🇷 フランス（AAH・就労歴不要）</td><td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td><td>約17万円</td><td>約14.6万円</td><td>約3万円〜</td></tr>
-          <tr><td>🇳🇴 ノルウェー（最低保障・就労歴ゼロでも適用）</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>約36万円</td><td>約19.7万円</td><td>高額（法的義務）</td></tr>
-          <tr><td>🇩🇰 デンマーク（就労歴不要・補足含む最大）</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>約31万円（税引前）</td><td>約20.8万円</td><td>高額（法的義務）</td></tr>
-          <tr><td>🇳🇱 オランダ（WIA-IVA 前職75%・下限値）</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>約34〜50万円</td><td>約26.7万円〜</td><td>高額（法的義務）</td></tr>
+          <tr style="background:#fffdf0">
+            <td><strong>🇯🇵 日本（1級・現行）</strong></td>
+            <td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td>
+            <td>約9.5万円<br><small>障害基礎年金88,260円＋生活者支援給付金7,025円</small></td>
+            <td><strong style="color:var(--gold)">約9.5万円</strong></td>
+            <td style="background:#fffbef;border-left:2px solid #d4a000;">
+              <strong style="color:var(--gold)">約9.5〜12.2万円</strong><br>
+              <small style="color:#888;">年金本体＋特別障害者手当（最大2.8万円）<br>※認定が極めて厳しく受給者は少数</small>
+            </td>
+            <td>約5万円</td>
+          </tr>
+          <tr>
+            <td>🇸🇪 スウェーデン（Sjukersättning）</td>
+            <td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td>
+            <td>約19〜33万円<br><small>年金本体＋住宅補助＋追加費用手当</small></td>
+            <td>約10.8万円〜<br><small style="color:#888;">年金本体のみ・拠出実績による下限</small></td>
+            <td style="background:#f0fff4;border-left:2px solid #2C7A3A;">
+              <strong style="color:#1a5c2a">約15.2〜21.8万円</strong><br>
+              <small style="color:#888;">住宅補助（家賃最大90%）＋追加費用手当（障害コスト実費）を含む合計</small>
+            </td>
+            <td>低額（就労統合型・雇用率制度なし）</td>
+          </tr>
+          <tr>
+            <td>🇬🇧 イギリス（PIP＋ESA）⚠️2026年〜大幅改革</td>
+            <td><span style="color:#888;font-weight:700;">★/☆ 混在</span><br><small>PIP=非課税<br>ESA=課税対象</small></td>
+            <td>約16〜19万円<br><small>PIP（個人自立払い）＋ESA（就労支援手当）合計</small></td>
+            <td>約8.5万円〜<br><small style="color:#888;">ESA本体のみ</small></td>
+            <td style="background:#f0fff4;border-left:2px solid #2C7A3A;">
+              <strong style="color:#1a5c2a">約12.5万円</strong><br>
+              <small style="color:#888;">PIP（障害コスト補填・非課税）＋ESAの合計。PIPは移動・日常生活費を別途補填</small>
+            </td>
+            <td>高額（法的義務）</td>
+          </tr>
+          <tr>
+            <td>🇩🇪 ドイツ（平均・就労歴あり・先天性は対象外）</td>
+            <td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span><br><small>※障害者控除が大きく<br>実質税負担は軽微</small></td>
+            <td>約26万円<br><small>Erwerbsminderungsrente（稼得能力減少年金）平均</small></td>
+            <td>約13.8万円<br><small style="color:#888;">年金本体のみ</small></td>
+            <td style="background:#f0fff4;border-left:2px solid #2C7A3A;">
+              <strong style="color:#1a5c2a">約16〜18万円</strong><br>
+              <small style="color:#888;">社会扶助（Grundsicherung）による基礎保護（年金不足分を補填）含む合計</small>
+            </td>
+            <td>約12万円（日本の約2.4倍）</td>
+          </tr>
+          <tr>
+            <td>🇫🇷 フランス（AAH・就労歴不要）</td>
+            <td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td>
+            <td>約17万円<br><small>AAH（成人障害者手当）月額€1,033.32（2025年4月〜）</small></td>
+            <td>約14.6万円<br><small style="color:#888;">AAH本体のみ（就労歴不要・非課税）</small></td>
+            <td style="background:#f0fff4;border-left:2px solid #2C7A3A;">
+              <strong style="color:#1a5c2a">約17〜19万円</strong><br>
+              <small style="color:#888;">住宅補助（APL・家賃の一部）を含む合計。AAH自体が非課税で実質手取りに近い</small>
+            </td>
+            <td>約3万円〜</td>
+          </tr>
+          <tr>
+            <td>🇳🇴 ノルウェー（最低保障・就労歴ゼロでも適用）</td>
+            <td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td>
+            <td>約36万円<br><small>Uføretrygd 単身最低保障（月約27,431 NOK）</small></td>
+            <td>約19.7万円<br><small style="color:#888;">年金本体・最低保障額ベース</small></td>
+            <td style="background:#f0fff4;border-left:2px solid #2C7A3A;">
+              <strong style="color:#1a5c2a">約19.7〜26万円</strong><br>
+              <small style="color:#888;">介護手当・移動補助等を加算した場合の上限。基本額が高く追加給付の必要性が低い設計</small>
+            </td>
+            <td>高額（法的義務）</td>
+          </tr>
+          <tr>
+            <td>🇩🇰 デンマーク（就労歴不要・補足含む最大）</td>
+            <td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td>
+            <td>約31万円（税引前）<br><small>Førtidspension 単身基本＋補足最大（約15,527 DKK/月）</small></td>
+            <td>約20.8万円<br><small style="color:#888;">基本＋補足含む合計（元々一体型給付）</small></td>
+            <td style="background:#f0fff4;border-left:2px solid #2C7A3A;">
+              <strong style="color:#1a5c2a">約20.8万円</strong><br>
+              <small style="color:#888;">Førtidspensionは基本額＋補足が一体設計。別建て住宅補助の必要性が低く、この額がほぼ手取り相当</small>
+            </td>
+            <td>高額（法的義務）</td>
+          </tr>
+          <tr>
+            <td>🇳🇱 オランダ（WIA-IVA 前職75%・下限値）</td>
+            <td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td>
+            <td>約34〜50万円<br><small>WIA-IVA（完全永続的就労不能）前職月収の75%</small></td>
+            <td>約26.7万円〜<br><small style="color:#888;">前職収入連動・下限値ベース</small></td>
+            <td style="background:#f0fff4;border-left:2px solid #2C7A3A;">
+              <strong style="color:#1a5c2a">約26.7万円〜</strong><br>
+              <small style="color:#888;">前職収入の75%が基本給付。追加手当は少ないが基本額自体が高水準で別建て補助の必要性が低い</small>
+            </td>
+            <td>高額（法的義務）</td>
+          </tr>
         </tbody>
       </table></div>
 
       <div class="callout-light" style="margin-top:12px;font-size:14px">
+        <strong>【表の読み方：PPP換算①と②の違いについて】</strong>　<span style="color:#B8421A;font-weight:600;">PPP換算①（年金本体のみ）</span>は各国の障害年金・手当の本体部分だけをPPP換算した値です。<span style="color:#2C7A3A;font-weight:600;">PPP換算②（住宅補助等含む合計）</span>は住宅補助・追加費用手当・社会扶助など「年金以外の給付」も含めた合計を換算した値であり、<strong>実際の生活水準に最も近い数字</strong>です。日本の「9.5万円」は年金本体と合計がほぼ同額（別建て給付がほとんど存在しないため）である点が、制度設計の根本的な差を示しています。<br><br>
         <strong>【課税区分について】</strong>　<span style="color:#2C7A3A;font-weight:700;">★非課税</span>の国（日本・フランス）は表示額がそのまま手取りです。<span style="color:#B8421A;font-weight:700;">☆課税対象</span>の国（スウェーデン・ドイツ・デンマーク・ノルウェー・オランダ）は表示額から所得税等が差し引かれた手取りになります。特にデンマーク・ノルウェー・スウェーデンは税率が高く（所得税率30〜50%程度）、名目額から手取りへの乖離が大きくなります。ドイツは課税対象ですが障害者控除・基礎控除が充実しており実質税負担は軽微です。イギリスはPIP（個人自立払い）が非課税、ESA（就労支援手当）が課税対象と給付種別によって異なります。<br><br>
-        <strong>【PPP換算（購買力平価）について】</strong>　上記金額はOECDの家計消費PPP（2023年）を用いて「日本での生活水準に置き換えた推定額」に換算した値です。計算式：名目額（円換算）×（日本PPP指数73 ÷ 各国PPP指数）。<strong>課税・PPP双方の補正後もなお、日本（9.5万円・非課税）はフランス（14.6万円・非課税）を大きく下回ります。</strong><br><br>
-        出典：各国公式機関一次ソース・OECD Statistics（2025年4月）。換算レートは参考値（1€≈163円、1£≈189円、1DKK≈20.1円、1NOK≈12.0円・2026年3月概算）。
+        <strong>【PPP換算（購買力平価）について】</strong>　上記金額はOECDの家計消費PPP（2023年）を用いて「日本での生活水準に置き換えた推定額」に換算した値です。計算式：名目額（円換算）×（日本PPP指数73 ÷ 各国PPP指数）。<strong>課税・PPP双方の補正後もなお、日本（①②ともに約9.5〜12.2万円）は比較全国中最低水準です。</strong><br><br>
+        出典：各国公式機関一次ソース・OECD Statistics（2025年4月）。換算レートは参考値（1€≈163円、1£≈189円、1DKK≈20.1円、1NOK≈12.0円・2026年3月概算）。住宅補助等の合計額は各国公式制度資料に基づく試算。
+      </div>
+
+      <div class="callout" style="margin-top:16px">
+        <strong>Key Finding</strong>　「ずるい・怠けだ」論争は給付水準が高い北欧ほど小さく、水準の低いイギリスで最も激化した。決定的な差は「①審査の透明性」「②就労すれば得をする設計」「③不正認定率の公開」の3点にある。本提言はAI判定・数値化審査・信頼スコア制によりこの3点を全て内包する。
       </div>
     </div>
 
