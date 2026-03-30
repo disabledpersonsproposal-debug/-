@@ -7,15 +7,13 @@
 <link rel="stylesheet" href="style.css">
 <script src="nav.js" defer></script>
 <style>
-.intl-bar-row{display:grid;grid-template-columns:220px 1fr 150px;align-items:center;gap:12px;padding:8px 12px;background:#fff;border:1px solid rgba(0,0,0,.07);margin-bottom:6px;font-size:14px}
+.intl-bar-row{display:grid;grid-template-columns:220px 1fr 110px;align-items:center;gap:12px;padding:8px 12px;background:#fff;border:1px solid rgba(0,0,0,.07);margin-bottom:6px;font-size:14px}
 .intl-bar-row.highlight{border:1px solid var(--gold);background:#fffdf0}
 .intl-country{font-weight:600;color:var(--text-dark);font-size:14px}
 .intl-bar-wrap{background:#e8e8e8;border-radius:3px;height:16px;position:relative}
 .intl-bar-fill{height:16px;border-radius:3px;background:var(--sidebar-bg)}
 .intl-bar-row.highlight .intl-bar-fill{background:var(--gold)}
-.intl-amount{text-align:right;font-weight:700;font-size:14px;color:var(--text-mid)}
-.intl-amount-sub{display:block;font-size:13px;font-weight:400;color:#2C7A3A;margin-top:2px;text-align:right}
-.intl-amount-sub.nontax{color:#2C7A3A}
+.intl-amount{text-align:right;font-weight:700;font-size:14px;color:var(--text-mid);white-space:nowrap}
 .intl-bar-row.highlight .intl-amount{color:var(--gold)}
 .penalty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0}
 .penalty-card{background:#fff;border:1px solid var(--gold-border);padding:14px}
@@ -45,93 +43,88 @@
     <div class="gold-rule"></div>
 
     <h2>障害年金月額の国際比較</h2>
-    <p style="font-size:14px;color:var(--text-muted);margin-bottom:8px">換算レートは参考値（1€≈163円、1£≈189円、1DKK≈20円、1SEK≈14円、1NOK≈13円、2026年3月時点概算）。最大値を100%としたバーで相対比較。</p>
-    <p style="font-size:14px;margin-bottom:16px"><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span>＝税引き前＝手取り（同額）　／　<span style="color:#B8421A;font-weight:700;">☆ 課税対象</span>＝税引き前の下に手取り推計額を併記。手取りは実効税率で試算（北欧30〜38%、オランダ37%、ドイツ約8%）</p>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px">換算レートは参考値（1€≈163円、1£≈189円、1DKK≈20円、1SEK≈14円、1NOK≈13円、2026年3月時点概算）。最大値を100%としたバーで相対比較。</p>
 
     <div class="intl-bar-row highlight">
-      <span class="intl-country">🇯🇵 日本（現行1級・最高額）<br><span style="color:#2C7A3A;font-weight:700;font-size:13px;">★非課税</span></span>
+      <span class="intl-country">🇯🇵 日本（現行1級・最高額）</span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:26%"></div></div>
-      <span class="intl-amount">約 9.5万円<span class="intl-amount-sub nontax">手取り 約 9.5万円</span></span>
+      <span class="intl-amount">約 9.5万円</span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇫🇷 フランス（AAH・就労歴不要）<br><span style="color:#2C7A3A;font-weight:700;font-size:13px;">★非課税</span></span>
+      <span class="intl-country">🇫🇷 フランス（AAH・就労歴不要）</span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:46%"></div></div>
-      <span class="intl-amount">約 16.8万円<span class="intl-amount-sub nontax">手取り 約 16.8万円</span></span>
+      <span class="intl-amount">約 16.8万円</span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇬🇧 イギリス（PIP非課税／ESA課税）<br><span style="color:#888;font-weight:700;font-size:13px;">★/☆混在</span></span>
+      <span class="intl-country">🇬🇧 イギリス（PIP+ESA・就労歴不要）</span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:41%"></div></div>
-      <span class="intl-amount">約 13〜15万円<span class="intl-amount-sub" style="color:#888">手取り 約 12〜14万円</span></span>
+      <span class="intl-amount">約 13〜15万円</span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇩🇪 ドイツ（就労歴あり平均）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇩🇪 ドイツ（就労歴あり平均）</span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:47%"></div></div>
-      <span class="intl-amount">約 17.0万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 15.6万円</span></span>
+      <span class="intl-amount">約 17.0万円</span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning等）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning等）</span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:52%"></div></div>
-      <span class="intl-amount">約 19〜33万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 13〜23万円</span></span>
+      <span class="intl-amount">約 19〜33万円</span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇩🇰 デンマーク（単身最大・補足含む）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇩🇰 デンマーク（単身最大・補足含む）</span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:90%"></div></div>
-      <span class="intl-amount">約 31万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 19万円</span></span>
+      <span class="intl-amount">約 31万円</span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇳🇱 オランダ（WIA-IVA 前職75%）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇳🇱 オランダ（WIA-IVA 前職75%）</span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:95%"></div></div>
-      <span class="intl-amount">約 34〜50万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 21〜31万円</span></span>
+      <span class="intl-amount">約 34〜50万円</span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇳🇴 ノルウェー（最低保障・就労歴ゼロ可）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇳🇴 ノルウェー（最低保障・就労歴ゼロ可）</span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:100%"></div></div>
-      <span class="intl-amount">約 36〜50万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 26〜39万円</span></span>
-    </div>
-
-    <div class="callout-light" style="margin-top:16px">
-      <strong>【課税対象国の実質手取りについて】</strong>　スウェーデン・デンマーク・ノルウェー・オランダ・ドイツは障害年金が課税対象です。北欧3カ国は所得税率が30〜50%程度と高いため、名目額から手取りへの乖離が大きくなります。たとえばノルウェーの名目36万円は、課税後の実質手取りでは大幅に低下します。一方、日本・フランスは非課税のため表示額がそのまま手取りです。<strong>課税補正後も日本の年金水準は欧州主要国を大きく下回ります。</strong>
+      <span class="intl-amount">約 36〜50万円</span>
     </div>
 
     <div class="callout" style="margin-top:20px">
-      <strong>Key Finding①</strong>　日本の障害基礎年金1級（月額約9.5万円・非課税）は「最高額」でありながら、欧州主要国と比較して圧倒的に低い。同じ非課税国のフランス（AAH・約16.8万円）と比較しても約7万円の差がある。この格差は財政規模の差ではなく、<strong>制度設計思想の根本的な違い</strong>が生んでいる。
+      <strong>Key Finding①</strong>　日本の障害基礎年金1級（月額約9.5万円）は「最高額」でありながら、欧州主要国のいずれをPPP補正後で比較しても日本を上回る。この格差は財政規模の差ではなく、<strong>制度設計思想の根本的な違い</strong>が生んでいる。
     </div>
 
     <h2>障害年金・雇用義務ペナルティの国際比較</h2>
     <div class="penalty-grid">
       <div class="penalty-card">
         <div class="penalty-country">🇯🇵 日本（現行）</div>
-        <div class="penalty-pension">年金 約9.5万円/月 <span style="color:#2C7A3A;font-size:13px;font-weight:700;">★非課税</span></div>
+        <div class="penalty-pension">年金 約9.5万円/月</div>
         <div class="penalty-fine">未達ペナルティ <strong>月約5万円</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇫🇷 フランス</div>
-        <div class="penalty-pension">年金 約17万円/月（AAH）<span style="color:#2C7A3A;font-size:13px;font-weight:700;"> ★非課税</span></div>
+        <div class="penalty-pension">年金 約17万円/月（AAH）</div>
         <div class="penalty-fine">未達ペナルティ <strong>月約3万円〜</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇩🇪 ドイツ</div>
-        <div class="penalty-pension">年金 約26万円/月（平均）<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約26万円/月（平均）</div>
         <div class="penalty-fine">未達ペナルティ <strong>月最大€720（約12万円）</strong><br><span style="font-size:14px">日本の約2.4倍</span></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇩🇰 デンマーク</div>
-        <div class="penalty-pension">年金 約31万円/月（2025年・税引前）<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約31万円/月（2025年）</div>
         <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇳🇴 ノルウェー</div>
-        <div class="penalty-pension">年金 約36万円/月（最低保障・税引前）<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約36万円/月（最低保障）</div>
         <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇸🇪 スウェーデン</div>
-        <div class="penalty-pension">年金 約19〜33万円/月<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約19〜33万円/月</div>
         <div class="penalty-fine">未達ペナルティ <strong>低額（就労統合型・雇用率制度なし）</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇳🇱 オランダ</div>
-        <div class="penalty-pension">年金 約34〜50万円/月（前職75%）<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約34〜50万円/月（前職75%）</div>
         <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
       </div>
       <div class="penalty-card">
@@ -143,36 +136,6 @@
 
     <div class="callout">
       <strong>Key Finding②</strong>　ドイツは日本と同水準の雇用率義務（5%）を課しながら、未達成企業への納付金を最大月額€720（約12万円）に設定しており、日本の納付金水準（月約5万円）の約2.4倍である。「義務を強化しながら納付金を低く抑える」日本の現行設計は、企業に「払えば済む」という抜け道を与えつつ、その収益を当事者の自立に還流させない最も非効率な構造である。
-    </div>
-
-    <h2>制度設計思想の比較</h2>
-    <p>給付額の格差は単なる財政規模の差ではない。制度の「設計思想」の違いが、給付水準・雇用義務のあり方・家族負担の構造を決定している。</p>
-    <div class="table-wrap"><table>
-      <thead><tr><th>比較軸</th><th>欧州主要国（デンマーク・ノルウェー・ドイツ・フランス等）</th><th>日本（現行）</th></tr></thead>
-      <tbody>
-        <tr><td><strong>①所得保障の基本設計</strong></td><td>「企業雇用」はあくまで付加的。生活の基盤は公的所得保障が先行して担う</td><td>障害年金（1級最高額でも月約9.5万円）が生活費を到底賄えず、企業雇用か家族が不足分を補填する構造</td></tr>
-        <tr><td><strong>②企業への雇用義務と納付金</strong></td><td>ドイツ：20人以上の企業で5%の雇用義務。未達成企業への納付金は月最大€720（約12万円）と高水準</td><td>法定雇用率2.5%（2024〜段階的引上げ）。未達成納付金は月約5万円程度と低額。「払えば済む」構造</td></tr>
-        <tr><td><strong>③追加コストへの補填</strong></td><td>スウェーデン：追加費用手当（月最大3,430 SEK）を別途支給。ノルウェー・デンマークも住宅補助・移動補助を重層付加</td><td>年金額内での自己負担が原則。追加コスト（移動費・医療費・バリアフリー住宅等）への別途補填は限定的</td></tr>
-        <tr><td><strong>④障害者の就業率（参考）</strong></td><td>OECD平均：約40〜50%。所得保障が充実した上で就労を「選択」できる環境が整っている</td><td>約18%（障害者の一般就労率は国際的に低水準に留まる）</td></tr>
-      </tbody>
-    </table></div>
-
-    <h2>日本が直面する三重の構造問題と本提言の対応</h2>
-    <div class="table-wrap"><table>
-      <thead><tr><th>日本が抱える構造問題</th><th>欧州の解決アプローチ</th><th>本提言の解決策</th></tr></thead>
-      <tbody>
-        <tr><td>障害年金（1級最高額でも月約9.5万円）が生活費を賄えず、企業雇用が「生活保障の代替」になっている</td><td>生活の基盤は国が担保。企業雇用は「社会参加の手段」に過ぎない</td><td>障害年金を月額9〜15万円に引き上げ。まず生活基盤を国が確立する</td></tr>
-        <tr><td>企業が「福祉の肩代わり」を強いられ、本業の生産性が低下する</td><td>高い納付金設定（ドイツ：月最大€720）と、「払えば義務代替」を明確なルールとして認める設計</td><td>「準企業職員制度」でタスク型雇用へ移行。1ユニット月18万円の拠出金で義務代替可能</td></tr>
-        <tr><td>家族の「経済的介護」が常態化し、親亡き後に生活基盤が崩壊するリスクを抱え続ける</td><td>充実した公的所得保障により、構造的な家族依存が発生しにくい設計</td><td>年金増額により家族依存から脱却。親亡き後リスクを制度で解消</td></tr>
-      </tbody>
-    </table></div>
-
-    <h2>なぜ「欧州モデルの全面移植」ではなく「本提言モデル」なのか</h2>
-    <p>国際比較データは「欧州の制度をそのまま日本に導入せよ」という主張の根拠ではない。本提言は欧州の設計思想を採用しつつ、日本固有の文脈に適合したオリジナルモデルを提示している。</p>
-    <div class="card-grid">
-      <div class="card"><div class="card-label">財源の設計</div><div class="card-desc">「増税なし」を原則とし、導入初期の不足財源は国債発行を含む政府支出（MMT的アプローチ）で対応しつつ、中長期的には雇用代替拠出金・補助金整理・経済活性化による税収増を通じた自律財源への移行を目指す。北欧型の高税率・高福祉モデルは採用しない</div></div>
-      <div class="card"><div class="card-label">既存制度の継承</div><div class="card-desc">就労継続支援施設・法定雇用率制度といった既存の制度資産を「廃止」ではなく「進化」させ、急激な制度移行による混乱を最小化する</div></div>
-      <div class="card"><div class="card-label">日本固有の課題との同時解決</div><div class="card-desc">「準公務職員制度」による自治体業務の担い手確保は、地方公務員不足という日本固有の課題と同時解決を図る日本発の制度革新であり、欧州にはない独自の付加価値を持つ</div></div>
     </div>
 
     <h2>制度設計の構造比較</h2>
@@ -201,16 +164,16 @@
     <button class="lazy-table-btn" onclick="this.nextElementSibling.classList.toggle('hidden');this.textContent=this.textContent.includes('展開')?'▲ 折りたたむ':'▼ 詳細を展開する'">▼ 詳細を展開する</button>
     <div class="hidden">
     <div class="table-wrap"><table>
-      <thead><tr><th>国</th><th>課税区分</th><th>制度名</th><th>月額目安（単身者）</th><th>円換算（概算）</th><th>就労要件</th></tr></thead>
+      <thead><tr><th>国</th><th>制度名</th><th>月額（基礎・下限）</th><th>月額目安（単身者）</th><th>円換算（概算）</th><th>就労要件</th></tr></thead>
       <tbody>
-        <tr style="background:#fffdf0"><td><strong>🇯🇵 日本（現行1級・最高額）</strong></td><td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td><td>障害基礎年金【1級】</td><td>月額約95,285円（88,260円＋生活者支援給付金7,025円）</td><td><strong style="color:var(--gold)">約9.5万円</strong></td><td>所得制限あり</td></tr>
-        <tr><td>🇩🇰 デンマーク</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>Førtidspension（早期退職年金）</td><td>単身最大 約15,527 DKK/月（税引前）</td><td>約31万円（税引前）</td><td>就労不可と認定が必要</td></tr>
-        <tr><td>🇳🇴 ノルウェー</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>Uføretrygd（障害給付）</td><td>前職収入の66%（最低保障以上・税引前）</td><td>約36〜50万円（税引前）</td><td>就労能力の喪失を要件とするが部分受給・就労との併用可</td></tr>
-        <tr><td>🇸🇪 スウェーデン</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>Sjukersättning＋住宅補助＋追加費用手当</td><td>就労能力喪失率に応じ段階支給（税引前）。住宅補助・追加費用手当が重層加算</td><td>約19〜33万円（税引前）</td><td>25〜100%就労能力喪失で段階受給</td></tr>
-        <tr><td>🇩🇪 ドイツ</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span><br><small>※障害者控除が充実し<br>実質税負担は軽微</small></td><td>Erwerbsminderungsrente（稼得能力減少年金）</td><td>2023年実績平均：約€1,550/月（税引前）</td><td>約26万円（税引前）</td><td>3時間/日未満の就労で全額受給</td></tr>
-        <tr><td>🇫🇷 フランス</td><td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td><td>AAH（成人障害者手当）</td><td>€1,033.32/月（2025年4月〜）。住宅補助（MVA）等の加算あり</td><td>約17万円</td><td>就労状況問わず（所得制限あり）</td></tr>
-        <tr><td>🇳🇱 オランダ</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>WIA-IVA（完全永続的就労不能所得保障）</td><td>前職月収の75%（税引前）</td><td>約34〜50万円（税引前・前職収入次第）</td><td>80〜100%就労不能かつ回復見込みなし</td></tr>
-        <tr><td>🇬🇧 イギリス</td><td><span style="color:#888;font-weight:700;">★/☆ 混在</span><br><small>PIP=非課税<br>ESA=課税対象</small></td><td>PIP＋ESA（個人自立払い＋就労支援手当）</td><td>PIP最高＋ESA計：約£750〜950/月</td><td>約15〜19万円</td><td>就労状況問わず受給可</td></tr>
+        <tr style="background:#fffdf0"><td><strong>🇯🇵 日本（現行1級・最高額）</strong></td><td>障害基礎年金【1級】</td><td>88,260円＋生活者支援給付金7,025円</td><td>月額約95,285円</td><td><strong style="color:var(--gold)">約9.5万円</strong></td><td>所得制限あり</td></tr>
+        <tr><td>🇩🇰 デンマーク</td><td>Førtidspension（早期退職年金）</td><td>基本額 約7,198 DKK/月（2025年）</td><td>単身最大 約15,527 DKK/月</td><td>約31万円</td><td>就労不可と認定が必要</td></tr>
+        <tr><td>🇳🇴 ノルウェー</td><td>Uføretrygd（障害給付）</td><td>単身者最低保障：月約27,431 NOK</td><td>前職収入の66%（最低保障以上）</td><td>約36〜50万円</td><td>就労能力の喪失を要件とするが部分受給・就労との併用可</td></tr>
+        <tr><td>🇸🇪 スウェーデン</td><td>Sjukersättning＋住宅補助＋追加費用手当</td><td>就労能力喪失率に応じ段階支給</td><td>住宅補助（家賃90%上限）・追加費用手当（最大3,430 SEK/月）が重層加算</td><td>約19〜33万円</td><td>25〜100%就労能力喪失で段階受給</td></tr>
+        <tr><td>🇩🇪 ドイツ</td><td>Erwerbsminderungsrente（稼得能力減少年金）</td><td>拠出実績により変動（最低€688/月〜）</td><td>2023年実績平均：約€1,550/月</td><td>約26万円（平均）</td><td>3時間/日未満の就労で全額受給</td></tr>
+        <tr><td>🇫🇷 フランス</td><td>AAH（成人障害者手当）</td><td>€1,033.32/月（2025年4月〜）</td><td>収入ゼロの場合はそのまま€1,033.32が上限。住宅補助（MVA）等の加算あり</td><td>約17万円</td><td>就労状況問わず（所得制限あり）</td></tr>
+        <tr><td>🇳🇱 オランダ</td><td>WIA-IVA（完全永続的就労不能所得保障）</td><td>前職月収の75%（上限：月額最大€6,617相当）</td><td>平均的受給者は月€2,000〜3,000相当</td><td>約34〜50万円（前職収入次第）</td><td>80〜100%就労不能かつ回復見込みなし</td></tr>
+        <tr><td>🇬🇧 イギリス</td><td>PIP＋ESA（個人自立払い＋就労支援手当）</td><td>PIP最低：£30.30/週〜（2026年4月〜）</td><td>PIP最高＋ESA計：約£750〜950/月</td><td>約15〜19万円</td><td>就労状況問わず受給可</td></tr>
       </tbody>
     </table></div>
     </div>
@@ -228,21 +191,6 @@
         <tr><td>🇳🇱 オランダ</td><td>★★ 過去に噴出・制度改革で収束</td><td>1980〜90年代に「オランダ病（Dutch disease）」と呼ばれる社会問題に。当時は深刻な社会的論争となったが、WIA改革（2006年）以降は収束</td><td>審査基準の厳格化・就労リハビリの義務化・段階的給付設計の導入により「本当に必要な人だけが受給する」体制を再構築。論争の教科書的な解決例</td></tr>
       </tbody>
     </table></div>
-
-    <div class="callout-light" style="margin-top:16px">
-      <strong>【イギリスの失敗から学ぶ：本提言の設計との比較】</strong><br><br>
-      通報・調査の仕組みそのものは不可欠であり、不正を見逃すことはあってはならない。イギリスの失敗の本質は「メディアによる感情的動員が入口になったこと」にある。その結果、主観的な通報が殺到し、調査の89%が「不正なし」に終わる行政コストの無駄を生んだ。<br><br>
-      本提言はAIによる客観的基準（診断書・就労実績・定期更新の乖離等）を調査のトリガーとすることで、「不正を見逃さず、かつ行政コストの無駄を生まない」調査体制を実現する。<br><br>
-      <div class="table-wrap"><table>
-        <thead><tr><th>比較軸</th><th>イギリス（失敗事例）</th><th>本提言の設計</th></tr></thead>
-        <tbody>
-          <tr><td>不正調査のトリガー</td><td>一般市民からの感情的通報（主観的）</td><td>AIによる客観的異常検知（診断書・就労実績・信頼スコアの乖離等）</td></tr>
-          <tr><td>審査の透明性</td><td>低い。不正認定率が非公開だった時期あり</td><td>不正認定率・調査件数を全国公開。「ガラス張りの審査」を制度的に保証</td></tr>
-          <tr><td>就労すれば得をする設計</td><td>不十分。就労すると給付が打ち切られ、不就労の方が得な逆インセンティブが発生</td><td>信頼スコアと連動した段階的業務解禁。就労実績が上位業務へのエントリー権につながる正のインセンティブ設計</td></tr>
-          <tr><td>社会的分断への影響</td><td>「Benefit scrounger」という言葉がメディアに定着。障害者への社会的態度が悪化</td><td>客観的スコアによる透明な管理が「本当に必要な人がもらっている」という社会的信頼を担保</td></tr>
-        </tbody>
-      </table></div>
-    </div>
 
     <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
   </div>
