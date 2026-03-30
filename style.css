@@ -305,6 +305,9 @@ tr:last-child td { border-bottom: none; }
   line-height: 1.7;
 }
 
+/* ── MINIMUM FONT SIZE ── */
+small { font-size: 14px; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .sidebar { width: 100%; min-height: auto; position: relative; }

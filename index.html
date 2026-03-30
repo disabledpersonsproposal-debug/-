@@ -35,7 +35,7 @@
 .fatigue-card-sub{font-size:14px;color:var(--text-muted);margin-bottom:8px}
 .fatigue-card-list{list-style:none;padding:0;margin:0}
 .fatigue-card-list li{font-size:14px;color:var(--text-mid);padding:3px 0 3px 14px;position:relative;line-height:1.6}
-.fatigue-card-list li::before{content:"─";position:absolute;left:0;color:var(--gold);font-size:12px}
+.fatigue-card-list li::before{content:"─";position:absolute;left:0;color:var(--gold);font-size:14px}
 /* 準公務職員詳細テーブル */
 .prep-table{width:100%;border-collapse:collapse;margin:16px 0;border:1px solid rgba(0,0,0,.13)}
 .prep-table th{background:var(--sidebar-bg);color:#fff;padding:9px 14px;font-size:14px;font-weight:600;border-right:1px solid rgba(255,255,255,.15);border-bottom:2px solid var(--gold);text-align:left}
@@ -195,8 +195,8 @@
         <tbody>
           <tr><td>報酬</td><td>時給1,200〜1,800円（職能・業務難易度に応じた困難手当を含む）</td></tr>
           <tr><td>雇用形態</td><td>タスク型雇用。業務発生時のみ稼働。待機コストゼロ</td></tr>
-          <tr><td>業務管理</td><td>正職員（現場管理職員）が随行・監督。「咄嗟の判断」は組織がカバー。全国1,072拠点整備<br><small style="color:var(--text-muted)">※人口規模に応じた配置設計：大規模自治体は複数拠点、財政力が弱い小規模自治体は近隣自治体と広域連合を組み単一拠点を共同設置。全国1,718市区町村を人口・地理・既存施設の集積状況により集約した結果。</small></td></tr>
-          <tr><td>信頼スコア制</td><td>過去の勤怠実績を数値化（100点満点・直近3か月ローリング平均）。高スコア保持者のみ上位業務へエントリー可。スコア低下時は上位業務のエントリーが自動制限（Lv.1室内定型に戻る）。スコア30点未満でエントリー権限を30日間凍結するが、<strong>凍結中も障害年金は全額継続支給</strong>され生活保障は完全に切り離されている。スコアは本人が常時確認でき、不服がある場合は推進局の第三者審査へ異議申し立て可能。算出ロジックは全国統一の公開基準であり自治体による恣意的運用を認めない。<br><small style="color:var(--text-muted)">※「スコアで人の価値を決めるのか」という批判に対して：本制度は公共インフラという責任ある業務への就労資格の基準を定めるものであり、障害の有無にかかわらず問われるのは「その業務を安全に遂行できるか」という一点である。スコアは「その人の価値」ではなく「現時点での就労コンディション」の客観的な指標であり、市民の安全を守るために必要な設計である。</small></td></tr>
+          <tr><td>業務管理</td><td>正職員（現場管理職員）が随行・監督。「咄嗟の判断」は組織がカバー。全国1,072拠点整備</td></tr>
+          <tr><td>信頼スコア制</td><td>過去の勤怠実績を数値化（100点満点・ローリング平均）。高スコア保持者のみ上位業務へエントリー可</td></tr>
           <tr><td>在宅対応</td><td>完全在宅のリモートタスクも対象。地域の業務格差を補完</td></tr>
         </tbody>
       </table>
@@ -226,7 +226,7 @@
       <div class="card-grid">
         <div class="card"><div class="card-label">① 雇用代替拠出金</div><div class="card-desc">雇用が困難な企業からの拠出金を直接年金原資へ充当。第3期で3.0兆円の安定財源に</div></div>
         <div class="card"><div class="card-label">② 補助金の一本化</div><div class="card-desc">現行の複雑な補助金体系を整理・直接給付へ集約し行政コストを圧縮。A/B型給付金（年約7,000億円）を段階的に移管</div></div>
-        <div class="card"><div class="card-label">③ 初期財政投資</div><div class="card-desc">導入初期の不足財源は段階的な国債発行を含む政府支出で対応。インフレ率・国債残高を監視指標に設定し、拠出金・税収増による黒字転換後に返済する財政投融資的設計。恒久的な国債依存を前提としない</div></div>
+        <div class="card"><div class="card-label">③ 初期財政措置（MMT）</div><div class="card-desc">導入初期の不足財源は国債発行を含む政府支出で対応。インフレ率・国債残高を監視指標に設定。恒久的な国債依存を前提としない</div></div>
         <div class="card"><div class="card-label">④ 税収増による自律化</div><div class="card-desc">本業回帰による企業競争力の回復が長期的な税収増につながる。順調シナリオでは第2期から黒字転換</div></div>
       </div>
 
@@ -283,14 +283,14 @@
       <!-- バー表示：PPP換算②合計ベース・最大値26.7万円=100%で全行統一スケール -->
       <!-- 各widthの算出根拠: 中央値÷26.7万円×100 (レンジは上限値採用) -->
       <!-- 日本:12.2/26.7=45.7% SW:21.8/26.7=81.6% UK:12.5/26.7=46.8% DE:18/26.7=67.4% FR:19/26.7=71.2% NO:26/26.7=97.4% DK:20.8/26.7=77.9% NL:26.7/26.7=100% -->
-      <div class="intl-row hi"><span>🇯🇵 日本（1級・現行・最高額）<span style="color:#2C7A3A;font-size:13px;margin-left:6px;font-weight:700;">★非課税</span></span><div class="intl-bar"><div class="intl-fill" style="width:46%"></div></div><span class="intl-amt">約 9.5〜12.2万円</span></div>
-      <div class="intl-row"><span>🇸🇪 スウェーデン（Sjukersättning＋住宅補助＋追加費用手当）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:82%"></div></div><span class="intl-amt">約 15.2〜21.8万円</span></div>
-      <div class="intl-row"><span>🇬🇧 イギリス（PIP＋ESA合計）⚠️2026年〜大幅改革<span style="color:#888;font-size:13px;margin-left:6px;font-weight:700;">★/☆混在</span></span><div class="intl-bar"><div class="intl-fill" style="width:47%"></div></div><span class="intl-amt">約 12.5万円</span></div>
-      <div class="intl-row"><span>🇩🇪 ドイツ（年金＋社会扶助による基礎保護・就労歴あり平均）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:67%"></div></div><span class="intl-amt">約 16〜18万円</span></div>
-      <div class="intl-row"><span>🇫🇷 フランス（AAH＋住宅補助APL等）<span style="color:#2C7A3A;font-size:13px;margin-left:6px;font-weight:700;">★非課税</span></span><div class="intl-bar"><div class="intl-fill" style="width:71%"></div></div><span class="intl-amt">約 17〜19万円</span></div>
-      <div class="intl-row"><span>🇳🇴 ノルウェー（Uføretrygd＋介護・移動手当・最低保障）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:97%"></div></div><span class="intl-amt">約 19.7〜26万円</span></div>
-      <div class="intl-row"><span>🇩🇰 デンマーク（Førtidspension・基本＋補足含む最大）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:78%"></div></div><span class="intl-amt">約 20.8万円</span></div>
-      <div class="intl-row"><span>🇳🇱 オランダ（WIA-IVA 前職75%・下限値）<span style="color:#B8421A;font-size:13px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:100%"></div></div><span class="intl-amt">約 26.7万円〜</span></div>
+      <div class="intl-row hi"><span>🇯🇵 日本（1級・現行・最高額）<span style="color:#2C7A3A;font-size:14px;margin-left:6px;font-weight:700;">★非課税</span></span><div class="intl-bar"><div class="intl-fill" style="width:46%"></div></div><span class="intl-amt">約 9.5〜12.2万円</span></div>
+      <div class="intl-row"><span>🇸🇪 スウェーデン（Sjukersättning＋住宅補助＋追加費用手当）<span style="color:#B8421A;font-size:14px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:82%"></div></div><span class="intl-amt">約 15.2〜21.8万円</span></div>
+      <div class="intl-row"><span>🇬🇧 イギリス（PIP＋ESA合計）⚠️2026年〜大幅改革<span style="color:#888;font-size:14px;margin-left:6px;font-weight:700;">★/☆混在</span></span><div class="intl-bar"><div class="intl-fill" style="width:47%"></div></div><span class="intl-amt">約 12.5万円</span></div>
+      <div class="intl-row"><span>🇩🇪 ドイツ（年金＋社会扶助による基礎保護・就労歴あり平均）<span style="color:#B8421A;font-size:14px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:67%"></div></div><span class="intl-amt">約 16〜18万円</span></div>
+      <div class="intl-row"><span>🇫🇷 フランス（AAH＋住宅補助APL等）<span style="color:#2C7A3A;font-size:14px;margin-left:6px;font-weight:700;">★非課税</span></span><div class="intl-bar"><div class="intl-fill" style="width:71%"></div></div><span class="intl-amt">約 17〜19万円</span></div>
+      <div class="intl-row"><span>🇳🇴 ノルウェー（Uføretrygd＋介護・移動手当・最低保障）<span style="color:#B8421A;font-size:14px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:97%"></div></div><span class="intl-amt">約 19.7〜26万円</span></div>
+      <div class="intl-row"><span>🇩🇰 デンマーク（Førtidspension・基本＋補足含む最大）<span style="color:#B8421A;font-size:14px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:78%"></div></div><span class="intl-amt">約 20.8万円</span></div>
+      <div class="intl-row"><span>🇳🇱 オランダ（WIA-IVA 前職75%・下限値）<span style="color:#B8421A;font-size:14px;margin-left:6px;font-weight:700;">☆課税対象</span></span><div class="intl-bar"><div class="intl-fill" style="width:100%"></div></div><span class="intl-amt">約 26.7万円〜</span></div>
 
       <div class="table-wrap" style="margin-top:16px"><table>
         <thead>
@@ -298,8 +298,8 @@
             <th>国</th>
             <th>課税区分</th>
             <th>名目受給額（参考・円換算）</th>
-            <th>PPP換算①<br><span style="font-weight:400;font-size:12px">年金本体のみ</span></th>
-            <th style="background:#1a3a1a;color:#fff;">PPP換算②<br><span style="font-weight:400;font-size:12px">住宅補助等含む合計</span><br><span style="font-weight:400;font-size:11px;opacity:.85">日本での実質生活水準</span></th>
+            <th>PPP換算①<br><span style="font-weight:400;font-size:14px">年金本体のみ</span></th>
+            <th style="background:#1a3a1a;color:#fff;">PPP換算②<br><span style="font-weight:400;font-size:14px">住宅補助等含む合計</span><br><span style="font-weight:400;font-size:14px;opacity:.85">日本での実質生活水準</span></th>
             <th>雇用義務未達<br>ペナルティ（月額）</th>
           </tr>
         </thead>
@@ -327,7 +327,7 @@
             <td>低額（就労統合型・雇用率制度なし）</td>
           </tr>
           <tr>
-            <td>🇬🇧 イギリス（PIP＋ESA）⚠️2026年〜大幅改革<br><small style="color:#B8421A">【改革の概要】2025年「Pathways to Work」緑書に基づく給付削減改革。2026年4月以降の新規申請者のユニバーサルクレジット健康手当を月£423→£217へ約半減。PIP受給要件の厳格化も提案されたが障害者団体・与党議員の強い反発により一部撤回。財政削減を優先した結果、制度の信頼性と社会的分断が同時に深刻化した事例として、「給付水準の低さが反発を生む」という本提言の国際比較上の論点を裏付けている。</small></td>
+            <td>🇬🇧 イギリス（PIP＋ESA）⚠️2026年〜大幅改革</td>
             <td><span style="color:#888;font-weight:700;">★/☆ 混在</span><br><small>PIP=非課税<br>ESA=課税対象</small></td>
             <td>約16〜19万円<br><small>PIP（個人自立払い）＋ESA（就労支援手当）合計</small></td>
             <td>約8.5万円〜<br><small style="color:#888;">ESA本体のみ</small></td>
@@ -454,7 +454,7 @@
         <div class="pillar">
           <div class="pillar-num">04</div>
           <div class="pillar-title">既存制度の進化</div>
-          <div class="pillar-desc">現行制度を「破壊」せず「深化」させる。就労支援施設・法定雇用率は継承し発展させる。就労困難な重度障害者のために、既存B型事業所の一部は「居場所・社会との交流の場」として存続させる。ただしその性格は就労支援ではなく日中活動の場であり、従来のような工賃・賃金は発生しない。経済的基盤は大幅に増額された障害年金が担う。</div>
+          <div class="pillar-desc">現行制度を「破壊」せず「深化」させる。就労支援施設・法定雇用率は継承し発展させる。</div>
         </div>
         <div class="pillar">
           <div class="pillar-num">05</div>
@@ -466,29 +466,6 @@
           <div class="pillar-title">破壊ではなく深化</div>
           <div class="pillar-desc">先人たちが命がけで切り拓いた「障害者が社会に存在できる場」という土台を継承しながら、その上に「障害者が社会の中で自立して生きられる」という次の段階を積み上げる。</div>
         </div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <div class="sec-num">07</div>
-      <h2>推進体制　── 省庁横断の権限設計</h2>
-      <p>本制度は厚生労働省・総務省・財務省・内閣府・デジタル庁にまたがる法整備を要する。霞が関で「主管省庁不明＝漂流案件」とならないよう、推進体制を以下の通り明示する。</p>
-      <div class="callout-light" style="font-size:14px">
-        <strong>【主管：内閣官房（内閣総理大臣直轄）】</strong>　本制度は単一省庁の所管を超える国家的構造改革であるため、内閣官房に「次世代障害者雇用モデル推進本部（仮称）」を設置し、省庁横断の調整権限を一元的に付与する。各省庁の役割は以下の通り分担する。<br><br>
-        厚生労働省：障害年金改正・障害者雇用促進法改正・就労支援施設の再編の主管。推進局の業務基準策定。<br>
-        総務省：地方自治法・地方公務員法改正による推進局の設置根拠の整備。地方交付税措置による財政支援。<br>
-        財務省：雇用代替拠出金の特別会計設計・初期財政措置の調整。<br>
-        デジタル庁：信頼スコアシステム・マイナンバー連携・AI審査基盤の整備。<br><br>
-        詳細な省庁横断的法整備一覧は別冊「制度設計」に収録。
-      </div>
-      <div class="callout-light" style="font-size:14px;margin-top:12px">
-        <strong>【自治労・自治体職員労組への回答：「仕事を奪う」は起きない】</strong>　準公務職員の担う動詞は「<strong>発見・記録・定型対応・報告</strong>」に限定される。「判断・処理・対応・承認」は引き続き専門課のプロ職員が担う。たとえばゴミ出し支援は、収集対象者の自宅からゴミ置き場への搬出が役割であり、収集車への積み込み・処理場搬入はゴミ収集課の業務である。公園点検は、異常・破損の発見とフラグ立て・報告が役割であり、修繕判断・業者手配・最終安全確認は公園管理課のプロが行う。準公務職員は専門課が「人手不足で手が届かない層」を補完する存在であり、既存職員の業務を代替するものではない。各タスクの権限境界線は「標準作業指示書」に明記し、逸脱した場合の責任は準公務職員個人ではなく推進局が負う設計である。
-      </div>
-      <div class="callout-light" style="font-size:14px;margin-top:12px">
-        <strong>【既存就労支援事業者（A型・B型）への対応】</strong>　全国約15,000施設の事業者・支援者を政治的障壁にしないため、本制度は「廃止」ではなく「転換支援」を原則とする。A型・B型施設のスタッフはSCPコーディネーターへの転換が優先的に認められ、研修支援・転換補助金が制度的に保障される。長年の現場ノウハウは本制度が必要とする人材基盤そのものであり、「支援者の雇用を守りながら制度を進化させる」設計である。詳細は別冊「準公務職員制度　移行期ロードマップ」に収録。
-      </div>
-      <div class="callout-light" style="font-size:14px;margin-top:12px">
-        <strong>【AIによる等級審査の法的位置づけ】</strong>　障害年金の等級判定にAIを活用するにあたり、AIは「補助ツール」に留め、最終判断は必ず人間（審査医・行政職員）が行う。AI単独による行政処分は行政手続法上の問題を生じるため、これを制度的に禁止する。判定結果への不服申し立て手続きは現行制度と同様に保障し、AI判定基準・算出ロジックは全国公開とする。AI行政利用の法的根拠については別途ガイドライン整備または新法制定を並行して進める。
       </div>
     </div>
 

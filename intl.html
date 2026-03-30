@@ -14,14 +14,14 @@
 .intl-bar-fill{height:16px;border-radius:3px;background:var(--sidebar-bg)}
 .intl-bar-row.highlight .intl-bar-fill{background:var(--gold)}
 .intl-amount{text-align:right;font-weight:700;font-size:14px;color:var(--text-mid)}
-.intl-amount-sub{display:block;font-size:13px;font-weight:400;color:#2C7A3A;margin-top:2px;text-align:right}
+.intl-amount-sub{display:block;font-size:14px;font-weight:400;color:#2C7A3A;margin-top:2px;text-align:right}
 .intl-amount-sub.nontax{color:#2C7A3A}
 .intl-bar-row.highlight .intl-amount{color:var(--gold)}
 .penalty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0}
 .penalty-card{background:#fff;border:1px solid var(--gold-border);padding:14px}
-.penalty-country{font-size:14px;color:#1a1a18;margin-bottom:4px}
+.penalty-country{font-size:14px;color:var(--text-muted);margin-bottom:4px}
 .penalty-pension{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px}
-.penalty-fine{font-size:14px;color:#1a1a18}
+.penalty-fine{font-size:14px;color:var(--text-muted)}
 .penalty-fine strong{color:#B8421A}
 .struct-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
 .struct-box{background:#fff;border:1px solid var(--gold-border);padding:18px}
@@ -45,46 +45,46 @@
     <div class="gold-rule"></div>
 
     <h2>障害年金月額の国際比較</h2>
-    <p style="font-size:14px;color:#1a1a18;margin-bottom:8px">換算レートは参考値（1€≈163円、1£≈189円、1DKK≈20円、1SEK≈14円、1NOK≈13円、2026年3月時点概算）。最大値を100%としたバーで相対比較。</p>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:8px">換算レートは参考値（1€≈163円、1£≈189円、1DKK≈20円、1SEK≈14円、1NOK≈13円、2026年3月時点概算）。最大値を100%としたバーで相対比較。</p>
     <p style="font-size:14px;margin-bottom:16px"><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span>＝税引き前＝手取り（同額）　／　<span style="color:#B8421A;font-weight:700;">☆ 課税対象</span>＝税引き前の下に手取り推計額を併記。手取りは実効税率で試算（北欧30〜38%、オランダ37%、ドイツ約8%）</p>
 
     <div class="intl-bar-row highlight">
-      <span class="intl-country">🇯🇵 日本（現行1級・最高額）<br><span style="color:#2C7A3A;font-weight:700;font-size:13px;">★非課税</span></span>
+      <span class="intl-country">🇯🇵 日本（現行1級・最高額）<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税</span></span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:26%"></div></div>
       <span class="intl-amount">約 9.5万円<span class="intl-amount-sub nontax">手取り 約 9.5万円</span></span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇫🇷 フランス（AAH・就労歴不要）<br><span style="color:#2C7A3A;font-weight:700;font-size:13px;">★非課税</span></span>
+      <span class="intl-country">🇫🇷 フランス（AAH・就労歴不要）<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税</span></span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:46%"></div></div>
       <span class="intl-amount">約 16.8万円<span class="intl-amount-sub nontax">手取り 約 16.8万円</span></span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇬🇧 イギリス（PIP非課税／ESA課税）<br><span style="color:#1a1a18;font-weight:700;font-size:13px;">★/☆混在</span></span>
+      <span class="intl-country">🇬🇧 イギリス（PIP非課税／ESA課税）<br><span style="color:#888;font-weight:700;font-size:14px;">★/☆混在</span></span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:41%"></div></div>
-      <span class="intl-amount">約 13〜15万円<span class="intl-amount-sub" style="color:#1a1a18">手取り 約 12〜14万円</span></span>
+      <span class="intl-amount">約 13〜15万円<span class="intl-amount-sub" style="color:#888">手取り 約 12〜14万円</span></span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇩🇪 ドイツ（就労歴あり平均）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇩🇪 ドイツ（就労歴あり平均）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:47%"></div></div>
       <span class="intl-amount">約 17.0万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 15.6万円</span></span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning等）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning等）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:52%"></div></div>
       <span class="intl-amount">約 19〜33万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 13〜23万円</span></span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇩🇰 デンマーク（単身最大・補足含む）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇩🇰 デンマーク（単身最大・補足含む）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:90%"></div></div>
       <span class="intl-amount">約 31万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 19万円</span></span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇳🇱 オランダ（WIA-IVA 前職75%）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇳🇱 オランダ（WIA-IVA 前職75%）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:95%"></div></div>
       <span class="intl-amount">約 34〜50万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 21〜31万円</span></span>
     </div>
     <div class="intl-bar-row">
-      <span class="intl-country">🇳🇴 ノルウェー（最低保障・就労歴ゼロ可）<br><span style="color:#B8421A;font-weight:700;font-size:13px;">☆課税対象</span></span>
+      <span class="intl-country">🇳🇴 ノルウェー（最低保障・就労歴ゼロ可）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:100%"></div></div>
       <span class="intl-amount">約 36〜50万円<span class="intl-amount-sub" style="color:#B8421A">手取り 約 26〜39万円</span></span>
     </div>
@@ -101,37 +101,37 @@
     <div class="penalty-grid">
       <div class="penalty-card">
         <div class="penalty-country">🇯🇵 日本（現行）</div>
-        <div class="penalty-pension">年金 約9.5万円/月 <span style="color:#2C7A3A;font-size:13px;font-weight:700;">★非課税</span></div>
+        <div class="penalty-pension">年金 約9.5万円/月 <span style="color:#2C7A3A;font-size:14px;font-weight:700;">★非課税</span></div>
         <div class="penalty-fine">未達ペナルティ <strong>月約5万円</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇫🇷 フランス</div>
-        <div class="penalty-pension">年金 約17万円/月（AAH）<span style="color:#2C7A3A;font-size:13px;font-weight:700;"> ★非課税</span></div>
+        <div class="penalty-pension">年金 約17万円/月（AAH）<span style="color:#2C7A3A;font-size:14px;font-weight:700;"> ★非課税</span></div>
         <div class="penalty-fine">未達ペナルティ <strong>月約3万円〜</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇩🇪 ドイツ</div>
-        <div class="penalty-pension">年金 約26万円/月（平均）<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約26万円/月（平均）<span style="color:#B8421A;font-size:14px;font-weight:700;"> ☆課税対象</span></div>
         <div class="penalty-fine">未達ペナルティ <strong>月最大€720（約12万円）</strong><br><span style="font-size:14px">日本の約2.4倍</span></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇩🇰 デンマーク</div>
-        <div class="penalty-pension">年金 約31万円/月（2025年・税引前）<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約31万円/月（2025年・税引前）<span style="color:#B8421A;font-size:14px;font-weight:700;"> ☆課税対象</span></div>
         <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇳🇴 ノルウェー</div>
-        <div class="penalty-pension">年金 約36万円/月（最低保障・税引前）<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約36万円/月（最低保障・税引前）<span style="color:#B8421A;font-size:14px;font-weight:700;"> ☆課税対象</span></div>
         <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇸🇪 スウェーデン</div>
-        <div class="penalty-pension">年金 約19〜33万円/月<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約19〜33万円/月<span style="color:#B8421A;font-size:14px;font-weight:700;"> ☆課税対象</span></div>
         <div class="penalty-fine">未達ペナルティ <strong>低額（就労統合型・雇用率制度なし）</strong></div>
       </div>
       <div class="penalty-card">
         <div class="penalty-country">🇳🇱 オランダ</div>
-        <div class="penalty-pension">年金 約34〜50万円/月（前職75%）<span style="color:#B8421A;font-size:13px;font-weight:700;"> ☆課税対象</span></div>
+        <div class="penalty-pension">年金 約34〜50万円/月（前職75%）<span style="color:#B8421A;font-size:14px;font-weight:700;"> ☆課税対象</span></div>
         <div class="penalty-fine">未達ペナルティ <strong>高額（法的義務）</strong></div>
       </div>
       <div class="penalty-card">
@@ -210,7 +210,7 @@
         <tr><td>🇩🇪 ドイツ</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span><br><small>※障害者控除が充実し<br>実質税負担は軽微</small></td><td>Erwerbsminderungsrente（稼得能力減少年金）</td><td>2023年実績平均：約€1,550/月（税引前）</td><td>約26万円（税引前）</td><td>3時間/日未満の就労で全額受給</td></tr>
         <tr><td>🇫🇷 フランス</td><td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td><td>AAH（成人障害者手当）</td><td>€1,033.32/月（2025年4月〜）。住宅補助（MVA）等の加算あり</td><td>約17万円</td><td>就労状況問わず（所得制限あり）</td></tr>
         <tr><td>🇳🇱 オランダ</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>WIA-IVA（完全永続的就労不能所得保障）</td><td>前職月収の75%（税引前）</td><td>約34〜50万円（税引前・前職収入次第）</td><td>80〜100%就労不能かつ回復見込みなし</td></tr>
-        <tr><td>🇬🇧 イギリス</td><td><span style="color:#1a1a18;font-weight:700;">★/☆ 混在</span><br><small>PIP=非課税<br>ESA=課税対象</small></td><td>PIP＋ESA（個人自立払い＋就労支援手当）</td><td>PIP最高＋ESA計：約£750〜950/月</td><td>約15〜19万円</td><td>就労状況問わず受給可</td></tr>
+        <tr><td>🇬🇧 イギリス</td><td><span style="color:#888;font-weight:700;">★/☆ 混在</span><br><small>PIP=非課税<br>ESA=課税対象</small></td><td>PIP＋ESA（個人自立払い＋就労支援手当）</td><td>PIP最高＋ESA計：約£750〜950/月</td><td>約15〜19万円</td><td>就労状況問わず受給可</td></tr>
       </tbody>
     </table></div>
     </div>
