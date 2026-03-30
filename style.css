@@ -1,7 +1,7 @@
 :root {
   --sidebar-bg: #2C2C2A;
   --sidebar-text: #ffffff;
-  --sidebar-muted: rgba(255,255,255,0.4);
+  --sidebar-muted: rgba(255,255,255,0.85);
   --gold: #D4AF37;
   --gold-light: #F0E4B0;
   --gold-dim: rgba(212,175,55,0.15);
@@ -9,8 +9,8 @@
   --main-bg: #F7F4EE;
   --content-bg: #ffffff;
   --text-dark: #1a1a18;
-  --text-mid: #3a3a38;
-  --text-muted: #888780;
+  --text-mid: #1a1a18;
+  --text-muted: #1a1a18;
   --border: rgba(0,0,0,0.08);
   --font: 'Meiryo UI', 'メイリオ', 'Yu Gothic UI', 'MS Gothic', sans-serif;
   --sidebar-w: 200px;
@@ -62,7 +62,7 @@ body {
 }
 .sidebar-logo-sub {
   font-size: 14px;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.85);
   display: block;
   margin-top: 3px;
   letter-spacing: 0.03em;
