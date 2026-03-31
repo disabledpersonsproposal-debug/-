@@ -121,3 +121,58 @@ const NAV_GROUPS = [
 
   document.body.prepend(sidebar);
 })();
+
+/* ── モバイルハンバーガーメニュー ── */
+(function () {
+  // モバイルヘッダーを生成
+  const header = document.createElement('div');
+  header.className = 'mobile-header';
+  header.innerHTML = `
+    <a href="index.html" class="mobile-header-title">提言書</a>
+    <button class="mobile-hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>`;
+  document.body.prepend(header);
+
+  // オーバーレイを生成
+  const overlay = document.createElement('div');
+  overlay.className = 'sidebar-overlay';
+  overlay.id = 'sidebar-overlay';
+  document.body.appendChild(overlay);
+
+  const hamburger = document.getElementById('hamburger');
+  const sidebar   = document.querySelector('.sidebar');
+
+  function openMenu() {
+    sidebar.classList.add('open');
+    overlay.classList.add('visible');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('visible');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // オーバーレイタップで閉じる
+  overlay.addEventListener('click', closeMenu);
+
+  // リンクをタップしたら閉じる
+  sidebar.addEventListener('click', (e) => {
+    if (e.target.closest('a')) closeMenu();
+  });
+
+  // Escキーで閉じる
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
