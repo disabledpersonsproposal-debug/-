@@ -7,8 +7,8 @@ const NAV_GROUPS = [
       { href: 'ch1.html',  label: 'Ch.1', sub: '次世代型障害者雇用モデル' },
       { href: 'ch2.html',  label: 'Ch.2', sub: '準公務・準企業職員制度' },
       { href: 'ch3.html',  label: 'Ch.3', sub: '不作為のコストと社会契約' },
+      { href: 'ch9.html',  label: 'Ch.4', sub: '制度の終わらせ方設計' },
       { href: 'ch4.html',  label: '付録', sub: '社会はすでに知っている' },
-      { href: 'ch9.html',  label: 'Ch.9', sub: '制度の終わらせ方設計' },
     ]
   },
   {
