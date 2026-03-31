@@ -121,11 +121,10 @@ body {
   background: rgba(255,255,255,0.05);
 }
 .nav-group-label {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   color: #ffffff;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .nav-group-header.open .nav-group-label {
   color: #ffffff;
