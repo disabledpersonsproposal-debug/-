@@ -19,7 +19,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* 最小フォントサイズ保証：smallタグのブラウザ縮小を無効化 */
-small { font-size: 12px; }
+small { font-size:13px; }
 
 html { font-size: 16px; }
 
