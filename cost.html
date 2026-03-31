@@ -18,9 +18,11 @@
     
 <h2>試算サマリー</h2>
 <style>
-.cost-bar-row{display:grid;grid-template-columns:280px 1fr 160px 80px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border:1px solid rgba(0,0,0,.07);margin-bottom:5px;font-size:14px}
+.cost-bar-row{display:grid;grid-template-columns:280px 1fr 160px 140px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border:1px solid rgba(0,0,0,.07);margin-bottom:5px;font-size:14px}
 .cost-bar-row.total{border:2px solid var(--gold);background:#fffdf0;font-weight:700}
-.cost-label{color:var(--text-mid);line-height:1.4}
+.cost-bar-row.ref{background:#f9f9f9;border-style:dashed;opacity:.85}
+.cost-label{color:var(--text-mid);line-height:1.6}
+.cost-certainty-inline{font-size:13px;color:var(--gold);display:block;margin-top:2px}
 .cost-bar-wrap{background:#e8e8e8;border-radius:3px;height:14px}
 .cost-bar-fill{height:14px;border-radius:3px;background:var(--sidebar-bg)}
 .cost-bar-row.total .cost-bar-fill{background:var(--gold)}
@@ -31,26 +33,39 @@
 .toggle-btn{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:14px;color:var(--gold);cursor:pointer;margin:12px 0;font-family:var(--font)}
 .toggle-btn:hover{background:var(--gold-dim)}
 </style>
+
+<div class="cost-bar-row" style="font-weight:700;background:var(--sidebar-bg);color:#fff;border:none">
+  <span>損失の経路</span>
+  <span style="font-size:14px;color:#fff;padding-left:4px">規模感</span>
+  <span style="text-align:center">SCP直接効果</span>
+  <span style="text-align:right">年間推計額</span>
+</div>
 <div class="cost-bar-row">
-  <span class="cost-label"><strong>①</strong> 家族介護者の就労損失（SCP年齢帯）</span>
+  <span class="cost-label"><strong>①</strong> 家族介護者の就労損失（SCP年齢帯）<span class="cost-certainty-inline">確度：★★☆</span></span>
   <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:44%"></div></div>
   <span class="cost-effect">◎ SCPで直接解消</span>
   <span class="cost-amount">5,300〜7,100億円</span>
 </div>
+<div class="cost-bar-row ref">
+  <span class="cost-label" style="padding-left:16px">〔参考〕障害児の親の就労損失<span class="cost-certainty-inline" style="color:#1a1a18">確度：★★☆</span></span>
+  <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:14%;background:#aaa"></div></div>
+  <span style="font-size:14px;color:#1a1a18">△ 間接支援</span>
+  <span class="cost-amount" style="color:#1a1a18;font-weight:400">約1,800億円</span>
+</div>
 <div class="cost-bar-row">
-  <span class="cost-label"><strong>②</strong> 企業の形式的雇用コスト（管理工数＋特例子会社）</span>
+  <span class="cost-label"><strong>②</strong> 企業の形式的雇用コスト（管理工数＋特例子会社）<span class="cost-certainty-inline">確度：★★☆</span></span>
   <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:45%"></div></div>
   <span class="cost-effect">◎ SCPで直接代替</span>
   <span class="cost-amount">5,400〜7,200億円</span>
 </div>
 <div class="cost-bar-row">
-  <span class="cost-label"><strong>③</strong> A型・B型給付費の非効率（制度設計ミスによる損失）</span>
+  <span class="cost-label"><strong>③</strong> A型・B型給付費の非効率（制度設計ミスによる損失）<span class="cost-certainty-inline">確度：★★★</span></span>
   <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:100%"></div></div>
   <span class="cost-effect">◎ SCPで直接組み替え</span>
   <span class="cost-amount">1.2〜1.4兆円</span>
 </div>
 <div class="cost-bar-row">
-  <span class="cost-label"><strong>④</strong> 障害者本人の未就労による税収損失</span>
+  <span class="cost-label"><strong>④</strong> 障害者本人の未就労による税収損失<span class="cost-certainty-inline">確度：★★☆</span></span>
   <div class="cost-bar-wrap"><div class="cost-bar-fill" style="width:25%"></div></div>
   <span class="cost-effect">○ 就労促進で改善</span>
   <span class="cost-amount">3,000〜4,000億円</span>
@@ -61,7 +76,7 @@
   <span></span>
   <span class="cost-amount">約2.6〜3.2兆円/年</span>
 </div>
-<p style="font-size:14px;color:var(--text-muted);margin-top:8px">確度：★★★＝政府統計直接計算、★★☆＝統計＋合理的仮定。「SCP直接効果」はSCP制度が10年以内に解消に寄与できる損失の程度。</p>
+<p style="font-size:14px;color:var(--text-muted);margin-top:8px">確度：<strong>★★★</strong>＝政府統計から直接計算　<strong>★★☆</strong>＝政府統計＋合理的仮定による推計　〔参考〕行は本試算の主軸には含めていない参考値。</p>
 
 <div class="callout">
 <strong>重要な前置き：</strong>本試算の「不作為コスト」はSCP制度だけで解消できるものではない。障害児の親・高齢障害者の介護者・企業の管理コストなど、制度の射程を超えた損失も含む。「SCP制度が直接解決するもの」と「障害者政策全体の問題」を分けて論じる。
@@ -133,6 +148,66 @@
     <tr style="font-weight:700;background:#f7f4ee"><td>④合計（保守値）</td><td>約3,000〜4,000億円/年</td><td>—</td></tr>
   </tbody>
 </table></div>
+
+<h2>第3章　「費用が膨大」という反論への回答</h2>
+<div class="callout-light">「費用が膨大」という批判は、本制度の費用がすべて「新規の追加支出」であるかのように見なしている。しかし財源シミュレーション（財源シミュレーションページ参照）を精査すると、第3期（完成・自走期）の費用約4.26兆円のうち、<strong>大半はすでに支出済みの予算の組み替えである。</strong></div>
+
+<h3>第3期（完成・自走期）費用の構造分解</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>費用項目</th><th>年間費用（第3期）</th><th>財源の性格</th><th>財源コード</th></tr></thead>
+  <tbody>
+    <tr><td>障害年金増額・3級新設（①）</td><td>約1.8兆円</td><td>現行障害年金予算の組み替え（財源A）</td><td>A</td></tr>
+    <tr><td>準公務・準企業職員給与（②）</td><td>約2.0兆円</td><td>A型B型給付費移管（財源B）＋企業拠出金（財源C）</td><td>B＋C</td></tr>
+    <tr><td>現場管理職員人件費（③）</td><td>約0.16兆円</td><td>企業拠出金の一部（財源C）</td><td>C</td></tr>
+    <tr><td>拠点整備費（⑤）</td><td>約0.02兆円</td><td>初期投資完了後は軽微（修繕のみ）</td><td>初期投資済み</td></tr>
+    <tr><td>ICT・運営・保険等（⑦〜⑬）</td><td>約0.30兆円</td><td>企業拠出金の一部（財源C）</td><td>C</td></tr>
+    <tr style="font-weight:700;background:#f7f4ee"><td>合計（第3期）</td><td>約4.26兆円</td><td>—</td><td>—</td></tr>
+  </tbody>
+</table></div>
+
+<h3>財源の内訳：「組み替え」と「新規」の仕分け</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>財源コード</th><th>財源の内容</th><th>第3期額</th><th>性格</th></tr></thead>
+  <tbody>
+    <tr><td>A</td><td>現行障害年金予算の充当（現行支出の流用）</td><td>2.5兆円</td><td>▶ 組み替え</td></tr>
+    <tr><td>B</td><td>A型・B型給付費の本制度への移管</td><td>1.2兆円</td><td>▶ 組み替え（現在は事業所運営費に消えている給付費を、本制度では障害者の直接所得に変換する）</td></tr>
+    <tr><td>C</td><td>企業からの雇用代替拠出金（新設）</td><td>3.0兆円</td><td>▶ 新設（ただし現行納付金の代替）</td></tr>
+    <tr><td>D</td><td>既存手当・扶助費の整理統合</td><td>0.5兆円</td><td>▶ 組み替え</td></tr>
+    <tr><td>F</td><td>政府初期財政措置（国債等・第1期のみ）</td><td>補完</td><td>▶ 時限的（第2期以降不要）</td></tr>
+    <tr style="background:#f7f4ee"><td colspan="2"><strong>組み替え分 小計（A＋B＋D）</strong></td><td><strong>4.2兆円</strong></td><td><strong>費用4.26兆円の約98%は既存予算の組み替えで賄える</strong></td></tr>
+    <tr style="background:#f7f4ee"><td colspan="2"><strong>財源C（企業拠出金）の位置づけ</strong></td><td><strong>3.0兆円</strong></td><td><strong>費用を上回る財源として年間2.94兆円の黒字を生む。現行納付金制度の発展形であり「新税」ではない</strong></td></tr>
+  </tbody>
+</table></div>
+
+<div class="callout"><strong>【核心的な論点】</strong><br><br>
+費用4.26兆円のうち4.2兆円（A＋B＋D、約98%）は、現行制度がすでに支出している予算を組み替えることで賄える。財源C（企業拠出金・3兆円）は費用を超える財源であり、年間2.94兆円の黒字を生む。これは現行の雇用納付金制度を発展させたものであり、「ゼロから生み出す新税」ではない。<br><br>
+純粋な追加財源が必要なのは、企業拠出金が立ち上がるまでの移行期の補完分のみであり、順調シナリオでは第1期から黒字を確保している。この初期投資は毎年2.6〜3.2兆円の不作為コストと比較すれば、数年で回収が見込める正当な投資である。</div>
+
+<h2>第4章　主要な反論への応答</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>反論</th><th>回答</th></tr></thead>
+  <tbody>
+    <tr><td>「推計に過ぎず信頼性がない」</td><td>その通りである。ただし政府が公式に採用している「9兆円のビジネスケアラー損失」「7.6兆円のメンタル不調損失」も同様の推計手法で算出されている。問題は精度ではなく「試算すら行われてこなかった」ことにある。本試算は粗さを正直に開示したうえで議論の起点とすることを目的としており、政府による精緻な再計算こそを要請する。</td></tr>
+    <tr><td>「費用がかかりすぎる、やる意味がない」</td><td>費用4.26兆円のうち約98%（4.2兆円）は現行制度がすでに支出している予算の組み替えで賄える。「費用が膨大」という批判は正確ではない。問われているのは「追加でいくら必要か」ではなく、「同じ金額を今より何倍も効率よく使う設計に変えられるか」である。</td></tr>
+    <tr><td>「子どもや高齢者の介護をする家族は対象外では」</td><td>本試算ではSCP制度の対象年齢帯（18〜64歳の障害者を介護する家族）に絞った精査版の数字（約5,300〜7,100億円）を主軸として提示している。障害児の親（約1,800億円）は参考値として明示した上で分離している。「数字が大きすぎる」という批判を先回りし、論点を明確化するためにあえて保守的な絞り込みを行っている。</td></tr>
+  </tbody>
+</table></div>
+
+<h3>参考：他の政府・研究機関の試算との比較</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>試算の対象</th><th>年間損失額</th><th>発表元・年</th></tr></thead>
+  <tbody>
+    <tr><td>高齢者介護（ビジネスケアラー）の経済損失（2030年推計）</td><td>約9兆円</td><td>経産省・日本総研（2023年）</td></tr>
+    <tr><td>メンタル不調による生産性損失（プレゼンティーズム等）</td><td>約7.6兆円</td><td>横浜市立大学・産業医科大学（2025年）</td></tr>
+    <tr><td>女性特有の健康課題による労働損失</td><td>約3.4兆円</td><td>経産省・BCG（2024年）</td></tr>
+    <tr style="background:#f7f4ee"><td><strong>本試算：SCP制度が直接解消する損失</strong></td><td><strong>約2.6〜3.2兆円</strong></td><td><strong>本試算（2026年）</strong></td></tr>
+  </tbody>
+</table></div>
+
+<div class="callout"><strong>結語：問われているのは「覚悟」だけである</strong><br><br>
+現行制度を維持することは「無料の選択肢」ではない。毎年2.6〜3.2兆円の請求書が、就労できない家族に、疲弊する企業に、低賃金で働かされる障害者に、縮小し続ける税収として届き続けている。<br><br>
+本制度の費用4.26兆円のうち約98%（4.2兆円）は現行制度がすでに支出している予算の組み替えである。残る財源は現行の雇用納付金を発展させた企業拠出金であり、制度内で完結するループ構造で賄われる。<br><br>
+<strong>「財源がない」は事実に反する。「費用が膨大すぎる」も事実に反する。問われているのは、60年間の回避の清算を始める覚悟があるか、それだけである。</strong></div>
 
     <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
   </div>
