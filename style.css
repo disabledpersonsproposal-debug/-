@@ -495,39 +495,13 @@ tr:last-child td { border-bottom: none; }
     padding: 24px 16px 48px;
   }
 
-  /* ── スマホ本文フォントサイズ引き上げ ── */
-  body {
-    font-size: 16px;
-  }
-  .content p,
-  .content li,
-  .callout,
-  .callout-light {
-    font-size: 16px;
-  }
-  .content h2 {
-    font-size: 18px;
-  }
-  .content h3 {
-    font-size: 16px;
-  }
-  .card-label,
-  .card-desc {
-    font-size: 15px;
-  }
-
   .table-wrap {
     margin: 16px 0;
   }
   table {
-    font-size: 14px;
+    font-size: 13px;
   }
-  th {
-    font-size: 14px;
-    padding: 8px 10px;
-  }
-  td {
-    font-size: 14px;
+  th, td {
     padding: 8px 10px;
   }
 
