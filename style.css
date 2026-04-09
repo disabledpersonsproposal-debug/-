@@ -509,3 +509,14 @@ tr:last-child td { border-bottom: none; }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ── CONCLUSION BOX（finance.html） ── */
+.conclusion-highlight .conclusion-eyebrow {
+  font-size: 14px !important;
+}
+.conclusion-highlight,
+.conclusion-highlight .conclusion-body,
+.conclusion-highlight .conclusion-body strong {
+  font-size: 16px !important;
+}

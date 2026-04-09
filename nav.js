@@ -36,6 +36,13 @@ const NAV_GROUPS = [
     items: [
       { href: 'faq.html', label: 'よくある質問と回答' },
     ]
+  },
+  {
+    id: 'timeline',
+    section: '年月試算',
+    items: [
+      { href: 'timeline.html', label: '完成までの年月', sub: '全工程・3シナリオ詳細試算' },
+    ]
   }
 ];
 
