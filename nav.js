@@ -22,12 +22,13 @@ const NAV_GROUPS = [
   },
   {
     id: 'data',
-    section: 'データ・根拠',
+    section: 'データ・試算',
     items: [
-      { href: 'intl.html',    label: '国際比較データ集' },
-      { href: 'finance.html', label: '財源シミュレーション' },
-      { href: 'cost.html',    label: '不作為のコスト試算' },
-      { href: 'fraud.html',   label: '不正悪用防止設計' },
+      { href: 'intl.html',      label: '国際比較データ集' },
+      { href: 'finance.html',   label: '財源シミュレーション' },
+      { href: 'cost.html',      label: '不作為のコスト試算' },
+      { href: 'fraud.html',     label: '不正悪用防止設計' },
+      { href: 'timeline.html',  label: '完成までの年月', sub: '全工程・3シナリオ詳細試算' },
     ]
   },
   {
@@ -35,13 +36,6 @@ const NAV_GROUPS = [
     section: 'FAQ',
     items: [
       { href: 'faq.html', label: 'よくある質問と回答' },
-    ]
-  },
-  {
-    id: 'timeline',
-    section: '年月試算',
-    items: [
-      { href: 'timeline.html', label: '完成までの年月', sub: '全工程・3シナリオ詳細試算' },
     ]
   }
 ];
