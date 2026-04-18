@@ -17,8 +17,8 @@ const NAV_GROUPS = [
     items: [
       { href: 'scp.html',          label: 'SCP制度図解' },
       { href: 'timeline.html',     label: '全工程タイムライン', sub: '3シナリオ・所要年数試算' },
-      { href: 'roadmap_corp.html', label: '民間企業 移行ロードマップ', sub: 'タイムライン起算後' },
       { href: 'roadmap_gov.html',  label: '準公務職員 移行ロードマップ', sub: 'タイムライン起算後' },
+      { href: 'roadmap_corp.html', label: '民間企業 移行ロードマップ', sub: 'タイムライン起算後' },
     ]
   },
   {
