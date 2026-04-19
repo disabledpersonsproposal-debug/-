@@ -32,7 +32,24 @@
 .lazy-table-btn{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:14px;color:var(--gold);cursor:pointer;margin:12px 0;font-family:var(--font)}
 .lazy-table-btn:hover{background:var(--gold-dim)}
 .hidden{display:none}
-@media(max-width:680px){.intl-bar-row{grid-template-columns:1fr auto}.intl-bar-wrap{display:none}.struct-grid{grid-template-columns:1fr}}
+
+/* 3類型モデルカード */
+.model-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 24px}
+.model-type-card{background:#fff;border:1px solid var(--gold-border);padding:18px 16px}
+.model-nordic{border-top:4px solid #2C7A3A}
+.model-us{border-top:4px solid #1a4a8a}
+.model-japan{border-top:4px solid #B8421A}
+.model-type-flag{font-size:20px;margin-bottom:6px}
+.model-type-label{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:2px;line-height:1.4}
+.model-type-countries{font-size:12px;color:var(--text-muted);margin-bottom:8px}
+.model-type-core{font-size:13px;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:5px 8px;margin-bottom:10px;border-left:3px solid var(--gold)}
+.model-type-list{list-style:none;padding:0;margin:0 0 12px}
+.model-type-list li{font-size:13px;color:var(--text-mid);padding:3px 0 3px 12px;position:relative;line-height:1.6;border-bottom:1px solid rgba(0,0,0,0.05)}
+.model-type-list li::before{content:"─";position:absolute;left:0;color:var(--text-muted);font-size:12px}
+.model-type-limit{font-size:13px;color:var(--text-mid);background:#fafafa;border:1px solid var(--border);padding:8px 10px;line-height:1.6}
+.model-type-limit strong{color:#B8421A}
+
+@media(max-width:680px){.intl-bar-row{grid-template-columns:1fr auto}.intl-bar-wrap{display:none}.struct-grid{grid-template-columns:1fr}.model-type-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -171,6 +188,153 @@
       </tbody>
     </table></div>
 
+    <h2>制度モデルの3類型比較：北欧型・米国型・日本型</h2>
+    <p>障害者政策の国際的な比較軸は、大きく3つの類型に整理できる。本提言がどの類型とも異なる「第四の道」を提示していることを理解するために、まずこの3類型の設計思想を整理する。</p>
+
+    <div class="model-type-grid">
+      <div class="model-type-card model-nordic">
+        <div class="model-type-flag">🇩🇰🇳🇴🇸🇪</div>
+        <div class="model-type-label">北欧型（社会民主主義モデル）</div>
+        <div class="model-type-countries">デンマーク・ノルウェー・スウェーデン</div>
+        <div class="model-type-core">設計思想：「生活保障は国家の義務」</div>
+        <ul class="model-type-list">
+          <li>高い税負担（所得税率30〜50%）を前提とした充実した公的所得保障</li>
+          <li>障害年金は就労歴がなくても受給可能。生活基盤を国が全面的に担保</li>
+          <li>企業雇用は「社会参加の手段」であり、生活保障とは切り離されている</li>
+          <li>障害者就業率：45〜55%（就労を強制ではなく選択肢として設計）</li>
+        </ul>
+        <div class="model-type-limit"><strong>限界：</strong>高税率・高福祉モデルは財政規模と国民的合意を前提とする。日本への直接移植は困難</div>
+      </div>
+
+      <div class="model-type-card model-us">
+        <div class="model-type-flag">🇺🇸</div>
+        <div class="model-type-label">米国型（市場・反差別モデル）</div>
+        <div class="model-type-countries">アメリカ合衆国</div>
+        <div class="model-type-core">設計思想：「差別をなくせば市場が解決する」</div>
+        <ul class="model-type-list">
+          <li>ADA（障害者法・1990年）による差別禁止が中心。雇用・施設・交通等の合理的配慮を義務化</li>
+          <li>所得保障（SSDI・SSI）は月額約1,000〜1,500ドル（約15〜22万円）と低水準。家族・民間保険への依存が大きい</li>
+          <li>法定雇用率制度なし。企業の「差別しない義務」で就労機会を確保する構造</li>
+          <li>障害者就業率：約35%。所得格差が大きく、働ける障害者と働けない障害者の間に深い断絶</li>
+        </ul>
+        <div class="model-type-limit"><strong>限界：</strong>公的所得保障の薄さから「差別はなくても貧困」という状況が常態化。民間保険・家族依存が構造化している</div>
+      </div>
+
+      <div class="model-type-card model-japan">
+        <div class="model-type-flag">🇯🇵</div>
+        <div class="model-type-label">日本型（制度義務・家族依存モデル）</div>
+        <div class="model-type-countries">日本（現行）</div>
+        <div class="model-type-core">設計思想：「企業に義務、家族が補填」</div>
+        <ul class="model-type-list">
+          <li>法定雇用率制度（2.5%）で企業に雇用を義務付け。しかし所得保障は月約9.5万円と不十分</li>
+          <li>企業雇用が「生活保障の代替」として機能。企業が福祉の肩代わりを強いられる構造</li>
+          <li>所得不足を家族が補填する「家族依存型自立」が常態化。親亡き後リスクが慢性化</li>
+          <li>障害者就業率：約18%（先進国中最低水準）</li>
+        </ul>
+        <div class="model-type-limit"><strong>限界：</strong>当事者・家族・企業の三者が同時に疲弊する構造が固定化。北欧型でも米国型でもない「最悪の中間」になっている</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Key Finding③</strong>　北欧型・米国型・日本型を並べると、日本の現行制度の問題の本質が際立つ。北欧型は「国が先に土台を作る」、米国型は「差別さえなければ市場が機能する」という明確な設計思想を持つ。日本型はその中間を狙いながら、どちらの利点も活かせず、三者が同時に疲弊する「中途半端な義務化」に陥っている。本提言は北欧型の設計思想（土台先行主義）を採用しつつ、日本の財政・産業・社会構造に適合した第四のモデルを提示する。
+    </div>
+
+    <h2>🇺🇸 米国型（ADA）の詳細分析：「差別禁止」で障害者の生活は変わったか</h2>
+    <p>米国のADA（Americans with Disabilities Act・1990年施行）は、世界で最も有名な障害者権利法の一つである。雇用・公共施設・交通・通信の4分野で障害を理由とした差別を禁止し、合理的配慮の提供を雇用主に義務付けた。しかし30年以上が経過した現在、その成果と限界は明確になっている。</p>
+
+    <h3>ADAが達成したこと</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>分野</th><th>具体的な成果</th></tr></thead>
+      <tbody>
+        <tr><td><strong>物理的アクセシビリティ</strong></td><td>車いす用スロープ・点字ブロック・エレベーター設置が全国的に普及。公共交通機関のバリアフリー化が大きく進展</td></tr>
+        <tr><td><strong>雇用差別の抑止</strong></td><td>障害を理由とした採用拒否・解雇・昇進差別が違法化。訴訟リスクが企業行動を変えた</td></tr>
+        <tr><td><strong>合理的配慮の義務化</strong></td><td>在宅勤務・フレックスタイム・補助機器の提供等を企業が拒否できない法的根拠が整備</td></tr>
+        <tr><td><strong>社会意識の変革</strong></td><td>障害者を「保護の対象」から「権利の主体」と位置づける文化的転換が起きた</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>ADAが解決できなかったこと</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>問題</th><th>実態</th></tr></thead>
+      <tbody>
+        <tr><td><strong>所得保障の薄さ</strong></td><td>SSDI（社会保障障害保険）の平均受給額は月約1,360ドル（約20万円）。ただし就労歴が必要で、就労歴がない先天性・若年発症の障害者はSSI（補足的保障所得）のみで月約943ドル（約14万円）に限定される</td></tr>
+        <tr><td><strong>医療費の自己負担</strong></td><td>公的医療保険（メディケア）加入には2年間の待機期間が必要。民間保険への依存が続き、医療費が生活を圧迫する</td></tr>
+        <tr><td><strong>就労・受給の崖問題</strong></td><td>就労収入が一定額を超えるとSSDI受給資格を失う「収入崖（Earnings Cliff）」が存在。就労インセンティブを阻害する逆効果が長年指摘されてきた</td></tr>
+        <tr><td><strong>民間保険・家族依存</strong></td><td>公的保障の薄さを民間長期障害保険（LTD）・家族の収入・NGO支援が補填する構造。保険に入れない低所得者・非正規労働者は無防備</td></tr>
+        <tr><td><strong>訴訟コストと中小企業の萎縮</strong></td><td>ADA訴訟（特にアクセシビリティ関連）が多発し、中小企業が採用を避ける「ADA恐れ」が就労機会を逆に減らしているという研究が複数存在する</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout-light">
+      <strong>【米国型が示す教訓：「差別禁止」だけでは生活は変わらない】</strong><br><br>
+      ADAは「障害者が社会に存在できる場」を法的に保証した画期的な法律である。しかし「差別がなければ市場が解決する」という前提は、所得保障の薄さという現実の前に機能しない場面が多い。就労できない・就労が困難な重度障害者にとって、差別禁止法は直接的な生活保障にはならない。<br><br>
+      本提言が米国型を採用しない理由は明確である。<strong>「合理的配慮の義務化」という考え方はADAから学ぶべき重要な要素</strong>だが、所得保障を市場と民間に委ねるアプローチは採用しない。日本はすでに「差別はあるが義務化もある」という状況にあり、米国型に移行すれば「差別はないが保障もない」になるだけである。
+    </div>
+
+    <h2>3類型と本提言の比較マトリクス</h2>
+    <div class="table-wrap"><table>
+      <thead>
+        <tr>
+          <th>比較軸</th>
+          <th>🇩🇰🇳🇴🇸🇪<br>北欧型</th>
+          <th>🇺🇸<br>米国型（ADA）</th>
+          <th>🇯🇵<br>日本型（現行）</th>
+          <th style="background:#1a3a1a;color:#D4AF37;">🇯🇵<br>本提言モデル</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>所得保障の設計</strong></td>
+          <td>国が完全担保（月20〜40万円・手取り）</td>
+          <td>公的保障は月14〜20万円だが就労歴要件あり。医療費自己負担・民間保険依存・家族補填が前提で、保険未加入者・非正規労働者は無防備。「差別はないが貧困」が常態化</td>
+          <td>不十分（月約9.5万円・最高額）</td>
+          <td style="background:#f0fff4;"><strong>段階的引上げ（月9〜15万円→国際水準へ接近）</strong></td>
+        </tr>
+        <tr>
+          <td><strong>企業への雇用義務</strong></td>
+          <td>高い納付金＋義務（生活保障は別）</td>
+          <td>義務なし（差別禁止のみ）</td>
+          <td>法定雇用率2.5%（納付金月約5万円・低額）</td>
+          <td style="background:#f0fff4;"><strong>タスク型雇用＋義務代替拠出金（月18万円）の二択化</strong></td>
+        </tr>
+        <tr>
+          <td><strong>財源の調達</strong></td>
+          <td>高税率（所得税30〜50%）</td>
+          <td>低税率・民間保険・家族依存</td>
+          <td>社会保険料＋家族依存</td>
+          <td style="background:#f0fff4;"><strong>増税なし。拠出金・補助金整理・税収増の三位一体</strong></td>
+        </tr>
+        <tr>
+          <td><strong>家族への依存度</strong></td>
+          <td>低い（公的保障が家族を代替）</td>
+          <td>高い（公的保障の薄さを補填）</td>
+          <td>非常に高い（構造的に家族依存）</td>
+          <td style="background:#f0fff4;"><strong>年金増額と公的支援強化により家族依存を段階的に解消</strong></td>
+        </tr>
+        <tr>
+          <td><strong>就労の位置づけ</strong></td>
+          <td>最低生活を国が保障した上で、就労がゆとりある生活への実質的な手段として機能。生存と就労が切り離されている</td>
+          <td>市場参加の権利（差別なき競争）</td>
+          <td>生活保障の代替（就労しないと生きられない）</td>
+          <td style="background:#f0fff4;"><strong>タスク型就労を社会参加の手段として再定義。年金は「生存の最低保障」であり、ゆとりある生活には就労が不可欠。休むことも含め、自己責任のある関与を前提とする</strong></td>
+        </tr>
+        <tr>
+          <td><strong>障害者就業率</strong></td>
+          <td>45〜55%</td>
+          <td>約35%</td>
+          <td>約18%</td>
+          <td style="background:#f0fff4;"><strong>段階的に30%超を目標</strong></td>
+        </tr>
+        <tr>
+          <td><strong>日本への移植可能性</strong></td>
+          <td>困難（高税率・国民的合意が前提）</td>
+          <td>不適切（所得保障の空白が深刻化）</td>
+          <td>現状維持（三者疲弊の継続）</td>
+          <td style="background:#f0fff4;"><strong>日本の財政・産業・社会構造に最適化した独自モデル</strong></td>
+        </tr>
+      </tbody>
+    </table></div>
+
     <h2>なぜ「欧州モデルの全面移植」ではなく「本提言モデル」なのか</h2>
     <p>国際比較データは「欧州の制度をそのまま日本に導入せよ」という主張の根拠ではない。本提言は欧州の設計思想を採用しつつ、日本固有の文脈に適合したオリジナルモデルを提示している。</p>
     <div class="card-grid">
@@ -187,7 +351,7 @@
           <li>「企業雇用」はあくまで付加的。生活の基盤は公的所得保障が先行して担う</li>
           <li>ドイツ：20人以上の企業で5%の雇用義務。未達成企業への納付金は月最大€720（約12万円）</li>
           <li>スウェーデン：追加費用手当（月最大3,430 SEK）を別途支給。ノルウェー・デンマークも住宅補助・移動補助を重層付加</li>
-          <li>OECD平均障害者就業率：約40〜50%。所得保障が充実した上で就労を「選択」できる環境</li>
+          <li>OECD平均障害者就業率：約40〜50%。最低生活が保障された上で就労がゆとりある生活への実質的な手段として機能している</li>
         </ul>
       </div>
       <div class="struct-box">
