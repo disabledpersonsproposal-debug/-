@@ -17,19 +17,19 @@
 .intl-amount-sub{display:block;font-size:13px;font-weight:400;color:#2C7A3A;margin-top:2px;text-align:right}
 .intl-amount-sub.nontax{color:#2C7A3A}
 .intl-bar-row.highlight .intl-amount{color:var(--gold)}
-.penalty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0}
+.penalty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 24px}
 .penalty-card{background:#fff;border:1px solid var(--gold-border);padding:14px}
 .penalty-country{font-size:14px;color:var(--text-muted);margin-bottom:4px}
 .penalty-pension{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px}
 .penalty-fine{font-size:14px;color:var(--text-muted)}
 .penalty-fine strong{color:#B8421A}
-.struct-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.struct-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 24px}
 .struct-box{background:#fff;border:1px solid var(--gold-border);padding:18px}
 .struct-box h4{font-size:14px;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--gold-border)}
 .struct-box ul{list-style:none;padding:0}
 .struct-box li{font-size:14px;color:var(--text-mid);padding:4px 0 4px 14px;position:relative;line-height:1.6}
 .struct-box li::before{content:"─";position:absolute;left:0;color:var(--gold)}
-.lazy-table-btn{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:14px;color:var(--gold);cursor:pointer;margin:12px 0;font-family:var(--font)}
+.lazy-table-btn{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:14px;color:var(--gold);cursor:pointer;margin:12px 24px;font-family:var(--font)}
 .lazy-table-btn:hover{background:var(--gold-dim)}
 .hidden{display:none}
 
@@ -67,7 +67,7 @@
 
     <h2>障害年金月額の国際比較</h2>
 
-    <div style="background:#f0f4f0;border-left:4px solid #2C7A3A;padding:14px 16px;margin-bottom:16px;font-size:14px;line-height:1.8">
+    <div style="background:#f0f4f0;border-left:4px solid #2C7A3A;padding:14px 16px;margin:0 24px 16px;font-size:14px;line-height:1.8">
       <strong>【このグラフが示す数字：PPP換算②「日本での実質生活水準」】</strong><br>
       バーの長さと右端の金額は、<strong>年金本体に住宅補助・追加費用手当・社会扶助など全ての給付を合算し、課税補正（手取り換算）後、Eurostat/OECDの家計消費物価指数（2024年）で日本の物価水準に換算した実質生活水準</strong>を表しています。換算式：名目手取り額×（日本物価指数÷各国物価指数）。各国の物価は日本より20〜80%高いため名目額より大幅に圧縮されます。名目額・計算の詳細は後掲の詳細比較表に記載。<br>
       <span style="font-size:13px;color:var(--text-muted)">最大値（ノルウェー就労歴平均：約20万円）を100%として相対比較。ノルウェーの最低保障（就労歴なし単身）は約16万円。換算レートは参考値（1€≈163円、1£≈189円、1DKK≈20円、1SEK≈14円、1NOK≈12円、2026年3月時点概算）。※オランダWIA-IVAは就労歴必須の所得比例給付のため本グラフの比較対象から除外。別枠で解説。</span>
@@ -114,7 +114,7 @@
       <strong>【物価補正（PPP換算②）の計算方法】</strong>　各国の全給付を合算し、課税補正（手取り換算）後、Eurostat家計消費物価指数2024年（EU27=100）を用いて「日本の物価水準に置き換えた実質額」に換算しています。計算式：名目手取り額×（日本換算指数78÷各国指数）。使用した各国の物価指数：デンマーク<strong>143</strong>・ノルウェー<strong>127.2</strong>・スウェーデン<strong>117</strong>・ドイツ<strong>108.8</strong>・フランス<strong>111.2</strong>・イギリス≈<strong>117</strong>（OECD推計）・日本換算<strong>78</strong>（出典：Eurostat「Comparative price levels of consumer goods and services 2024」2025年6月公表・SSB）。<strong>各国の物価は日本より20〜80%高いため、欧州各国の名目額から大幅に圧縮されます。</strong>日本は年金本体以外の別建て給付がほとんど存在しないため物価補正後も年金本体額（約9.5万円）とほぼ同額である点が、制度設計の根本的な差を示しています。なおイギリスはEU圏外のため、Eurostat指数が直接提供されていない。ここではOECDのPPP統計に基づく推計値（≈117）を使用している。
     </div>
 
-    <div style="background:#fff8e8;border:1px solid #d4a000;padding:12px 16px;margin:12px 0;font-size:14px;line-height:1.8">
+    <div style="background:#fff8e8;border:1px solid #d4a000;padding:12px 16px;margin:12px 24px;font-size:14px;line-height:1.8">
       <strong>⚠️ 現金給付のみの比較であることに注意</strong><br>
       このグラフはあくまで現金給付のPPP実質額の比較です。デンマーク・ノルウェー・スウェーデンでは<strong>医療費ほぼ無償・公共住宅の充実・充実した介護サービス</strong>など、現金に現れない現物給付が生活水準を大きく底上げしています。現金給付額が「日本と近い水準」に見える国も、現物給付を含む総合的な生活保障水準では日本を大きく上回っています。
     </div>
@@ -125,12 +125,12 @@
 
     <h2>【真の比較軸】現金給付から必須支出を差し引いた「可処分所得」の推計</h2>
 
-    <div style="background:#1a1a16;border-left:4px solid var(--gold);padding:16px 18px;margin-bottom:16px;font-size:14px;line-height:1.8;color:#f0e8c8;">
+    <div style="background:#1a1a16;border-left:4px solid var(--gold);padding:16px 18px;margin:0 24px 16px;font-size:14px;line-height:1.8;color:#f0e8c8;">
       <strong style="color:#f0e8c8;">前のグラフで「日本と欧州の差が小さい」と感じた方へ：</strong><br>
       現金給付のPPP実質額が各国で近い水準に見えるのは、<strong style="color:#f0e8c8;">「同じ金額で同じ生活ができる」という前提で換算しているから</strong>です。しかしその前提は成立しません。欧州では医療・介護・住宅が公的に提供されるため、現金給付をほぼそのまま食費・日用品・余暇に使えます。日本ではその現金から医療費・家賃・介護サービス費を自己負担した残りが実際の生活費です。<strong style="color:#f0e8c8;">現金給付が「近い」のではなく、支出構造が根本的に異なります。</strong>
     </div>
 
-    <div style="background:#fafafa;border:1px solid var(--gold-border);padding:12px 16px;margin-bottom:16px;font-size:13px;line-height:1.8;color:var(--text-mid)">
+    <div style="background:#fafafa;border:1px solid var(--gold-border);padding:12px 16px;margin:0 24px 16px;font-size:13px;line-height:1.8;color:var(--text-mid)">
       <strong>【下のグラフの計算方法】</strong>　現金給付（PPP実質）から、各国の障害者が実際に負担する医療費・家賃（住宅補助後の自己負担分）・介護サービス費の月額推計を差し引いた「手元に残る可処分所得」の試算です。各国の数値は公的制度資料・OECD統計に基づく推計であり、個人差・地域差があります。日本の支出は厚生労働省「障害者の生活実態調査」・ch1本文の生活費試算を参照。最大値（ノルウェー）を100%として相対表示。
     </div>
 
@@ -194,7 +194,7 @@
     </div>
 
 
-    <div id="earnings-related" style="background:#f4f0ff;border-left:4px solid #5a4a8a;padding:16px 18px;margin-top:20px;font-size:14px;line-height:1.8">
+    <div id="earnings-related" style="background:#f4f0ff;border-left:4px solid #5a4a8a;padding:16px 18px;margin:20px 24px;font-size:14px;line-height:1.8">
       <strong>【参考：前職収入連動型給付 ── 上のグラフに含まれない「もう一つの格差」】</strong><br>
       上のグラフは先天性・就労歴なし障害者を含む「最低保障ベース」での比較です。しかし欧州主要国の多くは、<strong>就労歴がある人が障害を負った場合に前職収入の一定割合を保障する所得比例型給付</strong>を別途持っています。この概念は日本にほぼ存在せず、「働いていた期間の生活水準を障害後も一定程度維持させる」というセーフティネットの発想自体が、日本の制度設計には根本的に欠けています。
 

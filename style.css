@@ -319,6 +319,46 @@ body {
 
 /* ── TABLE ── */
 .table-wrap { overflow-x: auto; margin: 20px 24px; }
+
+/* ── 幅統一：ページ固有コンポーネントの左右余白を標準化 ── */
+/* finance.html */
+.scenario-grid  { margin-left: 24px !important; margin-right: 24px !important; }
+.waterfall      { margin-left: 24px !important; margin-right: 24px !important; }
+.wf-header      { margin-left: 24px; margin-right: 24px; }
+.grade-grid     { margin-left: 24px !important; margin-right: 24px !important; }
+.cost-toggle, .toggle-btn, .lazy-table-btn {
+  margin-left: 24px;
+}
+/* cost.html */
+.cost-bar-row   { margin-left: 24px; margin-right: 24px; }
+/* intl.html */
+.intl-bar-row   { margin-left: 24px; margin-right: 24px; }
+.penalty-grid   { margin-left: 24px !important; margin-right: 24px !important; }
+.struct-grid    { margin-left: 24px !important; margin-right: 24px !important; }
+/* scp.html */
+.flow-row       { margin-left: 24px !important; margin-right: 24px !important; }
+.lane-grid      { margin-left: 24px !important; margin-right: 24px !important; }
+.cycle-row      { margin-left: 24px !important; margin-right: 24px !important; }
+.task-grid      { margin-left: 24px !important; margin-right: 24px !important; }
+/* timeline.html / roadmap */
+.gantt-wrap     { margin-left: 24px !important; margin-right: 24px !important; }
+.phase-grid, .bottleneck-grid, .conclusion-box, .legend {
+  margin-left: 24px !important; margin-right: 24px !important;
+}
+/* 汎用：.content直下のカスタムdivで余白が24pxでないものを補正 */
+.content > .card-grid { margin-left: 24px; margin-right: 24px; }
+
+/* モバイル時は余白を0に戻す */
+@media (max-width: 860px) {
+  .scenario-grid, .waterfall, .wf-header, .grade-grid,
+  .cost-bar-row, .intl-bar-row, .penalty-grid, .struct-grid,
+  .flow-row, .lane-grid, .cycle-row, .task-grid,
+  .gantt-wrap, .phase-grid, .bottleneck-grid, .conclusion-box, .legend,
+  .cost-toggle, .toggle-btn, .lazy-table-btn {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -509,3 +549,9 @@ tr:last-child td { border-bottom: none; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ── index.html: .sec内は自前padding(26px 28px)があるため余白上書きを0に ── */
+.sec .table-wrap  { margin-left: 0; margin-right: 0; }
+.sec .callout     { margin-left: 0; margin-right: 0; }
+.sec .callout-light { margin-left: 0; margin-right: 0; }
+.sec .card-grid   { margin-left: 0; margin-right: 0; }
