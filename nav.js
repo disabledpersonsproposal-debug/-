@@ -1,14 +1,18 @@
+/* ═══════════════════════════════════════════════════
+   nav.js — サイドバー + TOC + ページナビ
+   ═══════════════════════════════════════════════════ */
+
 const NAV_GROUPS = [
   {
     id: 'main',
     section: '本編',
     items: [
-      { href: 'ch0.html',  label: '序章', sub: '制度の歴史と善意の限界' },
-      { href: 'ch1.html',  label: 'Ch.1', sub: '次世代型障害者雇用モデル' },
-      { href: 'ch2.html',  label: 'Ch.2', sub: '準公務・準企業職員制度' },
-      { href: 'ch3.html',  label: 'Ch.3', sub: '不作為のコストと社会契約' },
-      { href: 'ch9.html',  label: 'Ch.4', sub: '制度の終わらせ方設計' },
-      { href: 'ch4.html',  label: '付録', sub: '社会はすでに知っている' },
+      { href: 'ch0.html', label: '序章',  sub: '制度の歴史と善意の限界' },
+      { href: 'ch1.html', label: 'Ch.1',  sub: '次世代型障害者雇用モデル' },
+      { href: 'ch2.html', label: 'Ch.2',  sub: '準公務・準企業職員制度' },
+      { href: 'ch3.html', label: 'Ch.3',  sub: '不作為のコストと社会契約' },
+      { href: 'ch9.html', label: 'Ch.4',  sub: '制度の終わらせ方設計' },
+      { href: 'ch4.html', label: '付録',  sub: '社会はすでに知っている' },
     ]
   },
   {
@@ -40,18 +44,23 @@ const NAV_GROUPS = [
   }
 ];
 
+/* ── フラットなページ順序（前後ナビ用） ── */
+const ALL_PAGES = [
+  { href: 'index.html', label: 'エグゼクティブサマリー' },
+  ...NAV_GROUPS.flatMap(g => g.items)
+];
+
 (function () {
   const current = location.pathname.split('/').pop() || 'index.html';
 
-  // どのグループが現在ページを含むか判定
   function groupContainsCurrent(group) {
     return group.items.some(i => i.href === current);
   }
 
+  /* ══ サイドバー構築 ══ */
   const sidebar = document.createElement('aside');
   sidebar.className = 'sidebar';
 
-  // ── ロゴ（トップページリンク）
   sidebar.innerHTML = `
     <div class="sidebar-logo">
       <a href="index.html">
@@ -65,7 +74,6 @@ const NAV_GROUPS = [
       </a>
     </div>`;
 
-  // ── アコーディオングループ
   NAV_GROUPS.forEach(group => {
     const hasCurrent = groupContainsCurrent(group);
     const isOpen = hasCurrent;
@@ -74,15 +82,13 @@ const NAV_GROUPS = [
     wrap.className = 'nav-group';
     wrap.dataset.id = group.id;
 
-    // ヘッダー（クリックで展開）
     const header = document.createElement('button');
     header.className = 'nav-group-header' + (isOpen ? ' open' : '');
     header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     header.innerHTML = `
       <span class="nav-group-label">${group.section}</span>
-      <span class="nav-chevron">${isOpen ? '▲' : '▼'}</span>`;
+      <span class="nav-chevron">▼</span>`;
 
-    // 中身
     const body = document.createElement('div');
     body.className = 'nav-group-body';
     body.style.display = isOpen ? 'block' : 'none';
@@ -101,18 +107,19 @@ const NAV_GROUPS = [
             <span class="sidebar-item-sub">${item.sub}</span>
           </span>`;
       } else {
-        a.innerHTML = `<span class="sidebar-dot"></span>${item.label}`;
+        a.innerHTML = `
+          <span class="sidebar-dot"></span>
+          <span class="sidebar-item-inner">
+            <span class="sidebar-item-label">${item.label}</span>
+          </span>`;
       }
       body.appendChild(a);
     });
 
-    // トグル動作
     header.addEventListener('click', () => {
-      const opened = header.classList.contains('open');
-      header.classList.toggle('open', !opened);
-      header.setAttribute('aria-expanded', !opened);
-      header.querySelector('.nav-chevron').textContent = !opened ? '▲' : '▼';
-      body.style.display = !opened ? 'block' : 'none';
+      const opened = header.classList.toggle('open');
+      header.setAttribute('aria-expanded', opened ? 'true' : 'false');
+      body.style.display = opened ? 'block' : 'none';
     });
 
     wrap.appendChild(header);
@@ -120,60 +127,122 @@ const NAV_GROUPS = [
     sidebar.appendChild(wrap);
   });
 
-  document.body.prepend(sidebar);
-})();
+  document.body.insertBefore(sidebar, document.body.firstChild);
 
-/* ── モバイルハンバーガーメニュー ── */
-(function () {
-  // モバイルヘッダーを生成
-  const header = document.createElement('div');
-  header.className = 'mobile-header';
-  header.innerHTML = `
+  /* ══ モバイルヘッダー ══ */
+  const mobileHeader = document.createElement('div');
+  mobileHeader.className = 'mobile-header';
+  mobileHeader.innerHTML = `
     <a href="index.html" class="mobile-header-title">提言書</a>
-    <button class="mobile-hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+    <button class="mobile-hamburger" aria-label="メニュー">
       <span></span><span></span><span></span>
     </button>`;
-  document.body.prepend(header);
 
-  // オーバーレイを生成
   const overlay = document.createElement('div');
   overlay.className = 'sidebar-overlay';
-  overlay.id = 'sidebar-overlay';
-  document.body.appendChild(overlay);
 
-  const hamburger = document.getElementById('hamburger');
-  const sidebar   = document.querySelector('.sidebar');
-
-  function openMenu() {
-    sidebar.classList.add('open');
-    overlay.classList.add('visible');
-    hamburger.classList.add('open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+  const main = document.querySelector('.main');
+  if (main) {
+    main.insertBefore(mobileHeader, main.firstChild);
+    main.appendChild(overlay);
   }
 
-  function closeMenu() {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('visible');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+  const hamburger = mobileHeader.querySelector('.mobile-hamburger');
+  function toggleMenu(open) {
+    hamburger.classList.toggle('open', open);
+    sidebar.classList.toggle('open', open);
+    overlay.classList.toggle('visible', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   }
+  hamburger.addEventListener('click', () => toggleMenu(!sidebar.classList.contains('open')));
+  overlay.addEventListener('click', () => toggleMenu(false));
 
-  hamburger.addEventListener('click', () => {
-    sidebar.classList.contains('open') ? closeMenu() : openMenu();
-  });
+  /* ══ ページ内TOC自動生成 ══ */
+  function buildTOC() {
+    if (current === 'index.html') return; // トップページはスキップ
 
-  // オーバーレイタップで閉じる
-  overlay.addEventListener('click', closeMenu);
+    const content = document.querySelector('.content');
+    if (!content) return;
 
-  // リンクをタップしたら閉じる
-  sidebar.addEventListener('click', (e) => {
-    if (e.target.closest('a')) closeMenu();
-  });
+    // h2要素を収集
+    const headings = Array.from(content.querySelectorAll('h2'));
+    if (headings.length < 2) return; // 1つ以下はTOC不要
 
-  // Escキーで閉じる
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
+    // idを付与（なければ自動生成）
+    headings.forEach((h, i) => {
+      if (!h.id) {
+        const slug = 'section-' + (i + 1);
+        h.id = slug;
+      }
+    });
+
+    const toc = document.createElement('nav');
+    toc.className = 'page-toc';
+    toc.setAttribute('aria-label', 'ページ内目次');
+
+    const title = document.createElement('span');
+    title.className = 'page-toc-title';
+    title.textContent = '目次';
+    toc.appendChild(title);
+
+    const ul = document.createElement('ul');
+    headings.forEach(h => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent.trim();
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    toc.appendChild(ul);
+
+    // gold-ruleの直後に挿入
+    const goldRule = content.querySelector('.gold-rule');
+    if (goldRule) {
+      goldRule.after(toc);
+    } else {
+      // chapter-titleの後に挿入
+      const subtitle = content.querySelector('.chapter-subtitle');
+      if (subtitle) subtitle.after(toc);
+    }
+  }
+  buildTOC();
+
+  /* ══ 前後ページナビゲーション ══ */
+  function buildPageNav() {
+    const content = document.querySelector('.content');
+    if (!content) return;
+
+    const idx = ALL_PAGES.findIndex(p => p.href === current);
+    if (idx === -1) return;
+
+    const prev = ALL_PAGES[idx - 1] || null;
+    const next = ALL_PAGES[idx + 1] || null;
+    if (!prev && !next) return;
+
+    const nav = document.createElement('nav');
+    nav.className = 'page-nav';
+    nav.setAttribute('aria-label', 'ページナビゲーション');
+
+    if (prev) {
+      nav.innerHTML += `
+        <a href="${prev.href}" class="page-nav-item">
+          <span class="page-nav-dir">← 前のページ</span>
+          <span class="page-nav-title">${prev.label}</span>
+          ${prev.sub ? `<span class="page-nav-sub">${prev.sub}</span>` : ''}
+        </a>`;
+    }
+    if (next) {
+      nav.innerHTML += `
+        <a href="${next.href}" class="page-nav-item">
+          <span class="page-nav-dir">次のページ →</span>
+          <span class="page-nav-title">${next.label}</span>
+          ${next.sub ? `<span class="page-nav-sub">${next.sub}</span>` : ''}
+        </a>`;
+    }
+
+    content.appendChild(nav);
+  }
+  buildPageNav();
+
 })();

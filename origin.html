@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本提言の記録 ─ 次世代型障害者雇用提言書</title>
+<link rel="stylesheet" href="style.css">
+<script src="nav.js" defer></script>
+<style>
+.origin-hero {
+  background: linear-gradient(135deg, #1a1a16 0%, #2C2C2A 60%, #1e1c14 100%);
+  border-bottom: 3px solid var(--gold);
+  padding: 44px 48px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.origin-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, transparent, transparent 40px, rgba(212,175,55,.03) 40px, rgba(212,175,55,.03) 41px);
+  pointer-events: none;
+}
+.origin-hero-label {
+  font-size: 14px;
+  letter-spacing: .3em;
+  color: var(--gold);
+  margin-bottom: 14px;
+  position: relative;
+}
+.origin-hero-title {
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  position: relative;
+  line-height: 1.4;
+}
+.origin-hero-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.7);
+  position: relative;
+  line-height: 1.8;
+}
+.origin-hero-rule {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), #F0E4B0, transparent);
+  margin: 0 0 32px 0;
+}
+
+/* タイムライン */
+.version-timeline {
+  position: relative;
+  padding-left: 28px;
+  margin: 24px 0;
+}
+.version-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold), rgba(212,175,55,.2));
+}
+.vt-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+.vt-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--gold);
+}
+.vt-item.first::before {
+  background: var(--sidebar-bg);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--sidebar-bg);
+  width: 14px;
+  height: 14px;
+  left: -25px;
+  top: 5px;
+}
+.vt-date {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin-bottom: 3px;
+}
+.vt-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.vt-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+.vt-badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.badge-init  { background: rgba(212,175,55,.15); color: #8a6a00; border: 1px solid rgba(212,175,55,.4); }
+.badge-data  { background: rgba(44,122,58,.1);   color: #1a5c2a; border: 1px solid rgba(44,122,58,.3); }
+.badge-str   { background: rgba(44,44,42,.08);   color: #2C2C2A; border: 1px solid rgba(44,44,42,.2); }
+.badge-fix   { background: rgba(184,66,26,.08);  color: #B8421A; border: 1px solid rgba(184,66,26,.2); }
+
+/* 概念定義テーブル */
+.concept-card {
+  border: 1px solid var(--gold-border);
+  border-top: 3px solid var(--sidebar-bg);
+  padding: 18px 20px 14px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+.concept-tag {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: .15em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.concept-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.concept-def {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.concept-prior {
+  font-size: 13px;
+  background: rgba(212,175,55,.07);
+  border-left: 3px solid var(--gold);
+  padding: 8px 12px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.concept-prior strong {
+  color: var(--text-dark);
+}
+
+/* 先行議論の限界表 */
+.gap-note {
+  font-size: 13px;
+  background: rgba(44,44,42,.04);
+  border: 1px solid rgba(44,44,42,.1);
+  border-left: 3px solid var(--sidebar-bg);
+  padding: 12px 14px;
+  margin-top: 16px;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+</style>
+</head>
+<body>
+<div class="main">
+  <div class="topbar"><span class="current">本提言の記録</span></div>
+
+  <div class="origin-hero">
+    <div class="origin-hero-label">RECORD OF ORIGINALITY</div>
+    <h1 class="origin-hero-title">本提言の記録<br>── この提言が初めて言ったこと、いつ言ったか</h1>
+    <p class="origin-hero-sub">
+      本ページは、本提言の公開・更新の履歴と、本提言が初めて言語化・定義した概念の一覧を記録するアーカイブである。<br>
+      将来、制度議論が進んだとき、「この提言が起点だった」と参照されるための文書として設計されている。
+    </p>
+  </div>
+  <div class="origin-hero-rule"></div>
+
+  <div class="content">
+
+    <h2>なぜこの記録が必要か</h2>
+    <p>本提言が示す結論——障害者雇用制度を根本から解体・再設計する——は、これまでの議論の中で言語化されてこなかった。問題が見えていなかったからではない。当事者団体・企業・行政・研究者のそれぞれが、それぞれの立場の制約によって結論まで踏み込めなかったからである。</p>
+    <p>先行資料が存在しないことは、本提言の弱点ではない。<strong>言語化できる立場の者がこれまで存在しなかった</strong>という事実の証明である。だからこそ、「この提言がいつ・何を・初めて言ったか」を明示的に記録しておくことが必要である。</p>
+
+    <div class="callout">
+      本提言は利害関係から切り離された立場だからこそ書けた。当事者団体・企業・行政・研究者のどの陣営にも属さず、どの陣営の言語にも縛られていない。その立場の唯一の強みを、この記録に刻む。
+    </div>
+
+    <h2>公開・更新履歴</h2>
+    <p>各バージョンの変更内容を記録する。本提言の「最初に言った」という事実を時系列で証明するための一次記録である。</p>
+
+    <div class="version-timeline">
+
+      <div class="vt-item first">
+        <div class="vt-date">2025年　初版公開</div>
+        <div class="vt-title">初版：提言書の骨格を公開</div>
+        <div class="vt-desc">
+          <span class="vt-badge badge-init">初版</span>
+        </div>
+        <div class="vt-desc">
+          SCP（Social Contribution Point）制度の概念設計・準公務職員制度の基本設計・雇用代替拠出金の設計・財源シミュレーション（3シナリオ）・国際比較（7カ国PPP補正）を含む全章を初稿として公開。本提言が定義する全ての中核概念がこの時点で言語化されている。
+        </div>
+      </div>
+
+      <div class="vt-item">
+        <div class="vt-date">2026年4月　第2版</div>
+        <div class="vt-title">第2版：データの最新化・構造補強・概念の明示化</div>
+        <div class="vt-desc">
+          <span class="vt-badge badge-data">データ更新</span>
+          <span class="vt-badge badge-str">構造補強</span>
+          <span class="vt-badge badge-fix">根拠明示</span>
+        </div>
+        <div class="vt-desc" style="margin-top:8px">
+          以下の補強を実施：<br>
+          ① 全統計データを2025〜2026年最新版に更新（厚労省「令和7年障害者雇用状況集計結果」・総務省「令和7年地方公務員給与実態調査」・国交省「建築着工統計調査2025年」等）<br>
+          ② ch1に「2-2-4補論：なぜ誰も言えなかったか」を新設——先行議論が辿り着けなかった構造的理由を5陣営・表形式で明示化<br>
+          ③ ch1に「2-2-6：準公務職員タスク需要の実在性」を新設——3軸10データで定量的証明を追加<br>
+          ④ finance.htmlに「給与レンジ・拠点整備費の根拠データ」を追加——設定根拠を外部統計で初めて明示<br>
+          ⑤ 本記録ページ（origin.html）を新設
+        </div>
+      </div>
+
+    </div>
+
+    <h2>本提言が初めて定義した概念</h2>
+    <p>以下は、本提言が公開時点において初めて言語化・定義した概念の一覧である。いずれも既存の政策文書・学術論文・業界報告書には存在しない。</p>
+
+    <div class="concept-card">
+      <div class="concept-tag">CONCEPT 01</div>
+      <div class="concept-name">SCP（Social Contribution Point）制度</div>
+      <div class="concept-def">
+        法定雇用率の「人数カウント」を廃止し、障害者が実際に遂行したタスクの種類・難度・社会的有用性に応じて付与されるポイントで雇用義務を評価する制度。1ポイント＝15分×難易度係数の標準単位で設計される。企業は実雇用（AレーンまたはBレーン）とポイント代替拠出金（Cレーン）を組み合わせて義務を充足する。
+      </div>
+      <div class="concept-prior">
+        <strong>先行議論の限界：</strong>既存制度は「何人雇用したか」のみを評価し、「何の仕事をしたか」を問わない。障害者のために作った業務と本当に社会に必要な業務を区別する評価軸が存在しなかった。本提言が初めてタスクの質と社会的有用性を数値化する設計を提示した。
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="concept-tag">CONCEPT 02</div>
+      <div class="concept-name">準公務職員制度</div>
+      <div class="concept-def">
+        障害者を民間企業への「義務的雇用」ではなく、人手不足で放置されている公共業務の担い手として位置づける新しい就労形態。自治体が発注主体となり、推進局が管理・調整を担う。タスクは道路橋点検・独居高齢者見守り・バリアフリー情報更新など「すでに社会に存在し、担い手がいない業務」に限定される。「仕事を作る」のではなく「放置された仕事に担い手を届ける」設計思想が核心である。
+      </div>
+      <div class="concept-prior">
+        <strong>先行議論の限界：</strong>公務補助員・非常勤職員・会計年度任用職員などの制度は存在するが、いずれも「障害者雇用の代替手段」として設計されたものではない。障害者の特性を活かしながら公共インフラの担い手不足を同時に解決する設計は、本提言以前には存在しなかった。
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="concept-tag">CONCEPT 03</div>
+      <div class="concept-name">雇用代替拠出金（SCPポイント不足拠出金）</div>
+      <div class="concept-def">
+        現行の「障害者雇用納付金（月5万円/人）」を廃止し、SCPポイント不足1ポイントあたり1,500円（1人分換算で月18万円相当・現行比3.6倍）の拠出金に置き換える設計。拠出金の全額は当事者直接報酬・年金増額原資・推進局運営費に目的配分され、「払えば済む」という抜け道を「実雇用の方が経済合理的」という逆転構造に転換する。
+      </div>
+      <div class="concept-prior">
+        <strong>先行議論の限界：</strong>現行の納付金（月5万円）は「払えば済む」という抜け道として機能し、当事者への直接還流もない。「納付金の水準が低すぎる」という指摘は存在したが、「水準を引き上げながら同時に使途を当事者に直接還流させる」という設計を提示したのは本提言が初めてである。
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="concept-tag">CONCEPT 04</div>
+      <div class="concept-name">信頼スコア制度（就労者評価の段階的蓄積）</div>
+      <div class="concept-def">
+        就労者の実績・遵守・タスク完遂率をローリング平均で数値化し、スコアに応じてエントリー可能なタスクの範囲が広がる設計。初期は定型・非対人業務のみ、スコア上昇とともに対人業務・高難度業務へとアクセスが広がる。不正・無断欠勤・タスク放棄はスコアを下げ、一定水準を下回るとエントリーロック・資格停止が発動する。「障害者への特別扱い」ではなく「実績に基づく対等な評価」が設計思想の核心である。
+      </div>
+      <div class="concept-prior">
+        <strong>先行議論の限界：</strong>就労継続支援の「工賃」評価・障害者雇用の定性評価はいずれも管理者側の主観に依存していた。就労者自身の実績を数値化し、それによって就労機会の範囲が広がるという「対等な評価に基づくキャリアパス」の設計は、本提言以前には障害者就労の文脈で存在しなかった。
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="concept-tag">CONCEPT 05</div>
+      <div class="concept-name">「不作為のコスト」論</div>
+      <div class="concept-def">
+        障害者雇用制度を改革しないことのコスト（家族の介護離職・企業の管理コスト・当事者の不完全就労による税収損失・障害年金の非効率な配分等）を年間2.6〜3.2兆円と試算し、「改革にかかるコスト」との比較を財政議論の正しい土俵として提示する論法。「この制度にいくらかかるか」ではなく「この制度を導入しなければ社会はいくら余分に失うか」を問う。
+      </div>
+      <div class="concept-prior">
+        <strong>先行議論の限界：</strong>政策コスト議論は常に「改革にかかる費用」だけを問題にしてきた。「現状維持にかかる費用」を定量化して改革コストと比較するという論法は、社会保障改革の議論では異例であり、本提言が体系的に提示した。
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="concept-tag">CONCEPT 06</div>
+      <div class="concept-name">「土台先行主義」——年金先行・雇用後続の設計順序</div>
+      <div class="concept-def">
+        現行制度が「企業に雇用させてから生活を成り立たせようとする」設計であるのに対し、本提言は「国が年金で生活基盤を先に確立し、その上で企業雇用を社会参加の手段として位置づける」という設計順序の転換を提示する。欧州主要国が実装している設計思想を日本の文脈で言語化したものであるが、日本の制度改革論として「雇用より先に年金」と明示的に宣言した提言は存在しなかった。
+      </div>
+      <div class="concept-prior">
+        <strong>先行議論の限界：</strong>年金引き上げと雇用促進は常に「並行して推進すべき課題」として論じられてきた。「雇用の義務化が年金の低さを補うために使われている」という構造批判から「まず年金」という設計順序を導いた論理展開は、本提言が初めて行った。
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="concept-tag">CONCEPT 07</div>
+      <div class="concept-name">「言語の転換」——人道から経済合理性へ</div>
+      <div class="concept-def">
+        障害者政策を「人道的要請・権利・配慮」という言語で訴えることをやめ、「企業の生産性を削ぎ、国全体の経済力を内側から腐食させている設計ミスの修正」として論じる言語転換の戦略的意図を明示する。60年間「人道の言語」が届かなかった壁を突き崩すために、提言の言語そのものを変える必要があるという主張。
+      </div>
+      <div class="concept-prior">
+        <strong>先行議論の限界：</strong>障害者権利条約・合理的配慮義務・共生社会の実現——いずれも「人道・権利」の言語で訴えられてきた。「経済合理性の言語でなければ政策は動かない」という現実認識と戦略的な言語選択を、提言書の冒頭で明言した文書は存在しなかった。
+      </div>
+    </div>
+
+    <h2>先行議論が辿り着けなかった構造的理由</h2>
+    <p>本提言の概念が先行研究・報告書に存在しないのは、誰かが怠慢だったからではない。それぞれの立場の構造的制約が、結論への到達を阻んでいたからである。</p>
+
+    <div class="table-wrap"><table>
+      <thead>
+        <tr>
+          <th>陣営</th>
+          <th>問題の認識</th>
+          <th>なぜ本提言の結論まで言えなかったか</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>当事者・支援団体</strong><br><span style="font-size:12px;color:var(--text-muted)">きょうされん・JDC等</span></td>
+          <td>○ 年金水準の不足・就労機会の格差を長年訴え続けた</td>
+          <td>「権利・人道」の言語を手放せなかった。「経済合理性」で論じると運動の連帯が壊れ、A型・B型事業所と結びついた組織基盤が揺らぐ構造的制約があった</td>
+        </tr>
+        <tr>
+          <td><strong>企業・人事の実務家</strong><br><span style="font-size:12px;color:var(--text-muted)">障害者雇用担当者等</span></td>
+          <td>○ 管理コストの重さ・業務創出の非合理性を現場で体感していた</td>
+          <td>「制度を解体せよ」と発言した瞬間、自社の法定雇用率・納付金の問題に直結した。制度批判はできても、代替制度の提言は立場上できなかった</td>
+        </tr>
+        <tr>
+          <td><strong>行政・審議会</strong><br><span style="font-size:12px;color:var(--text-muted)">厚労省研究会等</span></td>
+          <td>○ 2025年の研究会報告書でも雇用の「質」向上を正面から論じた</td>
+          <td>関係者合意が前提の審議会では、既存利害を根本から組み替える設計は議題に上げられなかった。結論は「ガイドライン整備・報告義務」という漸進的整備にとどまった</td>
+        </tr>
+        <tr>
+          <td><strong>経済学・財政論</strong></td>
+          <td>○ 障害者雇用のコスト構造の非効率は認識されていた</td>
+          <td>「障害者雇用を生産性問題として論じる」ことが差別的と見なされるリスクを回避する学術的・政治的慣行があった</td>
+        </tr>
+        <tr>
+          <td><strong>福祉研究・社会政策</strong></td>
+          <td>○ 国際比較データで日本の水準の低さを繰り返し示してきた</td>
+          <td>「日本の制度設計が根本的に間違っている」という結論は、既存制度の関係者との摩擦を生む。「さらなる充実を」という提言に止まった</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="gap-note">
+      本提言は上記いずれの陣営にも属していない。既存の制度に利害を持たない立場だからこそ、これまでの議論が踏み込めなかった場所に正面から足を踏み入れることができる。<strong>60年間、誰も結論を言えなかったのではない。言える立場の者が存在しなかった。</strong>これは傲慢さではなく、利害関係から切り離された立場の持つ唯一の強みである。
+    </div>
+
+    <h2>将来の参照者へ</h2>
+    <div class="callout">
+      本提言が想定する最良の未来は、この記録が「歴史的な一次資料」として参照される日が来ることである。制度議論が動き始めたとき、政策立案者・研究者・当事者のいずれかが「SCP制度という発想はいつ・誰が最初に提示したか」を調べた時、このページが答えとなる。<br><br>
+      本提言はお願いではなく請求である。そして、この記録はその請求の日付と内容を証明するための証書である。
+    </div>
+
+    <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
+  </div>
+</div>
+</body>
+</html>
