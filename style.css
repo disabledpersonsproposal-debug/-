@@ -131,7 +131,7 @@ body {
 
 /* ── PAGE TOC ── */
 .page-toc {
-  background: #faf8f2; border: 1px solid var(--gold-border);
+  background:#fffdf0; border: 1px solid var(--gold-border);
   border-left: 3px solid var(--gold); padding: 16px 20px; margin-bottom: 36px; font-size: 13px;
 }
 .page-toc-title { font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; display: block; }
@@ -185,7 +185,7 @@ td {
   font-size: 14px; line-height: 1.7; background: var(--content-bg);
 }
 td:last-child { border-right: none; }
-tr:hover td { background: #fafaf4; }
+tr:hover td { background:#fff; }
 tr:last-child td { border-bottom: none; }
 
 /* ── CARDS ── */
@@ -215,7 +215,7 @@ tr:last-child td { border-bottom: none; }
   min-width: 0;
 }
 .page-nav-item:first-child:not(:last-child) { border-right: none; }
-.page-nav-item:hover { border-top-color: var(--gold); background: #fafaf4; }
+.page-nav-item:hover { border-top-color: var(--gold); background:#fff; }
 .page-nav-dir { font-size: 12px; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
 .page-nav-item:last-child .page-nav-dir { justify-content: flex-end; }
 .page-nav-title { font-size: 14px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
