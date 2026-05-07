@@ -82,12 +82,20 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
 
 /* ── INDEX TABLE ── */
 .index-table{width:100%;border-collapse:collapse;margin:16px 0}
-.index-table td{padding:8px 12px;border-bottom:1px solid rgba(0,0,0,0.08);font-size:14px}
-.index-table td:first-child{width:36%;font-weight:600;color:var(--text-dark)}
-.index-table td:last-child{color:var(--text-muted);font-size:13px}
+.index-table td{padding:8px 12px;border-bottom:1px solid rgba(0,0,0,0.08);font-size:14px;vertical-align:middle}
+.index-table td:first-child{width:28%;font-weight:600;color:var(--text-dark)}
+.index-table td:nth-child(2){color:var(--text-muted);font-size:13px}
+.index-table td:last-child{width:28%;font-size:12px}
 
 /* ── PAGE FOOTER ── */
 .page-footer{margin-top:40px;padding-top:14px;border-top:1px solid rgba(0,0,0,0.1);font-size:12px;color:var(--text-muted)}
+
+/* ── PUBLIC LINKS ── */
+.pub-links{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 18px;align-items:center}
+.pub-links-label{font-size:12px;color:var(--text-muted);font-weight:700;letter-spacing:.06em;white-space:nowrap;margin-right:2px}
+.pub-link{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--gold-border);border-left:3px solid var(--gold);padding:4px 10px;font-size:12px;color:#5a4a00;text-decoration:none;border-radius:2px;line-height:1.4;transition:background .15s,border-color .15s}
+.pub-link:hover{background:var(--gold-dim);border-color:var(--gold)}
+.pub-link::before{content:"🔗";font-size:11px}
 
 @media(max-width:760px){
   .sidebar{display:none}
@@ -136,13 +144,41 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
 
       <h2>収録内容一覧</h2>
       <table class="index-table">
-        <tr><td>Ⅰ 省庁横断的法整備詳細</td><td>20本の改正対象法律・改正条文の具体的内容・優先順位</td></tr>
-        <tr><td>Ⅱ 等級再審査の詳細手順</td><td>全受給者対象の再審査設計・AI判定方式</td></tr>
-        <tr><td>Ⅲ 財源の具体的数値・単価</td><td>拠出金単価・費目別内訳・給与グレード設計</td></tr>
-        <tr><td>Ⅳ 推進局人員設計表詳細</td><td>自治体区分別の人員数・拠点数・コーディネーター配置</td></tr>
-        <tr><td>Ⅴ 制度の終わらせ方設計</td><td>日没条項・Exit Indicators・17の早期警戒指標</td></tr>
-        <tr><td>Ⅵ 不正悪用シナリオ詳細</td><td>4主体×シナリオ別の検知・抑止・ペナルティ体系</td></tr>
-        <tr><td>Ⅶ 交渉戦略・最低防衛ライン</td><td>反対勢力との交渉における絶対防衛ライン7点・年金額の妥協案・住宅補助要求・SCP制度の3層構造整理</td></tr>
+        <tr>
+          <td>Ⅰ 省庁横断的法整備詳細</td>
+          <td>20本の改正対象法律・改正条文の具体的内容・優先順位</td>
+          <td><a class="pub-link" href="ch1.html" target="_blank">ch1.html 3-1</a>　<a class="pub-link" href="roadmap_gov.html" target="_blank">行政ロードマップ</a></td>
+        </tr>
+        <tr>
+          <td>Ⅱ 等級再審査の詳細手順</td>
+          <td>全受給者対象の再審査設計・AI判定方式</td>
+          <td><a class="pub-link" href="ch1.html" target="_blank">ch1.html 3-1</a>　<a class="pub-link" href="faq.html" target="_blank">FAQ Q2</a></td>
+        </tr>
+        <tr>
+          <td>Ⅲ 財源の具体的数値・単価</td>
+          <td>拠出金単価・費目別内訳・給与グレード設計</td>
+          <td><a class="pub-link" href="finance.html" target="_blank">財源シミュレーション</a>　<a class="pub-link" href="cost.html" target="_blank">不作為のコスト</a></td>
+        </tr>
+        <tr>
+          <td>Ⅳ 推進局人員設計表詳細</td>
+          <td>自治体区分別の人員数・拠点数・コーディネーター配置</td>
+          <td><a class="pub-link" href="ch1.html" target="_blank">ch1.html 3-4</a>　<a class="pub-link" href="finance.html" target="_blank">財源シミュレーション</a></td>
+        </tr>
+        <tr>
+          <td>Ⅴ 制度の終わらせ方設計</td>
+          <td>日没条項・Exit Indicators・17の早期警戒指標</td>
+          <td><a class="pub-link" href="ch9.html" target="_blank">ch9.html 全体</a>　<a class="pub-link" href="ch1.html" target="_blank">ch1.html 3-5</a></td>
+        </tr>
+        <tr>
+          <td>Ⅵ 不正悪用シナリオ詳細</td>
+          <td>4主体×シナリオ別の検知・抑止・ペナルティ体系</td>
+          <td><a class="pub-link" href="fraud.html" target="_blank">fraud.html 全体</a>　<a class="pub-link" href="faq.html" target="_blank">FAQ Q4</a></td>
+        </tr>
+        <tr>
+          <td>Ⅶ 交渉戦略・最低防衛ライン</td>
+          <td>反対勢力との交渉における絶対防衛ライン7点・年金額の妥協案・住宅補助要求・SCP制度の3層構造整理</td>
+          <td><a class="pub-link" href="scp.html" target="_blank">SCP制度設計</a>　<a class="pub-link" href="ch3.html" target="_blank">ch3.html</a>　<a class="pub-link" href="faq.html" target="_blank">FAQ Q8</a></td>
+        </tr>
       </table>
     </div>
 
@@ -152,6 +188,11 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
     <div class="section-header" id="law">
       <h2>Ⅰ　省庁横断的法整備詳細</h2>
       <div class="section-src">元ページ：ch1.html「3-1 省庁横断的法整備一覧」</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="ch1.html" target="_blank">第1章 ─ 3-1 省庁横断的法整備</a>
+      <a class="pub-link" href="roadmap_gov.html" target="_blank">行政向けロードマップ</a>
     </div>
 
     <div class="reason-box">
@@ -192,7 +233,7 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
           <td>厚生労働省・内閣府</td>
           <td><strong>障害者総合支援法</strong><br><span>優先度★★★</span></td>
           <td>就労継続支援A型・B型は「事業所内での作業」を前提とした設計であり、「外部タスク型就労」を想定していない。準公務職員制度との接続根拠が存在しないため、A型・B型からの移行が法的に不可能。</td>
-          <td>①第5条（定義）に「準公務職員型就労支援」「準企業職員型就労支援」を新たな支援類型として追加する。②第51条の2以降に「公共業務分担推進局への統合移行」規定を新設し、A型事業所・就労移行支援等が推進局分室へ統合廃止される法的根拠を設ける。統合にあたっては立地・規模の認定基準による選別を行い、基準を満たす施設は推進局拠点として転用、満たさないものは廃止する。③A型事業所の職員はSCPコーディネーターとして推進局に優先再雇用することを附則で保証する。④B型事業所は就労不可能な重度障害者のみを対象とする必要最低限の拠点に再編・集約する。廃止・縮小となるB型拠点の職員については、（a）存続拠点への異動斡旋を事業者に義務付ける、（b）SCPコーディネーターへの転換を希望する者には研修支援・転換補助金を附則で保証する、（c）いずれも選択しない場合は整理解雇の4要件を厳格に適用する、の三択を附則で明定する。A型職員と異なりB型は施設の「全廃」ではなく「再編・集約」であるため「全員優先再雇用」の義務は課さないが、廃止拠点の職員が雇用の断絶なく移行できる選択肢を法的に担保する。⑤重度障害者の在宅タスク参加を支援類型として明記する。</td>
+          <td>①第5条（定義）に「準公務職員型就労支援」「準企業職員型就労支援」を新たな支援類型として追加する。②第51条の2以降に「公共業務分担推進局への統合移行」規定を新設し、A型事業所・就労移行支援等が推進局分室へ統合廃止される法的根拠を設ける。統合にあたっては立地・規模の認定基準による選別を行い、基準を満たす施設は推進局拠点として転用、満たさないものは廃止する。③A型事業所の職員はSCPコーディネーターとして推進局に優先再雇用することを附則で保証する。④B型事業所は就労不可能な重度障害者のみを対象とする必要最低限の拠点に再編・集約する。⑤重度障害者の在宅タスク参加を支援類型として明記する。</td>
           <td>既存の就労支援インフラを「推進局への統合・職員の雇用継続を担保した上での廃止・選別転用」によって質を担保しながら制度転換するための根拠法。</td>
         </tr>
         <tr class="priority-aaa">
@@ -262,7 +303,7 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
           <td>厚生労働省</td>
           <td><strong>社会福祉法</strong><br><span>優先度★</span></td>
           <td>A型事業所を推進局へ統合廃止する際、移行期間中の利用者の雇用契約・補助金の扱い・職員の身分変更について法上の根拠規定が存在しない。B型事業所を必要最低限の拠点に再編・集約するための存続認定基準も現行法には定めがない。</td>
-          <td>①A型事業所・就労移行支援等が推進局へ統合廃止される移行過程において、移行期間中の補助金継続・職員の優先再雇用・利用者の雇用契約継続義務を附則で規定する。②B型事業所の再編認定基準を定め、必要最低限の拠点のみ存続認定を受けられる仕組みを整備する。廃止・縮小となるB型拠点の職員については、存続拠点への異動斡旋義務・SCPコーディネーター転換支援（研修費・転換補助金）・整理解雇4要件の厳格適用を附則で明定する。③推進局が転用する施設の拠点認定要件を告示レベルで明定する。</td>
+          <td>①A型事業所・就労移行支援等が推進局へ統合廃止される移行過程において、移行期間中の補助金継続・職員の優先再雇用・利用者の雇用契約継続義務を附則で規定する。②B型事業所の再編認定基準を定め、必要最低限の拠点のみ存続認定を受けられる仕組みを整備する。③推進局が転用する施設の拠点認定要件を告示レベルで明定する。</td>
           <td>既存の利用者・職員が制度転換で不利益を被らないための調整法。</td>
         </tr>
         <tr class="priority-a">
@@ -321,6 +362,11 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
       <h2>Ⅱ　等級再審査の詳細手順</h2>
       <div class="section-src">元ページ：ch1.html「3-1 第1段階：障害年金の引き上げに関する法整備」</div>
     </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="ch1.html" target="_blank">第1章 ─ 3-1 年金増額と給付精度の向上</a>
+      <a class="pub-link" href="faq.html" target="_blank">FAQ ─ 2. 準公務職員制度の運用</a>
+    </div>
 
     <div class="reason-box">
       <strong>【非公開とした理由】</strong>
@@ -355,6 +401,12 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
     <div class="section-header" id="finance">
       <h2>Ⅲ　財源の具体的数値・単価</h2>
       <div class="section-src">元ページ：finance.html（費目別内訳・給与グレード・拠出金単価）</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="finance.html" target="_blank">財源確保シミュレーション（10カ年）</a>
+      <a class="pub-link" href="cost.html" target="_blank">「やらない余裕」など最初からなかった</a>
+      <a class="pub-link" href="faq.html" target="_blank">FAQ ─ 1. 財源・経済性について</a>
     </div>
 
     <div class="reason-box">
@@ -409,6 +461,12 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
     <div class="section-header" id="staff">
       <h2>Ⅳ　推進局人員設計表詳細</h2>
       <div class="section-src">元ページ：ch1.html「3-4 自治体規模別推進局設置モデル」／finance.html</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="ch1.html" target="_blank">第1章 ─ 3-4 推進局の設置体制</a>
+      <a class="pub-link" href="finance.html" target="_blank">財源確保シミュレーション（10カ年）</a>
+      <a class="pub-link" href="roadmap_gov.html" target="_blank">行政向けロードマップ</a>
     </div>
 
     <div class="reason-box">
@@ -482,6 +540,11 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
     <div class="section-header" id="sunset">
       <h2>Ⅴ　制度の終わらせ方設計（日没条項）</h2>
       <div class="section-src">元ページ：ch9.html 全体</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="ch9.html" target="_blank">制度の終わらせ方 ─ 日没条項の設計</a>
+      <a class="pub-link" href="ch1.html" target="_blank">第1章 ─ 3-5 日没条項の設計思想</a>
     </div>
 
     <div class="reason-box">
@@ -583,6 +646,11 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
       <h2>Ⅵ　不正悪用シナリオ詳細</h2>
       <div class="section-src">元ページ：fraud.html 全体</div>
     </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="fraud.html" target="_blank">SCP制度 ─ 不正・悪用シナリオと対策設計</a>
+      <a class="pub-link" href="faq.html" target="_blank">FAQ ─ 4. 公平性と不正防止について</a>
+    </div>
 
     <div class="reason-box">
       <strong>【非公開とした理由】</strong>
@@ -646,6 +714,13 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
     <div class="section-header" id="negotiation">
       <h2>Ⅶ　交渉戦略・最低防衛ライン</h2>
       <div class="section-src">2026年5月 策定　─　反対勢力との協議・交渉に向けた内部整理</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版（関連）：</span>
+      <a class="pub-link" href="ch1.html" target="_blank">第1章 ─ 3-2 雇用・報酬・社会保障</a>
+      <a class="pub-link" href="scp.html" target="_blank">SCP制度・就労実績ポイント設計</a>
+      <a class="pub-link" href="ch3.html" target="_blank">第3章 ─ 国への問いかけ</a>
+      <a class="pub-link" href="faq.html" target="_blank">FAQ ─ 8. 本制度の意義と国への問いかけ</a>
     </div>
 
     <div class="reason-box">
@@ -799,205 +874,6 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
     </div>
 
     <h2>5. 安楽死・旧優生保護法への言及について</h2>
-
-    <div class="callout">
-      <strong>この部分は提言の「核」であり、交渉で削除することはできない。</strong><br><br>
-      反対勢力が「表現が過激すぎる」という理由でこの部分の削除を求めてきた場合は、以下の論理で対応する。<br><br>
-      「この問いかけを削除することは、問いに答える覚悟がないことの表明である。政治・行政がこの問いに正面から答えられるなら、答えによって削除の要否は自ずと決まる。答えられないから削除を求めているのであれば、それ自体が問いの正当性を証明している。」<br><br>
-      なお、FAQ（faq.html）に記載の通り、これらの表現は安楽死や命の選別を「支持・推奨」するものではなく、「現行制度の不作為の帰結として国家が何を選んでいることになるのか」を直視させるための論理的問いかけである。この位置づけを交渉テーブルで明確にした上で、削除要求には応じない。
-    </div>
-
-
-    <!-- ════════════════════════════════════
-         Ⅶ 交渉戦略・最低防衛ライン
-         ════════════════════════════════════ -->
-    <div class="section-header" id="negotiation">
-      <h2>Ⅶ　交渉戦略・最低防衛ライン</h2>
-      <div class="section-src">2026年5月 策定　─　反対勢力との協議・交渉に向けた内部整理</div>
-    </div>
-
-    <div class="reason-box">
-      <strong>【本セクションの位置づけ】</strong>
-      本提言の内容が100%実現するのは困難であることを前提に、「ここまでは絶対に譲れない」という最低防衛ラインと、「ここまでなら交渉余地がある」という妥協許容範囲を明文化する。交渉テーブルに臨む前に内部で合意形成しておくべき戦略的判断材料である。
-    </div>
-
-    <h2>1. 絶対防衛ライン 7点</h2>
-    <p>以下の7点はいずれか一点でも失えば提言の骨格が崩れる。反対勢力からの圧力に対して一切後退してはならない。</p>
-
-    <div class="table-wrap"><table>
-      <thead><tr><th style="width:4%">#</th><th style="width:26%">防衛ライン</th><th style="width:36%">失った場合の帰結</th><th style="width:34%">交渉上の妥協許容範囲</th></tr></thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">①</td>
-          <td><strong>年金水準の法定数値明記</strong><br><span style="font-size:12px;color:var(--text-muted)">等級別最低保障額を国民年金法第33条に数値として直接規定。政令委任を認めない。</span></td>
-          <td>行政裁量で「段階的引き上げ」「据え置き」が可能になり増額が形骸化する。制度全体の財政設計が宙に浮く。</td>
-          <td>引き上げ額の数字・引き上げ時期の段階設定は交渉余地あり。ただし「数値を法定化すること」自体は絶対に譲れない。</td>
-        </tr>
-        <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">②</td>
-          <td><strong>拠出金収入の年金財源への法定直結</strong><br><span style="font-size:12px;color:var(--text-muted)">雇用代替拠出金を障害就労支援特別会計（新設）へ直結し、年金財源への充当経路を法定化する。</span></td>
-          <td>60年間と同じ「収益が当事者に届かない」構造が再現する。一般会計に吸収されれば別用途に流用される。</td>
-          <td>特別会計の名称・設計細部・拠出金単価の段階的引き上げは受け入れ可。「年金財源への法定直結ルート」の廃止は絶対に認めない。</td>
-        </tr>
-        <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">③</td>
-          <td><strong>A型事業所の囲い込み廃止と代替の法的確約</strong><br><span style="font-size:12px;color:var(--text-muted)">廃止・統合・再編の法的根拠と職員（A型・B型いずれも）の処遇保証を附則に明記する。</span></td>
-          <td>「改革」の看板のもとで低賃金囲い込み構造が法的保護を得る。現行の搾取構造が温存される。</td>
-          <td>廃止の猶予期間（5年→7年程度）・選別基準の細部は調整可。B型の重度障害者向け最低限拠点存続は認める。「A型の全面存続容認」は絶対に認めない。</td>
-        </tr>
-        <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">④</td>
-          <td><strong>就労実績を等級判断材料から除外する明文規定</strong><br><span style="font-size:12px;color:var(--text-muted)">障害状態確認届の再審査において就労実績・就労時間・就労収入を症状改善の根拠として使用することを法文上禁止する。</span></td>
-          <td>年金増額が事実上の「就労義務化」に転化する。「働くと等級が下がる」という現行の逆インセンティブ構造が継続し制度が機能しなくなる。</td>
-          <td>症状が実際に改善した場合の等級変更自体は認める（精神・発達障害は改善があり得るため）。禁止するのは「就労実績を根拠とすること」であり、医師診断・ADL指標等による変更は妥当な運用として認める。</td>
-        </tr>
-        <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">⑤</td>
-          <td><strong>就労実績ポイントの全国統一・算出ロジック公開・不服申立の法定化</strong><br><span style="font-size:12px;color:var(--text-muted)">準公務職員の就労評価の算出基準を全国統一・公開とし、当事者が異議申し立てできる第三者審査を推進局に義務付ける。</span></td>
-          <td>スコア算出が自治体・推進局の裁量に委ねられ、評価の恣意的運用による新たな差別構造が生まれる。</td>
-          <td>不服申立の手続き細部（申立期間・審査委員の構成等）は交渉可。「不服申立制度の存在」と「全国統一の算出基準」は絶対に譲れない。</td>
-        </tr>
-        <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">⑥</td>
-          <td><strong>就労資格と年金受給の完全分離</strong><br><span style="font-size:12px;color:var(--text-muted)">準公務職員資格を取り消された場合でも年金受給は継続されることを法文上明確にする。</span></td>
-          <td>「条件付き年金」として生活保障が就労規律の脅迫手段に転化する。「不正した者への年金継続はおかしい」という世論圧力で骨抜きにされやすい。</td>
-          <td>就労資格の取消条件の細部は交渉可。「資格取消＝年金停止」という連動は絶対に認めない。就労資格と生活保障は条文上も切り離す。</td>
-        </tr>
-        <tr style="background:#fff8f8">
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">⑦</td>
-          <td><strong>A型・B型職員双方の雇用継続保証の附則明記</strong>（攻め手兼防衛ライン）<br><span style="font-size:12px;color:var(--text-muted)">A型職員はSCPコーディネーターとして推進局に優先再雇用。廃止・縮小B型拠点の職員は存続拠点への異動斡旋・転換支援・整理解雇4要件の厳格適用の三択を附則に明定する。</span></td>
-          <td>A型・B型職員団体が「雇用を奪われる」という反論で法改正全体を頓挫させる。最大の反対勢力を中和できず国会審議で制度全体が潰される。</td>
-          <td>優先再雇用の条件細部（年収水準・研修期間等）は交渉可。ただし「A型・B型いずれの職員も雇用の断絶なく移行できる選択肢の法的保証」は絶対に確保する。<strong>これを早期に提示することで両団体を中立化・味方化できる可能性がある。戦略的に早めに出す。</strong></td>
-        </tr>
-      </tbody>
-    </table></div>
-
-    <h2>2. 年金額の交渉ライン</h2>
-
-    <div class="callout-light">
-      <strong>【提言原案と交渉における最低防衛ラインの関係】</strong><br>
-      提言書に記載の年金額（1級15万・2級12万・3級9万円）は「理想値」である。反対勢力との交渉の末に妥協を迫られた場合の最低防衛ラインを以下に示す。この水準を下回る妥協は「改革の形だけ残して実質なし」となるため、受け入れてはならない。
-    </div>
-
-    <div class="table-wrap"><table>
-      <thead><tr><th>等級</th><th>現行（2026年度）</th><th>提言原案（理想値）</th><th>最低防衛ライン（妥協の下限）</th><th>下限の根拠・注意事項</th></tr></thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:700">1級</td>
-          <td>約8.8万円</td>
-          <td style="color:#2C7A3A;font-weight:700">15万円</td>
-          <td style="color:#8B0000;font-weight:700">12万円</td>
-          <td>住宅補助（月3〜5万円相当）とのセット設計で実質15万円水準に接近できる。<strong>12万円単独での妥結は住宅補助の確保を条件とする。</strong></td>
-        </tr>
-        <tr>
-          <td style="font-weight:700">2級</td>
-          <td>約7.1万円</td>
-          <td style="color:#2C7A3A;font-weight:700">12万円</td>
-          <td style="color:#8B0000;font-weight:700">10万円</td>
-          <td>8万円では現行から0.9万円の増額に過ぎず実質改善が薄い。<strong>8万円は「勝ち取った」とは言えないため、交渉の下限を10万円と設定する。</strong></td>
-        </tr>
-        <tr>
-          <td style="font-weight:700">3級（新設）</td>
-          <td>5〜6万円相当</td>
-          <td style="color:#2C7A3A;font-weight:700">9万円</td>
-          <td style="color:#8B0000;font-weight:700">7万円</td>
-          <td><strong>5万円での法定化は現状固定のリスクがあるため絶対に受け入れてはならない。</strong>7万円で初めて「新設による改善」が生まれる。</td>
-        </tr>
-      </tbody>
-    </table></div>
-
-    <h2>3. 住宅補助・日常生活用具補助の要求</h2>
-
-    <div class="callout">
-      <strong>戦略的意義：年金額交渉と「抱き合わせ」で提示する</strong><br><br>
-      住宅補助と日常生活用具補助は、年金の数値を押し上げずに実質的な可処分所得を改善できる手段である。反対勢力も「現物給付の拡充」は「年金増額」より飲みやすい場合がある。「年金額はこちらが下げる、その代わり住宅補助を認めろ」という交換条件として機能させることが有効。
-    </div>
-
-    <div class="table-wrap"><table>
-      <thead><tr><th>要求項目</th><th>現行の問題</th><th>要求内容</th><th>交渉上の提示方法</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>住宅補助（家賃補助）</strong></td>
-          <td>家賃補助の明示的な仕組みがなく、都市部では家賃だけで年金の大半が消える。</td>
-          <td>障害基礎年金受給者を対象とした月3〜5万円の家賃補助制度を新設する。フランスAPL（個人住宅補助）の設計を参考に、家賃水準・所得水準に応じた段階的補助とする。</td>
-          <td>年金1級12万円＋家賃補助3〜5万円の組み合わせで実質15〜17万円相当となり提言原案（15万円）の効果をほぼ再現できる。「年金は12万円で妥協する代わりに住宅補助を確保する」という交換を提案する。</td>
-        </tr>
-        <tr>
-          <td><strong>日常生活用具補助</strong></td>
-          <td>補助対象品目が限定的・上限額が低く実態の需要に合っていない。</td>
-          <td>補助対象品目の包括化（限定列挙から「日常生活に必要なもの」への包括規定へ）および上限額の大幅引き上げ。</td>
-          <td>「無制限補助」という要求は反発を招くため、交渉テーブルでは「現行上限の大幅引き上げ」「対象品目の包括化」として提示する。実質的な効果は同等。</td>
-        </tr>
-      </tbody>
-    </table></div>
-
-    <h2>4. SCP制度・就労実績ポイントの3層構造整理</h2>
-
-    <div class="callout-light">
-      交渉テーブルでの説明・内部合意形成のための整理。制度の関係構造を混同すると議論が錯綜するため、この整理を共通認識として確立しておく。
-    </div>
-
-    <div class="table-wrap"><table>
-      <thead><tr><th>層</th><th>当事者（誰と誰）</th><th>何を決める仕組みか</th><th>根拠法</th></tr></thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:700;color:#8B0000">第1層<br>SCP制度</td>
-          <td>国・自治体（推進局）<br>↔ <strong>民間企業</strong></td>
-          <td>法定雇用義務の充足基準。企業がA（直接雇用）・B（職場浸透）・C（拠出代替・上限50%）の3レーンを組み合わせてSCPポイントを積み上げ、雇用義務を満たす仕組み。「頭数カウント」から「業務量・質カウント」への転換。</td>
-          <td>障害者雇用促進法（改正）</td>
-        </tr>
-        <tr>
-          <td style="font-weight:700;color:#8B0000">第2層<br>就労実績ポイント</td>
-          <td>国・自治体（推進局）<br>↔ <strong>障害当事者</strong></td>
-          <td>準公務職員として就労する当事者個人の就労評価（タスク完遂率・遵守実績等）。ポイントに応じて受けられる業務の種類・難度が変わる。算出ロジックは全国統一・公開とし、不服申立制度を法定化する（絶対防衛ライン⑤）。</td>
-          <td>地方公務員法（準公務職員規定・新設）、障害者総合支援法（改正）</td>
-        </tr>
-        <tr>
-          <td style="font-weight:700;color:#8B0000">第3層<br>個別雇用契約</td>
-          <td>民間企業<br>↔ <strong>障害当事者</strong></td>
-          <td>準企業職員として民間で働く場合の個別の雇用契約内容（業務種別・時給の上乗せ・就業規則の細部等）。国が定める最低基準（最低賃金・合理的配慮義務・労働基準法等）の枠内で各企業が設計する。「完全に委ねる」ではなく「最低基準の枠内での企業裁量」が正確な表現。</td>
-          <td>労働基準法・障害者差別解消法・最低賃金法（既存法が適用）</td>
-        </tr>
-      </tbody>
-    </table></div>
-
-    <div class="reason-box">
-      <strong>【交渉上の留意点】</strong>
-      反対勢力は「SCP制度が複雑すぎる」という論点で制度全体を潰しにかかる可能性がある。その場合は「3層構造のうち企業に新たに課すのは第1層（SCP）だけであり、第2層・第3層は現行制度の延長線上にある」という切り分けで応答する。企業が「SCPの管理が負担だ」と言う場合は「Cレーン（拠出金のみ）でも義務は充足できる。ただし上限50%のため最低限の接点は必要」と返す。
-    </div>
-
-    <h2>5. A型・B型事業所職員の処遇に関する交渉上の留意点</h2>
-
-    <div class="callout-light">
-      <strong>【A型とB型で扱いが異なる理由】</strong><br>
-      A型事業所は「全廃」が前提であるため、全職員に「推進局SCPコーディネーターとしての優先再雇用」という強い法的保証が必要。一方、B型事業所は「全廃」ではなく「必要最低限の拠点への再編・集約」であるため、存続拠点の職員は継続雇用となり全員への「優先再雇用義務」は馴染まない。ただし廃止・縮小拠点の職員の処遇が無保護では反対運動の核となるため、以下の3択を法的に明定する。
-    </div>
-
-    <div class="table-wrap"><table>
-      <thead><tr><th>区分</th><th>職員の処遇</th><th>法的根拠の位置づけ</th><th>交渉上の意義</th></tr></thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:700">A型職員<br>（全廃対象）</td>
-          <td>SCPコーディネーターとして推進局に<strong>優先再雇用</strong>することを附則で保証。研修支援・転換補助金も附則に明記。</td>
-          <td>障害者総合支援法附則・地方公務員法（準公務職員規定）</td>
-          <td>A型職員団体の反対を最大の反対勢力から中立化・味方化できる。<strong>早期に提示することが戦略的に重要。</strong></td>
-        </tr>
-        <tr>
-          <td style="font-weight:700">B型職員<br>（存続拠点）</td>
-          <td>現状の雇用が継続される。処遇の変更は事業者判断。</td>
-          <td>既存の労働契約が継続。特段の法改正不要。</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td style="font-weight:700">B型職員<br>（廃止・縮小拠点）</td>
-          <td>以下の三択を附則で明定する。<br>①存続拠点への<strong>異動斡旋</strong>（事業者に義務付け）<br>②SCPコーディネーターへの<strong>転換支援</strong>（研修費・転換補助金の保証）<br>③①②いずれも選択しない場合は<strong>整理解雇4要件の厳格適用</strong></td>
-          <td>障害者総合支援法附則</td>
-          <td>「A型職員は守るがB型職員は切り捨てる」という批判を封じる。「優先再雇用義務」まで課さなくても「雇用の断絶なき移行選択肢の法的保証」で同様の効果が得られる。</td>
-        </tr>
-      </tbody>
-    </table></div>
-
-    <h2>6. 安楽死・旧優生保護法への言及について</h2>
 
     <div class="callout">
       <strong>この部分は提言の「核」であり、交渉で削除することはできない。</strong><br><br>
