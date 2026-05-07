@@ -41,6 +41,13 @@ const NAV_GROUPS = [
     items: [
       { href: 'faq.html', label: 'よくある質問と回答' },
     ]
+  },
+  {
+    id: 'record',
+    section: '記録',
+    items: [
+      { href: 'origin.html', label: '本提言の記録', sub: '概念の初出・公開履歴' },
+    ]
   }
 ];
 
