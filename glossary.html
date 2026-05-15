@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用語集 ─ 次世代型障害者雇用提言書</title>
+<link rel="stylesheet" href="style.css">
+<script src="nav.js" defer></script>
+<style>
+/* ── 用語カード ── */
+.gl-section-intro {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  background: rgba(212,175,55,0.05);
+  border-left: 3px solid var(--gold-border);
+}
+
+.gl-card {
+  border: 1px solid var(--gold-border);
+  border-left: 4px solid var(--sidebar-bg);
+  background: #fff;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.gl-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid var(--gold-border);
+  background: #fafaf8;
+}
+.gl-term {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.35;
+}
+.gl-ruby {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.gl-tag {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  padding: 2px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.gl-card-body {
+  padding: 14px 18px;
+}
+.gl-def {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.95;
+  margin-bottom: 0;
+}
+.gl-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  background: rgba(44,44,42,0.04);
+  border-left: 3px solid #ccc;
+  padding: 8px 12px;
+  line-height: 1.75;
+}
+.gl-note strong {
+  color: var(--text-dark);
+}
+.gl-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-border);
+}
+.gl-link:hover { color: #b8900a; }
+
+/* ── 対比カード（準公務 vs 準企業）── */
+.gl-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--gold-border);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.gl-compare-col {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.85;
+}
+.gl-compare-col:first-child {
+  border-right: 1px solid var(--gold-border);
+  background: #fff;
+}
+.gl-compare-col:last-child {
+  background: #fafaf8;
+}
+.gl-compare-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--gold-border);
+  border-bottom: none;
+  overflow: hidden;
+}
+.gl-compare-label {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--sidebar-bg);
+  letter-spacing: 0.04em;
+}
+.gl-compare-label:first-child {
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.gl-compare-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--gold-border);
+  font-size: 13px;
+}
+.gl-compare-row:last-child { border-bottom: none; }
+.gl-compare-axis {
+  padding: 9px 12px;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(44,44,42,0.04);
+  border-right: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+}
+.gl-compare-val {
+  padding: 9px 12px;
+  line-height: 1.6;
+  color: var(--text-mid);
+}
+.gl-compare-val:first-of-type {
+  border-right: 1px solid var(--gold-border);
+  background: #fff;
+}
+.gl-compare-val:last-of-type {
+  background: #fafaf8;
+}
+.gl-compare-val em {
+  font-style: normal;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ── レーン表 ── */
+.gl-lane-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 12px 0 4px;
+}
+.gl-lane-box {
+  border: 1px solid var(--gold-border);
+  overflow: hidden;
+  font-size: 13px;
+}
+.gl-lane-head {
+  background: var(--sidebar-bg);
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.gl-lane-head span {
+  color: var(--gold);
+  margin-right: 6px;
+}
+.gl-lane-body {
+  padding: 10px 12px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  background: #fff;
+}
+
+/* ── 検索バー ── */
+.gl-search-wrap {
+  margin-bottom: 28px;
+}
+.gl-search {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: var(--font);
+  border: 1px solid var(--gold-border);
+  border-left: 4px solid var(--gold);
+  background: #fff;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.gl-search:focus { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold-dim); }
+.gl-search::placeholder { color: var(--text-muted); }
+
+/* ── セクション区切り ── */
+.gl-section-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #fff;
+  background: var(--sidebar-bg);
+  padding: 3px 10px;
+  margin-bottom: -1px;
+}
+
+@media (max-width: 680px) {
+  .gl-compare-row { grid-template-columns: 90px 1fr 1fr; }
+  .gl-lane-grid { grid-template-columns: 1fr; }
+  .gl-compare-head, .gl-compare { }
+}
+</style>
+</head>
+<body>
+<div class="main">
+  <div class="topbar">提言書 &rsaquo; <span class="current">用語集</span></div>
+  <div class="content">
+    <div class="chapter-label">GLOSSARY</div>
+    <h1 class="chapter-title">用語集</h1>
+    <p class="chapter-subtitle">本提言に登場するオリジナル用語・専門用語・国際比較の技術用語をわかりやすく解説します</p>
+    <div class="gold-rule"></div>
+
+    <div class="callout-light">
+      この用語集は3つのグループに分かれています。<strong>【制度用語】</strong>は本提言が独自に設計した概念、<strong>【国際比較用語】</strong>はデータ読解に必要な統計・経済の用語、<strong>【既存制度用語】</strong>は現行の制度について整理した解説です。読み進める中で「この言葉は？」と思ったときに、ここへ戻って確認してください。
+    </div>
+
+    <!-- 検索 -->
+    <div class="gl-search-wrap">
+      <input class="gl-search" type="text" id="glSearch" placeholder="用語を検索する（例：SCP、PPP、準公務）" oninput="filterGlossary()" autocomplete="off">
+    </div>
+
+    <!-- ══════════════════════════════
+         第1層：制度設計の固有用語
+         ══════════════════════════════ -->
+    <div class="gl-section-badge">制度用語</div>
+    <h2 id="gl-system">本提言の制度設計用語</h2>
+    <p class="gl-section-intro">本提言が独自に設計・命名した概念です。既存の政策文書や学術論文には存在しない用語です。</p>
+
+    <!-- SCP -->
+    <div class="gl-card" data-terms="SCP Social Contribution Point ポイント 社会参画">
+      <div class="gl-card-head">
+        <span class="gl-term">SCP（エスシーピー）</span>
+        <span class="gl-ruby">Social Contribution Point</span>
+        <span class="gl-tag">制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          本提言が提案する、企業の障害者雇用義務を測る新しい単位です。現在の制度は「何人雇ったか」だけを数えますが、SCPは<strong>「何時間、どんな仕事をしたか」</strong>で評価します。<br><br>
+          1ポイント＝1時間の就労に相当します。従業員1人分の雇用義務は120ポイント（週30時間×4週）。企業はA・B・C の3つのレーン（→後述）を組み合わせてこのポイントを満たします。<br><br>
+          「頭数を揃えればよい」という現行制度の抜け穴を塞ぎ、障害者が実際に社会へ貢献した量と質で評価する仕組みです。
+        </p>
+        <div class="gl-note"><strong>現行制度との違い：</strong>今は「週20時間以上働く障害者1人＝1人カウント」という単純な人数評価です。SCPは1時間単位でカウントするため、短時間・複数社掛け持ちでも正確に評価されます。</div>
+        <a class="gl-link" href="scp.html">→ SCP制度の詳細図解</a>
+      </div>
+    </div>
+
+    <!-- 準公務職員 vs 準企業職員（対比カード） -->
+    <div class="gl-card" data-terms="準公務職員 準企業職員 違い 比較 レーン 雇用主">
+      <div class="gl-card-head">
+        <span class="gl-term">準公務職員 と 準企業職員</span>
+        <span class="gl-tag">制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def" style="margin-bottom:14px">
+          本提言が設計する2種類の就労形態です。名前が似ているため混乱しやすいですが、<strong>雇用主・仕事の種類・選択権の所在がすべて異なります。</strong>
+        </p>
+
+        <div class="gl-compare-head">
+          <div class="gl-compare-label">準公務職員（じゅんこうむしょくいん）</div>
+          <div class="gl-compare-label">準企業職員（じゅんきぎょうしょくいん）</div>
+        </div>
+        <div style="border:1px solid var(--gold-border);border-top:none;">
+          <div class="gl-compare-row">
+            <div class="gl-compare-axis">雇用主</div>
+            <div class="gl-compare-val"><em>国・自治体</em>（推進局）</div>
+            <div class="gl-compare-val"><em>民間企業</em></div>
+          </div>
+          <div class="gl-compare-row">
+            <div class="gl-compare-axis">仕事の内容</div>
+            <div class="gl-compare-val">放置されている公共の仕事<br>（公園巡回・高齢者安否確認・データ入力など）</div>
+            <div class="gl-compare-val">企業の本業に実在する仕事<br>（SNS管理・Web制作・社内報など）</div>
+          </div>
+          <div class="gl-compare-row">
+            <div class="gl-compare-axis">仕事の選び方</div>
+            <div class="gl-compare-val"><em>当事者が</em>やりたい仕事を都度選ぶ</div>
+            <div class="gl-compare-val"><em>企業側が</em>特性に合わせて割り当てる</div>
+          </div>
+          <div class="gl-compare-row">
+            <div class="gl-compare-axis">賃金の原資</div>
+            <div class="gl-compare-val">企業の拠出金 → 年金財源経由</div>
+            <div class="gl-compare-val">企業が直接支払う（SCPポイントに算入）</div>
+          </div>
+          <div class="gl-compare-row">
+            <div class="gl-compare-axis">制度上の段階</div>
+            <div class="gl-compare-val">改革の第2段階</div>
+            <div class="gl-compare-val">改革の第3段階（SCP制度）</div>
+          </div>
+          <div class="gl-compare-row">
+            <div class="gl-compare-axis">向いている人</div>
+            <div class="gl-compare-val">自分でペースを決めて働きたい人</div>
+            <div class="gl-compare-val">企業の中で役割を担いたい人</div>
+          </div>
+        </div>
+
+        <div class="gl-note" style="margin-top:12px">
+          <strong>なぜ2種類に分けるのか：</strong>障害の種類・程度・働き方の希望は人によって大きく異なります。「全員を同じ仕組みに押し込む」のではなく、どちらのルートにも本物の仕事があり、本物の賃金が発生する設計が必要だからです。
+        </div>
+        <a class="gl-link" href="ch2.html">→ Ch.2 準公務・準企業職員制度の詳細</a>
+      </div>
+    </div>
+
+    <!-- Aレーン〜Cレーン -->
+    <div class="gl-card" data-terms="レーン Aレーン Bレーン Cレーン 直接雇用 職場浸透 拠出代替 企業">
+      <div class="gl-card-head">
+        <span class="gl-term">Aレーン・Bレーン・Cレーン</span>
+        <span class="gl-tag">制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def" style="margin-bottom:12px">
+          企業がSCPポイントを達成するための3つの方法です。企業はこれらを<strong>組み合わせて</strong>義務を果たします。ただしCレーンだけで全部まかなうことはできません（上限50%）。
+        </p>
+        <div class="gl-lane-grid">
+          <div class="gl-lane-box">
+            <div class="gl-lane-head"><span>A</span>直接雇用レーン</div>
+            <div class="gl-lane-body">障害者を実際に雇って仕事を担ってもらう。上限なし。最もポイント効率が高い。</div>
+          </div>
+          <div class="gl-lane-box">
+            <div class="gl-lane-head"><span>B</span>職場浸透レーン</div>
+            <div class="gl-lane-body">インターン受け入れ・研修・共同プロジェクトなど、段階的に接点を作る。上限30%。</div>
+          </div>
+          <div class="gl-lane-box">
+            <div class="gl-lane-head"><span>C</span>拠出代替レーン</div>
+            <div class="gl-lane-body">不足ポイント×1,500円を拠出金として納付する。上限50%。この拠出金が年金財源になる。</div>
+          </div>
+        </div>
+        <div class="gl-note"><strong>設計の意図：</strong>「全員に直接雇用を強制する」と現行と同じ歪みが再現します。「拠出金だけでいい」にすると「払えば済む」になります。3レーンの組み合わせ義務が、この2つの失敗を同時に防ぎます。</div>
+        <a class="gl-link" href="scp.html#scp-lanes">→ 3レーンの詳細</a>
+      </div>
+    </div>
+
+    <!-- 就労実績ポイント -->
+    <div class="gl-card" data-terms="就労実績ポイント スコア キャリア 評価 エントリー">
+      <div class="gl-card-head">
+        <span class="gl-term">就労実績ポイント</span>
+        <span class="gl-tag">制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          当事者（障害者）の働いた実績を数値化する仕組みです。100点満点のスコアで、過去の勤怠・タスク完遂率・無断欠勤の有無などをローリング平均（直近の実績を重視して平均を出す方式）で算出します。<br><br>
+          スコアが高いほど<strong>より難しい仕事・より高単価の仕事</strong>へのエントリー権が広がります。逆に無断欠勤や虚偽報告があるとスコアが下がり、一定水準を下回るとエントリーに制限がかかります。<br><br>
+          「障害者だから特別扱い」ではなく、「実績に基づいて評価する」という対等な設計が核心です。
+        </p>
+        <div class="gl-note"><strong>現行制度との違い：</strong>今の就労継続支援では、評価は管理者の主観に依存しています。就労実績ポイントは当事者自身の行動が数値として蓄積され、それがキャリアアップに直結します。</div>
+      </div>
+    </div>
+
+    <!-- 雇用代替拠出金 -->
+    <div class="gl-card" data-terms="雇用代替拠出金 拠出金 納付金 1500円 ポイント">
+      <div class="gl-card-head">
+        <span class="gl-term">雇用代替拠出金</span>
+        <span class="gl-tag">制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          現行の「障害者雇用納付金（月5万円/人）」を廃止して設ける新しい拠出金です。<strong>SCPポイント不足1ポイントにつき1,500円</strong>を企業が納付します。<br><br>
+          1人分（120ポイント）に換算すると月18万円。現行の納付金（月5万円）の約3.6倍です。この金額差が「雇うより払う方が損」という逆転を生み出し、企業が実際に雇用に動くインセンティブになります。<br><br>
+          集めた拠出金は障害年金の財源へ直接充当されます（→自律循環モデル）。
+        </p>
+        <div class="gl-note"><strong>なぜ現行は機能しないか：</strong>月5万円は「払えば済む」水準で、実際に雇用するコストより安い場合が多いため、企業が納付金で済ませてしまう抜け穴になっています。</div>
+        <a class="gl-link" href="finance.html">→ 財源シミュレーション</a>
+      </div>
+    </div>
+
+    <!-- 推進局 -->
+    <div class="gl-card" data-terms="推進局 公共業務分担推進局 コーディネーター 自治体 拠点">
+      <div class="gl-card-head">
+        <span class="gl-term">推進局</span>
+        <span class="gl-ruby">公共業務分担推進局（仮称）</span>
+        <span class="gl-tag">制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          本提言が各自治体に設置することを求める新しい行政機関です。首長直轄で設置し、準公務職員制度の運営・タスクの発注・当事者とのマッチング・就労実績ポイントの管理を担います。<br><br>
+          全国約967拠点を想定しています。現行のA型事業所・就労移行支援の施設を審査・選別のうえで推進局の拠点として転用します。そこで働いていた職員はSCPコーディネーターとして推進局に優先的に再雇用されます。
+        </p>
+        <div class="gl-note"><strong>SCPコーディネーター：</strong>推進局に所属し、当事者へのタスク配分・実績評価・支援を担う職員のことです。現行の就労支援員にあたる役割ですが、評価基準が客観的な数値に基づく点が異なります。</div>
+        <a class="gl-link" href="roadmap_gov.html">→ 準公務職員 移行ロードマップ</a>
+      </div>
+    </div>
+
+    <!-- 土台先行主義 -->
+    <div class="gl-card" data-terms="土台先行主義 年金先行 雇用後続 設計順序">
+      <div class="gl-card-head">
+        <span class="gl-term">土台先行主義</span>
+        <span class="gl-tag">概念用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          本提言が提唱する制度設計の順序です。現行制度は「企業に雇用させることで生活を成り立たせようとする」設計になっています。これに対して本提言は<strong>「まず年金で生活の土台を確立してから、雇用は社会参加の手段として位置づける」</strong>という順序の転換を求めます。<br><br>
+          たとえるなら：今は「橋もないのに向こう岸に渡れ」と言っているようなものです。土台先行主義は「まず橋を架けてから、渡るかどうかは自分で選べ」という発想です。<br><br>
+          欧州主要国はこの順序で設計されています（年金が生活を支え、就労はゆとりを得る手段）。日本ではこの言語化がこれまで行われていなかった、と本提言は指摘します。
+        </p>
+        <a class="gl-link" href="origin.html">→ 本提言が初めて定義した概念の一覧</a>
+      </div>
+    </div>
+
+    <!-- 不作為のコスト -->
+    <div class="gl-card" data-terms="不作為のコスト 現状維持 損失 試算 2.6兆円 3.2兆円">
+      <div class="gl-card-head">
+        <span class="gl-term">不作為のコスト</span>
+        <span class="gl-tag">概念用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          「制度を改革しないことにかかるコスト」のことです。本提言は年間2.6〜3.2兆円と試算しています。<br><br>
+          政策コストの議論では普通、「この改革にいくらかかるか」だけが問題にされます。しかし本提言は「改革しない場合に社会が失い続けるコスト」を対置することで、議論の土俵を変えます。<br><br>
+          内訳は主に：家族の介護離職による所得損失・企業の余分な管理コスト・当事者の不完全就労による税収損失・障害年金の非効率な配分などです。
+        </p>
+        <div class="gl-note"><strong>「不作為」とは：</strong>法律用語で「何もしないこと」を指します。ここでは「制度を変えずに現状を放置すること」の意味で使っています。放置することにも、実は毎年巨大なコストがかかっているという主張です。</div>
+        <a class="gl-link" href="cost.html">→ 不作為のコスト 試算の詳細</a>
+      </div>
+    </div>
+
+    <!-- 言語の転換 -->
+    <div class="gl-card" data-terms="言語の転換 人道 経済合理性 権利 戦略">
+      <div class="gl-card-head">
+        <span class="gl-term">言語の転換</span>
+        <span class="gl-tag">概念用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          本提言が意図的に採用した「問題の伝え方の戦略」です。従来の障害者政策の議論は「権利・人道・配慮」という言葉で訴えてきました。しかし本提言はあえてそれをやめ、<strong>「経済合理性」と「設計ミスの修正」</strong>という言葉で問題を論じます。<br><br>
+          理由は明確です。「障害者には生きる権利がある」という主張は倫理的に正しくても、すでに同意している人の共感を深めるだけで、予算の優先順位を動かす力にはなりません。政策が動くのは「この改革で社会全体が得をする」という経済合理性の論理によってです。60年間動かなかった壁を崩すために、言葉そのものを変える必要がある——それが「言語の転換」の意味です。
+        </p>
+        <a class="gl-link" href="ch0.html">→ 序章：既存運動の限界と本提言の立場</a>
+      </div>
+    </div>
+
+    <!-- 3重疲弊 -->
+    <div class="gl-card" data-terms="3重疲弊 三重疲弊 当事者 家族 企業 現場社員">
+      <div class="gl-card-head">
+        <span class="gl-term">3重疲弊</span>
+        <span class="gl-tag">概念用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          現行の障害者雇用制度が生み出している3つの同時的な疲弊です。<br><br>
+          ①<strong>当事者の疲弊：</strong>意味を感じられない仕事に就かされ、自尊心が回復しない。<br>
+          ②<strong>家族の疲弊：</strong>障害年金だけでは生活できないため、家族が経済的・精神的・地理的に縛られる。<br>
+          ③<strong>企業・現場社員の疲弊：</strong>本業と無関係の業務を無理やり作り、その管理コストが基幹社員に上乗せされる。<br><br>
+          本提言はこの3つを「制度の設計ミスが生んでいる」と捉え、設計の修正によって同時に解消できると主張します。
+        </p>
+        <a class="gl-link" href="index.html">→ エグゼクティブサマリー（3重疲弊の詳細）</a>
+      </div>
+    </div>
+
+    <!-- 自律循環モデル -->
+    <div class="gl-card" data-terms="自律循環 財源 拠出金 年金 税収">
+      <div class="gl-card-head">
+        <span class="gl-term">自律循環モデル</span>
+        <span class="gl-tag">制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          本提言の財源設計の核心的な考え方です。「企業の拠出金 → 年金財源 → 当事者の生活基盤確立 → タスク型就労が可能に → 公共サービスの質向上 → 税収増 → 財源の自律化」という循環を設計しています。<br><br>
+          増税に頼らず、制度の仕組みそのものが財源を生み出す構造です。
+        </p>
+        <a class="gl-link" href="finance.html">→ 財源シミュレーション（10カ年）</a>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════
+         第2層：国際比較の技術用語
+         ══════════════════════════════ -->
+    <div class="gl-section-badge">国際比較用語</div>
+    <h2 id="gl-intl">国際比較データを読むための用語</h2>
+    <p class="gl-section-intro">「国際比較データ集」のページに登場する統計・経済の用語です。これらを知ることで、数字の意味が正確に理解できます。</p>
+
+    <!-- PPP -->
+    <div class="gl-card" data-terms="PPP 購買力平価 物価補正 換算 国際比較">
+      <div class="gl-card-head">
+        <span class="gl-term">PPP（購買力平価）</span>
+        <span class="gl-ruby">Purchasing Power Parity</span>
+        <span class="gl-tag">国際比較用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          異なる国の金額を「実際の生活水準」で比べるための補正方法です。<br><br>
+          たとえば、ノルウェーで月20万円の障害年金をもらっていても、ノルウェーの物価は日本の約1.6倍です。日本円に換算しただけでは「20万円もらえるのか」と思いますが、物価を補正すると「日本の物価水準に直すと約12〜13万円相当」になります。<br><br>
+          逆に言えば、<strong>名目の金額が同じでも、物価の高い国の給付は実際にはそれほど豊かではない</strong>ということです。PPP換算をしないと、国際比較は正確にできません。
+        </p>
+        <div class="gl-note"><strong>本提言での使い方：</strong>PPP換算①は「年金本体だけ」を物価補正した参考値。PPP換算②（緑の列）は「全給付の合算＋税の補正＋物価補正」を行った、より正確な実質値です。グラフのバーはPPP換算②を使っています。</div>
+        <a class="gl-link" href="intl.html">→ 国際比較データ集</a>
+      </div>
+    </div>
+
+    <!-- Eurostat -->
+    <div class="gl-card" data-terms="Eurostat ユーロスタット EU 物価指数 統計">
+      <div class="gl-card-head">
+        <span class="gl-term">Eurostat（ユーロスタット）</span>
+        <span class="gl-tag">国際比較用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          EU（欧州連合）の公式統計機関です。加盟国の物価・経済・社会統計を収集・公表しています。<br><br>
+          本提言では、各国の物価水準を比較するための「家計消費物価指数（2024年版）」をEurostatから引用しています。EU27カ国平均を100として、各国の物価水準を数値化したものです（例：デンマーク143、ノルウェー127、日本換算約78）。<br><br>
+          イギリスはEU圏外のためEurostatのデータが提供されておらず、OECDの推計値（≈117）を代わりに使用しています。
+        </p>
+      </div>
+    </div>
+
+    <!-- 課税区分（★/☆） -->
+    <div class="gl-card" data-terms="課税 非課税 手取り 所得税 税率 星マーク">
+      <div class="gl-card-head">
+        <span class="gl-term">課税区分（★非課税 / ☆課税対象）</span>
+        <span class="gl-tag">国際比較用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          国際比較表に登場する星マークの意味です。<br><br>
+          <strong>★（非課税）：</strong>受け取った障害年金・手当から税金が引かれない。表示額がそのまま手取りになります。日本・フランスが該当します。<br><br>
+          <strong>☆（課税対象）：</strong>受け取った金額から所得税等が差し引かれます。スウェーデン（約30%）・デンマーク（約38%）・ノルウェー（実効18〜22%）・ドイツが該当します。<br><br>
+          名目額だけを見てスウェーデンやデンマークが「高い」と思っても、税引き後の手取りで比べると印象が変わります。本提言の比較表はこの税の差を補正した後の金額を使っています。
+        </p>
+        <div class="gl-note"><strong>実効税率とは：</strong>名目の税率（たとえば30%）ではなく、各種控除を差し引いた後に実際にかかる税率のことです。ノルウェーは名目税率が高くても、控除制度により実効税率は18〜22%程度になります。</div>
+      </div>
+    </div>
+
+    <!-- 現金給付 vs 現物給付 -->
+    <div class="gl-card" data-terms="現金給付 現物給付 医療費 住宅 介護 北欧">
+      <div class="gl-card-head">
+        <span class="gl-term">現金給付 と 現物給付</span>
+        <span class="gl-tag">国際比較用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          社会保障のもらい方の2種類です。<br><br>
+          <strong>現金給付：</strong>お金として受け取る。障害年金・手当がこれにあたります。使い道は自由ですが、医療費・家賃なども自分で払う必要があります。<br><br>
+          <strong>現物給付：</strong>お金ではなく「サービスそのもの」を受け取る。医療費がほぼ無償・公共住宅の整備・介護サービスの現物提供などです。北欧諸国はこれが充実しています。<br><br>
+          国際比較で「日本とスウェーデンのPPP換算額が近い」と見えても、スウェーデンでは現物給付が充実しているため<strong>現金をほぼそのまま食費・余暇に使える</strong>のに対し、日本では現金から医療費・家賃を自己負担した残りが生活費です。この差が、表に現れない「本当の格差」です。
+        </p>
+        <a class="gl-link" href="intl.html">→ 国際比較データ集：可処分所得の推計</a>
+      </div>
+    </div>
+
+    <!-- 前職収入代替率 -->
+    <div class="gl-card" data-terms="前職収入代替率 所得代替率 障害を負った 収入 ノルウェー スウェーデン">
+      <div class="gl-card-head">
+        <span class="gl-term">前職収入代替率</span>
+        <span class="gl-tag">国際比較用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          「働いていたときの収入に対して、障害を負った後に受け取れる給付が何%になるか」を示す指標です。<br><br>
+          たとえばノルウェーは約66%、スウェーデンは約64.7%です。月収30万円だった人が障害を負っても、約20万円程度の給付が保障されます。<br><br>
+          日本の障害基礎年金は就労歴に関係なく一律の金額（2級で月約8.8万円・2026年度）のため、前職収入が高かった人ほど大幅に収入が落ちます。就労歴のある人をカバーする「障害厚生年金」があっても、基礎年金の低さが底を引き下げています。
+        </p>
+        <div class="gl-note"><strong>「就労歴連動型給付」とは：</strong>障害を負う前の収入・就労期間に応じて給付額が変わる仕組みです。北欧・ドイツ・オランダなどが採用しています。ゼロから働いてきた人ほど手厚く保護されるため、就労へのインセンティブも保たれます。</div>
+      </div>
+    </div>
+
+    <!-- 可処分所得 -->
+    <div class="gl-card" data-terms="可処分所得 手取り 家賃 医療費 実際に使えるお金">
+      <div class="gl-card-head">
+        <span class="gl-term">可処分所得（かしょぶんしょとく）</span>
+        <span class="gl-tag">国際比較用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          受け取った給付・収入から、税金・社会保険料・必須の生活費（家賃・医療費など）を引いた後に<strong>実際に自由に使えるお金</strong>のことです。<br><br>
+          本提言が特に強調するのは、現金給付の額が国際比較で近く見えても「可処分所得」は大きく違うという点です。北欧では医療・介護・住宅が現物で提供されるため現金がほぼ全額自由に使えます。日本では現金給付から医療費・家賃・介護費を自己負担した後の残りが実際の生活費です。
+        </p>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════
+         第3層：既存制度の用語
+         ══════════════════════════════ -->
+    <div class="gl-section-badge">既存制度用語</div>
+    <h2 id="gl-current">現行制度の用語</h2>
+    <p class="gl-section-intro">現在の法制度に存在する用語です。本提言がどう問題視し、どう変えようとしているかも合わせて解説します。</p>
+
+    <!-- 法定雇用率 -->
+    <div class="gl-card" data-terms="法定雇用率 2.5% 2.7% 義務 企業 人数">
+      <div class="gl-card-head">
+        <span class="gl-term">法定雇用率（ほうていこようりつ）</span>
+        <span class="gl-tag">既存制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          一定規模以上の企業（2026年時点：従業員40人以上）が、全従業員のうち障害者を一定割合以上雇わなければならない義務の比率です。現在は2.5%（2026年度）、2027年度からは2.7%に引き上げられる予定です。<br><br>
+          達成できない企業は「障害者雇用納付金（月5万円/人）」を納付します。<br><br>
+          本提言はこの「頭数カウント」方式を廃止し、SCPポイントによる「実質貢献量の評価」に切り替えることを求めています。
+        </p>
+        <div class="gl-note"><strong>本提言が問題視する点：</strong>「何人雇ったか」しか評価されないため、企業が「意味のない仕事」を作ってでも人数を揃えようとする歪みが生まれています。</div>
+      </div>
+    </div>
+
+    <!-- 障害基礎年金・障害厚生年金 -->
+    <div class="gl-card" data-terms="障害基礎年金 障害厚生年金 1級 2級 3級 等級">
+      <div class="gl-card-head">
+        <span class="gl-term">障害基礎年金 と 障害厚生年金</span>
+        <span class="gl-tag">既存制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          障害を持つ人が受け取れる公的年金の2種類です。<br><br>
+          <strong>障害基礎年金：</strong>国民年金に加入していた人が対象。就労歴・収入に関わらず一律金額。1級（約9.5万円/月・2026年度）と2級（約7.7万円/月）の2段階。<br><br>
+          <strong>障害厚生年金：</strong>会社員など厚生年金に加入していた人が対象。基礎年金に上乗せされ、在職中の収入に応じて金額が変わる。1〜3級の3段階。<br><br>
+          本提言は、障害基礎年金を1級15万円・2級12万円・新設3級9万円に引き上げることを求めています（現行1級の約1.6倍）。
+        </p>
+        <div class="gl-note"><strong>「3級」の新設について：</strong>現在の障害基礎年金には3級がありません（厚生年金にはあります）。本提言は軽度の障害や精神障害・発達障害を持つ人が抜け落ちている問題を解消するため、基礎年金に3級を新設することを提案しています。</div>
+      </div>
+    </div>
+
+    <!-- A型・B型事業所 -->
+    <div class="gl-card" data-terms="A型事業所 B型事業所 就労継続支援 工賃 廃止 再編">
+      <div class="gl-card-head">
+        <span class="gl-term">A型事業所・B型事業所</span>
+        <span class="gl-ruby">就労継続支援A型・B型</span>
+        <span class="gl-tag">既存制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          障害者が一般企業での就労が難しい場合に利用できる、福祉サービスとしての就労の場です。<br><br>
+          <strong>A型：</strong>事業所と雇用契約を結び、最低賃金以上の時給が保障される。<br>
+          <strong>B型：</strong>雇用契約はなく、「工賃」として作業報酬を受け取る。平均工賃は月1〜2万円程度で非常に低い。<br><br>
+          本提言はA型事業所を推進局の分室として統合・再編することを求めています。B型は真に就労が困難な重度障害者のみを対象とする最小限の拠点に集約します。
+        </p>
+        <div class="gl-note"><strong>「工賃」とは：</strong>賃金（雇用契約に基づく報酬）ではなく、作業に対して払われる報酬です。労働基準法の保護対象外のため、最低賃金以下になるケースが多くあります。</div>
+        <a class="gl-link" href="ch1.html">→ Ch.1：既存就労支援制度の問題点</a>
+      </div>
+    </div>
+
+    <!-- 特例子会社 -->
+    <div class="gl-card" data-terms="特例子会社 障害者 雇用率 別会社 孤立 再編">
+      <div class="gl-card-head">
+        <span class="gl-term">特例子会社（とくれいこがいしゃ）</span>
+        <span class="gl-tag">既存制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          障害者の雇用促進を目的として、企業が別会社として設立できる子会社です。一定の要件を満たすと、特例子会社で働く障害者を親会社の法定雇用率に算入できます。<br><br>
+          本来の趣旨は「障害者が働きやすい環境を専門的に整える」ことですが、実態は障害者を本社から切り離した「福祉施設化」が進んでいると本提言は問題視しています。<br><br>
+          本提言のもとでは、実在する本業の仕事を継続して創出できる特例子会社は存続が合理的ですが、仕事を作り続けることが難しい場合は解散も選択肢になります。
+        </p>
+      </div>
+    </div>
+
+    <!-- 合理的配慮 -->
+    <div class="gl-card" data-terms="合理的配慮 障害者差別解消法 ADA 義務 バリアフリー">
+      <div class="gl-card-head">
+        <span class="gl-term">合理的配慮（ごうりてきはいりょ）</span>
+        <span class="gl-tag">既存制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          障害者が他の人と同じように社会活動に参加できるよう、過度な負担にならない範囲で行う「調整・変更」のことです。2024年4月から民間事業者にも義務化されました（障害者差別解消法改正）。<br><br>
+          具体例：車いす利用者のためにスロープを設ける、聴覚障害者のために文字で説明するなど。<br><br>
+          本提言はこの概念を重要視しつつ、「合理的配慮の義務化だけでは生活保障にならない」という点でアメリカ型（ADA：差別禁止法のみ）を採用しない理由を論じています。
+        </p>
+      </div>
+    </div>
+
+    <!-- 旧優生保護法 -->
+    <div class="gl-card" data-terms="旧優生保護法 強制不妊 歴史 差別 賠償">
+      <div class="gl-card-head">
+        <span class="gl-term">旧優生保護法（きゅうゆうせいほごほう）</span>
+        <span class="gl-tag">既存制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          1948年から1996年まで施行されていた法律です。「不良な子孫の出生を防止する」という目的のもと、障害者・精神疾患のある人に対して本人の同意なく不妊手術（強制不妊手術）を行うことを国が認めていました。被害者は約2万5千人と推定されています。<br><br>
+          2024年7月、最高裁判所は「違憲」と断じ、国の責任を認めました。同年11月、国は被害者への補償法を成立させています。<br><br>
+          本提言はこの歴史的事実を、「日本の障害者政策が長期にわたって当事者の人権を軽視してきた」という文脈の根拠として位置づけています。
+        </p>
+        <a class="gl-link" href="ch0.html">→ 序章：制度の歴史的経緯</a>
+      </div>
+    </div>
+
+    <!-- 安楽死 -->
+    <div class="gl-card" data-terms="安楽死 尊厳死 ALS 相模原 海外 オランダ ベルギー">
+      <div class="gl-card-head">
+        <span class="gl-term">安楽死（あんらくし）</span>
+        <span class="gl-tag">既存制度用語</span>
+      </div>
+      <div class="gl-card-body">
+        <p class="gl-def">
+          耐えがたい苦痛や回復不能な病・障害のある人が、自らの意思で死を選ぶことを医師が幇助する行為です。オランダ・ベルギー・カナダ・スイスなどで法的に認められている国があります。日本では違法です。<br><br>
+          本提言がこの問題に言及するのは、「生きていくだけの所得・就労の機会・社会的役割が保障されていない状態」が、障害を持つ人が死を選ぶことへの心理的障壁を下げる可能性があるからです。<br><br>
+          制度が人の生死に与える影響という観点から、本提言は障害者の尊厳ある生を保障する制度設計の必要性を論じています。「安楽死を認めるべきか」という議論ではなく、「安楽死を選ばなくて済む社会をどう設計するか」という問題提起として位置づけられています。
+        </p>
+        <a class="gl-link" href="ch0.html">→ 序章：本提言の問題意識の根底</a>
+      </div>
+    </div>
+
+    <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
+  </div><!-- /.content -->
+</div><!-- /.main -->
+
+<script>
+function filterGlossary() {
+  const q = document.getElementById('glSearch').value.trim().toLowerCase();
+  const cards = document.querySelectorAll('.gl-card');
+  const headers = document.querySelectorAll('.gl-section-badge, .content > h2[id^="gl-"], p.gl-section-intro');
+
+  cards.forEach(card => {
+    const terms = (card.dataset.terms || '').toLowerCase();
+    const text = card.textContent.toLowerCase();
+    card.style.display = (!q || terms.includes(q) || text.includes(q)) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

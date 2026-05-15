@@ -36,17 +36,12 @@ const NAV_GROUPS = [
     ]
   },
   {
-    id: 'faq',
-    section: 'FAQ',
+    id: 'reference',
+    section: '参考資料',
     items: [
-      { href: 'faq.html', label: 'よくある質問と回答' },
-    ]
-  },
-  {
-    id: 'record',
-    section: '記録',
-    items: [
-      { href: 'origin.html', label: '本提言の記録', sub: '概念の初出・公開履歴' },
+      { href: 'glossary.html', label: '用語集',           sub: '制度用語・PPP・現行制度' },
+      { href: 'faq.html',      label: 'FAQ',              sub: 'よくある質問と回答' },
+      { href: 'origin.html',   label: '本提言の記録',     sub: '概念の初出・公開履歴' },
     ]
   }
 ];
