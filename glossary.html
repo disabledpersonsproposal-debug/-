@@ -847,13 +847,81 @@
 function filterGlossary() {
   const q = document.getElementById('glSearch').value.trim().toLowerCase();
   const cards = document.querySelectorAll('.gl-card');
-  const headers = document.querySelectorAll('.gl-section-badge, .content > h2[id^="gl-"], p.gl-section-intro');
+
+  // セクションブロック：badge + h2 + intro をセットとして扱う
+  const sections = [
+    { badge: document.querySelector('.gl-section-badge[data-sec="system"]'),
+      h2:    document.getElementById('gl-system'),
+      intro: document.querySelector('[data-sec-intro="system"]') },
+    { badge: document.querySelector('.gl-section-badge[data-sec="intl"]'),
+      h2:    document.getElementById('gl-intl'),
+      intro: document.querySelector('[data-sec-intro="intl"]') },
+    { badge: document.querySelector('.gl-section-badge[data-sec="current"]'),
+      h2:    document.getElementById('gl-current'),
+      intro: document.querySelector('[data-sec-intro="current"]') },
+  ];
+
+  let total = 0;
 
   cards.forEach(card => {
     const terms = (card.dataset.terms || '').toLowerCase();
-    const text = card.textContent.toLowerCase();
-    card.style.display = (!q || terms.includes(q) || text.includes(q)) ? '' : 'none';
+    const text  = card.textContent.toLowerCase();
+    const show  = !q || terms.includes(q) || text.includes(q);
+    card.style.display = show ? '' : 'none';
+    if (show) total++;
   });
+
+  // セクション見出しの表示制御（そのセクション内に表示中のカードが1枚以上あれば表示）
+  // セクションは連続する gl-card の親ブロックで判断
+  const allBadges  = document.querySelectorAll('.gl-section-badge');
+  const allH2s     = document.querySelectorAll('h2[id^="gl-"]');
+  const allIntros  = document.querySelectorAll('p.gl-section-intro');
+
+  // 各セクションに属するカードを収集して判断
+  const sectionGroups = [];
+  let currentGroup = null;
+  // コンテンツ内の直系子ノードを順に処理してグループ化
+  const content = document.querySelector('.content');
+  let inGroup = false;
+  content.childNodes.forEach(node => {
+    if (node.nodeType !== 1) return;
+    if (node.classList && node.classList.contains('gl-section-badge')) {
+      currentGroup = { badge: node, h2: null, intro: null, cards: [] };
+      sectionGroups.push(currentGroup);
+      inGroup = true;
+    } else if (node.tagName === 'H2' && currentGroup) {
+      currentGroup.h2 = node;
+    } else if (node.classList && node.classList.contains('gl-section-intro') && currentGroup) {
+      currentGroup.intro = node;
+    } else if (node.classList && node.classList.contains('gl-card') && currentGroup) {
+      currentGroup.cards.push(node);
+    }
+  });
+
+  sectionGroups.forEach(group => {
+    const hasVisible = group.cards.some(c => c.style.display !== 'none');
+    const show = !q || hasVisible;
+    if (group.badge) group.badge.style.display = show ? '' : 'none';
+    if (group.h2)    group.h2.style.display    = show ? '' : 'none';
+    if (group.intro) group.intro.style.display = show ? '' : 'none';
+  });
+
+  // 件数・0件メッセージ
+  let msg = document.getElementById('gl-search-msg');
+  if (!msg) {
+    msg = document.createElement('p');
+    msg.id = 'gl-search-msg';
+    msg.style.cssText = 'font-size:13px;color:var(--text-muted);margin:0 0 16px;';
+    const wrap = document.querySelector('.gl-search-wrap');
+    wrap.insertAdjacentElement('afterend', msg);
+  }
+  if (!q) {
+    msg.textContent = '';
+  } else if (total === 0) {
+    msg.innerHTML = '「<strong>' + q + '</strong>」に一致する用語は見つかりませんでした。';
+  } else {
+    msg.innerHTML = '「<strong>' + q + '</strong>」の検索結果：' + total + '件';
+  }
 }
 </script>
 </body>
