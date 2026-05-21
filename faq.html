@@ -25,7 +25,70 @@
 .qa-a div{color:var(--text-mid)}
 .qa-a ul{padding-left:20px;margin:8px 0}
 .qa-a li{margin-bottom:6px;line-height:1.8}
+
+/* ── FAQアンカーナビ ── */
+.faq-toc {
+  background: rgba(212,175,55,0.05);
+  border: 1px solid var(--gold-border);
+  border-left: 4px solid var(--gold);
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+.faq-toc-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: block;
+}
+.faq-toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 4px 16px;
+}
+.faq-toc-item {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  line-height: 1.5;
+  transition: color .15s;
+}
+.faq-toc-item:hover { color: var(--gold); }
+.faq-toc-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  padding: 1px 5px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  line-height: 1.6;
+}
 </style>
+
+<nav class="faq-toc" aria-label="FAQ目次">
+  <span class="faq-toc-title">── FAQ セクション一覧 ──</span>
+  <div class="faq-toc-grid">
+    <a href="#faq-finance"    class="faq-toc-item"><span class="faq-toc-num">1</span>財源・経済性について</a>
+    <a href="#faq-operation"  class="faq-toc-item"><span class="faq-toc-num">2</span>準公務職員制度の運用</a>
+    <a href="#faq-corp"       class="faq-toc-item"><span class="faq-toc-num">3</span>企業側のメリットと義務</a>
+    <a href="#faq-fraud"      class="faq-toc-item"><span class="faq-toc-num">4</span>公平性と不正防止</a>
+    <a href="#faq-philosophy" class="faq-toc-item"><span class="faq-toc-num">5</span>提言の思想的背景</a>
+    <a href="#faq-next"       class="faq-toc-item"><span class="faq-toc-num">6</span>対象範囲と次の段階</a>
+    <a href="#faq-collab"     class="faq-toc-item"><span class="faq-toc-num">7</span>既存専門課との協働</a>
+    <a href="#faq-meaning"    class="faq-toc-item"><span class="faq-toc-num">8</span>制度の意義と国への問いかけ</a>
+    <a href="#faq-market"     class="faq-toc-item"><span class="faq-toc-num">9</span>制度の自浄作用と推進局</a>
+    <a href="#faq-skill"      class="faq-toc-item"><span class="faq-toc-num">10</span>採用・スキル要件と移行期</a>
+  </div>
+</nav>
+
 <h2 id="faq-finance">1. 財源・経済性について（準公務・準企業共通）</h2>
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>障害年金の増額（月15万円等）や準公務職員の給与など、膨大な財源をどう確保するのですか？結局、増税になるのではありませんか？</div>
@@ -86,7 +149,7 @@
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>知的障害や精神障害のある準職員だけで現場に行かせるのは不安ではありませんか？</div>
   <div class="qa-a"><span class="qa-label qa-label-a">A</span><div>必ず正職員（現場管理職員）が管理・随行します。公用車の運転や現場での予期せぬ事態への対応は、すべて正職員である現場管理職員が担当します。準公務職員は、職員の指導・管理のもとで作業を行うため、一人で判断を迫られる状況は発生しません。この「守られた環境での貢献」こそが、本制度が提供する新しい雇用の形です。</div></div>
-</div><h2>3. 企業側のメリットと義務について（準企業職員）</h2>
+</div><h2 id="faq-corp">3. 企業側のメリットと義務について（準企業職員）</h2>
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>法定雇用率の「人数基準」を廃止して「社会参画総量（SCPポイント）基準」にすると、企業が障害者を安易に切り捨てることになりませんか？</div>
   <div class="qa-a"><span class="qa-label qa-label-a">A</span><div>むしろ逆で、持続可能な雇用の形を作ることが目的です。
@@ -126,7 +189,7 @@
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>企業が形式的な登録だけ行い、実際には障害者にタスクを発注しない「拠出金逃れ」はできますか？</div>
   <div class="qa-a"><span class="qa-label qa-label-a">A</span><div>タスク発注実績（タスク種別・時間数・当事者氏名・完遂数）を四半期ごとに推進局へ報告する義務があります。発注実績が登録者数に比べて著しく少ない企業には自動アラートが発生し調査が開始されます。悪質な不正が確認された場合は、過去2年分の拠出金差額の割増徴収（1.5倍）、社名・業種の公表、3年間の制度参加禁止が科されます。SCPポイントの水増し申告も三重記録方式（当事者・コーディネーター・企業の三者一致）により検知されます。</div></div>
-</div><h2>5. 提言の思想的背景について</h2>
+</div><h2 id="faq-philosophy">5. 提言の思想的背景について</h2>
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>第3章にある「安楽死」や「命の選別」といった表現は過激すぎませんか？</div>
   <div class="qa-a"><span class="qa-label qa-label-a">A</span><div>これは現状の「不作為」がもたらす残酷な未来を直視するための、敢えて痛烈な言葉を用いた政治に対する問いかけです。決して安楽死や命の選別を支持・推奨する意図ではありません。
@@ -152,7 +215,7 @@
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>安定化基金の使途や推進局の機能拡張は、提言側が独占的に決めるのですか？</div>
   <div class="qa-a"><span class="qa-label qa-label-a">A</span><div>本提言側が独占的に決めることは想定していません。上記の三者協議体において、当事者・家族・支援団体・財政当局が対等に議論する場を設けます。本提言はその協議の場を「提言側が支配する場」ではなく「公共の議論の場」として設計することを、ここに明示しておきます。先に動いた者が扉の先に何を建てるかを先に決める権限を持つわけではありません。</div></div>
-</div><h2>7. 準公務職員と既存専門課の協働・境界線・管理体制について</h2>
+</div><h2 id="faq-collab">7. 準公務職員と既存専門課の協働・境界線・管理体制について</h2>
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>準公務職員は既存の専門課（ゴミ収集課・公園管理課・後期高齢者担当課など）の仕事を奪うのですか？</div>
   <div class="qa-a"><span class="qa-label qa-label-a">A</span><div>奪いません。本制度の設計原則は「代替」ではなく「協働」です。準公務職員が担うのは「発見・記録・定型対応・報告」に該当するタスクに限られます。「判断・処理・対応・承認」は引き続きプロの専門課が担います。たとえば公園巡回であれば、準公務職員は「異常の発見と報告」を担い、発見後の修繕判断・業者手配・最終的な安全確認は公園管理課のプロが行います。ゴミ出し支援であれば、準公務職員は玄関先からゴミ置き場へ搬出するところまでを担い、収集車への積み込み・処理場搬入はゴミ収集課の仕事です。準公務職員の導入によって専門課の業務が減るのではなく、これまで人手不足で手が届かなかった「発見・記録」の層が補完されることで、専門課は本来の判断・処理業務に集中しやすくなります。</div></div>
@@ -210,7 +273,7 @@
     停滞が長期化したとしても、<strong>障害年金の引き上げだけは、どの時代においても最後まで諦めてはならない一点です。</strong>本提言は「10年で完成しなければ意味がない賭け」ではなく、「何年かかろうと、土台だけは必ず置く」という長期的な社会契約の提案です。
   </div></div>
 </div>
-<h2 id="faq-market">10. 制度の自浄作用と推進局の関与範囲について</h2>
+<h2 id="faq-market">9. 制度の自浄作用と推進局の関与範囲について</h2>
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>業務提供が少ない企業に雇われた当事者はどうなりますか？推進局が介入して救済しますか？</div>
   <div class="qa-a"><span class="qa-label qa-label-a">A</span><div>推進局は当事者の雇用先選択・移行判断に介入しません。これは制度の設計原則です。<br><br>
@@ -232,7 +295,7 @@
   </div></div>
 </div>
 
-<h2 id="faq-skill">11. 採用・スキル要件と移行期の合意形成について</h2>
+<h2 id="faq-skill">10. 採用・スキル要件と移行期の合意形成について</h2>
 <div class="qa-block">
   <div class="qa-q"><span class="qa-label">Q</span>企業が「この業務に必要なスキルを持つ人だけ残す」と判断するのは、障害者への差別ではないですか？</div>
   <div class="qa-a"><span class="qa-label qa-label-a">A</span><div>
