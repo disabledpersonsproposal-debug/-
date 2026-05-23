@@ -38,6 +38,91 @@
 
 <h2 id="phase1">フェーズ1　制度設計・推進局準備</h2>
 
+<h3 id="bureau-structure">1-1　推進局の組織構造</h3>
+
+<p>推進局は<strong>本部と現場拠点の2層構造</strong>で運営する。本部は推進局長のもとに<strong>2課体制</strong>を置き制度全体を管理する。現場各拠点は拠点所長が統括し、準公務コーディネーターが準公務職員と日々向き合う。</p>
+
+<style>
+.bureau-wrap{margin:20px 0;font-size:14px}
+.bureau-top{background:var(--sidebar-bg);color:#fff;padding:10px 20px;text-align:center;font-weight:700;font-size:14px;border-bottom:3px solid var(--gold)}
+.bureau-mid{display:flex;gap:0;border:1px solid var(--gold-border);border-top:none}
+.bureau-col{flex:1;padding:16px;border-right:1px solid var(--gold-border)}
+.bureau-col:last-child{border-right:none}
+.bureau-col-head{font-weight:700;font-size:14px;padding:8px 12px;margin:-16px -16px 12px;display:flex;align-items:center;gap:8px}
+.bureau-col-head.c1{background:#2C5A3A;color:#fff}
+.bureau-col-head.c2{background:#1a3a5a;color:#fff}
+.bureau-badge{font-size:12px;background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:2px}
+.bureau-item{font-size:14px;padding:3px 0;color:var(--text-mid);border-bottom:1px solid rgba(0,0,0,0.06)}
+.bureau-item:last-child{border-bottom:none}
+.bureau-item::before{content:"▸ ";color:var(--gold);font-size:12px}
+.bureau-tag{display:inline-block;font-size:12px;background:var(--gold-dim);border:1px solid var(--gold-border);padding:1px 6px;margin-left:4px;vertical-align:middle}
+.bureau-foot{display:flex;gap:0;border:1px solid var(--gold-border);border-top:none}
+.bureau-foot-cell{flex:1;padding:10px 14px;font-size:13px;background:#fffdf0;border-right:1px solid var(--gold-border)}
+.bureau-foot-cell:last-child{border-right:none}
+.bureau-foot-label{font-weight:700;font-size:12px;color:var(--text-muted);letter-spacing:.05em;margin-bottom:4px}
+.bureau-top-sub{background:#3a3a38;color:rgba(255,255,255,0.75);padding:5px 20px;text-align:center;font-size:13px;border-bottom:2px solid var(--gold-border)}
+.bureau-field{border:1px solid var(--gold-border);margin-top:8px}
+.bureau-field-head{background:#5a4a00;color:#fff;padding:6px 14px;font-size:13px;font-weight:700}
+.bureau-field-body{padding:10px 14px;font-size:13px;color:var(--text-mid)}
+</style>
+
+<div class="bureau-wrap">
+  <div class="bureau-top">推進局本部　（推進局長 G4）</div>
+  <div class="bureau-top-sub">第一課長・第二課長・全拠点所長を統括　／　都道府県労働局・ハローワーク・労基署との連携窓口</div>
+  <div class="bureau-mid">
+    <div class="bureau-col">
+      <div class="bureau-col-head c1">第一課　準公務職員管理課 <span class="bureau-badge">現場組</span></div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.6);padding:2px 0 8px;margin-top:-8px">第一課長（G3）→ 主任コーディネーター（G2）→ 一般コーディネーター（G1）</div>
+      <div class="bureau-item">準公務職員の登録・アセスメント・マッチング</div>
+      <div class="bureau-item">準公務コーディネーターの配置・研修・管理</div>
+      <div class="bureau-item">就労実績ポイントの管理・運用</div>
+      <div class="bureau-item">タスク境界線の遵守確認・現場同行</div>
+      <div class="bureau-item">標準作業指示書の整備・更新</div>
+      <div class="bureau-item">エスカレーションプロトコルの管理</div>
+      <div class="bureau-item">自治体専門課との連携窓口</div>
+      <div class="bureau-item">民間⇔準公務職員の双方向移行窓口</div>
+      <div class="bureau-item">KPIモニタリング・制度改訂管理</div>
+    </div>
+    <div class="bureau-col">
+      <div class="bureau-col-head c2">第二課　データ・情報管理課 <span class="bureau-badge">事務組</span></div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.6);padding:2px 0 8px;margin-top:-8px">第二課長（G3）→ データ主任（G2）→ データ担当（G1）</div>
+      <div class="bureau-item">段取りコストデータの集約・閾値監視</div>
+      <div class="bureau-item">閾値超過時の都道府県労働局への自動通知</div>
+      <div class="bureau-item">企業別業務提供実績のオープンデータ管理</div>
+      <div class="bureau-item">全国KPIの集計・分析・公表</div>
+      <div class="bureau-item">ICTシステムの運用・ベンダー管理</div>
+      <div class="bureau-item">ハローワーク・労働局との情報連携</div>
+      <div class="bureau-item">不正受給防止モニタリング</div>
+      <div class="bureau-item">マイナンバー連携・二重登録防止システム管理</div>
+    </div>
+  </div>
+  <div class="bureau-foot">
+    <div class="bureau-foot-cell">
+      <div class="bureau-foot-label">第一課　求める人材像</div>
+      福祉職経験者（社会福祉士・精神保健福祉士等）。障害特性への理解と対人対応力が必須。A型・B型事業所スタッフからの転換を主力として想定。
+    </div>
+    <div class="bureau-foot-cell">
+      <div class="bureau-foot-label">第二課　求める人材像</div>
+      行政DX・統計・データ分析の実務経験者。深いSEスキルは必須とせず、ベンダーを管理・評価できるITリテラシーを重視。高度なシステム開発は外部委託。
+    </div>
+  </div>
+  <div class="bureau-shared">
+    <strong>【両課共通：相互ヘルプ研修】</strong>　全職員は年2回の共通研修を受講し、相手課の基本業務（定型データ入力・報告書作成・システム基本操作・障害特性の基礎知識）を把握する。ただし「相互完全代替」は目指さない。<strong>当事者との面談・現場対応（第一課固有）とシステム障害対応・高度なデータ解析（第二課固有）は代替不可</strong>と明示し、その場合は近隣拠点・都道府県支部への応援要請を発動する。
+  </div>
+  <div style="text-align:center;padding:8px 0;font-size:20px;color:var(--gold)">↓</div>
+  <div class="bureau-field">
+    <div class="bureau-field-head">現場各拠点　（拠点所長 G3）　※全国967拠点</div>
+    <div class="bureau-field-body">
+      <strong>拠点所長（G3）→ 主任コーディネーター（G2）→ 一般コーディネーター（G1）</strong><br>
+      拠点所長は推進局長直属の同格（G3）として担当エリアの現場運営全体を統括する。主任コーディネーターは複数の一般コーディネーターを束ね、拠点所長を補佐する。一般コーディネーターが準公務職員と日々向き合い、マッチング・現場管理・エスカレーション対応の最前線を担う。現場管理職員（G1）は準公務職員に同行・現場監督する。
+    </div>
+  </div>
+</div>
+
+<div class="callout-light" style="font-size:14px">
+<strong>【連携先の外部機関との関係】</strong>　推進局は「民間企業への調査・是正勧告権限」を持たない。業務合理性の偽装・SCPポイント虚偽申告の審査・通報受理は<strong>都道府県労働局SCP制度指導課</strong>が担い、推進局はデータ通知・情報提供に徹する。Bレーン月次レポートの受付・当事者の移行相談は<strong>ハローワーク</strong>が担当する。当事者への労働法違反の調査は<strong>労働基準監督署</strong>が担う。推進局は「準公務職員制度の運営主体」として本来業務に集中する設計である。
+</div>
+
 <h3>1-2　対象業務の選定基準</h3>
 <div class="table-wrap"><table>
   <thead><tr><th>選定条件</th><th>内容・判断基準</th><th>例示業務</th></tr></thead>
