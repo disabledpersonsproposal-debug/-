@@ -7,6 +7,7 @@ const NAV_GROUPS = [
     id: 'main',
     section: '本編',
     items: [
+      { href: 'summary.html',  label: 'エグゼクティブサマリー', sub: '提言の全体像・数字・構造' },
       { href: 'origin.html',   label: '本提言の記録',  sub: '概念の初出・公開履歴' },
       { href: 'ch0.html',      label: '序章',          sub: '制度の歴史と善意の限界' },
       { href: 'ch1.html',      label: 'Ch.1',          sub: '次世代型障害者雇用モデル' },
@@ -48,7 +49,7 @@ const NAV_GROUPS = [
 
 /* ── フラットなページ順序（前後ナビ用） ── */
 const ALL_PAGES = [
-  { href: 'index.html', label: 'エグゼクティブサマリー' },
+  { href: 'index.html', label: '巻頭言・読書案内' },
   ...NAV_GROUPS.flatMap(g => g.items)
 ];
 
@@ -72,7 +73,7 @@ const ALL_PAGES = [
     </div>
     <div class="sidebar-top${current === 'index.html' ? ' active' : ''}">
       <a href="index.html" class="sidebar-top-link">
-        <span class="sidebar-top-icon">▶</span>エグゼクティブサマリー
+        <span class="sidebar-top-icon">▶</span>巻頭言・読書案内
       </a>
     </div>`;
 
