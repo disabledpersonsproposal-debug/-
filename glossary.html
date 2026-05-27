@@ -10,7 +10,7 @@
 /* ── 用語カード ── */
 .gl-section-intro {
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-mid);
   line-height: 1.85;
   margin-bottom: 8px;
   padding: 12px 16px;
@@ -41,13 +41,13 @@
 }
 .gl-ruby {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-mid);
   font-weight: 400;
   letter-spacing: 0.04em;
 }
 .gl-tag {
   margin-left: auto;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--gold);
@@ -70,7 +70,7 @@
 .gl-note {
   margin-top: 10px;
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-mid);
   background: rgba(44,44,42,0.04);
   border-left: 3px solid #ccc;
   padding: 8px 12px;
@@ -142,7 +142,7 @@
   padding: 9px 12px;
   font-weight: 700;
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-mid);
   background: rgba(44,44,42,0.04);
   border-right: 1px solid var(--gold-border);
   display: flex;
@@ -218,7 +218,7 @@
 /* ── セクション区切り ── */
 .gl-section-badge {
   display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.15em;
   color: #fff;
@@ -248,7 +248,7 @@
     </div>
 
     <nav style="display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px;align-items:center" aria-label="用語集セクション">
-      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-muted);white-space:nowrap">セクションへ移動：</span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text-mid);white-space:nowrap">セクションへ移動：</span>
       <a href="#gl-system"  style="display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--gold-border);border-left:3px solid var(--gold);padding:5px 12px;font-size:13px;color:#5a4a00;text-decoration:none;border-radius:2px;transition:background .15s" onmouseover="this.style.background='var(--gold-dim)'" onmouseout="this.style.background='#fff'">制度設計用語</a>
       <a href="#gl-intl"    style="display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--gold-border);border-left:3px solid var(--gold);padding:5px 12px;font-size:13px;color:#5a4a00;text-decoration:none;border-radius:2px;transition:background .15s" onmouseover="this.style.background='var(--gold-dim)'" onmouseout="this.style.background='#fff'">国際比較用語</a>
       <a href="#gl-current" style="display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--gold-border);border-left:3px solid var(--gold);padding:5px 12px;font-size:13px;color:#5a4a00;text-decoration:none;border-radius:2px;transition:background .15s" onmouseover="this.style.background='var(--gold-dim)'" onmouseout="this.style.background='#fff'">現行制度用語</a>
@@ -918,7 +918,7 @@ function filterGlossary() {
   if (!msg) {
     msg = document.createElement('p');
     msg.id = 'gl-search-msg';
-    msg.style.cssText = 'font-size:13px;color:var(--text-muted);margin:0 0 16px;';
+    msg.style.cssText = 'font-size:13px;color:var(--text-mid);margin:0 0 16px;';
     const wrap = document.querySelector('.gl-search-wrap');
     wrap.insertAdjacentElement('afterend', msg);
   }
