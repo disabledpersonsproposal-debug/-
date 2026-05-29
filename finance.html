@@ -12,37 +12,37 @@
 .scenario-box.ok{border-top:4px solid #2C7A3A}
 .scenario-box.ng{border-top:4px solid #B8421A}
 .scenario-head{padding:14px 18px 10px}
-.scenario-head .stag{font-size:14px;font-weight:700;letter-spacing:.06em}
+.scenario-head .stag{font-size:15px;font-weight:700;letter-spacing:.06em}
 .stag.ok{color:#2C7A3A}.stag.ng{color:#B8421A}
-.scenario-head h3{font-size:14px;font-weight:700;color:var(--text-dark);margin:4px 0 2px}
-.scenario-head p{font-size:14px;color:var(--text-muted)}
+.scenario-head h3{font-size:15px;font-weight:700;color:var(--text-dark);margin:4px 0 2px}
+.scenario-head p{font-size:15px;color:var(--text-muted)}
 .scenario-body{padding:0 18px 16px}
 .period-row{display:grid;grid-template-columns:76px 1fr 90px;align-items:center;gap:8px;margin:10px 0}
-.period-label{font-size:14px;color:var(--text-muted);line-height:1.4}
+.period-label{font-size:15px;color:var(--text-muted);line-height:1.4}
 .bar-wrap{background:#e8e8e8;border-radius:3px;height:18px;position:relative}
 .bar-fill{height:18px;border-radius:3px}
 .bar-fill.ok{background:#2C7A3A}.bar-fill.ng{background:#B8421A}
-.bar-note{font-size:14px;margin-top:3px}
+.bar-note{font-size:15px;margin-top:3px}
 .ok-note{color:#2C7A3A;font-weight:600}.ng-note{color:#B8421A;font-weight:600}
-.bar-val{font-size:14px;font-weight:700;text-align:right;white-space:nowrap}
+.bar-val{font-size:15px;font-weight:700;text-align:right;white-space:nowrap}
 .bar-val.ok{color:#2C7A3A}.bar-val.ng{color:#B8421A}
 .wf-header{display:grid;grid-template-columns:200px 1fr 72px 72px 72px;gap:8px;margin:0 24px 4px}
-.wf-head{font-size:14px;color:var(--text-muted);text-align:right}
+.wf-head{font-size:15px;color:var(--text-muted);text-align:right}
 .waterfall{display:flex;flex-direction:column;gap:5px;margin:16px 24px}
-.wf-row{display:grid;grid-template-columns:200px 1fr 72px 72px 72px;align-items:center;gap:8px;font-size:14px}
+.wf-row{display:grid;grid-template-columns:200px 1fr 72px 72px 72px;align-items:center;gap:8px;font-size:15px}
 .wf-label{color:var(--text-mid);line-height:1.4}
 .wf-bar-cell{height:18px;position:relative}
 .wf-bar{height:18px;border-radius:3px;position:absolute;left:0;top:0}
 .c-income{background:rgba(44,122,58,.65)}.c-cost{background:rgba(184,66,26,.5)}
-.wf-num{font-size:14px;font-weight:600;text-align:right;white-space:nowrap}
-.cost-toggle{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:14px;color:var(--gold);cursor:pointer;margin:12px 24px;font-family:var(--font)}
+.wf-num{font-size:15px;font-weight:600;text-align:right;white-space:nowrap}
+.cost-toggle{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:15px;color:var(--gold);cursor:pointer;margin:12px 24px;font-family:var(--font)}
 .cost-toggle:hover{background:var(--gold-dim)}
 .hidden{display:none}
 .grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 24px}
 .grade-card{background:#fff;border:1px solid var(--gold-border);padding:14px 12px;text-align:center}
-.grade-tag{font-size:14px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:4px}
-.grade-name{font-size:14px;color:var(--text-muted);margin-bottom:6px}
-.grade-val{font-size:15px;font-weight:700;color:var(--text-dark)}
+.grade-tag{font-size:15px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:4px}
+.grade-name{font-size:15px;color:var(--text-muted);margin-bottom:6px}
+.grade-val{font-size:16px;font-weight:700;color:var(--text-dark)}
 @media(max-width:680px){.scenario-grid{grid-template-columns:1fr}.grade-grid{grid-template-columns:1fr 1fr}.wf-header,.wf-row{grid-template-columns:120px 1fr 60px 60px 60px}}
 </style>
 </head>
@@ -176,9 +176,9 @@
       <div class="wf-row" style="border-top:1px solid var(--gold-border);padding-top:6px;margin-top:4px;font-weight:700">
         <div class="wf-label">財源合計（順調）</div>
         <div class="wf-bar-cell"></div>
-        <div class="wf-num" style="color:#2C7A3A;font-size:14px">2.69兆円</div>
-        <div class="wf-num" style="color:#2C7A3A;font-size:14px">5.57兆円</div>
-        <div class="wf-num" style="color:#2C7A3A;font-size:14px">7.20兆円</div>
+        <div class="wf-num" style="color:#2C7A3A;font-size:15px">2.69兆円</div>
+        <div class="wf-num" style="color:#2C7A3A;font-size:15px">5.57兆円</div>
+        <div class="wf-num" style="color:#2C7A3A;font-size:15px">7.20兆円</div>
       </div>
     </div>
 
@@ -238,7 +238,7 @@
       <strong>【財源設計の論理構造——なぜ「自律循環する」と言えるか】</strong><br><br>
       本制度の財源が自律循環するとは、「雇用代替拠出金という制度内収入が、制度コスト（年金増額・推進局運営・当事者報酬）を賄えるようになる」ことを意味する。この循環が成立するための前提条件は以下の3点に集約される。<br><br>
       <strong>前提①：拠出金収入が第2期以降に立ち上がること</strong><br>
-      拠出金収入は、法定雇用率を充足できていない企業（現在54.0%が未達）がSCPポイント不足分を拠出金で補う仕組みである。現行の雇用納付金（月額約5万円）に対し、SCP拠出金は同水準の不足1人分で月約18万円（180P × 1,500円）と約3.6倍に設計されている。この水準設定により「払えば安く済む」という現行の抜け道を廃止し、拠出金に正当な社会的コストを与える。雇用と拠出金はどちらも正当な貢献の形であり、義務を誠実に履行しない企業にのみコスト上の不利が生じる設計である。第1期（制度立ち上げ期）は企業の制度移行猶予のため拠出金収入はほぼゼロだが、第2期（全国展開期）以降に拠出金収入が本格化する。<br><br>
+      拠出金収入は、法定雇用率を充足できていない企業（現在54.0%が未達）がSCPポイント不足分を拠出金で補う仕組みである。現行の雇用納付金（月額約5万円）に対し、SCP拠出金は同水準の不足1人分で月約18万円（120P × 1,500円）と約3.6倍に設計されている。この水準設定により「払えば安く済む」という現行の抜け道を廃止し、拠出金に正当な社会的コストを与える。雇用と拠出金はどちらも正当な貢献の形であり、義務を誠実に履行しない企業にのみコスト上の不利が生じる設計である。第1期（制度立ち上げ期）は企業の制度移行猶予のため拠出金収入はほぼゼロだが、第2期（全国展開期）以降に拠出金収入が本格化する。<br><br>
       <strong>前提②：制度参加企業が増加すること</strong><br>
       拠出金収入の規模は、法定雇用義務を持つ企業が制度に参加し、SCPポイントの不足分が生じることで決まる。参加企業数と不足ポイント量が増えるほど拠出金収入は拡大する。一方で、直接雇用（Aレーン）が増えれば拠出金収入は減少するが、当事者の就労収入・税収増という別の財源効果が生まれる。どちらに振れても財政的な合理性が確保されるよう設計されている。<br><br>
       <strong>前提③：既存補助金の効率化が進むこと</strong><br>

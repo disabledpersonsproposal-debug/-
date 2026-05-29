@@ -23,12 +23,12 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-small { font-size: 12px; }
+small { font-size: 13px; }
 html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.85;
   color: var(--text-dark);
   background: var(--main-bg);
@@ -60,20 +60,20 @@ body {
   flex-shrink: 0;
 }
 .sidebar-logo a { text-decoration: none; }
-.sidebar-logo-title { font-size: 14px; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; display: block; }
-.sidebar-logo-sub { font-size: 12px; color: rgba(255,255,255,0.65); display: block; margin-top: 4px; line-height: 1.5; }
+.sidebar-logo-title { font-size: 15px; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; display: block; }
+.sidebar-logo-sub { font-size: 13px; color: rgba(255,255,255,0.65); display: block; margin-top: 4px; line-height: 1.5; }
 
 .sidebar-top { border-bottom: 1px solid rgba(255,255,255,0.07); }
 .sidebar-top-link {
   display: flex; align-items: center; gap: 8px;
-  padding: 11px 18px; font-size: 13px; font-weight: 600;
+  padding: 11px 18px; font-size: 14px; font-weight: 600;
   color: rgba(255,255,255,0.85); text-decoration: none;
   transition: background 0.15s, color 0.15s;
   border-left: 3px solid transparent;
 }
 .sidebar-top-link:hover { background: rgba(255,255,255,0.07); color: #fff; }
 .sidebar-top.active .sidebar-top-link { background: var(--gold-dim); color: var(--gold); border-left-color: var(--gold); }
-.sidebar-top-icon { font-size: 12px; opacity: 0.7; flex-shrink: 0; }
+.sidebar-top-icon { font-size: 13px; opacity: 0.7; flex-shrink: 0; }
 
 .nav-group { border-bottom: 1px solid rgba(255,255,255,0.06); }
 .nav-group-header {
@@ -82,14 +82,14 @@ body {
   transition: background 0.15s; font-family: var(--font);
 }
 .nav-group-header:hover { background: rgba(255,255,255,0.05); }
-.nav-group-label { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.45); letter-spacing: 0.12em; text-transform: uppercase; }
-.nav-chevron { font-size: 12px; color: rgba(255,255,255,0.35); flex-shrink: 0; transition: transform 0.2s; }
+.nav-group-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.45); letter-spacing: 0.12em; text-transform: uppercase; }
+.nav-chevron { font-size: 13px; color: rgba(255,255,255,0.35); flex-shrink: 0; transition: transform 0.2s; }
 .nav-group-header.open .nav-chevron { transform: rotate(180deg); }
 
 .nav-group-body { padding-bottom: 6px; }
 .sidebar-item {
   display: flex; align-items: flex-start; gap: 8px;
-  padding: 6px 16px 6px 22px; font-size: 13px;
+  padding: 6px 16px 6px 22px; font-size: 14px;
   color: rgba(255,255,255,0.75); text-decoration: none;
   transition: background 0.15s, color 0.15s;
   border-left: 3px solid transparent; line-height: 1.45;
@@ -99,8 +99,8 @@ body {
 .sidebar-dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 7px; }
 .sidebar-item.active .sidebar-dot { opacity: 1; }
 .sidebar-item-inner { display: flex; flex-direction: column; gap: 2px; }
-.sidebar-item-label { font-size: 13px; font-weight: 600; line-height: 1.3; }
-.sidebar-item-sub { font-size: 12px; opacity: 0.7; line-height: 1.35; font-weight: 400; }
+.sidebar-item-label { font-size: 14px; font-weight: 600; line-height: 1.3; }
+.sidebar-item-sub { font-size: 13px; opacity: 0.7; line-height: 1.35; font-weight: 400; }
 .sidebar-item.active .sidebar-item-sub { opacity: 0.85; }
 
 /* ── MAIN ── */
@@ -108,7 +108,7 @@ body {
 
 .topbar {
   background: var(--content-bg); border-bottom: 1px solid var(--border);
-  padding: 10px var(--content-pad); font-size: 13px; color: var(--text-muted);
+  padding: 10px var(--content-pad); font-size: 14px; color: var(--text-muted);
   position: sticky; top: 0; z-index: 50; letter-spacing: 0.01em;
 }
 .topbar a { color: var(--text-muted); text-decoration: none; }
@@ -124,27 +124,27 @@ body {
 }
 
 /* ── CHAPTER HEADER ── */
-.chapter-label { font-size: 12px; color: var(--gold); letter-spacing: 0.25em; font-weight: 700; margin-bottom: 10px; padding-top: 36px; display: block; }
-.chapter-title { font-size: clamp(18px, 3vw, 26px); font-weight: 700; color: var(--text-dark); line-height: 1.45; margin-bottom: 10px; }
-.chapter-subtitle { font-size: 14px; color: var(--text-mid); margin-bottom: 24px; line-height: 1.65; }
+.chapter-label { font-size: 13px; color: var(--gold); letter-spacing: 0.25em; font-weight: 700; margin-bottom: 10px; padding-top: 36px; display: block; }
+.chapter-title { font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: var(--text-dark); line-height: 1.45; margin-bottom: 10px; }
+.chapter-subtitle { font-size: 15px; color: var(--text-mid); margin-bottom: 24px; line-height: 1.65; }
 .gold-rule { height: 2px; width: 48px; background: var(--gold); margin-bottom: 36px; }
 
 /* ── PAGE TOC ── */
 .page-toc {
   background:#fffdf0; border: 1px solid var(--gold-border);
-  border-left: 3px solid var(--gold); padding: 16px 20px; margin-bottom: 36px; font-size: 13px;
+  border-left: 3px solid var(--gold); padding: 16px 20px; margin-bottom: 36px; font-size: 14px;
 }
-.page-toc-title { font-size: 12px; font-weight: 700; color: var(--text-mid); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; display: block; }
+.page-toc-title { font-size: 13px; font-weight: 700; color: var(--text-mid); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; display: block; }
 .page-toc ul { margin: 0; padding-left: 0; list-style: none; }
-.page-toc li { padding: 3px 0; font-size: 13px; line-height: 1.5; color: var(--text-mid); display: flex; gap: 8px; }
-.page-toc li::before { content: '▸'; color: var(--gold); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+.page-toc li { padding: 3px 0; font-size: 14px; line-height: 1.5; color: var(--text-mid); display: flex; gap: 8px; }
+.page-toc li::before { content: '▸'; color: var(--gold); font-size: 13px; flex-shrink: 0; margin-top: 2px; }
 .page-toc a { color: var(--text-mid); text-decoration: none; transition: color 0.15s; }
 .page-toc a:hover { color: var(--gold); }
 h2[id], h3[id] { scroll-margin-top: 60px; }
 
 /* ── TYPOGRAPHY ── */
 .content h2 {
-  font-size: 17px; font-weight: 700; color: var(--text-dark);
+  font-size: 19px; font-weight: 700; color: var(--text-dark);
   margin: 48px 0 14px; padding-bottom: 10px;
   border-bottom: 1px solid var(--gold-border); position: relative;
 }
@@ -152,37 +152,37 @@ h2[id], h3[id] { scroll-margin-top: 60px; }
   content: ''; position: absolute; bottom: -1px; left: 0;
   width: 40px; height: 2px; background: var(--gold);
 }
-.content h3 { font-size: 15px; font-weight: 700; color: var(--text-dark); margin: 28px 0 10px; }
-.content p { font-size: 14px; line-height: 1.95; color: var(--text-mid); margin-bottom: 18px; }
+.content h3 { font-size: 16px; font-weight: 700; color: var(--text-dark); margin: 28px 0 10px; }
+.content p { font-size: 15px; line-height: 1.95; color: var(--text-mid); margin-bottom: 18px; }
 .content strong { color: var(--text-dark); font-weight: 700; }
 .content ul, .content ol { padding-left: 24px; margin-bottom: 18px; }
-.content li { font-size: 14px; line-height: 1.85; color: var(--text-mid); margin-bottom: 4px; }
+.content li { font-size: 15px; line-height: 1.85; color: var(--text-mid); margin-bottom: 4px; }
 
 /* ── CALLOUT ── */
 .callout {
   background: var(--sidebar-bg); color: #fff; padding: 20px 24px;
-  margin: 28px 0; border-left: 4px solid var(--gold); font-size: 14px; line-height: 1.9;
+  margin: 28px 0; border-left: 4px solid var(--gold); font-size: 15px; line-height: 1.9;
 }
 .callout strong { color: var(--gold); }
 .callout-light {
   background: #fffdf0; border: 1px solid var(--gold-border);
   border-left: 4px solid var(--gold); padding: 16px 20px; margin: 24px 0;
-  font-size: 14px; line-height: 1.9; color: var(--text-mid);
+  font-size: 15px; line-height: 1.9; color: var(--text-mid);
 }
 
 /* ── TABLES ── */
 .table-wrap { overflow-x: auto; margin: 24px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-table { width: 100%; border-collapse: collapse; font-size: 14px; border: 1px solid rgba(0,0,0,0.12); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; border: 1px solid rgba(0,0,0,0.12); }
 th {
   background: var(--sidebar-bg); color: #fff; padding: 10px 14px;
-  text-align: left; font-weight: 600; font-size: 14px; letter-spacing: 0.02em;
+  text-align: left; font-weight: 600; font-size: 15px; letter-spacing: 0.02em;
   border-right: 1px solid rgba(255,255,255,0.12); border-bottom: 2px solid var(--gold);
 }
 th:last-child { border-right: none; }
 td {
   padding: 9px 14px; border-bottom: 1px solid rgba(0,0,0,0.07);
   border-right: 1px solid rgba(0,0,0,0.07); vertical-align: top;
-  font-size: 14px; line-height: 1.7; background: var(--content-bg);
+  font-size: 15px; line-height: 1.7; background: var(--content-bg);
 }
 td:last-child { border-right: none; }
 tr:hover td { background:#fff; }
@@ -192,18 +192,18 @@ tr:last-child td { border-bottom: none; }
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
 .card { background: var(--content-bg); border: 1px solid var(--gold-border); border-top: 3px solid var(--sidebar-bg); padding: 18px 16px; transition: box-shadow 0.15s; }
 .card:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-.card-label { font-size: 12px; font-weight: 700; color: var(--text-mid); letter-spacing: 0.06em; margin-bottom: 4px; text-transform: none; }
+.card-label { font-size: 13px; font-weight: 700; color: var(--text-mid); letter-spacing: 0.06em; margin-bottom: 4px; text-transform: none; }
 /* card-valueがないカードではlabelがタイトル役を担う */
-.card-label--title { font-size: 15px; font-weight: 700; color: var(--text-dark); letter-spacing: 0; margin-bottom: 6px; }
+.card-label--title { font-size: 16px; font-weight: 700; color: var(--text-dark); letter-spacing: 0; margin-bottom: 6px; }
 .card-value { font-size: 22px; font-weight: 700; color: var(--gold); line-height: 1.2; }
 /* テキスト型カード（短い語句・状態説明）*/
 .card-value--text { font-size: 16px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
 /* 数値型カード（億円・万人など長い数値） */
 .card-value--num  { font-size: 18px; font-weight: 700; color: var(--gold); line-height: 1.3; }
-.card-desc { font-size: 14px; color: var(--text-mid); margin-top: 8px; line-height: 1.75; }
+.card-desc { font-size: 15px; color: var(--text-mid); margin-top: 8px; line-height: 1.75; }
 
 /* ── BADGE ── */
-.badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 2px; letter-spacing: 0.04em; }
+.badge { display: inline-block; font-size: 13px; font-weight: 600; padding: 2px 8px; border-radius: 2px; letter-spacing: 0.04em; }
 .badge-dark { background: var(--sidebar-bg); color: #fff; }
 .badge-gold { background: rgba(212,175,55,0.12); color: #7a5c0a; border: 1px solid var(--gold-border); }
 
@@ -222,15 +222,15 @@ tr:last-child td { border-bottom: none; }
 }
 .page-nav-item:first-child:not(:last-child) { border-right: none; }
 .page-nav-item:hover { border-top-color: var(--gold); background:#fff; }
-.page-nav-dir { font-size: 12px; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+.page-nav-dir { font-size: 13px; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
 .page-nav-item:last-child .page-nav-dir { justify-content: flex-end; }
-.page-nav-title { font-size: 14px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
+.page-nav-title { font-size: 15px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
 .page-nav-item:last-child .page-nav-title { text-align: right; }
-.page-nav-sub { font-size: 12px; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
+.page-nav-sub { font-size: 13px; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
 .page-nav-item:last-child .page-nav-sub { text-align: right; }
 
 /* ── FOOTER ── */
-.page-footer { margin-top: 48px; padding: 20px 0 0; border-top: 1px solid var(--gold-border); font-size: 13px; color: var(--text-mid); text-align: center; line-height: 1.7; }
+.page-footer { margin-top: 48px; padding: 20px 0 0; border-top: 1px solid var(--gold-border); font-size: 14px; color: var(--text-mid); text-align: center; line-height: 1.7; }
 
 /* ── MOBILE HEADER ── */
 .mobile-header { display: none; }
@@ -268,7 +268,7 @@ tr:last-child td { border-bottom: none; }
     background: var(--sidebar-bg); border-bottom: 2px solid var(--gold);
     padding: 0 16px; z-index: 200;
   }
-  .mobile-header-title { font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; text-decoration: none; }
+  .mobile-header-title { font-size: 14px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; text-decoration: none; }
   .mobile-hamburger {
     display: flex; flex-direction: column; justify-content: center; gap: 5px;
     width: 36px; height: 36px; padding: 6px; background: none; border: none;
@@ -288,8 +288,8 @@ tr:last-child td { border-bottom: none; }
   .topbar { top: 52px; }
   .content { max-width: 100%; padding: 20px 16px 60px; }
   .table-wrap { margin: 16px 0; }
-  table { font-size: 12px; }
-  th, td { padding: 8px 10px; font-size: 12px; }
+  table { font-size: 13px; }
+  th, td { padding: 8px 10px; font-size: 13px; }
   .card-grid { grid-template-columns: 1fr; }
   .page-toc { margin-bottom: 24px; }
   .page-nav { flex-direction: column; }
@@ -308,7 +308,7 @@ tr:last-child td { border-bottom: none; }
   padding: 0;
   border: none;
   color: var(--text-mid);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .18em;
   text-transform: none;
   line-height: 1;
@@ -338,39 +338,39 @@ tr:last-child td { border-bottom: none; }
    ══════════════════════════════════════════════════════ */
 
 /* ── 表内補足テキスト（<span class="td-note">） ── */
-.td-note { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
-.td-note--warn { font-size: 12px; font-weight: 700; line-height: 1.5; }
+.td-note { font-size: 13px; color: var(--text-mid); line-height: 1.5; }
+.td-note--warn { font-size: 13px; font-weight: 700; line-height: 1.5; }
 
 /* ── FATIGUE CARD（現状の疲弊を示すカード） ── */
 .fatigue-card { background: #fff; border: 1px solid var(--gold-border); border-top: 3px solid var(--sidebar-bg); padding: 16px; }
-.fatigue-card-label { font-size: 12px; font-weight: 700; color: var(--text-mid); letter-spacing: 0.06em; margin-bottom: 4px; }
+.fatigue-card-label { font-size: 13px; font-weight: 700; color: var(--text-mid); letter-spacing: 0.06em; margin-bottom: 4px; }
 .fatigue-card-value { font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 6px; line-height: 1.2; }
-.fatigue-card-sub { font-size: 14px; color: var(--text-mid); margin-bottom: 8px; }
+.fatigue-card-sub { font-size: 15px; color: var(--text-mid); margin-bottom: 8px; }
 .fatigue-card-list { list-style: none; padding: 0; margin: 0; }
-.fatigue-card-list li { font-size: 14px; color: var(--text-mid); padding: 3px 0 3px 16px; position: relative; line-height: 1.65; }
-.fatigue-card-list li::before { content: "─"; position: absolute; left: 0; color: var(--gold); font-size: 14px; }
+.fatigue-card-list li { font-size: 15px; color: var(--text-mid); padding: 3px 0 3px 16px; position: relative; line-height: 1.65; }
+.fatigue-card-list li::before { content: "─"; position: absolute; left: 0; color: var(--gold); font-size: 15px; }
 
 /* ── PILLAR CARD（3本柱・政策ピラー） ── */
-.pillar-num { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 4px; }
-.pillar-title { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; line-height: 1.4; }
-.pillar-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+.pillar-num { font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 4px; }
+.pillar-title { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; line-height: 1.4; }
+.pillar-desc { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
 
 /* ── TIMELINE CARD（フェーズ・工程表） ── */
 .tl-card { border: 1px solid var(--gold-border); overflow: hidden; }
 .tl-head { background: var(--sidebar-bg); color: #fff; padding: 10px 14px; }
-.tl-head .tl-period { font-size: 14px; color: var(--gold); font-weight: 600; }
-.tl-head .tl-name { font-size: 14px; font-weight: 700; margin-top: 2px; }
+.tl-head .tl-period { font-size: 15px; color: var(--gold); font-weight: 600; }
+.tl-head .tl-name { font-size: 15px; font-weight: 700; margin-top: 2px; }
 .tl-body { padding: 12px 14px; background: #fff; }
-.tl-body li { font-size: 14px; color: var(--text-mid); padding: 3px 0 3px 16px; line-height: 1.65; list-style: none; position: relative; }
+.tl-body li { font-size: 15px; color: var(--text-mid); padding: 3px 0 3px 16px; line-height: 1.65; list-style: none; position: relative; }
 .tl-body li::before { content: "・"; position: absolute; left: 0; color: var(--gold); }
 
 /* ── INTL BAR（国際比較グラフ行） ── */
-.intl-row { display: grid; grid-template-columns: 240px 1fr 120px; align-items: center; gap: 10px; padding: 7px 12px; background: #fff; border: 1px solid rgba(0,0,0,.07); margin-bottom: 4px; font-size: 14px; }
+.intl-row { display: grid; grid-template-columns: 240px 1fr 120px; align-items: center; gap: 10px; padding: 7px 12px; background: #fff; border: 1px solid rgba(0,0,0,.07); margin-bottom: 4px; font-size: 15px; }
 .intl-row.hi { border: 1px solid var(--gold); background: #fffdf0; }
 .intl-bar { background: #e8e8e8; border-radius: 3px; height: 14px; }
 .intl-fill { height: 14px; border-radius: 3px; background: var(--sidebar-bg); }
 .intl-row.hi .intl-fill { background: var(--gold); }
-.intl-amt { font-size: 14px; font-weight: 700; text-align: right; white-space: nowrap; }
+.intl-amt { font-size: 15px; font-weight: 700; text-align: right; white-space: nowrap; }
 .intl-row.hi .intl-amt { color: var(--gold); }
 
 /* ── READ CARD（推奨読書順カード） ── */
@@ -379,23 +379,23 @@ tr:last-child td { border-bottom: none; }
 .read-card:hover { border-color: var(--gold); box-shadow: 0 2px 8px rgba(212,175,55,.15); }
 .read-card-order { width: 52px; flex-shrink: 0; background: var(--sidebar-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 6px; gap: 4px; }
 .read-card-seq { font-size: 20px; font-weight: 700; color: var(--gold); line-height: 1; }
-.read-card-seq-label { font-size: 12px; color: rgba(255,255,255,.5); letter-spacing: .06em; }
+.read-card-seq-label { font-size: 13px; color: rgba(255,255,255,.5); letter-spacing: .06em; }
 .read-card-body { flex: 1; padding: 14px 18px; min-width: 0; }
-.read-card-label { font-size: 12px; font-weight: 700; color: var(--text-mid); letter-spacing: .08em; margin-bottom: 4px; }
-.read-card-title { font-size: 15px; font-weight: 700; color: var(--text-dark); line-height: 1.4; margin-bottom: 6px; }
-.read-card-desc { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+.read-card-label { font-size: 13px; font-weight: 700; color: var(--text-mid); letter-spacing: .08em; margin-bottom: 4px; }
+.read-card-title { font-size: 16px; font-weight: 700; color: var(--text-dark); line-height: 1.4; margin-bottom: 6px; }
+.read-card-desc { font-size: 15px; color: var(--text-mid); line-height: 1.75; }
 .read-card-time { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
-.read-card-meta { font-size: 12px; color: var(--text-mid); }
+.read-card-meta { font-size: 13px; color: var(--text-mid); }
 .read-card-arrow { width: 36px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 16px; background: rgba(212,175,55,.06); }
 
 /* ── DEEP CARD（深掘りリンクカード） ── */
 .deep-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 8px; padding: 0 28px; }
 .deep-card { border: 1px solid var(--border); background: #fff; padding: 14px 16px; text-decoration: none; color: var(--text-dark); display: block; transition: border-color .15s; }
 .deep-card:hover { border-color: var(--gold); }
-.deep-card-tag { font-size: 12px; letter-spacing: .08em; color: var(--text-mid); font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+.deep-card-tag { font-size: 13px; letter-spacing: .08em; color: var(--text-mid); font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
 .deep-card-tag::before { content: ''; display: inline-block; width: 14px; height: 2px; background: var(--gold); flex-shrink: 0; }
-.deep-card-title { font-size: 14px; font-weight: 700; color: var(--text-dark); line-height: 1.45; margin-bottom: 6px; }
-.deep-card-desc { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+.deep-card-title { font-size: 15px; font-weight: 700; color: var(--text-dark); line-height: 1.45; margin-bottom: 6px; }
+.deep-card-desc { font-size: 15px; color: var(--text-mid); line-height: 1.65; }
 
 /* ── MOBILE overrides for shared components ── */
 @media (max-width: 860px) {
@@ -412,7 +412,7 @@ tr:last-child td { border-bottom: none; }
   border-left: 4px solid var(--gold);
   padding: 16px 20px;
   margin: 24px 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.9;
   color: #f0e8c8;
 }
@@ -422,7 +422,7 @@ tr:last-child td { border-bottom: none; }
   border-left: 4px solid #5a4a8a;
   padding: 14px 20px;
   margin: 24px 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.9;
   color: var(--text-mid);
 }
@@ -434,7 +434,7 @@ tr:last-child td { border-bottom: none; }
   border-left: 4px solid #2C7A3A;
   padding: 14px 20px;
   margin: 24px 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.9;
   color: var(--text-mid);
 }
@@ -444,7 +444,7 @@ tr:last-child td { border-bottom: none; }
   border: 1px solid rgba(212,175,55,0.4);
   padding: 12px 16px;
   margin: 12px 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.9;
   color: var(--text-mid);
 }

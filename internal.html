@@ -20,24 +20,24 @@
   --sidebar-w: 220px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:var(--font);font-size:14px;line-height:1.85;color:var(--text-dark);background:var(--main-bg);display:flex;min-height:100vh}
+html{font-size:17px;scroll-behavior:smooth}
+body{font-family:var(--font);font-size:15px;line-height:1.85;color:var(--text-dark);background:var(--main-bg);display:flex;min-height:100vh}
 
 /* ── SIDEBAR ── */
 .sidebar{width:var(--sidebar-w);min-height:100vh;background:var(--sidebar-bg);display:flex;flex-direction:column;flex-shrink:0;position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;border-right:2px solid var(--red)}
 .sidebar-logo{padding:20px 16px 14px;border-bottom:1px solid rgba(139,0,0,0.4)}
-.sidebar-logo-title{display:block;font-size:12px;font-weight:700;color:var(--red);letter-spacing:.12em;margin-bottom:4px}
-.sidebar-logo-sub{display:block;font-size:13px;font-weight:700;color:#fff;line-height:1.4}
-.sidebar-warning{padding:12px 16px;background:var(--red);color:#fff;font-size:12px;line-height:1.6;font-weight:600;letter-spacing:.04em}
+.sidebar-logo-title{display:block;font-size:13px;font-weight:700;color:var(--red);letter-spacing:.12em;margin-bottom:4px}
+.sidebar-logo-sub{display:block;font-size:14px;font-weight:700;color:#fff;line-height:1.4}
+.sidebar-warning{padding:12px 16px;background:var(--red);color:#fff;font-size:13px;line-height:1.6;font-weight:600;letter-spacing:.04em}
 nav{padding:12px 0 20px}
-nav a{display:block;padding:7px 18px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;line-height:1.4;transition:background .15s,color .15s}
+nav a{display:block;padding:7px 18px;font-size:14px;color:rgba(255,255,255,0.7);text-decoration:none;line-height:1.4;transition:background .15s,color .15s}
 nav a:hover{background:rgba(139,0,0,0.2);color:#fff}
-nav .nav-section{padding:14px 18px 4px;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:.1em;font-weight:700}
+nav .nav-section{padding:14px 18px 4px;font-size:13px;color:rgba(255,255,255,0.35);letter-spacing:.1em;font-weight:700}
 
 /* ── MAIN ── */
 .main{margin-left:var(--sidebar-w);flex:1;display:flex;flex-direction:column;min-height:100vh}
-.topbar{background:var(--red);color:#fff;padding:10px 28px;font-size:13px;font-weight:700;letter-spacing:.06em;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:50}
-.topbar-badge{background:#fff;color:var(--red);padding:2px 8px;border-radius:2px;font-size:12px;font-weight:700;letter-spacing:.08em}
+.topbar{background:var(--red);color:#fff;padding:10px 28px;font-size:14px;font-weight:700;letter-spacing:.06em;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:50}
+.topbar-badge{background:#fff;color:var(--red);padding:2px 8px;border-radius:2px;font-size:13px;font-weight:700;letter-spacing:.08em}
 .content{padding:32px 32px 60px;max-width:860px}
 
 /* ── STAMP ── */
@@ -45,27 +45,27 @@ nav .nav-section{padding:14px 18px 4px;font-size:12px;color:rgba(255,255,255,0.3
 
 /* ── SECTION HEADER ── */
 .section-header{background:var(--red);color:#fff;padding:14px 20px;margin:36px 0 0;border-left:6px solid var(--gold)}
-.section-header h2{font-size:16px;font-weight:700;letter-spacing:.05em;margin:0;color:#fff;border-bottom:none;padding-bottom:0}
-.section-header .section-src{font-size:12px;color:rgba(255,255,255,0.75);margin-top:3px}
+.section-header h2{font-size:17px;font-weight:700;letter-spacing:.05em;margin:0;color:#fff;border-bottom:none;padding-bottom:0}
+.section-header .section-src{font-size:13px;color:rgba(255,255,255,0.75);margin-top:3px}
 
 /* ── REASON BOX ── */
-.reason-box{background:#fff8f8;border:1px solid var(--red-border);border-left:4px solid var(--red);padding:12px 16px;margin:12px 0 20px;font-size:13px;color:#6b0000;line-height:1.7}
+.reason-box{background:#fff8f8;border:1px solid var(--red-border);border-left:4px solid var(--red);padding:12px 16px;margin:12px 0 20px;font-size:14px;color:#6b0000;line-height:1.7}
 .reason-box strong{display:block;margin-bottom:2px;color:#8B0000}
 
 /* ── TYPOGRAPHY ── */
 h1{font-size:22px;font-weight:700;color:var(--text-dark);line-height:1.4;margin-bottom:8px}
-h2{font-size:16px;font-weight:700;color:var(--text-dark);margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,0.1)}
-h3{font-size:14px;font-weight:700;color:var(--text-dark);margin:20px 0 8px}
-h4{font-size:14px;font-weight:700;color:var(--text-muted);margin:16px 0 6px}
-p{font-size:14px;line-height:1.85;margin-bottom:10px}
-ul,ol{font-size:14px;padding-left:20px;margin-bottom:12px}
+h2{font-size:17px;font-weight:700;color:var(--text-dark);margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,0.1)}
+h3{font-size:15px;font-weight:700;color:var(--text-dark);margin:20px 0 8px}
+h4{font-size:15px;font-weight:700;color:var(--text-muted);margin:16px 0 6px}
+p{font-size:15px;line-height:1.85;margin-bottom:10px}
+ul,ol{font-size:15px;padding-left:20px;margin-bottom:12px}
 li{margin-bottom:4px}
 
 /* ── TABLE ── */
 .table-wrap{overflow-x:auto;margin:12px 0 20px}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{background:#3a3a38;color:#fff;padding:9px 12px;text-align:left;font-size:13px;font-weight:600;border-right:1px solid rgba(255,255,255,0.12)}
-td{padding:9px 12px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;font-size:13px;line-height:1.7;color:var(--text-dark)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:#3a3a38;color:#fff;padding:9px 12px;text-align:left;font-size:14px;font-weight:600;border-right:1px solid rgba(255,255,255,0.12)}
+td{padding:9px 12px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;font-size:14px;line-height:1.7;color:var(--text-dark)}
 tr:nth-child(even){background:#fafaf8}
 tr.priority-aaa{background:#fffdf0}
 tr.priority-aaa td:nth-child(2) span{color:#B8421A;font-weight:700}
@@ -73,27 +73,27 @@ tr.priority-aa td:nth-child(2) span{color:#4a7c3f;font-weight:700}
 tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
 
 /* ── CALLOUT ── */
-.callout{background:var(--sidebar-bg);color:#fff;border-left:4px solid var(--gold);padding:16px 20px;margin:16px 0;font-size:14px;line-height:1.85}
+.callout{background:var(--sidebar-bg);color:#fff;border-left:4px solid var(--gold);padding:16px 20px;margin:16px 0;font-size:15px;line-height:1.85}
 .callout strong{color:var(--gold)}
-.callout-light{background:#fff;border:1px solid var(--gold-border);border-left:4px solid var(--gold);padding:14px 18px;margin:14px 0;font-size:14px;line-height:1.85}
+.callout-light{background:#fff;border:1px solid var(--gold-border);border-left:4px solid var(--gold);padding:14px 18px;margin:14px 0;font-size:15px;line-height:1.85}
 
 /* ── GOLD RULE ── */
 .gold-rule{height:2px;background:linear-gradient(to right,var(--gold),transparent);margin:16px 0 24px}
 
 /* ── INDEX TABLE ── */
 .index-table{width:100%;border-collapse:collapse;margin:16px 0}
-.index-table td{padding:8px 12px;border-bottom:1px solid rgba(0,0,0,0.08);font-size:14px;vertical-align:middle}
+.index-table td{padding:8px 12px;border-bottom:1px solid rgba(0,0,0,0.08);font-size:15px;vertical-align:middle}
 .index-table td:first-child{width:28%;font-weight:600;color:var(--text-dark)}
-.index-table td:nth-child(2){color:var(--text-muted);font-size:13px}
-.index-table td:last-child{width:28%;font-size:12px}
+.index-table td:nth-child(2){color:var(--text-muted);font-size:14px}
+.index-table td:last-child{width:28%;font-size:13px}
 
 /* ── PAGE FOOTER ── */
-.page-footer{margin-top:40px;padding-top:14px;border-top:1px solid rgba(0,0,0,0.1);font-size:12px;color:var(--text-muted)}
+.page-footer{margin-top:40px;padding-top:14px;border-top:1px solid rgba(0,0,0,0.1);font-size:13px;color:var(--text-muted)}
 
 /* ── PUBLIC LINKS ── */
 .pub-links{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 18px;align-items:center}
-.pub-links-label{font-size:12px;color:var(--text-muted);font-weight:700;letter-spacing:.06em;white-space:nowrap;margin-right:2px}
-.pub-link{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--gold-border);border-left:3px solid var(--gold);padding:4px 10px;font-size:12px;color:#5a4a00;text-decoration:none;border-radius:2px;line-height:1.4;transition:background .15s,border-color .15s}
+.pub-links-label{font-size:13px;color:var(--text-muted);font-weight:700;letter-spacing:.06em;white-space:nowrap;margin-right:2px}
+.pub-link{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--gold-border);border-left:3px solid var(--gold);padding:4px 10px;font-size:13px;color:#5a4a00;text-decoration:none;border-radius:2px;line-height:1.4;transition:background .15s,border-color .15s}
 .pub-link:hover{background:var(--gold-dim);border-color:var(--gold)}
 .pub-link::before{content:"🔗";font-size:11px}
 
@@ -374,7 +374,7 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
           <td>全国約967拠点の推進局が共通のデータ基盤で動くための「情報インフラの法的根拠」。</td>
         </tr>
         <tr>
-          <td colspan="5" style="font-size:13px;color:var(--text-muted);background:#f8f8f6">※ 上記は主要な法改正を示したものであり、政令・省令・府令レベルの詳細整備は各省庁が個別に対応する。AI判定システムの行政利用基準については現時点で包括的な法律が存在しないため、別途「行政AI利用基本法（仮称）」の制定またはデジタル庁ガイドライン整備が必要となる。各省庁間の共管案件については内閣官房が調整主体となり、閣議決定を通じた一括提出が望ましい。</td>
+          <td colspan="5" style="font-size:14px;color:var(--text-muted);background:#f8f8f6">※ 上記は主要な法改正を示したものであり、政令・省令・府令レベルの詳細整備は各省庁が個別に対応する。AI判定システムの行政利用基準については現時点で包括的な法律が存在しないため、別途「行政AI利用基本法（仮称）」の制定またはデジタル庁ガイドライン整備が必要となる。各省庁間の共管案件については内閣官房が調整主体となり、閣議決定を通じた一括提出が望ましい。</td>
         </tr>
       </tbody>
     </table></div>
@@ -894,44 +894,44 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
       <thead><tr><th style="width:4%">#</th><th style="width:26%">防衛ライン</th><th style="width:36%">失った場合の帰結</th><th style="width:34%">交渉上の妥協許容範囲</th></tr></thead>
       <tbody>
         <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">①</td>
-          <td><strong>年金水準の法定数値明記</strong><br><span style="font-size:12px;color:var(--text-muted)">等級別最低保障額を国民年金法第33条に数値として直接規定。政令委任を認めない。</span></td>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">①</td>
+          <td><strong>年金水準の法定数値明記</strong><br><span style="font-size:13px;color:var(--text-muted)">等級別最低保障額を国民年金法第33条に数値として直接規定。政令委任を認めない。</span></td>
           <td>行政裁量で「段階的引き上げ」「据え置き」が可能になり増額が形骸化する。制度全体の財政設計が宙に浮く。</td>
           <td>引き上げ額の数字・引き上げ時期の段階設定は交渉余地あり。ただし「数値を法定化すること」自体は絶対に譲れない。</td>
         </tr>
         <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">②</td>
-          <td><strong>拠出金収入の年金財源への法定直結</strong><br><span style="font-size:12px;color:var(--text-muted)">雇用代替拠出金を障害就労支援特別会計（新設）へ直結し、年金財源への充当経路を法定化する。</span></td>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">②</td>
+          <td><strong>拠出金収入の年金財源への法定直結</strong><br><span style="font-size:13px;color:var(--text-muted)">雇用代替拠出金を障害就労支援特別会計（新設）へ直結し、年金財源への充当経路を法定化する。</span></td>
           <td>60年間と同じ「収益が当事者に届かない」構造が再現する。一般会計に吸収されれば別用途に流用される。</td>
           <td>特別会計の名称・設計細部・拠出金単価の段階的引き上げは受け入れ可。「年金財源への法定直結ルート」の廃止は絶対に認めない。</td>
         </tr>
         <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">③</td>
-          <td><strong>A型事業所の囲い込み廃止と代替の法的確約</strong><br><span style="font-size:12px;color:var(--text-muted)">廃止・統合・再編の法的根拠と職員の優先再雇用を附則に明記する。</span></td>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">③</td>
+          <td><strong>A型事業所の囲い込み廃止と代替の法的確約</strong><br><span style="font-size:13px;color:var(--text-muted)">廃止・統合・再編の法的根拠と職員の優先再雇用を附則に明記する。</span></td>
           <td>「改革」の看板のもとで低賃金囲い込み構造が法的保護を得る。現行の搾取構造が温存される。</td>
           <td>廃止の猶予期間（5年→7年程度）・選別基準の細部は調整可。B型の重度障害者向け最低限拠点存続は認める。「A型の全面存続容認」は絶対に認めない。</td>
         </tr>
         <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">④</td>
-          <td><strong>就労実績を等級判断材料から除外する明文規定</strong><br><span style="font-size:12px;color:var(--text-muted)">障害状態確認届の再審査において就労実績・就労時間・就労収入を症状改善の根拠として使用することを法文上禁止する。</span></td>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">④</td>
+          <td><strong>就労実績を等級判断材料から除外する明文規定</strong><br><span style="font-size:13px;color:var(--text-muted)">障害状態確認届の再審査において就労実績・就労時間・就労収入を症状改善の根拠として使用することを法文上禁止する。</span></td>
           <td>年金増額が事実上の「就労義務化」に転化する。「働くと等級が下がる」という現行の逆インセンティブ構造が継続し制度が機能しなくなる。</td>
           <td>症状が実際に改善した場合の等級変更自体は認める（精神・発達障害は改善があり得るため）。禁止するのは「就労実績を根拠とすること」であり、医師診断・ADL指標等による変更は妥当な運用として認める。</td>
         </tr>
         <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">⑤</td>
-          <td><strong>就労実績ポイントの全国統一・算出ロジック公開・不服申立の法定化</strong><br><span style="font-size:12px;color:var(--text-muted)">準公務職員の就労評価の算出基準を全国統一・公開とし、当事者が異議申し立てできる第三者審査を推進局に義務付ける。</span></td>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">⑤</td>
+          <td><strong>就労実績ポイントの全国統一・算出ロジック公開・不服申立の法定化</strong><br><span style="font-size:13px;color:var(--text-muted)">準公務職員の就労評価の算出基準を全国統一・公開とし、当事者が異議申し立てできる第三者審査を推進局に義務付ける。</span></td>
           <td>スコア算出が自治体・推進局の裁量に委ねられ、評価の恣意的運用による新たな差別構造が生まれる。</td>
           <td>不服申立の手続き細部（申立期間・審査委員の構成等）は交渉可。「不服申立制度の存在」と「全国統一の算出基準」は絶対に譲れない。</td>
         </tr>
         <tr>
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">⑥</td>
-          <td><strong>就労資格と年金受給の完全分離</strong><br><span style="font-size:12px;color:var(--text-muted)">準公務職員資格を取り消された場合でも年金受給は継続されることを法文上明確にする。</span></td>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">⑥</td>
+          <td><strong>就労資格と年金受給の完全分離</strong><br><span style="font-size:13px;color:var(--text-muted)">準公務職員資格を取り消された場合でも年金受給は継続されることを法文上明確にする。</span></td>
           <td>「条件付き年金」として生活保障が就労規律の脅迫手段に転化する。「不正した者への年金継続はおかしい」という世論圧力で骨抜きにされやすい。</td>
           <td>就労資格の取消条件の細部は交渉可。「資格取消＝年金停止」という連動は絶対に認めない。就労資格と生活保障は条文上も切り離す。</td>
         </tr>
         <tr style="background:#fff8f8">
-          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:16px">⑦</td>
-          <td><strong>A型職員の優先再雇用の附則明記</strong>（攻め手兼防衛ライン）<br><span style="font-size:12px;color:var(--text-muted)">A型事業所廃止・統合にあたり職員を準公務コーディネーターとして推進局に優先再雇用する義務を附則に明文化する。</span></td>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">⑦</td>
+          <td><strong>A型職員の優先再雇用の附則明記</strong>（攻め手兼防衛ライン）<br><span style="font-size:13px;color:var(--text-muted)">A型事業所廃止・統合にあたり職員を準公務コーディネーターとして推進局に優先再雇用する義務を附則に明文化する。</span></td>
           <td>A型職員団体が「雇用を奪われる」という反論で法改正全体を頓挫させる。最大の反対勢力を中和できず国会審議で制度全体が潰される。</td>
           <td>優先再雇用の条件細部（年収水準・研修期間等）は交渉可。「優先再雇用の法的義務そのもの」は絶対に確保する。<strong>これを早期に提示することで反対勢力を中立化・味方化できる可能性がある。戦略的に早めに出す。</strong></td>
         </tr>
@@ -1107,37 +1107,37 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
       <tbody>
         <tr>
           <td style="text-align:center;font-weight:700;color:#8B0000">①</td>
-          <td><strong>重度障害者の家族・ケアラー</strong><br><span style="font-size:12px;color:var(--text-muted)">数が多く感情的訴求力が高い。最も早く動く</span></td>
+          <td><strong>重度障害者の家族・ケアラー</strong><br><span style="font-size:13px;color:var(--text-muted)">数が多く感情的訴求力が高い。最も早く動く</span></td>
           <td>「B型事業所が縮小されれば日中の居場所がなくなり家族が丸抱えになる」「ヤングケアラーの就学・就労機会の損失に対する補填を」「ケアラー自身への直接的経済補償を」</td>
           <td>本提言のFAQ（対象範囲Q）で「B型の一部存続」「年金増額は全受給者対象」を明示済み。ケアラー支援は本提言の直接財源では賄えないが、本提言が生む税収増を将来財源として位置づける論理を準備しておく。感情的批判には「年金増額は今日から始まる」という事実で返す。</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:700;color:#8B0000">②</td>
-          <td><strong>就労判定ボーダー層</strong><br><span style="font-size:12px;color:var(--text-muted)">本提言への直接的批判になる。制度審議中に噴出するリスク</span></td>
+          <td><strong>就労判定ボーダー層</strong><br><span style="font-size:13px;color:var(--text-muted)">本提言への直接的批判になる。制度審議中に噴出するリスク</span></td>
           <td>「誰が就労可能を判定するのか」「精神・発達障害者は日によって状態が異なる。悪い日に判定されれば不当に除外される」「判定制度の透明性・不服申立の充実を」</td>
           <td>これは財源問題ではなく制度設計の問題。推進局の判定基準の透明化・不服申立制度は本提言の絶対防衛ライン④⑤に組み込み済み。制度審議の場でこの批判が出た場合、「すでに設計済み」と条文案を示せる状態を維持する。</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:700;color:#8B0000">③</td>
-          <td><strong>年金非受給の障害者</strong><br><span style="font-size:12px;color:var(--text-muted)">手帳はあるが年金受給資格がない層。共感を集めやすい</span></td>
+          <td><strong>年金非受給の障害者</strong><br><span style="font-size:13px;color:var(--text-muted)">手帳はあるが年金受給資格がない層。共感を集めやすい</span></td>
           <td>「障害者手帳を持っていても年金受給資格がない者はなぜ除外されるのか」「発達障害・軽度知的障害などのグレーゾーンは年金も取れず一般雇用にも適応できない」「年金非受給障害者への一律基礎給付を」</td>
           <td>本提言の年金増額審議が国会に上程された段階で「では年金にそもそも届かない者はどうするのか」という問いが議員から出る可能性が高い。これは本提言の審議プロセスの中で自然に接続できる問いであり、認定基準の見直し・拡大で対応できる部分が大きい。追加財源は比較的小規模で済む可能性があるため、審議中の「追加修正案」として吸収できる余地がある。</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:700;color:#8B0000">④</td>
-          <td><strong>厚生年金未加入の障害者</strong><br><span style="font-size:12px;color:var(--text-muted)">自営業・フリーランス・先天性障害者</span></td>
+          <td><strong>厚生年金未加入の障害者</strong><br><span style="font-size:13px;color:var(--text-muted)">自営業・フリーランス・先天性障害者</span></td>
           <td>「3級が新設されても厚生年金未加入者は対象外。自営業・フリーランス障害者はなぜ保護されないのか」「先天性障害で就労歴がなく年金等級すら持っていない者への対応を」</td>
           <td>障害基礎年金の増額は本提言に含まれており、この層にも一定の恩恵は届く。「完全な平等ではないが改善は生じる」という事実を明示する。完全解決は別制度の問題であり、本提言の射程外であることを明言する。</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:700;color:#8B0000">⑤</td>
-          <td><strong>難病・慢性疾患患者</strong><br><span style="font-size:12px;color:var(--text-muted)">団体組織力が高い。別制度の問題だが本提言に乗じやすい</span></td>
+          <td><strong>難病・慢性疾患患者</strong><br><span style="font-size:13px;color:var(--text-muted)">団体組織力が高い。別制度の問題だが本提言に乗じやすい</span></td>
           <td>「指定難病でも障害認定を受けられないケースが多数ある。そうした者はSCP制度にも年金増額にも無縁のまま」「難病・慢性疾患患者を障害福祉制度に正式に包含することを求める」</td>
           <td>これは障害福祉制度と医療制度・難病制度の接続問題であり、本提言とは法体系が異なる別の問題。「本提言が障害認定基準の議論を活性化させる起爆剤になることは歓迎するが、本提言への直接の接続は制度設計上不可能」という立場を明確にする。</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:700;color:#8B0000">⑥</td>
-          <td><strong>地方・過疎地在住の障害者</strong><br><span style="font-size:12px;color:var(--text-muted)">分散しており組織化が遅い。ただし地方議員を動かしやすい</span></td>
+          <td><strong>地方・過疎地在住の障害者</strong><br><span style="font-size:13px;color:var(--text-muted)">分散しており組織化が遅い。ただし地方議員を動かしやすい</span></td>
           <td>「都市部には拠点が整備され地方には何も来ない」「ICTリテラシーが低い障害者・高齢障害者はリモートタスクにも乗れない」「地方への推進局整備の義務化とデジタル支援員の配置を」</td>
           <td>推進局の地方整備義務化・リモートタスクの拡充は本提言の設計に追記可能。地方交付税の算定見直しで対応できる範囲。地方議員経由で圧力がかかる可能性があるが、地方整備を「義務→努力義務」に格下げする妥協余地はある。ただし格下げは地域間格差の固定化につながるため慎重に判断する。</td>
         </tr>
@@ -1488,15 +1488,15 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
       <thead><tr><th>分類</th><th>基準単価</th><th>上限件数（目安）</th><th>査定で加算される要件</th><th>査定で減額される要件</th></tr></thead>
       <tbody>
         <tr style="background:#fffdf0">
-          <td><strong>S級</strong><br>必須ノウハウ（直接活用型）<br><span style="font-size:12px;color:var(--text-muted)">能動型公募限定</span></td>
+          <td><strong>S級</strong><br>必須ノウハウ（直接活用型）<br><span style="font-size:13px;color:var(--text-muted)">能動型公募限定</span></td>
           <td><strong>300〜500万円/件</strong></td>
-          <td>全国10〜15件程度<br><span style="font-size:12px;color:var(--text-muted)">（厳格な定義に照らし件数を絞る）</span></td>
+          <td>全国10〜15件程度<br><span style="font-size:13px;color:var(--text-muted)">（厳格な定義に照らし件数を絞る）</span></td>
           <td>複数障害種別に対応・実績5年以上・推進局の改修コストがほぼゼロと判定された場合は上限に近い額</td>
           <td>一部の障害種別のみ対応・実績2年未満・推進局での改修コストが高いと判定された場合は下限寄り</td>
         </tr>
         <tr>
-          <td><strong>A級</strong><br>必須ノウハウ（アレンジ活用型）<br><span style="font-size:12px;color:var(--text-muted)">能動型・受動型両方対象</span></td>
-          <td><strong>100〜300万円/件</strong><br><span style="font-size:12px;color:var(--text-muted)">（上限を引き上げ。失敗・解決事例の格上げを反映）</span></td>
+          <td><strong>A級</strong><br>必須ノウハウ（アレンジ活用型）<br><span style="font-size:13px;color:var(--text-muted)">能動型・受動型両方対象</span></td>
+          <td><strong>100〜300万円/件</strong><br><span style="font-size:13px;color:var(--text-muted)">（上限を引き上げ。失敗・解決事例の格上げを反映）</span></td>
           <td>全国50〜100件程度</td>
           <td>アレンジ後の汎用性が高い・制度設計への直結度が明確・実績規模が大きい・失敗解決事例で推進局の設計コストを大幅削減できると判定された場合は上限寄り</td>
           <td>ローカルすぎる内容・汎用化に多大な改修が必要・実績年数が短い</td>
@@ -1509,9 +1509,9 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
           <td>既存の公開研究・文献で代替可能な内容・特定企業に特化しすぎている</td>
         </tr>
         <tr>
-          <td><strong>C級</strong><br>参考情報（事例蓄積型）<br><span style="font-size:12px;color:var(--text-muted)">※失敗・問題・解決事例は格上げ対象（後述）</span></td>
-          <td><strong>3〜10万円/件</strong><br><span style="font-size:12px;color:var(--text-muted)">（謝礼金水準）</span></td>
-          <td>年間200件程度を上限の目安とする<br><span style="font-size:12px;color:var(--text-muted)">（予算管理上のキャップ）</span></td>
+          <td><strong>C級</strong><br>参考情報（事例蓄積型）<br><span style="font-size:13px;color:var(--text-muted)">※失敗・問題・解決事例は格上げ対象（後述）</span></td>
+          <td><strong>3〜10万円/件</strong><br><span style="font-size:13px;color:var(--text-muted)">（謝礼金水準）</span></td>
+          <td>年間200件程度を上限の目安とする<br><span style="font-size:13px;color:var(--text-muted)">（予算管理上のキャップ）</span></td>
           <td>事例が具体的・再現可能性が高い・当事者の視点が含まれる</td>
           <td>抽象的・一般論の域を出ない</td>
         </tr>
