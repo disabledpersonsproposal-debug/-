@@ -7,25 +7,28 @@
 <link rel="stylesheet" href="style.css">
 <script src="nav.js" defer></script>
 <style>
-.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 24px}
+/* シナリオ比較 - 横展開レイアウト */
+.scenario-grid{display:flex;flex-direction:column;gap:10px;margin:24px 0}
 .scenario-box{border:1px solid var(--gold-border);background:#fff;overflow:hidden}
-.scenario-box.ok{border-top:4px solid #2C7A3A}
-.scenario-box.ng{border-top:4px solid #B8421A}
-.scenario-head{padding:14px 18px 10px}
-.scenario-head .stag{font-size:15px;font-weight:700;letter-spacing:.06em}
-.stag.ok{color:#2C7A3A}.stag.ng{color:#B8421A}
-.scenario-head h3{font-size:15px;font-weight:700;color:var(--text-dark);margin:4px 0 2px}
-.scenario-head p{font-size:15px;color:var(--text-muted)}
-.scenario-body{padding:0 18px 16px}
-.period-row{display:grid;grid-template-columns:76px 1fr 90px;align-items:center;gap:8px;margin:10px 0}
-.period-label{font-size:15px;color:var(--text-muted);line-height:1.4}
-.bar-wrap{background:#e8e8e8;border-radius:3px;height:18px;position:relative}
-.bar-fill{height:18px;border-radius:3px}
-.bar-fill.ok{background:#2C7A3A}.bar-fill.ng{background:#B8421A}
-.bar-note{font-size:15px;margin-top:3px}
-.ok-note{color:#2C7A3A;font-weight:600}.ng-note{color:#B8421A;font-weight:600}
-.bar-val{font-size:15px;font-weight:700;text-align:right;white-space:nowrap}
-.bar-val.ok{color:#2C7A3A}.bar-val.ng{color:#B8421A}
+.scenario-box.ok{border-left:5px solid #2C7A3A}
+.scenario-box.mid{border-left:5px solid #1a5c9a}
+.scenario-box.ng{border-left:5px solid #B8421A}
+.scenario-inner{display:grid;grid-template-columns:210px 1fr}
+.scenario-head{padding:14px 16px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--gold-border)}
+.scenario-head .stag{font-size:14px;font-weight:700;letter-spacing:.05em;margin-bottom:5px}
+.stag.ok{color:#2C7A3A}.stag.mid{color:#1a5c9a}.stag.ng{color:#B8421A}
+.scenario-head h3{font-size:14px;font-weight:700;color:var(--text-dark);margin:0 0 4px;line-height:1.4}
+.scenario-head p{font-size:13px;color:var(--text-muted);margin:0;line-height:1.45}
+.scenario-body{display:grid;grid-template-columns:repeat(3,1fr)}
+.period-col{padding:12px 14px;border-right:1px solid rgba(0,0,0,.06)}
+.period-col:last-child{border-right:none}
+.period-col-label{font-size:12px;color:var(--text-muted);font-weight:700;letter-spacing:.04em;margin-bottom:7px}
+.bar-wrap{background:#e8e8e8;border-radius:3px;height:12px;margin-bottom:5px}
+.bar-fill{height:12px;border-radius:3px}
+.bar-fill.ok{background:#2C7A3A}.bar-fill.mid{background:#1a5c9a}.bar-fill.ng{background:#B8421A}
+.period-note{font-size:12px;font-weight:600;margin-bottom:2px}
+.period-val{font-size:15px;font-weight:700}
+.ok-note{color:#2C7A3A;font-weight:600}.mid-note{color:#1a5c9a;font-weight:600}.ng-note{color:#B8421A;font-weight:600}
 .wf-header{display:grid;grid-template-columns:200px 1fr 72px 72px 72px;gap:8px;margin:0 24px 4px}
 .wf-head{font-size:15px;color:var(--text-muted);text-align:right}
 .waterfall{display:flex;flex-direction:column;gap:5px;margin:16px 24px}
@@ -43,7 +46,8 @@
 .grade-tag{font-size:15px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:4px}
 .grade-name{font-size:15px;color:var(--text-muted);margin-bottom:6px}
 .grade-val{font-size:16px;font-weight:700;color:var(--text-dark)}
-@media(max-width:680px){.scenario-grid{grid-template-columns:1fr}.grade-grid{grid-template-columns:1fr 1fr}.wf-header,.wf-row{grid-template-columns:120px 1fr 60px 60px 60px}}
+@media(max-width:680px){.scenario-inner{grid-template-columns:1fr}.scenario-head{border-right:none;border-bottom:1px solid var(--gold-border)}.scenario-body{grid-template-columns:1fr}.grade-grid{grid-template-columns:1fr 1fr}.wf-header,.wf-row{grid-template-columns:120px 1fr 60px 60px 60px}}
+@media(max-width:430px){.grade-grid{grid-template-columns:1fr}.wf-header{display:none}.wf-row{grid-template-columns:1fr;gap:2px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.07)}.wf-label{font-weight:600}.wf-bar-cell{height:12px;margin:4px 0}.wf-num{text-align:left;font-size:13px}}
 </style>
 </head>
 <body>
@@ -52,7 +56,7 @@
   <div class="content">
     <div class="chapter-label">REFERENCE</div>
     <h1 class="chapter-title">財源確保シミュレーション（10カ年・年額）</h1>
-    <p class="chapter-subtitle">順調シナリオ・停滞シナリオの双方で財源構造を検証。第2期から黒字転換を目指す自律循環モデル。</p>
+    <p class="chapter-subtitle">順調・現実的・停滞の3シナリオで財源構造を検証。現実的シナリオでも第2期から黒字転換を目指す自律循環モデル。</p>
     <div class="gold-rule"></div>
 
     <div class="callout-light" style="margin-bottom:20px"><strong>【本資料の位置づけについて】</strong>　本ページに示す数値・シナリオはいずれも、制度実現の可能性を検証するための試算であり、確定値ではない。拠出金率・給付水準・財源配分の具体的な設計は、制度化の過程において財政当局・有識者・関係者による精査と合意形成を経て決定されるべき事項である。本試算はその議論の出発点として提示するものである。</div>
@@ -65,75 +69,103 @@
       したがって「増税なし」とは「一切の公的支出を伴わない」ではなく、「恒久的な増税を財源の前提としない設計」を意味する。この区別を明確にした上で、以下のシミュレーションを参照されたい。
     </div>
 
-    <h2>両シナリオ比較：予算と財源の対照</h2>
+    <h2>3シナリオ比較：予算と財源の対照</h2>
 
     <div class="scenario-grid">
+
+      <!-- 順調シナリオ -->
       <div class="scenario-box ok">
-        <div class="scenario-head">
-          <div class="stag ok">✅ 順調シナリオ</div>
-          <h3>既存施設・リース・民間連携を最大活用</h3>
-          <p>第2期から黒字転換</p>
-        </div>
-        <div class="scenario-body">
-          <div class="period-row">
-            <span class="period-label">第1期<br>1〜3年目</span>
-            <div>
+        <div class="scenario-inner">
+          <div class="scenario-head">
+            <div class="stag ok">✅ 順調シナリオ</div>
+            <h3>既存施設・リース・民間連携を最大活用</h3>
+            <p>第2期から黒字転換</p>
+          </div>
+          <div class="scenario-body">
+            <div class="period-col">
+              <div class="period-col-label">第1期（1〜3年目）</div>
               <div class="bar-wrap"><div class="bar-fill ok" style="width:34%"></div></div>
-              <div class="bar-note ok-note">財源 2.69兆円（+国債先行投資補完）</div>
+              <div class="period-note ok-note">財源 2.69兆円（+国債補完）</div>
+              <div class="period-val ok-note">予算 2.29兆円</div>
             </div>
-            <span class="bar-val ok">予算 2.29兆</span>
-          </div>
-          <div class="period-row">
-            <span class="period-label">第2期<br>4〜6年目</span>
-            <div>
+            <div class="period-col">
+              <div class="period-col-label">第2期（4〜6年目）</div>
               <div class="bar-wrap"><div class="bar-fill ok" style="width:48%"></div></div>
-              <div class="bar-note ok-note">財源 5.57兆円 ＋2.28兆黒字</div>
+              <div class="period-note ok-note">財源 5.57兆円</div>
+              <div class="period-val ok-note">予算 3.29兆円　＋2.28兆黒字</div>
             </div>
-            <span class="bar-val ok">予算 3.29兆</span>
-          </div>
-          <div class="period-row">
-            <span class="period-label">第3期<br>7〜10年目</span>
-            <div>
+            <div class="period-col">
+              <div class="period-col-label">第3期（7〜10年目）</div>
               <div class="bar-wrap"><div class="bar-fill ok" style="width:63%"></div></div>
-              <div class="bar-note ok-note">財源 7.20兆円 ＋2.94兆黒字</div>
+              <div class="period-note ok-note">財源 7.20兆円</div>
+              <div class="period-val ok-note">予算 4.26兆円　＋2.94兆黒字</div>
             </div>
-            <span class="bar-val ok">予算 4.26兆</span>
           </div>
         </div>
       </div>
+
+      <!-- 現実的シナリオ -->
+      <div class="scenario-box mid">
+        <div class="scenario-inner">
+          <div class="scenario-head">
+            <div class="stag mid">🔵 現実的シナリオ</div>
+            <h3>法改正遅延・パイロット延長を織り込んだ標準シナリオ</h3>
+            <p>第2期から黒字転換（日本の立法実態に即した最も蓋然性の高い見通し）</p>
+          </div>
+          <div class="scenario-body">
+            <div class="period-col">
+              <div class="period-col-label">第1期（1〜3年目）</div>
+              <div class="bar-wrap"><div class="bar-fill mid" style="width:44%"></div></div>
+              <div class="period-note mid-note">財源 2.60兆円（+国債補完）</div>
+              <div class="period-val mid-note">予算 3.0兆円</div>
+            </div>
+            <div class="period-col">
+              <div class="period-col-label">第2期（4〜6年目）</div>
+              <div class="bar-wrap"><div class="bar-fill mid" style="width:62%"></div></div>
+              <div class="period-note mid-note">財源 4.60兆円</div>
+              <div class="period-val mid-note">予算 4.2兆円　＋0.40兆黒字</div>
+            </div>
+            <div class="period-col">
+              <div class="period-col-label">第3期（7〜10年目）</div>
+              <div class="bar-wrap"><div class="bar-fill mid" style="width:74%"></div></div>
+              <div class="period-note mid-note">財源 6.10兆円</div>
+              <div class="period-val mid-note">予算 5.0兆円　＋1.10兆黒字</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 停滞シナリオ -->
       <div class="scenario-box ng">
-        <div class="scenario-head">
-          <div class="stag ng">⚠️ 停滞シナリオ</div>
-          <h3>老朽化・独自開発・採用難・移行遅延</h3>
-          <p>10年内に黒字転換せず</p>
-        </div>
-        <div class="scenario-body">
-          <div class="period-row">
-            <span class="period-label">第1期<br>1〜3年目</span>
-            <div>
+        <div class="scenario-inner">
+          <div class="scenario-head">
+            <div class="stag ng">⚠️ 停滞シナリオ</div>
+            <h3>老朽化・独自開発・採用難・移行遅延</h3>
+            <p>10年内に黒字転換せず</p>
+          </div>
+          <div class="scenario-body">
+            <div class="period-col">
+              <div class="period-col-label">第1期（1〜3年目）</div>
               <div class="bar-wrap"><div class="bar-fill ng" style="width:61%"></div></div>
-              <div class="bar-note ng-note">財源 2.69兆円 ▲1.50兆不足</div>
+              <div class="period-note ng-note">財源 2.69兆円</div>
+              <div class="period-val ng-note">予算 4.19兆円　▲1.50兆不足</div>
             </div>
-            <span class="bar-val ng">予算 4.19兆</span>
-          </div>
-          <div class="period-row">
-            <span class="period-label">第2期<br>4〜6年目</span>
-            <div>
+            <div class="period-col">
+              <div class="period-col-label">第2期（4〜6年目）</div>
               <div class="bar-wrap"><div class="bar-fill ng" style="width:76%"></div></div>
-              <div class="bar-note ng-note">財源 5.07兆円 ▲0.11兆不足</div>
+              <div class="period-note ng-note">財源 5.07兆円</div>
+              <div class="period-val ng-note">予算 5.18兆円　▲0.11兆不足</div>
             </div>
-            <span class="bar-val ng">予算 5.18兆</span>
-          </div>
-          <div class="period-row">
-            <span class="period-label">第3期<br>7〜10年目</span>
-            <div>
+            <div class="period-col">
+              <div class="period-col-label">第3期（7〜10年目）</div>
               <div class="bar-wrap"><div class="bar-fill ng" style="width:90%"></div></div>
-              <div class="bar-note ng-note">財源 4.90兆円 ▲1.20兆不足</div>
+              <div class="period-note ng-note">財源 4.90兆円</div>
+              <div class="period-val ng-note">予算 6.10兆円　▲1.20兆不足</div>
             </div>
-            <span class="bar-val ng">予算 6.10兆</span>
           </div>
         </div>
       </div>
+
     </div>
 
     <div class="callout">最大の変数は2点：<strong>「拠点整備コスト」</strong>と<strong>「企業の制度参加速度（＝拠出金収入）」</strong>。いずれのシナリオでも現行制度の「不作為のコスト」（年2.6〜3.2兆円）との比較では社会的に合理的な投資である。問われているのは「コストをかけるか否か」ではなく、「そのコストを誰が・どんな形で負担するか」という設計思想の問題である。</div>
@@ -179,6 +211,98 @@
         <div class="wf-num" style="color:#2C7A3A;font-size:15px">2.69兆円</div>
         <div class="wf-num" style="color:#2C7A3A;font-size:15px">5.57兆円</div>
         <div class="wf-num" style="color:#2C7A3A;font-size:15px">7.20兆円</div>
+      </div>
+    </div>
+
+    <h2 id="finance-breakdown-realistic">財源の構成（年額推移）─ 現実的シナリオ</h2>
+
+    <div class="wf-header">
+      <div></div><div></div>
+      <div class="wf-head">第1期</div><div class="wf-head">第2期</div><div class="wf-head">第3期</div>
+    </div>
+    <div class="waterfall">
+      <div class="wf-row">
+        <div class="wf-label"><strong>A</strong> 現行障害年金予算（流用）</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:100%"></div></div>
+        <div class="wf-num" style="color:#1a5c9a">2.4兆円</div>
+        <div class="wf-num" style="color:#1a5c9a">2.4兆円</div>
+        <div class="wf-num" style="color:#1a5c9a">2.5兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>B</strong> 補助金効率化・スライド</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:4%"></div></div>
+        <div class="wf-num" style="color:#1a5c9a">0.1兆円</div>
+        <div class="wf-num" style="color:#1a5c9a">0.6兆円</div>
+        <div class="wf-num" style="color:#1a5c9a">1.0兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>C</strong> 雇用代替拠出金（企業）</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:0%"></div></div>
+        <div class="wf-num" style="color:var(--text-muted)">0.0兆円</div>
+        <div class="wf-num" style="color:#1a5c9a">1.3兆円</div>
+        <div class="wf-num" style="color:#1a5c9a">2.2兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>D</strong> 既存手当・扶助費整理</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:4%"></div></div>
+        <div class="wf-num" style="color:#1a5c9a">0.1兆円</div>
+        <div class="wf-num" style="color:#1a5c9a">0.3兆円</div>
+        <div class="wf-num" style="color:#1a5c9a">0.4兆円</div>
+      </div>
+      <div class="wf-row" style="border-top:1px solid var(--gold-border);padding-top:6px;margin-top:4px;font-weight:700">
+        <div class="wf-label">財源合計（現実的）</div>
+        <div class="wf-bar-cell"></div>
+        <div class="wf-num" style="color:#1a5c9a;font-size:15px">2.60兆円</div>
+        <div class="wf-num" style="color:#1a5c9a;font-size:15px">4.60兆円</div>
+        <div class="wf-num" style="color:#1a5c9a;font-size:15px">6.10兆円</div>
+      </div>
+    </div>
+
+    <h2 id="finance-breakdown-stagnant">財源の構成（年額推移）─ 停滞シナリオ</h2>
+
+    <div class="callout-light" style="margin-bottom:12px;border-left-color:#B8421A">
+      <strong>【停滞シナリオにおける財源Cの特徴】</strong>　企業拠出金（C）は第2期に一定水準まで立ち上がるが、法整備の遅延と政治的抵抗により第3期に向けて拡大が停滞・縮小する。第3期のC（1.5兆円）はcost.htmlの確定値。第2期のCが第3期を上回るのは、法整備遅延が長期化する中で当初参加した企業が義務軽減を求めて拠出金を減らす動きを反映している。
+    </div>
+
+    <div class="wf-header">
+      <div></div><div></div>
+      <div class="wf-head">第1期</div><div class="wf-head">第2期</div><div class="wf-head">第3期</div>
+    </div>
+    <div class="waterfall">
+      <div class="wf-row">
+        <div class="wf-label"><strong>A</strong> 現行障害年金予算（流用）</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:100%"></div></div>
+        <div class="wf-num" style="color:#B8421A">2.4兆円</div>
+        <div class="wf-num" style="color:#B8421A">2.4兆円</div>
+        <div class="wf-num" style="color:#B8421A">2.5兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>B</strong> 補助金効率化・スライド</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:4%"></div></div>
+        <div class="wf-num" style="color:#B8421A">0.1兆円</div>
+        <div class="wf-num" style="color:#B8421A">0.6兆円</div>
+        <div class="wf-num" style="color:#B8421A">0.7兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>C</strong> 雇用代替拠出金（企業）</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:0%"></div></div>
+        <div class="wf-num" style="color:var(--text-muted)">0.0兆円</div>
+        <div class="wf-num" style="color:#B8421A">1.8兆円</div>
+        <div class="wf-num" style="color:#B8421A">1.5兆円</div>
+      </div>
+      <div class="wf-row">
+        <div class="wf-label"><strong>D</strong> 既存手当・扶助費整理</div>
+        <div class="wf-bar-cell"><div class="wf-bar c-income" style="width:8%"></div></div>
+        <div class="wf-num" style="color:#B8421A">0.2兆円</div>
+        <div class="wf-num" style="color:#B8421A">0.3兆円</div>
+        <div class="wf-num" style="color:#B8421A">0.2兆円</div>
+      </div>
+      <div class="wf-row" style="border-top:1px solid var(--gold-border);padding-top:6px;margin-top:4px;font-weight:700">
+        <div class="wf-label">財源合計（停滞）</div>
+        <div class="wf-bar-cell"></div>
+        <div class="wf-num" style="color:#B8421A;font-size:15px">2.70兆円</div>
+        <div class="wf-num" style="color:#B8421A;font-size:15px">5.10兆円</div>
+        <div class="wf-num" style="color:#B8421A;font-size:15px">4.90兆円</div>
       </div>
     </div>
 

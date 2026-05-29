@@ -227,10 +227,15 @@
   margin-bottom: -1px;
 }
 
-@media (max-width: 680px) {
-  .gl-compare-row { grid-template-columns: 90px 1fr 1fr; }
+@media (max-width: 860px) {
   .gl-lane-grid { grid-template-columns: 1fr; }
-  .gl-compare-head, .gl-compare { }
+  .gl-compare-head { grid-template-columns: 1fr; }
+  .gl-compare-label:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .gl-compare { grid-template-columns: 1fr; }
+  .gl-compare-col:first-child { border-right: none; border-bottom: 1px solid var(--gold-border); }
+  .gl-compare-row { grid-template-columns: 1fr; }
+  .gl-compare-axis { border-right: none; border-bottom: 1px solid var(--gold-border); }
+  .gl-compare-val:first-of-type { border-right: none; border-bottom: 1px solid var(--gold-border); }
 }
 </style>
 </head>
