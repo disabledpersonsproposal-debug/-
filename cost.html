@@ -115,16 +115,92 @@
   <div class="card"><div class="card-label">年間就労損失（SCP年齢帯限定）</div><div class="card-value" style="font-size:18px;">5,300〜7,100億円</div><div class="card-desc">SCP制度により直接解消可能</div></div>
 </div>
 
-<h2>② 企業の形式的雇用コスト</h2>
+<h2 id="cost-premise">② 企業の形式的雇用コスト</h2>
+
+<div class="callout-light" style="margin-bottom:16px">
+<strong>【推計前提の透明化】</strong>　本項目の数値は、「管理工数36〜48万円/人」「形式的雇用層60%」という2つの仮定に強く依存する。前者については厚労省「特別費用調査」（労働政策審議会障害者雇用分科会提出資料）という公式の一次資料が存在し、本試算はその値を参照している。後者は複数調査の間接証拠から導いた仮定であり、直接計測値ではない。各仮定の根拠と不確実性を下表の後に明示する。
+</div>
+
 <div class="table-wrap"><table>
-  <thead><tr><th>項目</th><th>推計額</th><th>根拠</th></tr></thead>
+  <thead><tr><th>項目</th><th>推計額</th><th>根拠・仮定</th></tr></thead>
   <tbody>
-    <tr><td>形式的雇用の管理コスト（機会費用）</td><td>1,440〜1,920億円</td><td>雇用障害者67.7万人のうち60%×管理工数36〜48万円/人</td></tr>
-    <tr><td>特例子会社の純維持コスト（管理費・役員派遣等）</td><td>1,860〜3,100億円</td><td>約620社×3〜5億円/社</td></tr>
-    <tr><td>法定雇用率未達成企業の納付金（間接コスト）</td><td>500〜600億円</td><td>JEED納付金収入より推計</td></tr>
-    <tr style="font-weight:700;background:#fff"><td>合計（②）</td><td>約5,400〜7,200億円</td><td>SCP制度移行により管理工数・特例子会社維持費が解消される</td></tr>
+    <tr><td>形式的雇用の管理コスト（機会費用）</td><td>1,440〜1,920億円</td><td>雇用障害者677,461人（厚労省・令和6年障害者雇用状況集計）のうち「業務を本業から切り出せていない形式的雇用層」を60%と仮定。担当者1人あたり年間管理工数を36〜48万円（月3〜4万円相当）と仮定して算出。両仮定の根拠は下記を参照。</td></tr>
+    <tr><td>特例子会社の純維持コスト（管理費・役員派遣等）</td><td>1,860〜3,100億円</td><td>JEED公表（2024年）の特例子会社数621社を使用。純維持コスト（親会社からの管理職派遣・コーポレート業務・施設維持等・障害者給与を除く）を1社あたり3〜5億円と仮定して算出。仮定の根拠は下記を参照。</td></tr>
+    <tr><td>法定雇用率未達成企業の納付金（間接コスト）</td><td>500〜600億円</td><td>JEED「令和5年度障害者雇用納付金等収支状況」の納付金収入実績より。確度★★★（政府統計から直接算出）</td></tr>
+    <tr style="font-weight:700;background:#fff"><td>合計（②）</td><td>約5,400〜7,200億円</td><td>SCP制度移行により管理工数・特例子会社維持費が解消される。納付金は拠出金へ発展的移行。</td></tr>
   </tbody>
 </table></div>
+
+<button class="toggle-btn" onclick="this.nextElementSibling.classList.toggle('hidden');this.textContent=this.textContent.includes('展開')?'▲ 折りたたむ':'▼ 2つの主要仮定の根拠を展開する'">▼ 2つの主要仮定の根拠を展開する</button>
+<div class="hidden">
+<div class="table-wrap"><table>
+  <thead><tr><th>仮定</th><th>設定値</th><th>参照した調査・根拠</th><th>不確実性</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>「形式的雇用層60%」</strong></td>
+      <td>雇用障害者のうち約60%は業務を本業から実質的に切り出せていないと仮定</td>
+      <td>
+        ① パーソルダイバース独自調査（2024年）：法定雇用率2.7%への引き上げについて57.9%の企業が「達成は困難・やや困難」と回答——達成困難の主因が「割り当てられる業務がない」であることを示唆<br>
+        ② スタートライン「障害者雇用に関する2025年の総括と2026年展望調査」（2025年11月）：約7割の企業で採用計画が「遅れた」と回答、課題筆頭は「受け入れ部署の理解・協力」<br>
+        ③ JEED特例子会社調査：特例子会社（親会社の本業と切り離した別会社）の設立企業が621社に達している事実自体が、「本業内での業務創出の限界」を示す構造的証拠<br>
+        ④ appendix.html記載：厚労省「令和7年 障害者雇用状況の集計結果」（2025年12月）——雇用者数が最高更新の一方、法定雇用率達成企業が54%にとどまる「量的拡大と質的空洞化の並立」が確認されている
+      </td>
+      <td>直接の計測値はなく、複数間接証拠からの推定。実態は40〜70%程度の幅があると見込まれる。感度分析：仮定が40%の場合、管理コスト合計は約960〜1,280億円に縮小。</td>
+    </tr>
+    <tr>
+      <td><strong>「管理工数36〜48万円/人・年」</strong></td>
+      <td>
+        障害者1人を雇用する際に企業に生じる年間「特別費用」。<br>
+        施設・設備の設置整備費、直接的管理費（特別手当・福利厚生・教育訓練等）、間接的管理費（作業補助員・相談員の配置・他従業員の研修等）を合算したもの。
+      </td>
+      <td>
+        <strong>【一次資料：厚労省「特別費用調査」】</strong><br>
+        障害者雇用納付金制度の金額設定根拠として、厚労省がハローワーク経由で事業所を訪問調査し、障害者1人あたり月間特別費用を実測している。労働政策審議会障害者雇用分科会に公式提出された値は以下の通り。<br><br>
+        <table style="font-size:13px;border-collapse:collapse;width:100%;margin:4px 0">
+          <tr style="background:var(--sidebar-bg);color:#fff">
+            <th style="padding:5px 8px;text-align:left;font-weight:600">調査時点</th>
+            <th style="padding:5px 8px;text-align:right;font-weight:600">月額平均</th>
+            <th style="padding:5px 8px;text-align:right;font-weight:600">年換算</th>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:5px 8px">平成15年（2003年）分科会提出</td>
+            <td style="padding:5px 8px;text-align:right">37,000円</td>
+            <td style="padding:5px 8px;text-align:right"><strong>44.4万円</strong></td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:5px 8px">平成19年（2007年）分科会提出</td>
+            <td style="padding:5px 8px;text-align:right">42,000円</td>
+            <td style="padding:5px 8px;text-align:right"><strong>50.4万円</strong></td>
+          </tr>
+          <tr>
+            <td style="padding:5px 8px">平成24年（2012年）分科会提出</td>
+            <td style="padding:5px 8px;text-align:right">42,000円</td>
+            <td style="padding:5px 8px;text-align:right"><strong>50.4万円</strong></td>
+          </tr>
+        </table>
+        <small style="color:var(--text-muted)">出典：厚労省「障害者雇用納付金及び調整金の額の設定の基準となる数値の変遷」（労働政策審議会障害者雇用分科会提出資料）</small><br><br>
+        本試算の「36〜48万円」は、最も古い調査値（2003年・37,000円/月＝年44.4万円）を参照した保守的な設定。2007年・2012年の実測値（年50.4万円）はこれを上回っており、現在値はさらに高い可能性が高い。
+      </td>
+      <td>
+        公式調査値（2012年・年50.4万円）と比較すると、本試算の上限48万円はむしろ過小評価の可能性がある。2012年以降の最新確定値は現時点で未公表。<br><br>
+        なお「特別費用」の調査項目には担当者の人件費（間接的管理コスト）が含まれているが、業務時間の全機会費用まで反映されているかは不明であり、実態はさらに大きい可能性がある。<br><br>
+        <strong>2012年以降の更新調査の公表と、現行制度に即した実態把握を政府に求める。</strong>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>「特例子会社維持コスト3〜5億円/社」</strong></td>
+      <td>障害者の給与・工賃を除いた「純管理コスト」（親会社からの役員・管理職派遣、施設維持、コーポレート業務等）</td>
+      <td>
+        ① JEED「特例子会社の設立及び経営管理に関する調査研究」：特例子会社の経営課題として「管理職の確保・人件費負担」「親会社との調整コスト」が上位に挙げられている<br>
+        ② 特例子会社の平均雇用障害者数（JEED）：1社あたり約40〜60名——管理職1〜2名の人件費（500〜1,000万円/年）＋施設・設備・コーポレート費用を合算すると3億円程度が実態上の下限として妥当<br>
+        ③ 上限5億円は、大企業の特例子会社（雇用者100名超）における実態として合理的範囲
+      </td>
+      <td>特例子会社の規模・業種・親会社規模により大きく異なる。3〜5億円は中規模想定。小規模（20名以下）では1〜2億円程度の可能性もある。</td>
+    </tr>
+  </tbody>
+</table></div>
+<p style="color:var(--text-muted);font-size:13px;margin-top:8px">※主要参照資料：厚労省「障害者雇用納付金及び調整金の額の設定の基準となる数値の変遷」（労働政策審議会障害者雇用分科会提出資料）／JEED報告書No.176（https://www.nivr.jeed.go.jp/research/report/houkoku/houkoku176.html）／令和5年度障害者雇用実態調査（厚労省）</p>
+</div>
 
 <h2>③ A型・B型給付費の非効率（制度設計ミスによる損失）</h2>
 <div class="callout-light">
