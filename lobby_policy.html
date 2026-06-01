@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>障害者雇用制度の構造的失敗と政策的解決 ─ 政策立案者・論者へ</title>
+<style>
+:root {
+  --dark:    #181816;
+  --dark2:   #2a2a28;
+  --navy:    #1a2640;
+  --gold:    #B8960A;
+  --gold-l:  rgba(184,150,10,0.13);
+  --gold-b:  rgba(184,150,10,0.28);
+  --red:     #7a1515;
+  --green:   #1a4a28;
+  --bg:      #F4F2ED;
+  --white:   #ffffff;
+  --mid:     #2a2a28;
+  --muted:   #585854;
+  --border:  rgba(0,0,0,0.09);
+  --font: 'Meiryo UI','メイリオ','Yu Gothic UI',sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); font-size: 15px; line-height: 1.9; color: var(--mid); background: var(--bg); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, #0f0f0d 0%, #18181a 50%, #101418 100%);
+  padding: 60px 24px 54px; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg,  transparent, transparent 79px, rgba(184,150,10,.03) 79px, rgba(184,150,10,.03) 80px),
+    repeating-linear-gradient(  0deg, transparent, transparent 79px, rgba(184,150,10,.02) 79px, rgba(184,150,10,.02) 80px);
+  pointer-events: none;
+}
+.hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+.hero-kicker {
+  font-size: 11px; letter-spacing: .32em; color: var(--gold);
+  font-weight: 700; margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-kicker::before { content:''; width:32px; height:1px; background:var(--gold); display:inline-block; }
+.hero-eyebrow {
+  font-size: 13px; color: rgba(255,255,255,.45);
+  letter-spacing: .08em; margin-bottom: 12px;
+}
+.hero-title {
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 900; color: #fff; line-height: 1.3;
+  margin-bottom: 24px; letter-spacing: -.01em;
+}
+.hero-title em { color: var(--gold); font-style: normal; }
+.hero-lead {
+  font-size: 15px; color: rgba(255,255,255,.72); line-height: 2.0;
+  max-width: 660px; margin-bottom: 36px; border-left: 2px solid rgba(184,150,10,.4);
+  padding-left: 16px;
+}
+.hero-lead strong { color: rgba(255,255,255,.92); }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-tag {
+  font-size: 12px; padding: 3px 11px;
+  border: 1px solid rgba(184,150,10,.5);
+  color: rgba(255,255,255,.82); border-radius: 1px;
+  background: rgba(184,150,10,.09); letter-spacing: .04em;
+}
+
+/* ── LAYOUT ── */
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+.sec { padding: 44px 0 40px; border-bottom: 1px solid rgba(0,0,0,.1); }
+.sec:last-of-type { border-bottom: none; }
+
+.sec-label {
+  font-size: 12px; letter-spacing: .28em; font-weight: 700;
+  color: var(--gold); margin-bottom: 10px; text-transform: uppercase;
+}
+.sec-title {
+  font-size: clamp(18px, 3vw, 24px); font-weight: 800;
+  color: #1a1a18; line-height: 1.4; margin-bottom: 20px;
+}
+.sec-title em  { color: var(--red); font-style: normal; }
+.sec-title mark {
+  background: rgba(184,150,10,.18); color: inherit;
+  padding: 1px 5px; border-radius: 2px;
+}
+
+/* ── CALLOUTS ── */
+.callout-dark {
+  background: var(--dark); color: rgba(255,255,255,.82);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px; margin: 20px 0;
+  font-size: 15px; line-height: 1.95;
+}
+.callout-dark strong { color: var(--gold); }
+.callout-light {
+  background: #faf8f2; border: 1px solid var(--gold-b);
+  border-left: 3px solid var(--gold);
+  padding: 16px 20px; margin: 18px 0;
+  font-size: 14px; line-height: 1.9; color: var(--mid);
+}
+.callout-light strong { color: #1a1a18; }
+.callout-warn {
+  background: #fdf5f5; border: 1px solid rgba(122,21,21,.2);
+  border-left: 3px solid var(--red);
+  padding: 16px 20px; margin: 18px 0;
+  font-size: 14px; line-height: 1.9; color: var(--mid);
+}
+.callout-warn strong { color: var(--red); }
+.callout-navy {
+  background: var(--navy); color: rgba(255,255,255,.82);
+  border-left: 3px solid #4a78b8;
+  padding: 20px 24px; margin: 20px 0;
+  font-size: 15px; line-height: 1.95;
+}
+.callout-navy strong { color: #a8c4e8; }
+
+/* ── DIAGNOSIS (3-col) ── */
+.diag-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 20px 0; }
+.diag-card {
+  background: var(--white); border: 1px solid var(--gold-b);
+  border-top: 3px solid var(--dark); padding: 18px 16px;
+}
+.diag-num  { font-size: 11px; letter-spacing: .14em; color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+.diag-title{ font-size: 14px; font-weight: 700; color: #1a1a18; margin-bottom: 8px; line-height: 1.4; }
+.diag-body { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+/* ── COST TABLE ── */
+.cost-table { width:100%; border-collapse:collapse; margin:18px 0; font-size:14px; }
+.cost-table th {
+  background: var(--dark); color: rgba(255,255,255,.88);
+  padding: 9px 14px; text-align:left; font-weight:600;
+  border-bottom: 2px solid var(--gold); border-right:1px solid rgba(255,255,255,.1);
+  font-size: 13px; letter-spacing: .04em;
+}
+.cost-table th:last-child { border-right:none; }
+.cost-table td {
+  padding: 9px 14px; border-bottom:1px solid rgba(0,0,0,.07);
+  border-right:1px solid rgba(0,0,0,.06); vertical-align:top; line-height:1.7;
+}
+.cost-table td:last-child { border-right:none; }
+.cost-table tr:last-child td { border-bottom:none; }
+.cost-table tr:hover td { background:#faf8f2; }
+.cost-amt { font-weight:700; color: var(--red); white-space:nowrap; }
+
+/* ── INTL ── */
+.intl-row {
+  display: grid; grid-template-columns: 200px 1fr 100px;
+  align-items: center; gap: 12px;
+  padding: 9px 14px; background: var(--white);
+  border: 1px solid var(--border); margin-bottom: 4px; font-size: 14px;
+}
+.intl-row.hi { border-color: var(--gold-b); background: #fffdf0; }
+.intl-bar  { background: #e4e4e2; border-radius: 2px; height: 12px; }
+.intl-fill { height: 12px; border-radius: 2px; background: var(--dark2); }
+.intl-row.hi .intl-fill { background: var(--red); }
+.intl-amt  { font-weight:700; text-align:right; white-space:nowrap; }
+.intl-row.hi .intl-amt { color: var(--red); }
+.intl-note { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* ── REFORM STEPS ── */
+.reform-steps { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+.reform-step {
+  display: grid; grid-template-columns: 52px 1fr;
+  border: 1px solid var(--gold-b); background: var(--white);
+  margin-bottom: -1px; position: relative;
+}
+.reform-step-num {
+  background: var(--dark); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 16px 8px;
+  gap: 4px;
+}
+.reform-step-n { font-size: 20px; font-weight: 900; color: var(--gold); line-height: 1; }
+.reform-step-label { font-size: 12px; color: rgba(255,255,255,.45); letter-spacing: .06em; }
+.reform-step-body { padding: 16px 20px; }
+.reform-step-title { font-size: 14px; font-weight: 700; color: #1a1a18; margin-bottom: 6px; line-height: 1.4; }
+.reform-step-desc  { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+/* ── FINANCE CARDS ── */
+.fin-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 18px 0; }
+.fin-card {
+  background: var(--white); border: 1px solid var(--gold-b);
+  padding: 16px 16px;
+}
+.fin-card-label { font-size: 11px; letter-spacing:.1em; color:var(--gold); font-weight:700; margin-bottom:6px; }
+.fin-card-title { font-size: 14px; font-weight:700; color:#1a1a18; margin-bottom:6px; line-height:1.4; }
+.fin-card-body  { font-size: 13px; color:var(--muted); line-height:1.7; }
+
+/* ── TIMELINE ── */
+.tl-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 18px 0; }
+.tl-card { border: 1px solid var(--gold-b); overflow: hidden; }
+.tl-head { background: var(--dark); padding: 10px 14px; }
+.tl-period { font-size: 11px; color: var(--gold); font-weight: 600; letter-spacing: .06em; }
+.tl-name   { font-size: 13px; font-weight: 700; color: #fff; margin-top: 3px; }
+.tl-body   { padding: 12px 14px; background: var(--white); }
+.tl-body li {
+  font-size: 13px; color: var(--muted); list-style: none;
+  padding: 3px 0 3px 13px; position: relative; line-height: 1.65;
+}
+.tl-body li::before { content:"·"; position:absolute; left:0; color:var(--gold); font-size:16px; top:1px; }
+
+/* ── PARTISAN GRID ── */
+.partisan-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 18px 0; }
+.partisan-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-top: 3px solid var(--dark); padding: 14px 14px 12px;
+}
+.partisan-stance { font-size: 11px; letter-spacing:.1em; font-weight:700; color:var(--muted); margin-bottom:6px; }
+.partisan-title  { font-size: 13px; font-weight:700; color:#1a1a18; margin-bottom:7px; line-height:1.4; }
+.partisan-body   { font-size: 13px; color:var(--muted); line-height:1.7; }
+
+/* ── FINAL QUESTIONS ── */
+.fq-block {
+  border: 1px solid rgba(122,21,21,.2);
+  background: #fdf5f5; padding: 20px 24px; margin: 14px 0;
+}
+.fq-num   { font-size: 11px; letter-spacing:.14em; color:var(--red); font-weight:700; margin-bottom:6px; }
+.fq-q     { font-size: 15px; font-weight:700; color:#1a1a18; line-height:1.5; margin-bottom:8px; }
+.fq-body  { font-size: 14px; color:var(--muted); line-height:1.85; }
+
+/* ── AB CHOICE ── */
+.ab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.ab-card { padding: 20px 20px; border: 1px solid; }
+.ab-a { border-color: rgba(26,74,40,.35); background: #f3faf4; }
+.ab-b { border-color: rgba(122,21,21,.25); background: #fdf5f5; }
+.ab-head { font-size: 13px; font-weight:800; letter-spacing:.08em; margin-bottom:10px; }
+.ab-a .ab-head { color: var(--green); }
+.ab-b .ab-head { color: var(--red); }
+.ab-body { font-size: 14px; line-height: 1.85; color: var(--mid); }
+
+/* ── CTA ── */
+.cta-section { background: var(--dark); padding: 48px 24px 52px; }
+.cta-inner   { max-width: 760px; margin: 0 auto; }
+.cta-label   { font-size: 11px; letter-spacing:.24em; color:var(--gold); font-weight:700; margin-bottom:14px; }
+.cta-title   { font-size: clamp(17px,3vw,24px); font-weight:800; color:#fff; line-height:1.4; margin-bottom:12px; }
+.cta-title em { color: var(--gold); font-style:normal; }
+.cta-lead    { font-size:14px; color:rgba(255,255,255,.68); line-height:1.9; margin-bottom:28px; }
+
+.link-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+.link-card {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(184,150,10,.22);
+  padding: 14px 16px; text-decoration:none; color:#fff;
+  transition: background .15s, border-color .15s;
+}
+.link-card:hover { background: rgba(184,150,10,.1); border-color: var(--gold); }
+.link-card-icon { font-size:18px; flex-shrink:0; margin-top:2px; }
+.link-card-body { flex:1; min-width:0; }
+.link-card-label { font-size:12px; letter-spacing:.12em; color:var(--gold); margin-bottom:3px; }
+.link-card-title { font-size:13px; font-weight:700; line-height:1.4; margin-bottom:3px; }
+.link-card-desc  { font-size:12px; color:rgba(255,255,255,.48); line-height:1.5; }
+.link-card-arrow { color:var(--gold); font-size:16px; flex-shrink:0; margin-top:2px; }
+
+/* ── CLOSING ── */
+.closing { padding:36px 24px 44px; background:var(--bg); border-top:3px solid var(--gold); }
+.closing-inner { max-width:760px; margin:0 auto; }
+.closing-claim {
+  font-size: clamp(15px,2.5vw,19px); font-weight:800;
+  color:#1a1a18; line-height:1.55; margin-bottom:16px;
+}
+.closing-claim em { color:var(--red); font-style:normal; }
+.closing p { font-size:13px; color:var(--muted); line-height:1.85; max-width:600px; }
+
+/* ── UTIL ── */
+p { margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+.gold-rule { height:2px; background:linear-gradient(90deg,var(--gold),rgba(184,150,10,.1)); margin:32px 0; }
+.big-stat {
+  font-size: clamp(32px,6vw,52px); font-weight:900;
+  color:var(--red); line-height:1; margin-bottom:4px;
+}
+.big-stat-label { font-size:14px; color:var(--muted); margin-bottom:20px; }
+
+@media (max-width:620px) {
+  .diag-grid, .tl-grid, .partisan-grid { grid-template-columns:1fr; }
+  .fin-grid, .ab-grid, .link-grid { grid-template-columns:1fr; }
+  .intl-row { grid-template-columns:130px 1fr 80px; font-size:13px; }
+  .reform-step { grid-template-columns:44px 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">政策立案者・論者・評論家へ</div>
+    <div class="hero-eyebrow">POLICY BRIEF ── 次世代型障害者雇用モデルの創設</div>
+    <h1 class="hero-title">
+      「現状維持」は政策ではない。<br>
+      <em>不作為という、もう一つの政策選択だ。</em>
+    </h1>
+    <p class="hero-lead">
+      1960年以来、障害者雇用制度は60年以上、実質的な構造改革なしに維持されてきた。<br>
+      その間に積み上がった「不作為のコスト」は年間<strong>2.6〜3.2兆円</strong>と試算される。<br>
+      本提言は、財政規律・経済合理性・人権保障の三軸から同一の結論に到達できる、<strong>超党派的な政策設計</strong>である。
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">不作為のコスト年2.6〜3.2兆円</span>
+      <span class="hero-tag">増税なし・自律循環財源</span>
+      <span class="hero-tag">10カ年・3シナリオ財政試算済</span>
+      <span class="hero-tag">先進国最低水準からの是正</span>
+      <span class="hero-tag">超党派設計</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════════════════ SECTION 1：構造的失敗の診断 ══════════════════════ -->
+<section class="sec">
+  <div class="sec-label">Problem Diagnosis</div>
+  <h2 class="sec-title">60年間の「土台なき義務化」が招いた<em>三者同時疲弊</em></h2>
+
+  <p>
+    現行制度の根本的失敗は単純である。
+    欧州型の設計が「国が生活基盤を先に確立してから、企業雇用を社会参加の手段とする」のに対し、
+    日本は<strong>所得保障が不十分なまま企業への雇用義務だけを先行</strong>させた。
+    この「土台なき義務化」が、関係するすべての主体を同時に疲弊させる構造を生んでいる。
+  </p>
+
+  <div class="diag-grid">
+    <div class="diag-card">
+      <div class="diag-num">ACTOR 01</div>
+      <div class="diag-title">障害当事者・家族</div>
+      <div class="diag-body">障害基礎年金1級で月9.5万円（2026年度）。公的制度フル活用後の可処分所得は約2万円。家族依存なしの自立は構造的に不可能。「親亡き後」問題が家族の人生設計を恒常的に制約する。</div>
+    </div>
+    <div class="diag-card">
+      <div class="diag-num">ACTOR 02</div>
+      <div class="diag-title">民間企業・現場</div>
+      <div class="diag-body">法定雇用率達成のため意味のない業務を人工的に創出し、基幹社員に管理させる。1名あたり年間管理コストは給与とは別に36〜48万円超。国が担うべき福祉を無償で肩代わりさせられている状態。</div>
+    </div>
+    <div class="diag-card">
+      <div class="diag-num">ACTOR 03</div>
+      <div class="diag-title">国・自治体</div>
+      <div class="diag-body">義務を民間に転嫁し続けることで財政負担を可視化せずに済ませてきた。その結果、本来国が担うべき公共業務の人手不足が深刻化し、社会インフラの維持コストが別の形で増大している。</div>
+    </div>
+  </div>
+
+  <div class="callout-dark">
+    <strong>根本診断：「設計ミスの60年間の継続」</strong><br><br>
+    これは運用の問題ではなく設計の問題である。制度が前提とした社会的条件——家族形態・産業構造・障害の多様性——はすべて根本から変わった。制度は変わらなかった。<strong>変わらなかったことが、現在の問題の唯一の原因だ。</strong>
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 2：不作為のコスト ══════════════════════ -->
+<section class="sec">
+  <div class="sec-label">The Cost of Inaction</div>
+  <h2 class="sec-title">「何もしない」ことのコスト：<mark>年間2.6〜3.2兆円</mark></h2>
+
+  <p>
+    政策論議において「現状維持のコスト」はしばしば過小評価される。
+    しかし現行制度の「不作為」は、以下の形で毎年確実に社会的損失を生んでいる。
+  </p>
+
+  <table class="cost-table">
+    <thead>
+      <tr>
+        <th>コスト項目</th>
+        <th>年間推計額</th>
+        <th>構造的原因</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>家族の介護離職・就労制限による所得損失</td>
+        <td class="cost-amt">約1.0〜1.4兆円</td>
+        <td>年金不足を家族が補填するため、就労・転職・転勤を断念。税収損失と社会保険料減も含む</td>
+      </tr>
+      <tr>
+        <td>企業の形式的雇用に伴う管理コスト・生産性損失</td>
+        <td class="cost-amt">約0.8〜1.0兆円</td>
+        <td>基幹社員の工数を本来業務でない管理に消費。国際競争力の低下と直結</td>
+      </tr>
+      <tr>
+        <td>就労支援施設の非効率な維持コスト（A型・B型給付金等）</td>
+        <td class="cost-amt">約0.7兆円</td>
+        <td>年約7,000億円の給付金が、当事者の自立ではなく施設の存続に充当されている構造</td>
+      </tr>
+      <tr>
+        <td>医療・生活保護への二次的流入コスト</td>
+        <td class="cost-amt">約0.1〜0.1兆円</td>
+        <td>自立不可能な経済状況が精神的疾患・健康悪化を促進し、医療費・生活保護費を押し上げる</td>
+      </tr>
+      <tr style="background:#fdf8ee">
+        <td><strong>合計</strong></td>
+        <td class="cost-amt" style="font-size:15px"><strong>約2.6〜3.2兆円／年</strong></td>
+        <td>現行制度を「何もしない」ことを選び続ける際の、社会が毎年支払っているコスト</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout-warn">
+    <strong>財政論議の前提として確認すべき点：</strong><br><br>
+    本提言の制度移行コストは、この「不作為コスト2.6〜3.2兆円」と比較されるべきものである。
+    移行コストを「新たな財政負担」として論じることは、
+    <strong>現在すでに発生している損失を「ゼロ」と計上した上での議論</strong>であり、
+    政策評価として不完全だ。
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 3：国際的文脈 ══════════════════════ -->
+<section class="sec">
+  <div class="sec-label">International Context</div>
+  <h2 class="sec-title">日本の水準は<em>先進国の中で構造的最低位</em>にある</h2>
+
+  <p>
+    現金給付から医療費・住宅費・介護費を差し引いた「実質可処分所得」で比較する。
+    これが障害者の実際の生活水準を示す唯一の正確な指標だ。
+  </p>
+
+  <div style="margin:18px 0;">
+    <div class="intl-row hi">
+      <div>
+        <div>🇯🇵 日本（制度フル活用・最良ケース）</div>
+        <div class="intl-note">各種自立支援医療・障害福祉サービス適用後</div>
+      </div>
+      <div class="intl-bar"><div class="intl-fill" style="width:14%"></div></div>
+      <span class="intl-amt" style="color:var(--red)">約 2万円</span>
+    </div>
+    <div class="intl-row hi">
+      <div>
+        <div>🇯🇵 日本（都市部・制度未活用）</div>
+        <div class="intl-note">医療3割負担・介護サービス定価利用の場合</div>
+      </div>
+      <div class="intl-bar"><div class="intl-fill" style="width:4%"></div></div>
+      <span class="intl-amt" style="color:var(--red)">0〜1万円</span>
+    </div>
+    <div class="intl-row">
+      <span>🇬🇧 イギリス（NHS・住宅給付後）</span>
+      <div class="intl-bar"><div class="intl-fill" style="width:45%"></div></div>
+      <span class="intl-amt">約 6〜7万円</span>
+    </div>
+    <div class="intl-row">
+      <span>🇫🇷 フランス（AAH＋住宅補助・医療補填後）</span>
+      <div class="intl-bar"><div class="intl-fill" style="width:66%"></div></div>
+      <span class="intl-amt">約 9〜10万円</span>
+    </div>
+    <div class="intl-row">
+      <span>🇩🇪 ドイツ（公的医療・社会扶助後）</span>
+      <div class="intl-bar"><div class="intl-fill" style="width:67%"></div></div>
+      <span class="intl-amt">約 9〜10万円</span>
+    </div>
+    <div class="intl-row">
+      <span>🇸🇪 スウェーデン（住宅補助・医療無償後）</span>
+      <div class="intl-bar"><div class="intl-fill" style="width:67%"></div></div>
+      <span class="intl-amt">約 9〜10万円</span>
+    </div>
+    <div class="intl-row">
+      <span>🇳🇴 ノルウェー（医療無償・住宅支援後）</span>
+      <div class="intl-bar"><div class="intl-fill" style="width:100%"></div></div>
+      <span class="intl-amt">約 14〜15万円</span>
+    </div>
+  </div>
+
+  <div class="callout-light">
+    <strong>解釈上の注意：</strong>名目現金給付のみを比較すると日本（9.5万円）と欧州の差は小さく見える。しかし欧州では「現金給付≒そのまま生活費」であるのに対し、日本では「現金給付≒支出の補填」という支出構造の根本的差異が隠れている。<strong>本提言が求める年金引き上げ（1級月15万円）でさえ、フランスの現行名目額（約17万円・2026年4月〜）を下回る。「過大な要求」ではなく「最低限の是正」だ。</strong>詳細はPPP補正済み7カ国比較データ集を参照。
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 4：制度設計の骨格 ══════════════════════ -->
+<section class="sec">
+  <div class="sec-label">Policy Design</div>
+  <h2 class="sec-title">3段階改革の骨格：<em>土台先行・タスク型・SCP転換</em></h2>
+
+  <div class="reform-steps">
+    <div class="reform-step">
+      <div class="reform-step-num">
+        <div class="reform-step-n">1</div>
+        <div class="reform-step-label">PHASE</div>
+      </div>
+      <div class="reform-step-body">
+        <div class="reform-step-title">障害年金の底上げ ── 自立の土台を先に確立する</div>
+        <div class="reform-step-desc">障害基礎年金を等級別に月9〜15万円へ引き上げ（1級：15万円／2級：12万円／新設3級：9万円）。AI診断書数値化・等級再審査を並行実施し公正性を担保。欧州型「土台先行」設計の導入。</div>
+      </div>
+    </div>
+    <div class="reform-step">
+      <div class="reform-step-num">
+        <div class="reform-step-n">2</div>
+        <div class="reform-step-label">PHASE</div>
+      </div>
+      <div class="reform-step-body">
+        <div class="reform-step-title">準公務職員制度 ── 障害者を公共インフラの担い手へ</div>
+        <div class="reform-step-desc">自治体に首長直轄の「公共業務分担推進局（仮称）」を新設。放置されてきた公共業務（施設巡回・安否確認・デジタル支援・データ整備等）をタスク型委託で障害者に担わせる。時給1,200〜1,800円・待機コストゼロ設計。全国約967拠点を整備。就労実績ポイント制で参加資格を自律管理。</div>
+      </div>
+    </div>
+    <div class="reform-step">
+      <div class="reform-step-num">
+        <div class="reform-step-n">3</div>
+        <div class="reform-step-label">PHASE</div>
+      </div>
+      <div class="reform-step-body">
+        <div class="reform-step-title">準企業職員制度（SCP制度）── 法定雇用率の評価軸転換</div>
+        <div class="reform-step-desc">評価基準を「人数」から「社会参画総量（SCPポイント）」へ転換。企業は直接雇用・段階的受け入れ・拠出金の組み合わせで義務を達成する。拠出金は年金原資へ直接スライド。管理コスト消滅により実雇用企業の実質負担は現行より低減。「形式的人数合わせ」を制度設計から排除する。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 5：財源構造 ══════════════════════ -->
+<section class="sec">
+  <div class="sec-label">Fiscal Architecture</div>
+  <h2 class="sec-title">増税なし・<em>自律循環財源</em>の設計</h2>
+
+  <p>
+    本提言の財源は単一の増税に依存しない。
+    既存コストの組み替えと、移行に伴う税収増の自律循環で成立させる設計だ。
+  </p>
+
+  <div class="fin-grid">
+    <div class="fin-card">
+      <div class="fin-card-label">財源 ①</div>
+      <div class="fin-card-title">雇用代替拠出金</div>
+      <div class="fin-card-body">SCP制度移行により、雇用困難な企業からの拠出金が年金原資へ直接充当される。不足1人分あたり月18万円相当の設計（1P×1,500円×120P）。拠出金のみで義務完了は不可とし、社会参加の実質化を担保。</div>
+    </div>
+    <div class="fin-card">
+      <div class="fin-card-label">財源 ②</div>
+      <div class="fin-card-title">補助金の一本化・直接給付化</div>
+      <div class="fin-card-body">A型・B型給付金（年約7,000億円）をはじめとする複雑な補助金体系を整理・統廃合し、行政コストを圧縮。直接給付へ移管することで当事者への到達率を高める。</div>
+    </div>
+    <div class="fin-card">
+      <div class="fin-card-label">財源 ③</div>
+      <div class="fin-card-title">初期財政措置（先行投資）</div>
+      <div class="fin-card-body">導入初期の不足財源は財政投融資・建設国債に準じた先行投資として対応。インフレ率・国債残高・プライマリーバランスを監視指標に設定。10カ年計画での財政均衡を目標とする。</div>
+    </div>
+    <div class="fin-card">
+      <div class="fin-card-label">財源 ④</div>
+      <div class="fin-card-title">企業競争力回復による税収増</div>
+      <div class="fin-card-body">企業が本業に集中できることによる生産性向上・国際競争力回復が、中長期的な法人税・所得税収の増加につながる。現実的シナリオでも第2期（4〜6年目）以降に黒字転換を見込む。</div>
+    </div>
+  </div>
+
+  <div class="tl-grid" style="margin-top:20px">
+    <div class="tl-card">
+      <div class="tl-head">
+        <div class="tl-period">第1期（1〜3年目）</div>
+        <div class="tl-name">制度整備・移行準備</div>
+      </div>
+      <ul class="tl-body">
+        <li>障害年金引き上げ法整備</li>
+        <li>推進局の設置・967拠点整備</li>
+        <li>SCPポイント算定システム構築</li>
+        <li>AI等級審査の試行導入</li>
+      </ul>
+    </div>
+    <div class="tl-card">
+      <div class="tl-head">
+        <div class="tl-period">第2期（4〜6年目）</div>
+        <div class="tl-name">本稼働・財源自律化へ</div>
+      </div>
+      <ul class="tl-body">
+        <li>準公務職員30万人体制</li>
+        <li>就労支援施設の再編・集約</li>
+        <li>SCP制度本格移行開始</li>
+        <li>拠出金が財源として本格機能</li>
+      </ul>
+    </div>
+    <div class="tl-card">
+      <div class="tl-head">
+        <div class="tl-period">第3期（7〜10年目）</div>
+        <div class="tl-name">完全移行・均衡</div>
+      </div>
+      <ul class="tl-body">
+        <li>準公務職員50万人体制</li>
+        <li>順調シナリオ：黒字約2.94兆円</li>
+        <li>現実的シナリオ：黒字約1.10兆円</li>
+        <li>特例子会社の方針確定</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 6：超党派性 ══════════════════════ -->
+<section class="sec">
+  <div class="sec-label">Political Positioning</div>
+  <h2 class="sec-title">財政・効率・人権——<em>三つの立場が同一の結論に到達する</em>設計</h2>
+
+  <p>
+    本提言は特定の政治的立場の実現を目的としない。
+    財政規律を重んじる立場からも、企業の経済合理性を重んじる立場からも、
+    当事者の権利保障を重んじる立場からも、同じ政策的結論に到達できるよう設計されている。
+  </p>
+
+  <div class="partisan-grid">
+    <div class="partisan-card">
+      <div class="partisan-stance">財政規律・小さな政府の立場から</div>
+      <div class="partisan-title">「不作為コスト2.6〜3.2兆円」の削減こそが財政健全化だ</div>
+      <div class="partisan-body">現状維持は「コストゼロ」ではない。家族の介護離職・企業の管理コスト・就労支援施設の非効率な維持費として、毎年数兆円規模が経済から失われている。制度移行は「新たな支出」ではなく、「すでに発生している損失の組み替え」である。増税なし・自律循環財源の設計は、財政規律の観点とも整合する。</div>
+    </div>
+    <div class="partisan-card">
+      <div class="partisan-stance">産業競争力・企業効率の立場から</div>
+      <div class="partisan-title">基幹社員を「無償の福祉代替」から解放し、本業集中を取り戻す</div>
+      <div class="partisan-body">法定雇用率制度は事実上、企業の人的資本を国の福祉目的に無償で徴用している。この歪んだ構造が日本企業の生産性と国際競争力を毀損し続けている。SCPポイント制度への転換で企業は本業に集中でき、「形式的な人数合わせ」という無意味なコストから解放される。</div>
+    </div>
+    <div class="partisan-card">
+      <div class="partisan-stance">人権保障・社会包摂の立場から</div>
+      <div class="partisan-title">「慈善」ではなく「設計ミスの修正」として要求する</div>
+      <div class="partisan-body">先進国で家族依存なしに自立できない唯一の障害者制度を60年維持したことは、人道的失敗ではなく構造的設計ミスだ。本提言は「気の毒だから助ける」という同情の言語ではなく、「設計ミスを修正する」という権利の言語で訴える。日本国憲法第25条・障害者権利条約の実効的履行として要求できる根拠がある。</div>
+    </div>
+  </div>
+
+  <div class="callout-navy">
+    <strong>「人道の言語で60年間訴えても制度は動かなかった」という現実がある。</strong><br><br>
+    本提言は、その現実を直視した上で、財政的合理性・経済的効率性・国際的比較優位という論拠を前面に出す戦略をとる。人道的目標を、より政策決定に届く言語で語り直すための選択であり、目標そのものの変更ではない。
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 7：最終問い ══════════════════════ -->
+<section class="sec">
+  <div class="sec-label">Final Questions to Policy Makers</div>
+  <h2 class="sec-title">政治・行政に突き付ける<em>三つの問い</em></h2>
+
+  <p>
+    本提言を退けるなら、以下の問いに対して国民に説明する責任が発生する。
+  </p>
+
+  <div class="fq-block">
+    <div class="fq-num">QUESTION 01</div>
+    <div class="fq-q">家族の犠牲を「国策」として公式に認定するのか？</div>
+    <div class="fq-body">現行制度の維持は、親に対し「死ぬまで身を削り、最後は共倒れになること」を国が公式に求めているに等しい。本提言を退けるなら、政府は「当事者の生存権は家族の自己犠牲の上にのみ成立し、家族不在後の生活破綻は公助の範囲外である」と明言すべきだ。それを明言できないなら、この構造を放置し続ける根拠を国民に示す義務がある。</div>
+  </div>
+
+  <div class="fq-block">
+    <div class="fq-num">QUESTION 02</div>
+    <div class="fq-q">生存保障を拒むなら、安楽死制度の議論を直ちに開始すべきである。</div>
+    <div class="fq-body">生存のための経済的保障を拒み、社会での役割も提供せず、ただ「存在すること」のみを強いるのは人道に対する挑戦である。保障を拒絶する道を選ぶなら、国家は「安楽死制度」の議論を直ちに開始し、死の選択肢を国民に提供する責任を負うべきだ。それができないなら、保障を拒みながら死も選ばせない——という二重の拒絶を、国は何と呼ぶのか。<br><br><span style="font-size:13px;color:var(--muted)">※この問いは安楽死を支持・推奨するものではない。「現行制度の放置は、帰結として何を選んでいることになるのか」を政治・行政に直視させるための論理的問いかけである。</span></div>
+  </div>
+
+  <div class="fq-block">
+    <div class="fq-num">QUESTION 03</div>
+    <div class="fq-q">旧優生保護法および「命の選別」を再支持する覚悟はあるのか？</div>
+    <div class="fq-body">本提言のような抜本的救済を拒むことは、実質的に「経済的自立が困難な者の生存は社会にとって優先順位が低い」と判断していることに等しい。「存在は認めるが、生活は保障しない」という現在の不透明な態度は、法による直接的な抹殺よりも卑怯な、経済的手段による「緩やかな排除」である。</div>
+  </div>
+
+  <div class="gold-rule"></div>
+
+  <div class="ab-grid">
+    <div class="ab-card ab-a">
+      <div class="ab-head">選択肢 A ── 新たな社会契約</div>
+      <div class="ab-body">障害者を「準職員」として社会インフラに組み込み、企業の負担を解消し、国力と個人の尊厳を両立させる新たな社会契約を結ぶ。財政的に合理的であり、国際的水準に整合し、当事者・家族・企業・現場の四者が同時に利益を得る。</div>
+    </div>
+    <div class="ab-card ab-b">
+      <div class="ab-head">選択肢 B ── 不作為の継続</div>
+      <div class="ab-body">本提言を拒絶し、家族の悲劇と企業の衰退を傍観し、年2.6〜3.2兆円の損失を次世代に引き継ぐことを選ぶ。同時に、「命の選別を辞さない冷酷な国家へと退歩することを公式に宣言する」という帰結を受け入れる。<br>その品格が今、問われている。</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- ══════════════════════ CTA ══════════════════════ -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-label">Reference Documents</div>
+    <h2 class="cta-title">政策検討に必要な<em>一次資料</em></h2>
+    <p class="cta-lead">
+      各ページは独立した政策文書として設計されている。
+      担当領域に応じて参照されたい。
+    </p>
+    <div class="link-grid">
+      <a class="link-card" href="../summary.html">
+        <div class="link-card-icon">📋</div>
+        <div class="link-card-body">
+          <div class="link-card-label">最初に読む</div>
+          <div class="link-card-title">エグゼクティブサマリー</div>
+          <div class="link-card-desc">提言全体の骨格・数字・構造を1ページで。政策立案者向けの入口</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="../ch3.html">
+        <div class="link-card-icon">⚖️</div>
+        <div class="link-card-body">
+          <div class="link-card-label">政治・行政への問い</div>
+          <div class="link-card-title">第3章：不作為のコストと社会契約への覚悟</div>
+          <div class="link-card-desc">二者択一の最終問い。政治的決断を求める核心章</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="../cost.html">
+        <div class="link-card-icon">📉</div>
+        <div class="link-card-body">
+          <div class="link-card-label">財政根拠</div>
+          <div class="link-card-title">不作為のコスト試算</div>
+          <div class="link-card-desc">年間2.6〜3.2兆円の根拠となる項目別試算の詳細</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="../finance.html">
+        <div class="link-card-icon">💴</div>
+        <div class="link-card-body">
+          <div class="link-card-label">財政担当者向け</div>
+          <div class="link-card-title">財源シミュレーション</div>
+          <div class="link-card-desc">10カ年・順調／現実的／停滞の3シナリオ別財政試算</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="../intl.html">
+        <div class="link-card-icon">🌍</div>
+        <div class="link-card-body">
+          <div class="link-card-label">国際比較根拠</div>
+          <div class="link-card-title">国際比較データ集（7カ国）</div>
+          <div class="link-card-desc">PPP補正済み実質生活水準比較。Eurostat 2024年データ使用</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="../fraud.html">
+        <div class="link-card-icon">🔒</div>
+        <div class="link-card-body">
+          <div class="link-card-label">制度健全性</div>
+          <div class="link-card-title">不正悪用防止設計</div>
+          <div class="link-card-desc">4主体×シナリオ別の検知・抑止・ペナルティ体系</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="../timeline.html">
+        <div class="link-card-icon">🕐</div>
+        <div class="link-card-body">
+          <div class="link-card-label">政策プロセス</div>
+          <div class="link-card-title">全工程タイムライン</div>
+          <div class="link-card-desc">法整備から全国展開まで14〜20年の工程試算</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="../scp.html">
+        <div class="link-card-icon">🧩</div>
+        <div class="link-card-body">
+          <div class="link-card-label">制度図解</div>
+          <div class="link-card-title">SCP制度図解：3レーン・財源構造・全体像</div>
+          <div class="link-card-desc">準公務・準企業・拠出金の3レーン構造とお金の流れをビジュアルで把握。制度の仕組みを視覚で確認したい担当者向け</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="../faq.html">
+        <div class="link-card-icon">💬</div>
+        <div class="link-card-body">
+          <div class="link-card-label">論点整理</div>
+          <div class="link-card-title">FAQ（財源・運用・不正防止・思想的背景）</div>
+          <div class="link-card-desc">反論・懸念事項への体系的な回答集</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ CLOSING ══════════════════════ -->
+<div class="closing">
+  <div class="closing-inner">
+    <div class="closing-claim">
+      「やるかどうか」を問う段階は<em>とうに過ぎている</em>。<br>
+      問われているのは「いつ、どこから始めるか」だけだ。
+    </div>
+    <p>
+      本提言書「次世代型障害者雇用モデルの創設」は、財政規律を重んじる立場にも、企業経営の合理性を重んじる立場にも、当事者の尊厳を重んじる立場にも——同じ結論に到達してもらえる設計のど真ん中を貫くことを、一貫した意図として書かれた文書である。特定の政治的立場の実現ではなく、60年間の構造的回避の終端点を作ることが、この提言の唯一の目標だ。
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

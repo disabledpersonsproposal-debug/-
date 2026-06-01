@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>この声は、願いではなく請求である ─ 障害当事者・ご家族へ</title>
+<style>
+:root {
+  --dark:   #1a1a18;
+  --dark2:  #2a2a28;
+  --gold:   #C8960C;
+  --gold-l: rgba(200,150,12,0.15);
+  --gold-b: rgba(200,150,12,0.30);
+  --green:  #1a5c2a;
+  --red:    #7a1515;
+  --bg:     #F7F4EE;
+  --white:  #ffffff;
+  --mid:    #2a2a28;
+  --muted:  #5a5a56;
+  --border: rgba(0,0,0,0.09);
+  --font: 'Meiryo UI','メイリオ','Yu Gothic UI',sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); font-size: 16px; line-height: 1.9; color: var(--mid); background: var(--bg); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(165deg, #0e0d0b 0%, #1a1a16 55%, #111110 100%);
+  padding: 64px 24px 56px;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+}
+.hero-inner { max-width: 700px; margin: 0 auto; position: relative; }
+.hero-kicker {
+  font-size: 12px; letter-spacing: .3em; color: var(--gold);
+  font-weight: 700; margin-bottom: 22px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-kicker::before { content:''; width:24px; height:2px; background:var(--gold); display:inline-block; }
+.hero-title {
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 900; color: #fff; line-height: 1.3;
+  margin-bottom: 22px; letter-spacing: -.01em;
+}
+.hero-title em { color: var(--gold); font-style: normal; display: block; }
+.hero-lead {
+  font-size: 16px; color: rgba(255,255,255,.75); line-height: 2.05;
+  max-width: 620px; margin-bottom: 36px;
+}
+.hero-lead strong { color: #fff; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-tag {
+  font-size: 13px; padding: 4px 13px;
+  border: 1px solid rgba(200,150,12,.55);
+  color: rgba(255,255,255,.88); border-radius: 2px;
+  background: rgba(200,150,12,.1);
+}
+
+/* ── LAYOUT ── */
+.wrap { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+.sec { padding: 44px 0 40px; border-bottom: 1px solid rgba(0,0,0,.1); }
+.sec:last-of-type { border-bottom: none; }
+
+.sec-label { font-size: 11px; letter-spacing: .22em; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+.sec-title {
+  font-size: clamp(20px, 3.5vw, 26px); font-weight: 800;
+  color: #1a1a18; line-height: 1.4; margin-bottom: 22px;
+}
+.sec-title em  { color: var(--red); font-style: normal; }
+.sec-title mark { background: rgba(200,150,12,.2); color: inherit; padding: 0 4px; border-radius: 2px; }
+
+/* ── VOICE ── */
+.voice-block {
+  background: var(--white); border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: 20px 22px; margin: 18px 0;
+  font-size: 15px; line-height: 2.05; color: #1a1a18;
+}
+.voice-block p { margin-bottom: 10px; }
+.voice-block p:last-of-type { margin-bottom: 0; }
+.voice-source { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* ── CALLOUT ── */
+.callout-dark {
+  background: var(--dark); color: rgba(255,255,255,.83);
+  border-left: 4px solid var(--gold);
+  padding: 22px 24px; margin: 22px 0;
+  font-size: 15px; line-height: 1.95;
+}
+.callout-dark strong { color: var(--gold); }
+.callout-light {
+  background: #faf8f3; border: 1px solid var(--gold-b);
+  border-left: 4px solid var(--gold);
+  padding: 18px 22px; margin: 18px 0;
+  font-size: 15px; line-height: 1.95; color: var(--mid);
+}
+.callout-light strong { color: #1a1a18; }
+.callout-green {
+  background: #f3faf5; border: 1px solid rgba(26,92,42,.25);
+  border-left: 4px solid var(--green);
+  padding: 18px 22px; margin: 18px 0;
+  font-size: 15px; line-height: 1.95; color: var(--mid);
+}
+.callout-green strong { color: var(--green); }
+.callout-warn {
+  background: #fdf6f6; border: 1px solid rgba(122,21,21,.22);
+  border-left: 4px solid var(--red);
+  padding: 18px 22px; margin: 18px 0;
+  font-size: 15px; line-height: 1.95; color: var(--mid);
+}
+.callout-warn strong { color: var(--red); }
+
+/* ── STATS ── */
+.stat-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr));
+  gap: 14px; margin: 20px 0;
+}
+.stat-card {
+  background: var(--white); border: 1px solid var(--gold-b);
+  border-top: 3px solid var(--dark); padding: 18px 16px;
+}
+.stat-label { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.stat-value { font-size: 28px; font-weight: 900; line-height: 1.1; margin-bottom: 4px; }
+.stat-desc  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.stat-value.danger { color: var(--red); }
+.stat-value.hope   { color: var(--green); }
+
+/* ── LIST ── */
+.icon-list { list-style: none; padding: 0; margin: 14px 0; }
+.icon-list li {
+  padding: 8px 0 8px 26px; position: relative;
+  font-size: 15px; line-height: 1.8; color: var(--mid);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.icon-list li:last-child { border-bottom: none; }
+.icon-list li::before {
+  content: attr(data-icon); position: absolute; left: 0; top: 9px; font-size: 13px;
+}
+
+/* ── COMPARE BAR ── */
+.cmp-row {
+  display: grid; grid-template-columns: 160px 1fr 90px;
+  align-items: center; gap: 12px;
+  padding: 10px 14px; background: var(--white);
+  border: 1px solid var(--border); margin-bottom: 5px;
+  font-size: 14px;
+}
+.cmp-row.hi { border-color: var(--gold-b); background: #fffdf2; }
+.cmp-bar { background: #e6e6e4; border-radius: 3px; height: 13px; }
+.cmp-fill { height: 13px; border-radius: 3px; background: var(--dark2); }
+.cmp-row.hi .cmp-fill { background: var(--red); }
+.cmp-amt { font-weight: 700; text-align: right; white-space: nowrap; }
+.cmp-row.hi .cmp-amt { color: var(--red); }
+
+/* ── CHANGE CARDS ── */
+.change-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.change-card { padding: 18px 18px; border: 1px solid; }
+.change-now  { border-color: rgba(122,21,21,.3); background: #fdf6f6; }
+.change-next { border-color: rgba(26,92,42,.3);  background: #f3faf5; }
+.change-head { font-size: 12px; font-weight: 700; letter-spacing: .1em; margin-bottom: 10px; }
+.change-now  .change-head { color: var(--red); }
+.change-next .change-head { color: var(--green); }
+.change-body { font-size: 14px; line-height: 1.85; }
+
+/* ── BIG CLAIM ── */
+.big-claim {
+  font-size: clamp(17px, 2.8vw, 21px); font-weight: 800;
+  color: #1a1a18; line-height: 1.55;
+  text-align: center; padding: 28px 16px;
+  border-top: 2px solid var(--gold-b);
+  border-bottom: 2px solid var(--gold-b);
+  margin: 30px 0;
+}
+.big-claim em { color: var(--red); font-style: normal; }
+
+/* ── CONTRACT SECTION ── */
+.contract-box {
+  background: var(--dark); padding: 28px 28px;
+  margin: 24px 0;
+}
+.contract-box h3 { color: var(--gold); font-size: 16px; margin-bottom: 16px; }
+.contract-box p { color: rgba(255,255,255,.78); font-size: 15px; line-height: 1.95; margin-bottom: 14px; }
+.contract-box p:last-child { margin-bottom: 0; }
+.contract-box strong { color: #fff; }
+.contract-box ul { padding-left: 20px; margin: 10px 0; }
+.contract-box li { color: rgba(255,255,255,.78); font-size: 14px; line-height: 1.8; margin-bottom: 6px; }
+
+/* ── CTA ── */
+.cta-section { background: var(--dark); padding: 48px 24px 52px; }
+.cta-inner { max-width: 700px; margin: 0 auto; }
+.cta-label { font-size: 12px; letter-spacing: .2em; color: var(--gold); font-weight: 700; margin-bottom: 14px; }
+.cta-title { font-size: clamp(18px, 3vw, 26px); font-weight: 800; color: #fff; line-height: 1.4; margin-bottom: 14px; }
+.cta-title em { color: var(--gold); font-style: normal; }
+.cta-lead { font-size: 15px; color: rgba(255,255,255,.72); line-height: 1.9; margin-bottom: 32px; }
+.link-cards { display: flex; flex-direction: column; gap: 10px; }
+.link-card {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(200,150,12,.24);
+  padding: 16px 18px; text-decoration: none; color: #fff;
+  transition: background .15s, border-color .15s;
+}
+.link-card:hover { background: rgba(200,150,12,.12); border-color: var(--gold); }
+.link-card-icon { font-size: 22px; flex-shrink: 0; }
+.link-card-body { flex: 1; min-width: 0; }
+.link-card-label { font-size: 11px; letter-spacing: .12em; color: var(--gold); margin-bottom: 3px; }
+.link-card-title { font-size: 14px; font-weight: 700; line-height: 1.4; }
+.link-card-desc { font-size: 13px; color: rgba(255,255,255,.52); margin-top: 3px; line-height: 1.5; }
+.link-card-arrow { color: var(--gold); font-size: 18px; flex-shrink: 0; }
+
+/* ── CLOSING ── */
+.closing-bar {
+  padding: 40px 24px 48px; text-align: center; background: var(--bg);
+  border-top: 3px solid var(--gold);
+}
+.closing-bar .final-line {
+  font-size: clamp(18px, 3vw, 24px); font-weight: 900;
+  color: #1a1a18; letter-spacing: .04em; margin-bottom: 16px;
+}
+.closing-bar .final-line em { color: var(--red); font-style: normal; }
+.closing-bar p { font-size: 14px; color: var(--muted); max-width: 500px; margin: 0 auto; line-height: 1.9; }
+
+/* ── UTIL ── */
+p { margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+.gold-rule { height: 3px; background: linear-gradient(90deg, var(--gold), rgba(200,150,12,.1)); margin: 34px 0; }
+
+@media (max-width: 580px) {
+  .change-grid { grid-template-columns: 1fr; }
+  .stat-row    { grid-template-columns: 1fr 1fr; }
+  .cmp-row     { grid-template-columns: 120px 1fr 80px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">障害当事者・ご家族へ</div>
+    <h1 class="hero-title">
+      あなたが感じてきた<br>
+      「なぜ自分たちだけが<br>
+      <em>こんなに苦しいのか」</em>
+    </h1>
+    <p class="hero-lead">
+      それは、あなたの弱さではない。<br>
+      <strong>60年間変わらなかった制度の、設計ミスの結果だ。</strong><br><br>
+      この提言は、「助けてほしい」というお願いではない。
+      国が長年やるべきことを回避してきた、
+      その清算を求める<strong>請求書</strong>だ。
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">年金を月9〜15万円に</span>
+      <span class="hero-tag">家族への経済依存を終わらせる</span>
+      <span class="hero-tag">自分のペースで働ける仕組みへ</span>
+      <span class="hero-tag">「親亡き後」に制度が答える</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════════ SECTION 1：今の現実 ══════════════ -->
+<section class="sec">
+  <div class="sec-label">現実の数字</div>
+  <h2 class="sec-title">月<mark>9.5万円</mark>では、<em>自立できない</em>。<br>これは「事実」だ。</h2>
+
+  <p>
+    障害基礎年金1級（2026年度）は月88,260円。
+    生活者支援給付金（約7,000円）を加えても<strong>月9.5万円</strong>。
+    都市部で家賃・医療費・生活費を払えば、手元に残るのは——
+  </p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-label">障害基礎年金1級（最高額）</div>
+      <div class="stat-value danger">9.5万円</div>
+      <div class="stat-desc">2026年度。これが現行制度の最高額</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">公的制度フル活用後の手残り</div>
+      <div class="stat-value danger">約2万円</div>
+      <div class="stat-desc">医療・福祉サービスを差し引いた後の実態</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">都市部・最悪ケース</div>
+      <div class="stat-value danger">0〜1万円</div>
+      <div class="stat-desc">公的助成を使いこなせない場合、ほぼゼロになる</div>
+    </div>
+  </div>
+
+  <div class="callout-warn">
+    <strong>「生存はできても生活にはならない」</strong><br><br>
+    障害年金の水準が低いのは、あなたの症状が軽いからでも、
+    審査が厳しいからでもない。
+    制度そのものが「家族が補填する」ことを前提に設計されているからだ。
+    <strong>これは個人の問題ではなく、制度の問題だ。</strong>
+  </div>
+
+  <p>
+    欧州に目を向けると、日本がいかに「特別に低い」かがわかる。
+    同じ障害を持って生まれていても、
+    住む国が違えば生活水準が根本から変わる。
+  </p>
+</section>
+
+<!-- ══════════════ SECTION 2：欧州と比べると ══════════════ -->
+<section class="sec">
+  <div class="sec-label">世界と比べると</div>
+  <h2 class="sec-title">欧州では「家族に頼らず」<em>自立できている</em></h2>
+
+  <p>
+    各国で、医療費・住宅費・介護費を差し引いた後、
+    実際に手元に残る生活費で比較する。
+    これが「本当の生活水準」だ。
+  </p>
+
+  <div style="margin: 20px 0;">
+    <div class="cmp-row hi">
+      <span>🇯🇵 日本（制度フル活用）</span>
+      <div class="cmp-bar"><div class="cmp-fill" style="width:14%"></div></div>
+      <span class="cmp-amt" style="color:var(--red)">約 2万円</span>
+    </div>
+    <div class="cmp-row hi">
+      <span>🇯🇵 日本（最悪ケース）</span>
+      <div class="cmp-bar"><div class="cmp-fill" style="width:4%"></div></div>
+      <span class="cmp-amt" style="color:var(--red)">0〜1万円</span>
+    </div>
+    <div class="cmp-row">
+      <span>🇬🇧 イギリス</span>
+      <div class="cmp-bar"><div class="cmp-fill" style="width:45%"></div></div>
+      <span class="cmp-amt">約 6〜7万円</span>
+    </div>
+    <div class="cmp-row">
+      <span>🇫🇷 フランス</span>
+      <div class="cmp-bar"><div class="cmp-fill" style="width:66%"></div></div>
+      <span class="cmp-amt">約 9〜10万円</span>
+    </div>
+    <div class="cmp-row">
+      <span>🇩🇪 ドイツ</span>
+      <div class="cmp-bar"><div class="cmp-fill" style="width:67%"></div></div>
+      <span class="cmp-amt">約 9〜10万円</span>
+    </div>
+    <div class="cmp-row">
+      <span>🇳🇴 ノルウェー</span>
+      <div class="cmp-bar"><div class="cmp-fill" style="width:100%"></div></div>
+      <span class="cmp-amt">約 14〜15万円</span>
+    </div>
+  </div>
+
+  <div class="callout-light">
+    <strong>フランスでは、障害者手当（AAH）だけで名目月額約17万円が保障されている（2026年4月〜）。</strong><br><br>
+    日本の障害年金は9.5万円。医療や住宅に使い果たした後の手残りは2万円。
+    欧州では「年金≒そのまま生活費」だが、
+    日本では「年金≒支出の補填」に終わる——
+    <strong>この構造の違いが、「家族なしでは生きていけない」という現実を作っている。</strong>
+  </div>
+
+  <div class="big-claim">
+    日本が異常なのではない。<br>
+    <em>60年間放置した制度が異常なのだ。</em>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 3：当事者の声 ══════════════ -->
+<section class="sec">
+  <div class="sec-label">届いた声</div>
+  <h2 class="sec-title">あなたと同じ声が、<em>全国から</em>集まった</h2>
+
+  <div class="voice-block">
+    「A型事業所で週4日働いています。月収は約7万円。年金と合わせて13万円。家賃を払ったら残りは2万円ほど。もう少し働けないかと思うこともある。でも更新のたびに怖い。就労していると『回復した』とみなされて年金が止まるかもしれないと言われた。働けば年金が危うくなる。働かなければ生活が苦しいまま。どちらに転んでも詰まっている。親が元気なうちはいい。でも親が倒れたら、私はどうなるんでしょう。誰も答えてくれません。」
+    <div class="voice-source">── 精神障害・2級・30代女性</div>
+  </div>
+
+  <div class="voice-block">
+    「息子は特例子会社に勤めて5年になります。真面目に働いています。でも手取りで12〜13万円では、親が死んだあとどうやって生きるのか。グループホームの空きを待ちながら、私たちも年を取っていく。体が動くうちに、息子の『その後』を何とかしなければという焦りだけが、毎日頭にあります。」
+    <div class="voice-source">── 知的障害の子を持つ60代父親</div>
+  </div>
+
+  <div class="voice-block">
+    「うちは妻も私も障害があります。二人合わせて障害年金が月約17万円。子どもが生まれて、正直どうやって育てるか分からない。働きたいという気持ちはある。でも二人とも体に限界があって、無理をすれば体の不調とその治療の出費が重なる。収入を増やそうとするほど、それが追いかけてくる。この国の制度は、私たちのような家族のことを想定していないのだと思う。」
+    <div class="voice-source">── 身体障害・夫婦ともに障害年金受給・30代</div>
+  </div>
+
+  <div class="callout-dark">
+    これらの声に共通するのは「絶望」ではない。<br>
+    <strong>「制度が変われば自分たちの未来も変わる」という、静かな確信だ。</strong><br><br>
+    怒っているのは制度に対してであって、誰かに対してではない。
+    その怒りは正しく、その確信は正しい。
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 4：「働くと損をする」罠 ══════════════ -->
+<section class="sec">
+  <div class="sec-label">制度の矛盾</div>
+  <h2 class="sec-title">「働きたい」のに<em>どちらに転んでも詰まっている</em></h2>
+
+  <p>
+    今の制度では、働こうとしても「2種類の詰まり方」が待っている。
+    どちらも当事者の問題ではなく、<strong>制度の設計ミスだ。</strong>
+  </p>
+
+  <div class="callout-warn" style="margin-bottom:18px">
+    <strong>詰まり方①：年金が止まるリスク</strong><br><br>
+    就労していると「回復した」とみなされ、年金が止まるかもしれない——そう言われれば、働く量を増やすことを恐れるのは当然だ。<strong>働けば年金が危うくなる。働かなければ生活が苦しいまま。</strong>どちらを選んでも出口がない。<br><br>
+    <strong>詰まり方②：無理をすれば体と出費が重なる</strong><br><br>
+    体に限界があるなかで無理をすれば、不調が出て治療費がかさむ。収入を増やそうとするほど、医療コストがそれを追いかけてくる。働くほど手残りが増えない構造が、当事者を静かに消耗させる。
+  </div>
+
+  <div class="change-grid">
+    <div class="change-card change-now">
+      <div class="change-head">TODAY ─ 今の構造</div>
+      <div class="change-body">
+        就労すると「回復した」とみなされ年金が止まるリスクがある。<br>
+        無理をして働けば体の不調と医療費が追いかけてくる。<br>
+        「与えられた業務」は本来一体の作業を切り分けたもので、<strong>何をやっているかわからなくなる</strong>ことがある。<br>
+        働く意欲があっても、動けば動くほど損をする設計になっている。
+      </div>
+    </div>
+    <div class="change-card change-next">
+      <div class="change-head">AFTER ─ この提言が実現したら</div>
+      <div class="change-body">
+        年金の底上げにより、就労しなくても生活できる土台が先に確立される。<br>
+        その上で、<strong>「働きたいとき・できるときに働く」タスク型就労</strong>が選べる。<br>
+        公共業務（巡回点検・デジタルサポート・安否確認・データ入力等）を自分のペースで担える。<br>
+        働いた実績がポイントとして積み上がり、より多くの機会へとつながる。
+      </div>
+    </div>
+  </div>
+
+  <div class="callout-light">
+    <strong>本提言が目指すのは「働かなくていい制度」ではない。</strong><br><br>
+    「生活のために無理に働かざるを得ない状態」を終わらせ、
+    「本当に働きたいから働く」という選択を取り戻すことだ。
+    社会に役割を持ち、自分のペースで貢献できる——
+    <strong>それが自立の本当の意味だ。</strong>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 5：この提言が変えること ══════════════ -->
+<section class="sec">
+  <div class="sec-label">提言の核心</div>
+  <h2 class="sec-title">「年金引き上げ」と「タスク型就労」で<br><em>何が変わるか</em></h2>
+
+  <h3 style="font-size:17px;font-weight:700;color:#1a1a18;margin:0 0 14px;">第1段階：障害年金を月9〜15万円に引き上げる</h3>
+
+  <p>
+    障害基礎年金を等級別に引き上げる（1級：月15万円 ／ 2級：月12万円 ／ 新設3級：月9万円）。
+    現行の1.6倍。これでも欧州最低水準の国（フランス・名目月17万円）を下回る。
+    「過大な要求」ではなく、「最低限の是正」だ。
+  </p>
+
+  <div class="callout-green">
+    <strong>年金が上がれば、何が変わるか。</strong><br><br>
+    家族に毎月補填してもらう必要がなくなる。<br>
+    「この仕事を辞めたら生活が崩れる」という恐怖から解放される。<br>
+    「親が元気なうちは大丈夫」という綱渡りが終わる。<br>
+    <strong>生活の「土台」が、初めて当事者自身のものになる。</strong>
+  </div>
+
+  <h3 style="font-size:17px;font-weight:700;color:#1a1a18;margin:20px 0 14px;">第2段階：自治体に「公共業務分担推進局」を新設する</h3>
+
+  <p>
+    自治体内に障害者向けのタスク型就労の場を整備する。
+    人手不足で後回しにされてきた公共の仕事を、障害者が担う。
+  </p>
+
+  <ul class="icon-list">
+    <li data-icon="🌳">公園・公共施設の巡回点検</li>
+    <li data-icon="📱">デジタルサポート（スマホ操作の手助け）</li>
+    <li data-icon="🏠">独居高齢者の安否確認</li>
+    <li data-icon="💻">データ入力・書類のデジタル化（完全在宅可）</li>
+    <li data-icon="🔍">SNSリスクモニタリング（完全在宅）</li>
+  </ul>
+
+  <div class="callout-light">
+    <strong>「業務がいつ来るかわからない待機拘束」は設計から排除する。</strong><br><br>
+    在宅勤務で「PCの前から離れられない」状態——
+    これもまた今の制度が生む疲弊だ。
+    この提言のタスク型就労は、<strong>業務発生時のみ稼働する設計</strong>にする。
+    待機コストをゼロにする。報酬は時給1,200〜1,800円。
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 6：家族へ ══════════════ -->
+<section class="sec">
+  <div class="sec-label">ご家族へ</div>
+  <h2 class="sec-title">「<em>親亡き後</em>」という問いに、<br>制度が答えを出す</h2>
+
+  <p>
+    家族が感じてきた重さを、言葉にするのは難しい。
+    経済的な負担だけではない。
+    「自分が先に逝ったら」という考えが頭から離れない日々——
+    それは「心配性」ではなく、現実だ。
+  </p>
+
+  <ul class="icon-list">
+    <li data-icon="💴">毎月の生活費の補填。自分の老後資金を削りながら続けてきた</li>
+    <li data-icon="🔗">転勤・転職・遠くへの引っ越しを、「本人のそば」にいるために諦めてきた</li>
+    <li data-icon="😔">「自分が倒れたら終わり」というプレッシャーを誰にも言えずに抱えてきた</li>
+    <li data-icon="❓">「親亡き後」をどう頼めばいいかを、誰も教えてくれなかった</li>
+  </ul>
+
+  <div class="callout-dark">
+    <strong>本提言は、この問いに正面から答えようとしている。</strong><br><br>
+    障害年金が生活の土台になれば、家族への経済依存は終わる。<br>
+    タスク型就労で社会とつながり続けられれば、孤立も防げる。<br>
+    公的制度が「親亡き後」の生活を支えられれば——<br>
+    <strong>あなたは、自分の人生を取り戻せる。</strong>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 7：双方向の契約 ══════════════ -->
+<section class="sec">
+  <div class="sec-label">正直に伝える</div>
+  <h2 class="sec-title">この提言は「無条件の保護」ではない。<br><em>双方向の契約</em>だ。</h2>
+
+  <p>
+    本提言は、障害者への一方的な「支援の拡充」を求めているのではない。
+    社会が投資する以上、当事者にも明確な責任が発生する。
+    それを正直に伝える。
+  </p>
+
+  <div class="contract-box">
+    <h3>社会と当事者が互いに責任を果たし合う設計</h3>
+    <p>
+      <strong>社会が果たすこと：</strong><br>
+      生活の土台（年金）を先に確立する。
+      自分のペースで働ける機会を整備する。
+      「働いたら損をする」という罠を取り除く。
+    </p>
+    <p>
+      <strong>当事者に求められること：</strong>
+    </p>
+    <ul>
+      <li>就労実績の積み上げと、自己管理の責任</li>
+      <li>無断欠勤・虚偽報告へのペナルティの受容</li>
+      <li>自力通勤という社会人としての基本責任</li>
+      <li>悪質な不正に対しては資格取消という社会的制裁</li>
+    </ul>
+    <p>
+      これらは「障害があるから仕方ない」では通らない、<br>
+      <strong>対等な労働者としての当然の規律だ。</strong>
+    </p>
+    <p>
+      条件が整った後に何を選び何を積み上げるかは、
+      当事者自身の責任と自由の領域に属する。
+      本提言が整備しようとしているのは「やらなくていい理由」ではなく、
+      <strong>「やれる環境」だ。</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 8：請求 ══════════════ -->
+<section class="sec" style="border-bottom:none;">
+  <div class="sec-label">この提言の立場</div>
+  <h2 class="sec-title">「お願い」ではなく、<em>「請求」だ</em>。</h2>
+
+  <p>
+    1960年代から60年以上、国は障害者の生活保障を家族と民間に押しつけてきた。
+    やれば財政負担が可視化される。
+    やれば公務員定数の問題に触れる。
+    だから——先送りにしてきた。
+  </p>
+
+  <div class="callout-warn">
+    <strong>「現状維持」は「コストゼロ」ではない。</strong><br><br>
+    国が何もしないことで、当事者が、家族が、そして現場のスタッフが——
+    誰かが見えない形でそのコストを払い続けている。
+    「不作為のコスト」は年間2.6〜3.2兆円と試算されている。
+    それは今も、誰かの時間と体力と精神力で払われている。
+  </div>
+
+  <div class="callout-dark">
+    <strong>本制度の実現に伴うコストは、国が引き受けるべき正当な負債であり、<br>
+    民間や家族や当事者が長年肩代わりさせられてきたコストの返済だ。</strong><br><br>
+    「やるかどうか」を問う段階はとうに過ぎている。
+    問われているのは「いつ、どこから始めるか」だけだ。<br><br>
+    この声は、願いではなく、<strong style="font-size:17px">請求である。</strong>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- ══════════════ CTA ══════════════ -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-label">まず読む</div>
+    <h2 class="cta-title">あなたのための<em>3ページ</em>から始めてほしい</h2>
+    <p class="cta-lead">
+      難しい制度設計や財政の話は後でいい。
+      まずこの3ページで「何が問題で、この提言が何を変えようとしているか」をつかんでほしい。
+    </p>
+    <div class="link-cards">
+      <a class="link-card" href="ch3.html">
+        <div class="link-card-icon">⚡</div>
+        <div class="link-card-body">
+          <div class="link-card-label">最初に読む ─ 本提言の核心</div>
+          <div class="link-card-title">第3章：不作為のコストと社会契約への覚悟</div>
+          <div class="link-card-desc">当事者・家族の声から始まり、国家に問われる二者択一で締めくくられる。この提言が「請求」である理由がここにある</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="summary.html">
+        <div class="link-card-icon">📋</div>
+        <div class="link-card-body">
+          <div class="link-card-label">次に読む ─ 全体像を把握する</div>
+          <div class="link-card-title">エグゼクティブサマリー</div>
+          <div class="link-card-desc">「何が問題で、何を変えようとしているか」を数字・図・構造で1ページに凝縮</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="faq.html">
+        <div class="link-card-icon">💬</div>
+        <div class="link-card-body">
+          <div class="link-card-label">疑問を解消する</div>
+          <div class="link-card-title">FAQ ─ よくある質問と回答</div>
+          <div class="link-card-desc">「お金はどこから？」「不正は？」「本当に機能するの？」疑問をここで解消してから次へ</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="intl.html">
+        <div class="link-card-icon">🌍</div>
+        <div class="link-card-body">
+          <div class="link-card-label">根拠を確認したい方へ</div>
+          <div class="link-card-title">国際比較データ集</div>
+          <div class="link-card-desc">欧州7カ国との障害年金・雇用制度の詳細比較。「日本だけがこんなに低い」の根拠がすべてここにある</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="appendix.html">
+        <div class="link-card-icon">📰</div>
+        <div class="link-card-body">
+          <div class="link-card-label">事実として確認したい方へ</div>
+          <div class="link-card-title">巻末付録：社会はすでに知っている</div>
+          <div class="link-card-desc">「これは理論ではなく、すでに起きている現実だ」という証拠。報道・証言のまとめ</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CLOSING ══════════════ -->
+<div class="closing-bar">
+  <div class="final-line">
+    この声は、願いではなく、<em>請求である</em>。
+  </div>
+  <p>
+    本提言書「次世代型障害者雇用モデルの創設」は、<br>
+    60年間誰もが問題とわかっていながら積み残されてきた問いに<br>
+    正面から向き合った文書です。<br>
+    特定の政治的立場の実現ではなく、<br>
+    設計ミスの修正を、あらゆる立場の人に届けることを意図しています。
+  </p>
+</div>
+
+</body>
+</html>

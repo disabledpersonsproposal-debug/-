@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの「なんかおかしい」は正しい ─ 障害者雇用制度の本音</title>
+<style>
+:root {
+  --dark:   #1e1e1c;
+  --gold:   #D4AF37;
+  --gold-l: rgba(212,175,55,0.18);
+  --gold-b: rgba(212,175,55,0.32);
+  --red:    #8B1A1A;
+  --bg:     #F5F2EC;
+  --white:  #ffffff;
+  --mid:    #2a2a28;
+  --muted:  #5a5a56;
+  --font: 'Meiryo UI','メイリオ','Yu Gothic UI',sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); font-size: 16px; line-height: 1.85; color: var(--mid); background: var(--bg); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, #111110 0%, #1e1e1c 60%, #161614 100%);
+  padding: 56px 24px 52px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(212,175,55,.04) 59px, rgba(212,175,55,.04) 60px),
+              repeating-linear-gradient(0deg,  transparent, transparent 59px, rgba(212,175,55,.03) 59px, rgba(212,175,55,.03) 60px);
+  pointer-events: none;
+}
+.hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
+.hero-kicker {
+  font-size: 13px; letter-spacing: .25em; color: var(--gold);
+  font-weight: 700; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-kicker::before {
+  content: ''; display: inline-block; width: 28px; height: 2px; background: var(--gold);
+}
+.hero-title {
+  font-size: clamp(22px, 4.5vw, 38px);
+  font-weight: 900; color: #fff; line-height: 1.35;
+  margin-bottom: 20px; letter-spacing: -.01em;
+}
+.hero-title em { color: var(--gold); font-style: normal; }
+.hero-lead {
+  font-size: 16px; color: rgba(255,255,255,.78);
+  line-height: 2.0; max-width: 600px; margin-bottom: 32px;
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-tag {
+  font-size: 13px; padding: 4px 12px;
+  border: 1px solid rgba(212,175,55,.6);
+  color: rgba(255,255,255,.85); border-radius: 2px;
+  background: rgba(212,175,55,.1);
+}
+
+/* ── WRAPPER ── */
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+/* ── SECTION ── */
+.sec { padding: 40px 0 36px; border-bottom: 1px solid rgba(0,0,0,.1); }
+.sec:last-of-type { border-bottom: none; }
+
+.sec-label {
+  font-size: 11px; letter-spacing: .22em; font-weight: 700;
+  color: var(--gold); margin-bottom: 10px; text-transform: uppercase;
+}
+.sec-title {
+  font-size: clamp(18px, 3vw, 24px); font-weight: 800;
+  color: #1a1a18; line-height: 1.4; margin-bottom: 20px;
+}
+.sec-title em { color: var(--red); font-style: normal; }
+.sec-title mark {
+  background: rgba(212,175,55,.2); color: inherit;
+  padding: 0 4px; border-radius: 2px;
+}
+
+/* ── CALLOUT ── */
+.callout {
+  background: var(--dark); color: rgba(255,255,255,.85);
+  border-left: 4px solid var(--gold);
+  padding: 20px 22px; margin: 20px 0;
+  font-size: 15px; line-height: 1.9;
+}
+.callout strong { color: var(--gold); }
+.callout-warn {
+  background: #fff8f8; border-left: 4px solid var(--red);
+  padding: 18px 22px; margin: 20px 0;
+  font-size: 15px; line-height: 1.9;
+  color: var(--mid);
+}
+.callout-warn strong { color: var(--red); }
+.callout-light {
+  background: #faf8f2; border: 1px solid var(--gold-b);
+  border-left: 4px solid var(--gold);
+  padding: 18px 22px; margin: 20px 0;
+  font-size: 15px; line-height: 1.9;
+  color: var(--mid);
+}
+.callout-light strong { color: #1a1a18; }
+
+/* ── QUOTE ── */
+.quote-block {
+  border-left: 3px solid var(--gold);
+  padding: 14px 18px; margin: 18px 0;
+  background: #fff; font-size: 15px; line-height: 2.0;
+  color: #1a1a18;
+}
+.quote-block .q-source { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+/* ── BIG NUMBER ── */
+.stat-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px; margin: 20px 0;
+}
+.stat-card {
+  background: var(--white); border: 1px solid var(--gold-b);
+  border-top: 3px solid var(--dark); padding: 18px 16px;
+}
+.stat-label { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.stat-value { font-size: 26px; font-weight: 900; color: var(--gold); line-height: 1.1; margin-bottom: 4px; }
+.stat-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── LIST ── */
+.check-list { list-style: none; padding: 0; margin: 14px 0; }
+.check-list li {
+  padding: 7px 0 7px 24px; position: relative;
+  font-size: 15px; line-height: 1.75; color: var(--mid);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: '▶'; position: absolute; left: 0; top: 9px;
+  font-size: 10px; color: var(--gold);
+}
+
+/* ── BEFORE/AFTER ── */
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+.ba-card { padding: 16px 16px; border: 1px solid; font-size: 14px; line-height: 1.8; }
+.ba-before { border-color: rgba(139,26,26,.35); background: #fff8f8; }
+.ba-after  { border-color: rgba(0,100,0,.3);    background: #f4faf4; }
+.ba-head { font-size: 12px; font-weight: 700; letter-spacing: .1em; margin-bottom: 8px; }
+.ba-before .ba-head { color: var(--red); }
+.ba-after  .ba-head { color: #1a5c2a; }
+
+/* ── INTL ── */
+.intl-row {
+  display: grid; grid-template-columns: 1fr 100px;
+  align-items: center; gap: 12px;
+  padding: 10px 14px; background: var(--white);
+  border: 1px solid rgba(0,0,0,.08); margin-bottom: 4px;
+  font-size: 14px;
+}
+.intl-row.hi { border-color: var(--gold-b); background: #fffdf0; }
+.intl-name { font-weight: 500; }
+.intl-amt { font-weight: 700; text-align: right; white-space: nowrap; }
+.intl-row.hi .intl-amt { color: var(--red); }
+.intl-note { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--dark); padding: 44px 24px;
+  margin-top: 0;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; }
+.cta-title { font-size: clamp(18px, 3vw, 26px); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.4; }
+.cta-title em { color: var(--gold); font-style: normal; }
+.cta-lead { font-size: 15px; color: rgba(255,255,255,.75); line-height: 1.9; margin-bottom: 28px; }
+.link-cards { display: flex; flex-direction: column; gap: 10px; }
+.link-card {
+  display: flex; align-items: center;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(212,175,55,.25);
+  padding: 14px 18px; text-decoration: none; color: #fff;
+  transition: background .15s, border-color .15s;
+  gap: 14px;
+}
+.link-card:hover { background: rgba(212,175,55,.12); border-color: var(--gold); }
+.link-card-icon { font-size: 20px; flex-shrink: 0; }
+.link-card-body { flex: 1; min-width: 0; }
+.link-card-label { font-size: 11px; letter-spacing: .12em; color: var(--gold); margin-bottom: 3px; }
+.link-card-title { font-size: 14px; font-weight: 700; line-height: 1.4; }
+.link-card-desc { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 3px; line-height: 1.5; }
+.link-card-arrow { color: var(--gold); font-size: 18px; flex-shrink: 0; }
+
+/* ── CLOSING ── */
+.closing {
+  border-top: 3px solid var(--gold);
+  padding: 36px 24px 44px;
+  background: var(--bg);
+  text-align: center;
+}
+.closing p { font-size: 14px; color: var(--muted); max-width: 560px; margin: 0 auto; line-height: 1.85; }
+.closing strong { color: #1a1a18; }
+
+/* ── UTILITY ── */
+p { margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+.gold-rule { height: 3px; background: linear-gradient(90deg, var(--gold), rgba(212,175,55,.1)); margin: 32px 0; }
+.big-claim {
+  font-size: clamp(18px, 3vw, 22px); font-weight: 800;
+  color: #1a1a18; line-height: 1.5;
+  text-align: center; padding: 28px 0;
+  border-top: 2px solid var(--gold-b);
+  border-bottom: 2px solid var(--gold-b);
+  margin: 28px 0;
+}
+.big-claim em { color: var(--red); font-style: normal; }
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  .ba-grid { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 40px 18px 44px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">現場からの問い直し</div>
+    <h1 class="hero-title">
+      「なんでオレたちが<br>
+      <em>この業務を抱えなきゃいけないんだ</em>」<br>
+      ──その感覚は、正しい。
+    </h1>
+    <p class="hero-lead">
+      障害者雇用の「義務」は、60年間ずっと現場に押しつけられてきた。
+      国が本来引き受けるべきコストを、民間の、そして現場の基幹スタッフが
+      無償で肩代わりさせられてきた構造。
+      この提言は、その「設計ミスの修正」を求めている。
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">現場スタッフの負担が消える</span>
+      <span class="hero-tag">当事者が自立できる</span>
+      <span class="hero-tag">家族が解放される</span>
+      <span class="hero-tag">増税なし</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ SECTION 1：現場の疲弊 ══════════════════ -->
+<div class="wrap">
+<section class="sec">
+  <div class="sec-label">あなたが感じていること</div>
+  <h2 class="sec-title">職場で起きている「あの感覚」の正体</h2>
+
+  <p>
+    障害者雇用の義務を果たすために、職場では本来必要のない業務が「作られる」。
+    それを管理するのは、現場の基幹スタッフだ。
+    誰も口には出さないが、感じている人は多い。
+  </p>
+
+  <div class="callout-warn">
+    <strong>こういう場面に、心当たりはないか。</strong><br><br>
+    在庫表の数字を転記するだけの作業を切り出して依頼するとき——
+    どの商品をどの欄に入力するかを説明する手順書を用意し、完了後に誤りがないか突き合わせる確認が発生する。
+    冷静に考えると、<strong>手順書を書いている時間で転記は終わっている。</strong><br><br>
+    書類を所定のフォルダに綴じるだけの作業を切り出して依頼するとき——
+    指示の言語化・完了確認・順序チェックが必要になる。
+    <strong>その指示を言語化する手間が、綴じる作業そのものより重くなることがある。</strong>
+  </div>
+
+  <p>
+    悪意はどこにもない。配慮も、善意もある。
+    しかしその構造が、<strong>両者に「切り分けなければ存在しなかった非効率」を課している。</strong>
+    あなたが感じてきた「なんかおかしい」は、感情ではなく、
+    制度の設計ミスへの正確な気づきだ。
+  </p>
+
+  <div class="big-claim">
+    現場の基幹スタッフは今、<em>国が担うべき福祉を無償で肩代わり</em>させられている。
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 2：当事者の現実 ══════════════════ -->
+<section class="sec">
+  <div class="sec-label">当事者の現実</div>
+  <h2 class="sec-title">月<mark>9.5万円</mark>では、<em>生きていけない</em>。</h2>
+
+  <p>
+    障害基礎年金（1級）は月約8.8万円。
+    生活者支援給付金（約7,000円）を合わせても、<strong>月9.5万円</strong>。
+    自立に必要な最低生活費は15〜25万円と言われている。
+    足りない分は——家族が補っている。
+  </p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-label">障害基礎年金1級（2026年度）</div>
+      <div class="stat-value">月9.5万円</div>
+      <div class="stat-desc">生活者支援給付金込み。これが最高額</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">自立に必要な最低生活費</div>
+      <div class="stat-value">15〜25万円</div>
+      <div class="stat-desc">家賃・医療費・生活費の合計（都市部）</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">公的制度フル活用後の「手残り」</div>
+      <div class="stat-value">約2万円</div>
+      <div class="stat-desc">医療・福祉サービスを差し引いた後の実態</div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    「A型事業所で週4日働いています。月収は約7万円。年金と合わせて13万円。家賃を払ったら残りは2万円ほど。もう少し働けないかと思うこともある。でも更新のたびに怖い。就労していると『回復した』とみなされて年金が止まるかもしれないと言われた。働けば年金が危うくなる。働かなければ生活が苦しいまま。どちらに転んでも詰まっている。親が元気なうちはいい。でも親が倒れたら、私はどうなるんでしょう。誰も答えてくれません。」
+    <div class="q-source">── 精神障害・2級・30代女性</div>
+  </div>
+
+  <div class="quote-block">
+    「息子は特例子会社に勤めて5年になります。真面目に働いています。でも手取りで12〜13万円では、親が死んだあとどうやって生きるのか。グループホームの空きを待ちながら、私たちも年を取っていく。体が動くうちに、息子の『その後』を何とかしなければという焦りだけが、毎日頭にあります。」
+    <div class="q-source">── 知的障害の子を持つ60代父親</div>
+  </div>
+
+  <div class="callout">
+    <strong>これは「他人事」ではない。</strong><br><br>
+    職場の同僚、部下、あるいは自分の家族・兄弟・子ども。
+    障害年金だけでは生活できない現実は、<strong>あなたの身の回りにすでにある</strong>かもしれない。
+    この問題は「障害者の話」ではなく、「家族を持つすべての人の話」だ。
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 3：家族の現実 ══════════════════ -->
+<section class="sec">
+  <div class="sec-label">家族が背負っているもの</div>
+  <h2 class="sec-title">「親亡き後」という、<em>答えのない問い</em></h2>
+
+  <p>
+    日本の障害者雇用制度は、<strong>家族がいることを前提に設計されている。</strong>
+    年金だけでは生活できないから、親が補う。親が倒れたら、兄弟が補う。
+    誰も補えなくなったとき——制度に答えはない。
+  </p>
+
+  <ul class="check-list">
+    <li><strong>経済的負担</strong>：年金不足分を毎月補填。家族の収入が事実上「障害者の生活費」になっている</li>
+    <li><strong>心理的拘束</strong>：「自分が倒れたら終わり」というプレッシャーが、家族の人生設計を縛り続ける</li>
+    <li><strong>地理的制約</strong>：本人の近くに住まざるを得ず、転勤・転職・移住の選択肢が消える</li>
+    <li><strong>介護離職</strong>：家族を支えるために仕事を辞める。その損失は社会全体に及ぶ</li>
+  </ul>
+
+  <div class="callout-light">
+    <strong>「現状維持」のコストは、誰かが負っている。</strong><br><br>
+    政府が何もしないことは「コストゼロ」ではない。
+    家族が、当事者が、現場のスタッフが、見えない形でそのコストを払い続けている。
+    年間2.6〜3.2兆円と試算されるこのコストは、今もどこかの「誰か」が負担している。
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 4：国際比較（シンプル版）══════════════════ -->
+<section class="sec">
+  <div class="sec-label">世界と比べると</div>
+  <h2 class="sec-title">「日本だけが<em>こんなに低い</em>」という現実</h2>
+
+  <p>
+    障害者の生活保障について、日本は先進国の中でどの位置にいるか。
+    難しい計算を抜きにして、手元に残る実質的な生活費で比べると——
+  </p>
+
+  <div style="margin: 20px 0;">
+    <div class="intl-row hi">
+      <div>
+        <div class="intl-name">🇯🇵 日本（公的制度フル活用・最良ケース）</div>
+        <div class="intl-note">各種医療・福祉サービスを差し引いた後の手残り</div>
+      </div>
+      <div class="intl-amt" style="color:#8B1A1A">約 2万円</div>
+    </div>
+    <div class="intl-row hi">
+      <div>
+        <div class="intl-name">🇯🇵 日本（都市部・公的助成未利用の最悪ケース）</div>
+        <div class="intl-note">医療3割負担・介護サービス定価の場合</div>
+      </div>
+      <div class="intl-amt" style="color:#8B1A1A">約 0〜1万円</div>
+    </div>
+    <div class="intl-row">
+      <div>
+        <div class="intl-name">🇬🇧 イギリス（NHS・住宅給付後）</div>
+      </div>
+      <div class="intl-amt">約 6〜7万円</div>
+    </div>
+    <div class="intl-row">
+      <div>
+        <div class="intl-name">🇫🇷 フランス（住宅補助・医療補填後）</div>
+      </div>
+      <div class="intl-amt">約 9〜10万円</div>
+    </div>
+    <div class="intl-row">
+      <div>
+        <div class="intl-name">🇩🇪 ドイツ（公的医療・社会扶助後）</div>
+      </div>
+      <div class="intl-amt">約 9〜10万円</div>
+    </div>
+    <div class="intl-row">
+      <div>
+        <div class="intl-name">🇳🇴 ノルウェー（医療無償・住宅支援後）</div>
+      </div>
+      <div class="intl-amt">約 14〜15万円</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>フランスでは障害者手当（AAH）だけで月約17万円（名目額）が保障されている。</strong><br><br>
+    日本の障害年金（1級）は9.5万円。
+    本提言が求める引き上げ案（月15万円）でさえ、
+    フランスの現行水準を<strong>下回る</strong>。
+    「過大な要求」どころか、「最低限の是正」だ。
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 5：提言が変えること ══════════════════ -->
+<section class="sec">
+  <div class="sec-label">この提言が変えること</div>
+  <h2 class="sec-title">「あなたに関係ある」<em>4つの変化</em></h2>
+
+  <div class="ba-grid">
+    <div class="ba-card ba-before">
+      <div class="ba-head">NOW ─ 今</div>
+      現場スタッフが障害者の業務を創出・管理・フォローする義務を負う。
+      不要な引き継ぎ・確認・手順書作成が日常的に発生する。
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-head">AFTER ─ この提言が実現したら</div>
+      障害者は自治体の「タスク型業務」として公共の仕事に就く。
+      民間（現場スタッフ）は本業に専念できる。
+      <strong>意味のない業務創出と管理コストがなくなる。</strong>
+    </div>
+  </div>
+
+  <div class="ba-grid">
+    <div class="ba-card ba-before">
+      <div class="ba-head">NOW ─ 今</div>
+      家族に障害者がいる場合、自分（または親）が毎月の生活費を補填し続ける。
+      転勤・転職の選択肢が「家族の都合」で制限される。
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-head">AFTER ─ この提言が実現したら</div>
+      障害年金が月9〜15万円に引き上げられ、家族への経済的依存が解消される。
+      <strong>「親亡き後」の不安に、制度が答えを出す。</strong>
+    </div>
+  </div>
+
+  <div class="callout-light">
+    <strong>「当事者への恩恵」ではなく、「現場の人間への恩恵」でもある。</strong><br><br>
+    この提言は、障害者だけが得をする話ではない。
+    現場スタッフが不合理な義務から解放され、
+    障害のある家族を持つすべての人が「制度に頼れる」社会になる——
+    <strong>四者が同時に利益を得る設計</strong>だ。
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 6：国の責任 ══════════════════ -->
+<section class="sec" style="border-bottom: none;">
+  <div class="sec-label">これは「お願い」ではない</div>
+  <h2 class="sec-title">60年間の<em>「ツケ」の清算</em>を求める</h2>
+
+  <p>
+    1960年代から、国は障害者雇用の義務を民間に押しつけてきた。
+    財政負担が可視化されるのが嫌だったから。
+    公務員定数の問題に触れるのが嫌だったから。
+    だから民間に、現場に、家族に——60年間、無償で肩代わりさせてきた。
+  </p>
+
+  <div class="callout">
+    <strong>この声は、願いではなく、請求である。</strong><br><br>
+    本制度の実現に伴うコストは、国が引き受けるべき正当な負債であり、
+    民間や家族や当事者が長年肩代わりさせられてきたコストの返済だ。
+    「やるかどうか」を問う段階はとうに過ぎている。
+    問われているのは「いつ、どこから始めるか」だけである。
+  </div>
+
+  <p>
+    多少の非効率を恐れて国が手をこまねき続けることは、
+    もはや「慎重さ」ではなく「回避の継続」だ。
+    <strong>現状維持は「何もしていない」のではなく、
+    「誰かに払わせ続けている」だけだ。</strong>
+  </p>
+</section>
+</div><!-- /wrap -->
+
+<!-- ══════════════════ CTA ══════════════════ -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title">まず読む3ページ —— <em>全体像が見える</em></h2>
+    <p class="cta-lead">
+      難しい計算や法律の話は後でいい。
+      まずこの3ページで「何が問題で、何を変えようとしているか」をつかんでほしい。
+    </p>
+    <div class="link-cards">
+      <a class="link-card" href="summary.html">
+        <div class="link-card-icon">📋</div>
+        <div class="link-card-body">
+          <div class="link-card-label">まず読む ① / 15〜20分</div>
+          <div class="link-card-title">エグゼクティブサマリー</div>
+          <div class="link-card-desc">提言の全体像を1ページで。数字・図・構造が一気にわかる</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="faq.html">
+        <div class="link-card-icon">💬</div>
+        <div class="link-card-body">
+          <div class="link-card-label">まず読む ② / 15〜20分</div>
+          <div class="link-card-title">よくある質問と回答（FAQ）</div>
+          <div class="link-card-desc">「お金はどこから？」「不正は？」「本当に機能するの？」——疑問をここで解消</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="ch3.html">
+        <div class="link-card-icon">⚡</div>
+        <div class="link-card-body">
+          <div class="link-card-label">まず読む ③ / 15〜20分 ─ 本提言の核心</div>
+          <div class="link-card-title">第3章：不作為のコストと社会契約への覚悟</div>
+          <div class="link-card-desc">国家に問われる二者択一。この提言が「お願い」ではなく「請求」である理由</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="appendix.html">
+        <div class="link-card-icon">📰</div>
+        <div class="link-card-body">
+          <div class="link-card-label">気になる方へ</div>
+          <div class="link-card-title">巻末付録：社会はすでに知っている</div>
+          <div class="link-card-desc">「理論じゃなく事実が見たい」という方へ。報道・証言のまとめ</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+      <a class="link-card" href="index.html">
+        <div class="link-card-icon">🗺</div>
+        <div class="link-card-body">
+          <div class="link-card-label">提言書の入口</div>
+          <div class="link-card-title">巻頭言・読書案内（全体マップ）</div>
+          <div class="link-card-desc">全ページの位置づけ一覧。どこから読んでも迷わない</div>
+        </div>
+        <div class="link-card-arrow">›</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ CLOSING ══════════════════ -->
+<div class="closing">
+  <p>
+    本提言書「<strong>次世代型障害者雇用モデルの創設</strong>」は、<br>
+    特定の政治的立場の実現を目的としていない。<br>
+    財政規律を重んじる人にも、効率を重んじる人にも、<br>
+    当事者の尊厳を重んじる人にも——<br>
+    同じ結論に到達してもらえる設計を目指した文書である。
+  </p>
+</div>
+
+</body>
+</html>
