@@ -332,6 +332,41 @@ tr:last-child td { border-bottom: none; }
   margin-top: 0;
 }
 
+/* ── SYSTEM LABEL DIVIDER（準公務職員 / 準企業職員 / 共通 の区切り） ── */
+.system-label {
+  border-top-width: 3px;
+  border-top-style: solid;
+  margin: 36px 0 20px;
+  padding-top: 16px;
+}
+.system-label--gov    { border-top-color: #2C7A3A; }
+.system-label--corp   { border-top-color: #1a5c9a; }
+.system-label--common { border-top-width: 2px; border-top-color: var(--gold-border); }
+
+.system-label span {
+  display: inline-block;
+  padding: 4px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #fff;
+}
+.system-label--gov  span { background: #2C7A3A; }
+.system-label--corp span { background: #1a5c9a; }
+.system-label--common span { background: var(--sidebar-bg); color: var(--gold); }
+
+@media (max-width: 860px) {
+  .system-label {
+    margin: 20px 0 14px;
+    padding-top: 12px;
+  }
+  .system-label span {
+    font-size: 12px;
+    letter-spacing: .06em;
+    padding: 3px 10px;
+  }
+}
+
 
 /* ══════════════════════════════════════════════════════
    共通コンポーネント（全ページ適用・各HTMLのインライン定義を廃止）
