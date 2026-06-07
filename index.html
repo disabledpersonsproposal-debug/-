@@ -177,7 +177,7 @@
   line-height: 1;
 }
 .read-card-seq-label {
-  font-size: 15px;
+  font-size: 13px;
   color: rgba(255,255,255,.5);
   letter-spacing: .06em;
 }
@@ -187,7 +187,7 @@
   min-width: 0;
 }
 .read-card-label {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--text-muted);
   letter-spacing: .08em;
   margin-bottom: 4px;
@@ -211,7 +211,7 @@
   margin-top: 10px;
 }
 .read-card-meta {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--text-muted);
 }
 .read-card-arrow {
@@ -261,7 +261,7 @@
   border-color: var(--gold);
 }
 .deep-card-tag {
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: .08em;
   color: var(--text-muted);
   font-weight: 700;
@@ -376,9 +376,20 @@
   margin: 36px 28px;
 }
 
+@media (max-width: 860px) {
+  .fatigue-grid, .timeline, .pillars { grid-template-columns: 1fr; }
+  .intl-row { grid-template-columns: 1fr auto; }
+  .intl-bar { display: none; }
+  .step-header { padding: 0 0 12px; }
+  .section-rule { margin: 28px 0; }
+  .preface { padding: 36px 16px 0; }
+  .preface-text { margin: 28px 0 0; padding: 28px 20px 24px; }
+  .preface-closing { margin: 32px 0 0; padding: 22px 20px; font-size: 18px; }
+  .preface-body { padding-bottom: 56px; }
+  .preface-body p { font-size: 15px; line-height: 2.0; }
+}
 @media (max-width: 680px) {
   .deep-grid { grid-template-columns: 1fr; }
-  .read-card-desc { font-size: 15px; }
 }
 
 </style>

@@ -288,15 +288,53 @@ tr:last-child td { border-bottom: none; }
   .topbar { top: 52px; }
   .content { max-width: 100%; padding: 20px 16px 60px; }
   .table-wrap { margin: 16px 0; }
+
+  /* ── 見出し ── */
+  .content h2 { font-size: 17px; margin: 36px 0 12px; }
+  .content h3 { font-size: 15px; margin: 22px 0 8px; }
+
+  /* ── 表 ── */
   table { font-size: 14px; }
   th, td { padding: 8px 10px; font-size: 14px; }
+
+  /* ── カード ── */
   .card-grid { grid-template-columns: 1fr; }
+  .card-value { font-size: 18px; }
+  .card-value--num { font-size: 16px; }
+
+  /* ── ページTOC / ナビ ── */
   .page-toc { margin-bottom: 24px; }
   .page-nav { flex-direction: column; }
   .page-nav-item:first-child:not(:last-child) { border-right: 1px solid var(--border); border-bottom: none; }
   .page-nav-item:last-child .page-nav-dir { justify-content: flex-start; }
   .page-nav-item:last-child .page-nav-title { text-align: left; }
   .page-nav-item:last-child .page-nav-sub { text-align: left; }
+
+  /* ── ボタン類のマージン（コンテナ外にはみ出す問題を防ぐ） ── */
+  .toggle-btn, .cost-toggle, .lazy-table-btn { margin-left: 0; margin-right: 0; }
+
+  /* ── index.html 固有 ── */
+  .step-header { padding: 0 0 12px; }
+  .section-rule { margin: 28px 0; }
+
+  /* ── finance.html 固有（waterfallグラフ） ── */
+  .wf-row { font-size: 14px; }
+  .wf-head { font-size: 13px; }
+  .wf-num { font-size: 14px; }
+  .period-val { font-size: 14px; }
+
+  /* ── intl.html 固有（国際比較バー） ── */
+  .intl-bar-row { font-size: 14px; }
+  .intl-country, .intl-amount { font-size: 14px; }
+  .intl-amount-sub { font-size: 13px; }
+
+  /* ── scp.html 固有（フロー・レーン） ── */
+  .lane-body { font-size: 14px; }
+  .cycle-box { font-size: 14px; }
+
+  /* ── callout 内の小表 ── */
+  .callout-light table th,
+  .callout-light table td { font-size: 13px; padding: 5px 8px; }
 }
 
 /* ── CHAPTER SECTION DIVIDER ── */
