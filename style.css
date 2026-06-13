@@ -12,10 +12,14 @@
   --gold-border:  rgba(212,175,55,0.28);
   --main-bg:      #F5F2EC;
   --content-bg:   #ffffff;
+  --card-bg:      #ffffff;   /* インタラクティブ要素・カード・表セル */
+  --tinted-bg:    #fffdf0;   /* 静的な強調ボックス・callout系 */
   --text-dark:    #1a1a18;
   --text-mid:     #2a2a28;
   --text-muted:   #5a5a56;
   --border:       rgba(0,0,0,0.09);
+  --accent-warn:  #B8421A;   /* 警告・責務系callout */
+  --card-shadow:  0 1px 6px rgba(0,0,0,0.08);
   --font:         'Meiryo UI', 'メイリオ', 'Yu Gothic UI', 'MS Gothic', sans-serif;
   --sidebar-w:    240px;
   --content-max:  820px;
@@ -301,6 +305,9 @@ tr:last-child td { border-bottom: none; }
   .card-grid { grid-template-columns: 1fr; }
   .card-value { font-size: 18px; }
   .card-value--num { font-size: 16px; }
+  .card { box-shadow: var(--card-shadow); }
+  .tl-card { box-shadow: var(--card-shadow); }
+  .fatigue-card { box-shadow: var(--card-shadow); }
 
   /* ── ページTOC / ナビ ── */
   .page-toc { margin-bottom: 24px; }
@@ -479,9 +486,9 @@ tr:last-child td { border-bottom: none; }
 }
 
 /* ── CALLOUT バリアント ── */
-/* ダーク背景注釈ボックス（黒背景・金ボーダー・クリーム文字） */
+/* ダーク背景注釈ボックス（チャコール背景・金ボーダー・クリーム文字） */
 .callout-dark-note {
-  background: #1a1a16;
+  background: var(--sidebar-bg);
   border-left: 4px solid var(--gold);
   padding: 16px 20px;
   margin: 24px 0;
@@ -491,7 +498,7 @@ tr:last-child td { border-bottom: none; }
 }
 /* 紫ボーダー注釈ボックス（前職収入連動型給付など） */
 .callout-purple {
-  background: #fffdf0;
+  background: #f8f5ff;
   border-left: 4px solid #5a4a8a;
   padding: 14px 20px;
   margin: 24px 0;
@@ -503,7 +510,7 @@ tr:last-child td { border-bottom: none; }
 .callout-purple a:hover { text-decoration: underline; }
 /* 緑ボーダー注釈ボックス */
 .callout-green {
-  background: #fff;
+  background: #f3faf4;
   border-left: 4px solid #2C7A3A;
   padding: 14px 20px;
   margin: 24px 0;
@@ -513,7 +520,7 @@ tr:last-child td { border-bottom: none; }
 }
 /* 薄黄背景・金ボーダー補足ボックス（グラフ読み方など） */
 .callout-note {
-  background: #fffdf0;
+  background: var(--tinted-bg);
   border: 1px solid rgba(212,175,55,0.4);
   padding: 12px 16px;
   margin: 12px 0;
@@ -521,3 +528,16 @@ tr:last-child td { border-bottom: none; }
   line-height: 1.9;
   color: var(--text-mid);
 }
+/* 警告・責務系（オレンジ赤ボーダー）── ダーク背景版モディファイア */
+.callout.callout--warn { border-left-color: var(--accent-warn); }
+/* 警告・責務系 ── ライト背景版スタンドアロン */
+.callout-warn {
+  background: #fff8f5;
+  border-left: 4px solid var(--accent-warn);
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-mid);
+}
+.callout-warn strong { color: var(--accent-warn); }
