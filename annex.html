@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【内部参照・非公開】次世代型障害者雇用提言書 ─ Annex</title>
+<style>
+:root {
+  --red:       #8B0000;
+  --red-light: rgba(139,0,0,0.08);
+  --red-border:rgba(139,0,0,0.25);
+  --gold:      #D4AF37;
+  --gold-border:rgba(212,175,55,0.28);
+  --gold-dim:  rgba(212,175,55,0.12);
+  --sidebar-bg:#1e1e1c;
+  --main-bg:   #F5F2EC;
+  --text-dark: #1a1a18;
+  --text-muted:#5a5a56;
+  --font: 'Meiryo UI','メイリオ','Yu Gothic UI','MS Gothic',sans-serif;
+  --sidebar-w: 220px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font);font-size:15px;line-height:1.85;color:var(--text-dark);background:var(--main-bg);display:flex;min-height:100vh}
+
+/* ── SIDEBAR ── */
+.sidebar{width:var(--sidebar-w);min-height:100vh;background:var(--sidebar-bg);display:flex;flex-direction:column;flex-shrink:0;position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;border-right:2px solid var(--red)}
+.sidebar-logo{padding:20px 16px 14px;border-bottom:1px solid rgba(139,0,0,0.4)}
+.sidebar-logo-title{display:block;font-size:13px;font-weight:700;color:var(--red);letter-spacing:.12em;margin-bottom:4px}
+.sidebar-logo-sub{display:block;font-size:14px;font-weight:700;color:#fff;line-height:1.4}
+.sidebar-warning{padding:12px 16px;background:var(--red);color:#fff;font-size:13px;line-height:1.6;font-weight:600;letter-spacing:.04em}
+nav{padding:12px 0 20px}
+nav a{display:block;padding:7px 18px;font-size:14px;color:rgba(255,255,255,0.7);text-decoration:none;line-height:1.4;transition:background .15s,color .15s}
+nav a:hover{background:rgba(139,0,0,0.2);color:#fff}
+nav .nav-section{padding:14px 18px 4px;font-size:13px;color:rgba(255,255,255,0.35);letter-spacing:.1em;font-weight:700}
+
+/* ── MAIN ── */
+.main{margin-left:var(--sidebar-w);flex:1;display:flex;flex-direction:column;min-height:100vh}
+.topbar{background:var(--red);color:#fff;padding:10px 28px;font-size:14px;font-weight:700;letter-spacing:.06em;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:50}
+.topbar-badge{background:#fff;color:var(--red);padding:2px 8px;border-radius:2px;font-size:13px;font-weight:700;letter-spacing:.08em}
+.content{padding:32px 32px 60px;max-width:860px}
+
+/* ── STAMP ── */
+.stamp{display:inline-block;border:3px solid var(--red);color:var(--red);font-size:22px;font-weight:900;padding:6px 18px;letter-spacing:.18em;transform:rotate(-2deg);margin-bottom:24px;line-height:1.3}
+
+/* ── SECTION HEADER ── */
+.section-header{background:var(--red);color:#fff;padding:14px 20px;margin:36px 0 0;border-left:6px solid var(--gold)}
+.section-header h2{font-size:17px;font-weight:700;letter-spacing:.05em;margin:0;color:#fff;border-bottom:none;padding-bottom:0}
+.section-header .section-src{font-size:13px;color:rgba(255,255,255,0.75);margin-top:3px}
+
+/* ── REASON BOX ── */
+.reason-box{background:#fff8f8;border:1px solid var(--red-border);border-left:4px solid var(--red);padding:12px 16px;margin:12px 0 20px;font-size:14px;color:#6b0000;line-height:1.7}
+.reason-box strong{display:block;margin-bottom:2px;color:#8B0000}
+
+/* ── TYPOGRAPHY ── */
+h1{font-size:22px;font-weight:700;color:var(--text-dark);line-height:1.4;margin-bottom:8px}
+h2{font-size:17px;font-weight:700;color:var(--text-dark);margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,0.1)}
+h3{font-size:15px;font-weight:700;color:var(--text-dark);margin:20px 0 8px}
+h4{font-size:15px;font-weight:700;color:var(--text-muted);margin:16px 0 6px}
+p{font-size:15px;line-height:1.85;margin-bottom:10px}
+ul,ol{font-size:15px;padding-left:20px;margin-bottom:12px}
+li{margin-bottom:4px}
+
+/* ── TABLE ── */
+.table-wrap{overflow-x:auto;margin:12px 0 20px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:#3a3a38;color:#fff;padding:9px 12px;text-align:left;font-size:14px;font-weight:600;border-right:1px solid rgba(255,255,255,0.12)}
+td{padding:9px 12px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;font-size:14px;line-height:1.7;color:var(--text-dark)}
+tr:nth-child(even){background:#fafaf8}
+tr.priority-aaa{background:#fffdf0}
+tr.priority-aaa td:nth-child(2) span{color:#B8421A;font-weight:700}
+tr.priority-aa td:nth-child(2) span{color:#4a7c3f;font-weight:700}
+tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
+
+/* ── CALLOUT ── */
+.callout{background:var(--sidebar-bg);color:#fff;border-left:4px solid var(--gold);padding:16px 20px;margin:16px 0;font-size:15px;line-height:1.85}
+.callout strong{color:var(--gold)}
+.callout-light{background:#fff;border:1px solid var(--gold-border);border-left:4px solid var(--gold);padding:14px 18px;margin:14px 0;font-size:15px;line-height:1.85}
+
+/* ── GOLD RULE ── */
+.gold-rule{height:2px;background:linear-gradient(to right,var(--gold),transparent);margin:16px 0 24px}
+
+/* ── INDEX TABLE ── */
+.index-table{width:100%;border-collapse:collapse;margin:16px 0}
+.index-table td{padding:8px 12px;border-bottom:1px solid rgba(0,0,0,0.08);font-size:15px;vertical-align:middle}
+.index-table td:first-child{width:28%;font-weight:600;color:var(--text-dark)}
+.index-table td:nth-child(2){color:var(--text-muted);font-size:14px}
+.index-table td:last-child{width:28%;font-size:14px}
+
+/* ── PAGE FOOTER ── */
+.page-footer{margin-top:40px;padding-top:14px;border-top:1px solid rgba(0,0,0,0.1);font-size:13px;color:var(--text-muted)}
+
+/* ── PUBLIC LINKS ── */
+.pub-links{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 18px;align-items:center}
+.pub-links-label{font-size:13px;color:var(--text-muted);font-weight:700;letter-spacing:.06em;white-space:nowrap;margin-right:2px}
+.pub-link{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--gold-border);border-left:3px solid var(--gold);padding:4px 10px;font-size:13px;color:#5a4a00;text-decoration:none;border-radius:2px;line-height:1.4;transition:background .15s,border-color .15s}
+.pub-link:hover{background:var(--gold-dim);border-color:var(--gold)}
+.pub-link::before{content:"🔗";font-size:12px}
+
+@media(max-width:760px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .content{padding:20px 16px 40px}
+  table{font-size:14px}
+  th,td{padding:8px 10px;font-size:14px}
+  h2{font-size:17px}
+  h3{font-size:15px}
+  .stamp{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <span class="sidebar-logo-title">【非公開・内部資料】</span>
+    <span class="sidebar-logo-sub">次世代型障害者雇用提言書<br>制度設計詳細</span>
+  </div>
+  <div class="sidebar-warning">⚠ 外部公開禁止<br>戦略的判断が必要な内容を含む</div>
+  <nav>
+    <div class="nav-section">収録セクション</div>
+    <a href="#overview">本資料について</a>
+    <a href="#law">Ⅰ 省庁横断的法整備詳細</a>
+    <a href="#reexam">Ⅱ 等級再審査の詳細手順</a>
+    <a href="#finance">Ⅲ 財源の具体的数値・単価</a>
+    <a href="#staff">Ⅳ 推進局人員設計表詳細</a>
+    <a href="#sunset">Ⅴ 制度の終わらせ方設計</a>
+    <a href="#fraud">Ⅵ 不正悪用シナリオ詳細</a>
+    <a href="#negotiation">Ⅶ 交渉戦略・最低防衛ライン</a>
+    <a href="#successor">Ⅷ 後続組対策・第二波戦略</a>
+    <a href="#hellowork">Ⅸ 行政機関の役割分担と分散配置モデル</a>
+    <a href="#corp-transition">Ⅹ 民間企業向け移行支援戦略</a>
+    <a href="#knowhow-price">Ⅺ 民間ノウハウ買い取り設計（金額詳細）</a>
+    <a href="#scp-agency">Ⅻ 独立行政法人・SCP推進機構（仮称）</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <span class="topbar-badge">INTERNAL ONLY</span>
+    内部資料 ─ 非公開・制度設計詳細
+  </div>
+
+  <div class="content">
+    <div class="stamp">内 部 資 料</div>
+    <h1>次世代型障害者雇用提言書<br>制度設計詳細 ── 非公開版</h1>
+    <div class="gold-rule"></div>
+
+    <div id="overview">
+      <div class="reason-box">
+        <strong>【本資料の位置づけ】</strong>
+        本資料は、公開版提言書から切り離した「制度設計の詳細」を収録する内部資料である。収録内容はいずれも「実現可能性の証明」として設計済みの情報であるが、反対勢力に具体的な数値・条文案・制度の穴を先行して開示することを避けるため、公開版からは分離した。制度議論が進み、信頼できる有識者・行政関係者との協議テーブルが整った段階で、必要に応じて本資料の該当箇所を選択的に共有する。
+      </div>
+
+      <h2>収録内容一覧</h2>
+      <table class="index-table">
+        <tr>
+          <td>Ⅰ 省庁横断的法整備詳細</td>
+          <td>20本の改正対象法律・改正条文の具体的内容・優先順位</td>
+          <td><a class="pub-link" href="ch1.html#cross-ministry" target="_blank">ch1 省庁横断的法整備</a>　<a class="pub-link" href="roadmap_gov.html#phase1" target="_blank">行政ロードマップ F1</a></td>
+        </tr>
+        <tr>
+          <td>Ⅱ 等級再審査の詳細手順</td>
+          <td>全受給者対象の再審査設計・AIによる補助的活用の位置づけ</td>
+          <td><a class="pub-link" href="ch1.html#pension-accuracy" target="_blank">ch1 年金増額と給付精度</a>　<a class="pub-link" href="faq.html#faq-operation" target="_blank">FAQ Q2</a></td>
+        </tr>
+        <tr>
+          <td>Ⅲ 財源の具体的数値・単価</td>
+          <td>拠出金単価・費目別内訳・給与グレード設計</td>
+          <td><a class="pub-link" href="finance.html#finance-breakdown" target="_blank">財源構成（10カ年）</a>　<a class="pub-link" href="cost.html#cost-summary" target="_blank">不作為のコスト試算</a></td>
+        </tr>
+        <tr>
+          <td>Ⅳ 推進局人員設計表詳細</td>
+          <td>自治体区分別の人員数・拠点数・コーディネーター配置。第一課（現場組）・第二課（事務組）の課別設計詳細：待遇差の根拠・採用戦略の違い・ITベンダー管理方針・相互ヘルプ範囲の限定設計</td>
+          <td><a class="pub-link" href="ch1.html#bureau-setup" target="_blank">ch1 推進局の設置体制</a>　<a class="pub-link" href="finance.html#finance-admin" target="_blank">財源・行政接続設計</a></td>
+        </tr>
+        <tr>
+          <td>Ⅴ 制度の終わらせ方設計</td>
+          <td>日没条項・Exit Indicators・17の早期警戒指標</td>
+          <td><a class="pub-link" href="ch4.html#sunset-design" target="_blank">日没条項の設計思想</a>　<a class="pub-link" href="ch4.html#exit-indicators" target="_blank">Exit Indicators</a></td>
+        </tr>
+        <tr>
+          <td>Ⅵ 不正悪用シナリオ詳細</td>
+          <td>4主体×シナリオ別の検知・抑止・ペナルティ体系</td>
+          <td><a class="pub-link" href="fraud.html#fraud-overview" target="_blank">不正 4主体の概要</a>　<a class="pub-link" href="faq.html#faq-fraud" target="_blank">FAQ Q4</a></td>
+        </tr>
+        <tr>
+          <td>Ⅶ 交渉戦略・最低防衛ライン</td>
+          <td>反対勢力との交渉における絶対防衛ライン7点・年金額の妥協案・住宅補助要求・SCP制度の3層構造整理</td>
+          <td><a class="pub-link" href="ch2.html#point-system" target="_blank">就労実績ポイント設計</a>　<a class="pub-link" href="scp.html#scp-lanes" target="_blank">SCP 3レーン</a>　<a class="pub-link" href="faq.html#faq-meaning" target="_blank">FAQ Q8</a></td>
+        </tr>
+        <tr>
+          <td>Ⅷ 後続組対策・第二波戦略</td>
+          <td>本提言後に動き出す後続層の予測・財源余白の分析・共倒れリスクへの対処・驀進戦略の根拠</td>
+          <td><a class="pub-link" href="faq.html#faq-next" target="_blank">FAQ Q9（公開版・扉のみ）</a></td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td>Ⅸ 行政機関の役割分担と分散配置モデル</td>
+          <td>推進局への機能集中から「分散配置モデル」への設計転換。都道府県労働局SCP制度指導課（新設）・ハローワーク・労基署・推進局の機能分担確定版。通報制度の法的根拠・閾値トリガー連携の仕組み</td>
+          <td><a class="pub-link" href="roadmap_corp.html" target="_blank">民間ロードマップ 補論</a></td>
+        </tr>
+        <tr>
+          <td>Ⅹ 民間企業向け移行支援戦略</td>
+          <td>移行に前向きな企業が抱く7つの実務的懸念・各課題の現段階での準備可能性・制度側が提供すべき支援設計</td>
+          <td><a class="pub-link" href="roadmap_corp.html" target="_blank">民間ロードマップ 全体</a></td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td>Ⅺ 民間ノウハウ買い取り設計（金額詳細）</td>
+          <td>S/A/B/C級ノウハウの分類・査定基準・買い取り単価（修正版）・全体予算規模試算（約26.8億円）・能動型公募と受動型持ち込みの2方式・競争査定と落選企業メリット設計・SCP拠出金割引（5%・上限50万円/年）・査定委員会構成。金額・詳細設計は非公開</td>
+          <td><a class="pub-link" href="roadmap_gov.html#knowhow-acquisition" target="_blank">行政ロードマップ 1-3</a>／<a class="pub-link" href="roadmap_corp.html#knowhow-transfer" target="_blank">民間ロードマップ ノウハウ提供</a></td>
+        </tr>
+        <tr>
+          <td>Ⅻ 独立行政法人・SCP推進機構（仮称）</td>
+          <td>推進局967拠点を統括する上位機関の設計。なぜ独立行政法人でなければならないか・既存選択肢との比較・目指す組織モデル（文科省型統治＋年金機構型独立性）・6機能区分・政治的独立性の担保設計・設置タイミングと法整備の順序・財務省抵抗への対処指針</td>
+          <td><a class="pub-link" href="roadmap_gov.html#scp-agency" target="_blank">行政ロードマップ 1-0</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ════════════════════════════════════
+         Ⅰ 省庁横断的法整備詳細
+         ════════════════════════════════════ -->
+    <div class="section-header" id="law">
+      <h2>Ⅰ　省庁横断的法整備詳細</h2>
+      <div class="section-src">元ページ：ch1.html「3-1 省庁横断的法整備一覧」</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="ch1.html#cross-ministry" target="_blank">第1章 ─ 省庁横断的法整備の範囲</a>
+      <a class="pub-link" href="ch1.html#law-reform" target="_blank">第1章 ─ 3-1 制度の柱と法整備</a>
+      <a class="pub-link" href="roadmap_gov.html#phase1" target="_blank">行政ロードマップ ─ フェーズ1</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      改正条文の具体的文言まで公開すると、各条文の細部を反対勢力に個別に攻撃される。「第○条の改正案では○○の問題がある」という技術論で制度全体を潰しにかかる材料を与える。公開版では「20本超の法整備が必要」という事実のみを示し、条文の詳細は本資料に留める。
+    </div>
+
+    <div class="callout-light">
+      <strong>【優先度の定義】</strong>　★★★＝制度発足の前提条件となる最優先改正　★★＝第1段階施行までに成立が必要　★＝第2段階移行までに整備すれば足りる
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead>
+        <tr>
+          <th style="width:10%">所管省庁</th>
+          <th style="width:16%">改正対象法律</th>
+          <th style="width:22%">現行の問題点</th>
+          <th style="width:34%">改正の具体的内容</th>
+          <th style="width:18%">改正の核心ポイント</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="priority-aaa">
+          <td>厚生労働省</td>
+          <td><strong>国民年金法</strong><br><span>優先度★★★</span></td>
+          <td>障害基礎年金は1級・2級の2区分のみ。3級は障害厚生年金にしか存在せず、軽度障害者は実質的に無保護状態に置かれている。1級月額：88,260円、2級月額：70,608円（2026年度）は生活実態と乖離。</td>
+          <td>①障害基礎年金に「3級」区分を新設し、月額9万円を法定最低保障額として明記する。②1級：月額15万円・2級：月額12万円・3級：月額9万円の等級別最低保障額を第33条に数値として直接規定し、政令委任による恣意的運用を排除する。③等級認定に用いる診断書様式・評価指標を数値化・標準化様式に改める（第30条改正）。なお、AIはデータ整理・統計補助の用途に限定し、等級の最終判定は医師・審査委員が行うことを明示的に規定する。<strong>④等級の見直し（障害状態確認届による再審査）において、就労実績・就労時間・就労収入を「症状改善の根拠」として使用することを第33条の2に明示的に禁止する。等級の変更は医師の診断・日常生活の困難度・第三者評価（ADL指標等）のみを根拠とし、「働いたことで等級が下がる」という逆インセンティブ構造を制度的に遮断する。なお、症状が実際に改善した場合の等級変更そのものは正当な運用として認める。</strong></td>
+          <td>本制度全体の財政設計と当事者の生活再建が「年金水準」を土台とする。この改正なしには他の全改正が意味を失う。最優先かつ単独先行成立を狙う。</td>
+        </tr>
+        <tr class="priority-aaa">
+          <td>厚生労働省</td>
+          <td><strong>障害者雇用促進法</strong><br><span>優先度★★★</span></td>
+          <td>法定雇用率の算定基準が「頭数（人数）」のみであるため、企業は形式的に人員を確保するインセンティブが生まれ、当事者の実際の業務貢献度が評価されない。雇用率未達企業への納付金単価（月額50,000円/人）が低く代替コストとして機能していない。</td>
+          <td>①法第43条の算定基準を「頭数」から「月間総業務時間（ワークロード換算）」へ全面転換する。②「雇用代替拠出金」を新設し、従来の納付金を廃止・統合。拠出金単価を1ポイントあたり1,500円（障害者1人分＝120P×1,500円＝月18万円）に設定し、障害年金財源に直接充当する特別会計へ直結させる。③タスク型での就労貢献を法定雇用率の充足実績として算入する根拠規定を第2条に追加する。④Aレーン・Bレーン・Cレーンの三択構造を条文上明示する。</td>
+          <td>企業の行動変容を促す制度根拠の核。この改正なしにはBレーン・Cレーンの法的根拠が生じず、制度全体が構築できない。</td>
+        </tr>
+        <tr class="priority-aaa">
+          <td>厚生労働省・内閣府</td>
+          <td><strong>障害者総合支援法</strong><br><span>優先度★★★</span></td>
+          <td>就労継続支援A型・B型は「事業所内での作業」を前提とした設計であり、「外部タスク型就労」を想定していない。準公務職員制度との接続根拠が存在しないため、A型・B型からの移行が法的に不可能。</td>
+          <td>①第5条（定義）に「準公務職員型就労支援」「準企業職員型就労支援」を新たな支援類型として追加する。②第51条の2以降に「公共業務分担推進局への統合移行」規定を新設し、A型事業所・就労移行支援等が推進局分室へ統合廃止される法的根拠を設ける。統合にあたっては立地・規模の認定基準による選別を行い、基準を満たす施設は推進局拠点として転用、満たさないものは廃止する。③A型事業所の職員は準公務コーディネーターとして推進局に優先再雇用することを附則で保証する。④B型事業所は就労不可能な重度障害者のみを対象とする必要最低限の拠点に再編・集約する。⑤重度障害者の在宅タスク参加を支援類型として明記する。</td>
+          <td>既存の就労支援インフラを「推進局への統合・職員の雇用継続を担保した上での廃止・選別転用」によって質を担保しながら制度転換するための根拠法。</td>
+        </tr>
+        <tr class="priority-aaa">
+          <td>総務省</td>
+          <td><strong>地方自治法</strong><br><span>優先度★★★</span></td>
+          <td>自治体が「公共業務分担推進局」を設置する法的根拠が存在しない。国が義務付けなければ全国一律の制度設計が不可能。財政力の弱い自治体は設置を回避するため、地域間格差が固定化する。</td>
+          <td>①第138条の4（附属機関）ではなく、独立した「特例執行機関」として推進局を位置づける条文を追加する（第180条の2の次に新条文）。②推進局の設置を都道府県・政令市に「義務」、一般市町村に「努力義務」として段階的に規定する。③推進局の業務権限・情報管理権限を列挙的に明記し、条例に委任しない国法上の根拠とする。④広域連合設置・支部代行モデルの適用条件を施行令レベルで整備できるよう委任条項を設ける。</td>
+          <td>推進局は制度の「実働エンジン」。地方自治法改正による国法上の根拠が最優先。</td>
+        </tr>
+        <tr class="priority-aaa">
+          <td>財務省・厚生労働省</td>
+          <td><strong>特別会計に関する法律</strong><br><span>優先度★★★</span></td>
+          <td>現行の雇用保険特別会計・年金特別会計は相互に分離しており、雇用代替拠出金を障害年金財源に直接充当する法的経路が存在しない。</td>
+          <td>①「障害就労支援特別会計（仮称）」を新設し、雇用代替拠出金・国庫補助・年金財源の三者を一元管理する独立会計を設ける。②同特別会計内に「障害年金水準安定基金」勘定を設置する。③毎年度の決算報告を国会に対して義務付ける（財政法第46条改正と連動）。</td>
+          <td>「拠出金→年金財源」のルートが法的に確立しない限り、制度の財政自律性は担保されない。年金法改正と同時成立が必要。</td>
+        </tr>
+        <tr class="priority-aa">
+          <td>厚生労働省</td>
+          <td><strong>厚生年金保険法</strong><br><span>優先度★★</span></td>
+          <td>障害厚生年金の最低保障水準が規定されておらず低報酬・短期在職者は障害基礎年金同等以下となるケースがある。準公務職員のタスク型雇用が厚生年金適用の「雇用」に該当するか否かが不明確。</td>
+          <td>①第50条（最低保障額）を改正し、障害厚生年金1・2・3級それぞれに国民年金法改正で定める最低保障額と同水準の下限を設ける。②タスク型雇用（週20時間以上）を厚生年金保険の「適用事業所における勤務」として明示的に位置づける。③準公務職員の拠出金算定に用いる標準報酬月額の特例計算方式（月間タスク収入×12/実働月数）を新設する。</td>
+          <td>国民年金法3級新設と表裏一体。就労属性によって年金額に不公平が生じないよう底上げを図る。</td>
+        </tr>
+        <tr class="priority-aa">
+          <td>総務省</td>
+          <td><strong>地方公務員法</strong><br><span>優先度★★</span></td>
+          <td>準公務職員を一般職・特別職のいずれかに当てはめると、定数管理・守秘義務・服務規律・身分保障が過剰または不適合に適用される。定数管理規定に抵触すると自治体が採用を回避する誘因が生じる。</td>
+          <td>①第3条の次に「第3条の2（準職員）」を新設し、準公務職員を一般職・特別職のいずれとも異なる「第三の身分類型」として明定する。②準職員には守秘義務・信用失墜行為禁止を適用しつつ、定数管理規定の対象外とする。③雇用期間の上限を設けず、タスク実績に基づく継続更新を可能とする。④懲戒規定は軽微化し、就労実績ポイントとの連動による行政的制裁を主たる規律手段とする。</td>
+          <td>自治体が「定数増」を懸念して制度参加を回避しないための設計。</td>
+        </tr>
+        <tr class="priority-aa">
+          <td>総務省</td>
+          <td><strong>地方交付税法</strong><br><span>優先度★★</span></td>
+          <td>推進局の設置・運営費用が基準財政需要額に算入されていないため、財政力の弱い自治体は設置に向けた財源措置を独自に確保できない。</td>
+          <td>①第11条（基準財政需要額の算定）に「公共業務分担推進局運営費」項目を追加し、人口規模・障害者数・過疎係数に応じた単位費用を設定する。②広域連合型・支部代行型を採用した自治体には、単独設置相当額の交付税措置を共同参加自治体間で按分支給する仕組みを設ける。③財政再建団体でも制度参加できるよう、推進局運営費に限り起債制限の除外規定を設ける。</td>
+          <td>財政力格差が制度参加格差に直結しないための担保。</td>
+        </tr>
+        <tr class="priority-aa">
+          <td>厚生労働省</td>
+          <td><strong>労働基準法</strong><br><span>優先度★★</span></td>
+          <td>タスク型雇用が「労働契約」か「業務委託」かが不明確。業務委託と分類された場合、最低賃金・時間外割増・休業補償の保護が受けられず、偽装請負問題が発生する。</td>
+          <td>①第9条（労働者の定義）に「タスク型就労者」の定義条文を追加し、業務発生時のみ就労する形態でも「使用従属性あり」と推定する規定を設ける。②第32条（労働時間）の特例として、タスク開始から終了までの実働時間のみを労働時間とする特則を設ける。③第37条（時間外割増）は実働タスク時間が1日8時間・週40時間を超えた場合のみ適用する。</td>
+          <td>準公務職員が「労働者」として保護される法的根拠を明確化。偽装業務委託による権利侵害を防ぐ守りの改正。</td>
+        </tr>
+        <tr class="priority-aa">
+          <td>厚生労働省</td>
+          <td><strong>雇用保険法</strong><br><span>優先度★★</span></td>
+          <td>現行の雇用保険は断続的就労者が要件を満たしにくく、タスク型雇用者が失業した場合のセーフティネットが存在しない。</td>
+          <td>①第6条（適用除外）を改正し、タスク型雇用者を「みなし週所定労働時間（月間実働時間÷4.3）が20時間以上」であれば被保険者とする特則を追加する。②タスク型雇用者の基本手当受給要件として「過去12か月の実働時間合計が960時間以上」を設ける。③準公務職員の雇用保険料の使用者負担分は推進局が拠出金財源から支出することを明記する。</td>
+          <td>タスク型雇用者の就労意欲を維持するための安全弁。</td>
+        </tr>
+        <tr class="priority-aa">
+          <td>厚生労働省・内閣府</td>
+          <td><strong>障害者差別解消法</strong><br><span>優先度★★</span></td>
+          <td>タスク型（非継続的・短時間・複数事業者掛け持ち）の雇用形態に対する合理的配慮義務の具体的内容が示されておらず、準企業職員受け入れ企業が拒否の口実としている。</td>
+          <td>①第7条・第8条に「タスク型就労における合理的配慮」の具体的場面を施行令で例示列挙する委任条項を追加する。②「不当な差別的取扱い」の例示に、タスク型雇用者への業務割り当て拒否・就労実績ポイントのみを根拠とした排除を追加する。③複数事業者にまたがるタスク型雇用における「配慮義務の主体」を推進局とする特則を設け、個別企業の負担を軽減する。</td>
+          <td>準企業職員の受け入れ拡大に向けた参入障壁の除去。</td>
+        </tr>
+        <tr class="priority-aa">
+          <td>内閣府・総務省</td>
+          <td><strong>国家公務員法</strong><br><span>優先度★★</span></td>
+          <td>国直轄の推進局本部スタッフの法的身分が不明確。国家公務員として採用した場合は定数管理・給与法の制約を受け、機動的な人員配置が困難になる。</td>
+          <td>①第2条の次に「第2条の2（推進局本部職員）」を新設し、「国の準職員」身分を設ける。②推進局本部職員の給与は独自の「推進局職員給与規程」で定め、実績に連動した成果報酬体系とする。③守秘義務・兼業禁止については国家公務員法の対応条文を準用しつつ、任期の定めなし・公募採用を可能とする。</td>
+          <td>霞が関の定数管理ロジックに縛られない組織文化の基盤。</td>
+        </tr>
+        <tr class="priority-a">
+          <td>厚生労働省</td>
+          <td><strong>社会福祉法</strong><br><span>優先度★</span></td>
+          <td>A型事業所を推進局へ統合廃止する際、移行期間中の利用者の雇用契約・補助金の扱い・職員の身分変更について法上の根拠規定が存在しない。B型事業所を必要最低限の拠点に再編・集約するための存続認定基準も現行法には定めがない。</td>
+          <td>①A型事業所・就労移行支援等が推進局へ統合廃止される移行過程において、移行期間中の補助金継続・職員の優先再雇用・利用者の雇用契約継続義務を附則で規定する。②B型事業所の再編認定基準を定め、必要最低限の拠点のみ存続認定を受けられる仕組みを整備する。③推進局が転用する施設の拠点認定要件を告示レベルで明定する。</td>
+          <td>既存の利用者・職員が制度転換で不利益を被らないための調整法。</td>
+        </tr>
+        <tr class="priority-a">
+          <td>厚生労働省</td>
+          <td><strong>最低賃金法</strong><br><span>優先度★</span></td>
+          <td>タスク型雇用では「1タスク単位の報酬（出来高払い的要素）」が混在し、最低賃金の充足性判断が困難。実質的に最低賃金を下回る水準でタスクが設計されるリスクがある。</td>
+          <td>①第2条（最低賃金の定義）に「タスク型就労における最低賃金の換算方法（1タスク報酬÷当該タスクの標準所要時間≧地域別最低賃金額）」を定める条文を追加する。②推進局が発注するタスクの報酬単価について、タスク設計時に最低賃金換算の事前審査を義務付ける。</td>
+          <td>タスク型雇用が「最低賃金逃れ」の温床とならないための防衛規定。</td>
+        </tr>
+        <tr class="priority-a">
+          <td>厚生労働省</td>
+          <td><strong>労災保険法</strong><br><span>優先度★</span></td>
+          <td>準公務職員が公共業務中に負傷・疾病を被った場合の業務上災害認定が不明確。特に「タスクの移動中」「タスクとタスクの間の待機中」が業務中に含まれるか否かが争いになるリスクがある。</td>
+          <td>①第7条（業務上の認定基準）に「タスク型就労者の移動中は業務中と認定する」旨の特則を設ける。②「包括的準職員保険」との役割分担を明確化し、労災保険が第一次適用・包括保険が上乗せ補償となる優先順位を法定する。③タスク型雇用者の「タスク開始地点への移動」を通勤と認定する特則を追加する。</td>
+          <td>曖昧な認定基準は企業・自治体の受け入れ拒否の口実となるため早期整備が望ましい。</td>
+        </tr>
+        <tr class="priority-a">
+          <td>厚生労働省</td>
+          <td><strong>健康保険法</strong><br><span>優先度★</span></td>
+          <td>断続的タスク型雇用者は社会保険の適用要件を満たせず国民健康保険に留まりがちで、保険料が全額自己負担となる。</td>
+          <td>①タスク型雇用者について「月間実働時間が87時間以上、かつ月収8.8万円以上」を満たした月を被保険者月として扱う「月次判定制」を導入する。②推進局が使用者として一括で協会けんぽに加入し、準公務職員全員を包括的に被保険者とする「推進局包括加入特例」を設ける。③タスク型雇用者の使用者負担分保険料は拠出金財源から充当する旨を附則に明記する。</td>
+          <td>「健康保険がないから就労できない」という逆説を解消。</td>
+        </tr>
+        <tr class="priority-a">
+          <td>財務省</td>
+          <td><strong>所得税法</strong><br><span>優先度★</span></td>
+          <td>準公務職員の「給与収入」と「障害年金」の合算額に対する課税の取扱いが不明確で、手取り収入の逆転現象（就労増で手取り減）が生じるリスクがある。</td>
+          <td>①障害年金非課税規定に「準公務職員給与との合算課税において、障害年金相当額は給与所得の計算に含めない」旨の解釈規定を追加する。②障害者控除を改正し、準公務職員登録者は就労収入額にかかわらず適用できることを明示する。③就労収入増加による障害年金の支給停止・減額規定を廃止し、「就労しても年金が減らない」設計を担保する。</td>
+          <td>「働くほど損をする」という逆インセンティブ構造を税制面から排除する。就労促進の最後の鍵。</td>
+        </tr>
+        <tr class="priority-a">
+          <td>デジタル庁・個人情報保護委員会</td>
+          <td><strong>個人情報保護法</strong><br><span>優先度★</span></td>
+          <td>等級再審査で医療情報を行政機関間で共有すること、就労実績ポイントをAIが処理することは、現行の「要配慮個人情報」の取扱い規制に抵触する可能性が高い。</td>
+          <td>①「障害等級認定業務・推進局のタスクマネジメント業務に用いる医療・就労情報の行政機関間共有は第三者提供に該当しない」とする特別規定を追加する。②就労実績ポイントのAI算出・不正検知処理を「公益上の特別の必要」として法定する。③推進局が保有する個人情報の保存期間・廃棄方法・当事者の閲覧・訂正請求権を省令で明定する委任条項を設ける。</td>
+          <td>法的根拠なきAI活用は後に制度全体を覆す訴訟リスクを生む。</td>
+        </tr>
+        <tr class="priority-a">
+          <td>デジタル庁・厚生労働省</td>
+          <td><strong>マイナンバー法（番号利用法）</strong><br><span>優先度★</span></td>
+          <td>「準公務職員の就労実績管理」「就労実績ポイントの自治体間共有」「タスク・スキルマッチング」はいずれも現行の別表に記載がなく、マイナンバーの利用が不可能。</td>
+          <td>①別表第一に「公共業務分担推進局における準公務職員登録・就労実績管理・就労実績ポイント管理に関する事務」「障害年金等級再審査に関する事務」を追加する。②別表第二に「推進局間のタスク実績・スキル情報」「医療保険者が保有する障害認定関連情報」を追加する。③マイナポータルのAPIを通じて当事者本人が自己の就労実績ポイント・タスク実績を確認・エクスポートできる機能を法律上の権利として明記する。</td>
+          <td>全国約967拠点の推進局が共通のデータ基盤で動くための「情報インフラの法的根拠」。</td>
+        </tr>
+        <tr>
+          <td colspan="5" style="font-size:14px;color:var(--text-muted);background:#f8f8f6">※ 上記は主要な法改正を示したものであり、政令・省令・府令レベルの詳細整備は各省庁が個別に対応する。行政業務へのAI活用（就労実績ポイント算出・不正検知・診断書データ整理等）については現時点で包括的な法律が存在しないため、別途「行政AI利用基本法（仮称）」の制定またはデジタル庁ガイドライン整備が必要となる。<strong>いずれもAIは補助的活用にとどめ、行政判断の最終責任は人間が負う原則を明記すること。</strong>各省庁間の共管案件については内閣官房が調整主体となり、閣議決定を通じた一括提出が望ましい。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+
+    <!-- ════════════════════════════════════
+         Ⅱ 等級再審査の詳細手順
+         ════════════════════════════════════ -->
+    <div class="section-header" id="reexam">
+      <h2>Ⅱ　等級再審査の詳細手順</h2>
+      <div class="section-src">元ページ：ch1.html「3-1 第1段階：障害年金の引き上げに関する法整備」</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="ch1.html#pension-accuracy" target="_blank">第1章 ─ 年金増額と給付精度の向上</a>
+      <a class="pub-link" href="faq.html#faq-operation" target="_blank">FAQ ─ 2. 準公務職員制度の運用</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      「全受給者を対象に等級再審査を実施する」という表現は、当事者団体にとって「受給額を削られるかもしれない」という恐怖を呼ぶ。本提言の目的は年金の「増額」であるにもかかわらず、「再審査」という手段だけが独り歩きして最大の反対勢力を生む可能性がある。公開版では「年金増額」の目的のみを前面に出し、再審査の詳細手順は本資料に留める。
+    </div>
+
+    <p>本制度の導入にあたっては、現行の障害年金受給者全員を対象に、医学的基準を厳格化した上での等級再審査を実施する。</p>
+
+    <h3>再審査の目的</h3>
+    <p>年金増額の財源を確保するためではなく、以下の2点を達成するための手続きである。</p>
+    <ul>
+      <li><strong>恣意的な等級認定の是正：</strong>現行の認定基準は医師の裁量に依存する部分が大きく、同程度の障害でも居住地・担当医によって等級が異なるケースが報告されている。標準化によって不公平を解消する。</li>
+      <li><strong>実態との乖離の修正：</strong>長年の経過で生活状況・障害程度が変化しているにもかかわらず等級が固定されているケースを双方向（上方・下方）に適正化する。</li>
+    </ul>
+
+    <h3>再審査の設計方針</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>項目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td><strong>対象</strong></td><td>現行の障害年金受給者全員（約196万人）。新規申請者は新基準で審査。</td></tr>
+        <tr><td><strong>手法</strong></td><td>医師の診断書の数値化・標準化、客観的評価指標の導入、AIによる<strong>補助的</strong>データ照合・傾向把握を組み合わせた科学的手法。<strong>等級の最終判定は必ず医師・審査委員が行うものとし、AIは資料整理・統計的補助にとどめる。</strong>AIの出力を根拠に等級を自動決定することはしない。恣意的な運用を排除しつつ、当事者の不利益にならないよう慎重に設計する。</td></tr>
+        <tr><td><strong>方向性</strong></td><td>年金増額が前提であるため、再審査によって等級が下がるケースよりも上がるケースが大幅に多くなる設計とする。等級引き下げは医学的に明確な証拠がある場合に限定し、異議申し立て制度を整備する。</td></tr>
+        <tr><td><strong>期間</strong></td><td>全受給者の再審査は段階的に実施。第1期（1〜3年目）のパイロット審査で基準を検証し、第2期以降に全国展開する。</td></tr>
+        <tr><td><strong>通知・不服申立</strong></td><td>審査結果の通知は書面で行い、不服がある場合は審査請求・再審査請求の制度を現行通り維持する。</td></tr>
+      </tbody>
+    </table></div>
+
+
+    <!-- ════════════════════════════════════
+         Ⅲ 財源の具体的数値・単価
+         ════════════════════════════════════ -->
+    <div class="section-header" id="finance">
+      <h2>Ⅲ　財源の具体的数値・単価</h2>
+      <div class="section-src">元ページ：finance.html（費目別内訳・給与グレード・拠出金単価）</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="finance.html#finance-breakdown" target="_blank">財源シミュレーション ─ 財源の構成</a>
+      <a class="pub-link" href="finance.html#finance-admin" target="_blank">財源シミュレーション ─ 行政接続設計</a>
+      <a class="pub-link" href="cost.html#cost-summary" target="_blank">不作為のコスト ─ 試算サマリー</a>
+      <a class="pub-link" href="faq.html#faq-finance" target="_blank">FAQ ─ 1. 財源・経済性</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【公開版との切り分け方針】</strong>
+      拠出金単価（1,500円/P・月18万円・現行比3.6倍）、拠出金収入の積算モデル（義務総量×参加率×C充足比率）、財源自律循環の前提条件・感度分析は、「なぜ自律循環が成立するか」を読者に説得するための論理の核であるため、公開版（finance.html）に掲載している。<strong>C収入は義務総量とCレーン上限から導かれる構造的上限（年約0.9〜1.2兆円）の範囲内で計上する設計とし（順調・第3期で約0.9兆円）、費用側の②準公務職員給与もタスク型就労の実態に即して積み上げ、収支を「新規費用 vs 新規財源」で対称化している。</strong>単価や積算式を隠すと「根拠不明の楽観的試算」という批判を招くため、論理の透明性を優先した判断である。<br><br>
+      本資料（内部資料）に留めているのは以下の2点である。<br>
+      ①<strong>費目別の詳細内訳（費目番号・各期の精細な金額・コーディネーター人数等）：</strong>個別費目の数字を突かれると「この試算が間違っているなら制度全体が成立しない」という技術論での攻撃を受けやすい。財源の構造・論理は公開し、積算の詳細は信頼できる有識者・財政当局との協議テーブルで開示する段階管理を採る。<br>
+      ②<strong>職員給与グレード設計（G1〜G4の年収レンジ）：</strong>「公務員より高い・低い」という批判が想定外の文脈で広がるリスクがあるため、制度設計の精査段階まで非公開とする。
+    </div>
+
+    <h3>拠出金単価設計</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>項目</th><th>設定値</th><th>現行比</th><th>設計根拠</th></tr></thead>
+      <tbody>
+        <tr><td>拠出金単価</td><td>1ポイントあたり1,500円</td><td>現行納付金（月5万円/人）の3.6倍水準</td><td>障害者1人分＝120P×1,500円＝月18万円。年金財源に直接充当する特別会計へ直結</td></tr>
+        <tr><td>Cレーン企業の年間負担概算</td><td>月18万円×雇用義務人数</td><td>現行比3.6倍</td><td>「払えば済む」構造を解消するために現行を大幅に上回る水準に設定。直接雇用・タスク型の選択を経済合理性で促す。なお全企業合計のC収入は義務総量（約1.75兆円相当）とCレーン上限（50〜70%）により年約0.9〜1.2兆円が構造的天井であり、財源計画はこの範囲内でのみ計上する</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>費目別内訳（順調シナリオ・年額）</h3>
+    <div class="callout-light" style="margin-bottom:12px">
+      <strong>【計上の原則】</strong>　本表は「公費が負担する費用」のみを計上する。準企業職員の給与は受け入れ企業が負担するため公費計上に含めない（②は準公務職員分のみ）。②はタスク型就労の実態（ch2の月収シミュレーション＝平均月収約10万円・週10〜27h）に即し、50万人×平均月収約10万円×使用者負担込みで算定する。①は「増額分のみ」を計上し、現行受給者への基礎保障の継続支出（財源Aと両建て・約2.4〜2.5兆円）は収支の枠外とする。<strong>合計は「新規費用」として集計し、第3期で約3.0兆円</strong>となる。財源側は財源シミュレーション（finance.html）を一次ソースとする。
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>費目</th><th>第1期</th><th>第2期</th><th>第3期</th><th>備考</th></tr></thead>
+      <tbody>
+        <tr><td>①</td><td>障害年金増額・新設分</td><td>約1.5兆円</td><td>約1.6兆円</td><td>約1.8兆円</td><td>1級35万人×月+6.7万円、2級残留161万人×月+5.4万円、新設3級流入（第1期平均5万人→第3期35万人）×月+9万円</td></tr>
+        <tr><td>②</td><td>準公務職員 給与<br><span style="font-size:13px;color:var(--text-muted)">準企業職員は企業負担のため公費計上せず</span></td><td>約0.1兆円（登録5万人）</td><td>約0.4兆円（登録30万人）</td><td>約0.7兆円（登録50万人）</td><td>平均月収約10万円（週10〜27h・ch2シミュレーション）×使用者負担込みで算定。フルタイム換算ではなくタスク型実働ベースで積算する</td></tr>
+        <tr><td>③</td><td>現場管理職員 人件費</td><td>約0.08兆円（8,000名）</td><td>約0.10兆円（15,000名）</td><td>約0.11兆円（17,500名）</td><td>G1:520〜580万／G2:600〜680万／G3:700〜800万／G4:650〜750万</td></tr>
+        <tr><td>④</td><td>現場管理職員 転換研修費</td><td>約0.003兆円</td><td>約0.001兆円</td><td>約0.000兆円</td><td>選考16億＋転換研修30億＋OJT26億＋認定1億＝計73億円を3年分割</td></tr>
+        <tr><td>⑤</td><td>拠点整備費（順調：バリアフリー・耐震等）</td><td>約0.27兆円（約967拠点×2.8億円）</td><td>約0.05兆円（軽微改修）</td><td>約0.02兆円（修繕）</td><td>A型事業所の既存施設転用・賃貸借・改修を主体とする転用・改修ベースのコスト</td></tr>
+        <tr><td>⑦</td><td>公用車（リース優先）</td><td>約0.05兆円</td><td>約0.01兆円</td><td>約0.01兆円</td><td>約967拠点×屋外チーム約8台＝約7,736台。ファイナンスリース優先で初期費用を圧縮</td></tr>
+        <tr><td>⑧</td><td>公務ユニット運営費</td><td>約0.05兆円</td><td>約0.12兆円</td><td>約0.15兆円</td><td>燃料・保険・車検、タブレット端末・通信費、拠点光熱費・消耗品等</td></tr>
+        <tr><td>⑨</td><td>準職員 研修費</td><td>約0.02兆円</td><td>約0.08兆円</td><td>約0.04兆円</td><td>障害特性別業務習熟・安全管理・ICT操作。eラーニング活用で費用圧縮</td></tr>
+        <tr><td>⑩</td><td>ICT基盤整備費</td><td>約0.08兆円</td><td>約0.08兆円</td><td>約0.08兆円</td><td>既存自治体基盤をAPI連携で活用しフルスクラッチ開発を回避</td></tr>
+        <tr><td>⑪</td><td>推進局 設置・運営費</td><td>約0.01兆円</td><td>約0.03兆円</td><td>約0.03兆円</td><td>47都道府県ブロック×8名（順調）</td></tr>
+        <tr><td>⑫</td><td>不正受給防止・モニタリング</td><td>約0.01兆円</td><td>約0.01兆円</td><td>約0.01兆円</td><td>AI診断書照合・医療機関監査・生活実態調査体制</td></tr>
+        <tr><td>⑬</td><td>包括的準職員保険・補償基金</td><td>約0.01兆円</td><td>約0.01兆円</td><td>約0.01兆円</td><td>公務中事故・ケガへの補償原資。民間保険との折半を検討</td></tr>
+        <tr><td>⑭</td><td>独立行政法人・SCP推進機構 運営費</td><td>約0.01兆円（約100億円）</td><td>約0.015兆円（約150億円）</td><td>約0.015兆円（約150億円）</td><td>日本年金機構本部（約400〜500名）を参照。全体財源の0.2〜0.3%以下に収まる。拠出金収入に連動して増える自律設計のため、制度が安定するにつれて比率はむしろ低下する</td></tr>
+        <tr style="font-weight:700;background:#fffdf0"><td colspan="2">新規費用合計（年額）</td><td>約2.2兆円</td><td>約2.5兆円</td><td>約3.0兆円</td><td>基礎保障の継続支出（約2.4〜2.5兆円）は枠外</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>職員給与グレード設計（確定版）</h3>
+
+    <div class="callout-light" style="margin-bottom:12px">
+      <strong>【階層構造の全体像】</strong>　SCP推進機構理事長・理事（G5）→ 推進局長（G4）→ 第一課長・第二課長・拠点所長（G3・同列）→ 主任コーディネーター・データ主任（G2）→ 一般コーディネーター・データ担当（G1）の5階層。G5は独立行政法人の役員として全体を統治し、G4推進局長はその下で制度の日常執行を担う。G3の3役職は推進局長直属の同格。課長は本部に各1名・拠点所長は全国967拠点分が存在するという非対称はあるが、責任の重さとして同グレードに設計する。
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th>グレード</th><th>役職</th><th>所属・人数</th><th>年収レンジ</th><th>根拠・備考</th></tr></thead>
+      <tbody>
+        <tr style="background:#1a1a18;color:#fff">
+          <td><strong style="color:var(--gold)">G5</strong></td>
+          <td>SCP推進機構　理事長<br>SCP推進機構　理事</td>
+          <td>理事長1名<br>理事（複数・設置法で定める）</td>
+          <td>理事長：1,200〜1,400万円<br>理事：900〜1,100万円</td>
+          <td>独立行政法人通則法に基づく役員報酬規程で設定。日本年金機構理事長（約1,500万円）を参照した水準。政治任命ではなく有識者委員会推薦・内閣任命。任期5年・再任1回まで。推進局全体（本部＋967拠点）の最終統治責任者</td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td><strong>G4</strong></td>
+          <td>推進局長<br>都道府県支部長</td>
+          <td>本部トップ（1名）<br>都道府県支部（47名）</td>
+          <td>750〜850万円</td>
+          <td>都道府県の課長〜部長相当。本部2課・全拠点所長を統括する最終責任者。都道府県支部長も同グレードで設計</td>
+        </tr>
+        <tr>
+          <td><strong>G3</strong></td>
+          <td>第一課長（準公務職員管理課）<br>第二課長（データ・情報管理課）<br>拠点所長</td>
+          <td>本部各1名（計2名）<br>全国967拠点分</td>
+          <td>700〜800万円</td>
+          <td>同調査・課長補佐相当。3役職は推進局長直属の同列。課長は本部機能の責任者、拠点所長は現場エリアの責任者として責任の方向は異なるが重さは同等</td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td><strong>G2</strong></td>
+          <td>主任コーディネーター（第一課・各拠点）<br>データ主任（第二課）</td>
+          <td>各課・各拠点に配置</td>
+          <td>600〜680万円</td>
+          <td>同調査・一般行政職主任相当。課長・拠点所長を補佐し、G1一般職員を束ねる中間管理職。原則固定（ローテなし）</td>
+        </tr>
+        <tr>
+          <td><strong>G1</strong></td>
+          <td>一般コーディネーター（第一課・各拠点）<br>データ担当（第二課）</td>
+          <td>各課・各拠点に配置（最多数）</td>
+          <td>520〜580万円</td>
+          <td>同調査・技能労務職水準を基準に設定。制度の最前線を担う実務担当。第一課・各拠点は1年ローテ対象（現場経験の蓄積と燃え尽き防止のため）。第二課は専門性の継続性を重視し原則固定</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout-light" style="margin-top:12px">
+      <strong>【第一課G1のローテーションと第二課G1の固定の設計思想】</strong><br>
+      第一課・各拠点の一般コーディネーターは対人・感情労働の比重が高く燃え尽きリスクがあるため、1年ローテーションで本部と拠点間・担当エリア間を定期的に異動させる。現場経験の蓄積と負荷分散を両立させる設計。第二課のデータ担当はシステム習熟・ベンダー関係の継続性が業務品質に直結するため原則固定とし、専門性を維持する。
+    </div>
+
+    <h3>第一課・第二課の課別設計詳細</h3>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      課別の待遇差・採用戦略の差異・ベンダー管理方針・相互ヘルプ範囲の限定設計は、労使交渉・採用市場への影響・反対勢力への攻撃材料提供のリスクがある。制度化の協議テーブルが整った段階で厚生労働省・総務省・財務省との予算折衝において開示する。
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th>比較軸</th><th>第一課　準公務職員管理課</th><th>第二課　データ・情報管理課</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>性格</strong></td>
+          <td>現場組。対人・対外・突発対応が主体</td>
+          <td>事務組。データ・システム・定常業務が主体</td>
+        </tr>
+        <tr style="background:#fafafa">
+          <td><strong>近い職種イメージ</strong></td>
+          <td>福祉職＋現場監督者（体育会系×専門職）</td>
+          <td>行政情報システム職（理数系×ホワイトカラー）</td>
+        </tr>
+        <tr>
+          <td><strong>業務量の特性</strong></td>
+          <td>登録者数に比例して増加。第1期→第3期で最大10倍に膨らむ。突発対応・繁閑の波が大きい</td>
+          <td>システム稼働後は定常業務に収束。自動化・AI活用で増員なしに対応可能。繁閑の波は小さい</td>
+        </tr>
+        <tr style="background:#fafafa">
+          <td><strong>難しさの質</strong></td>
+          <td>「人の難しさ」。障害特性理解・メンタル危機対応・信頼関係構築。マニュアル化しにくい感情労働</td>
+          <td>「技術の難しさ」。システム設計・統計分析・ベンダー管理。習熟すれば定型化できる専門スキル</td>
+        </tr>
+        <tr>
+          <td><strong>基本給の設定</strong></td>
+          <td><strong>やや高め（G1上位〜G2水準）</strong><br>業務量・突発対応・精神的負荷を反映</td>
+          <td><strong>標準（G1標準〜G2水準）</strong><br>定常業務・安定稼働を基準に設定</td>
+        </tr>
+        <tr style="background:#fafafa">
+          <td><strong>加算要素</strong></td>
+          <td>担当登録者数・インシデント対応件数・有資格者加算（社会福祉士・精神保健福祉士・介護福祉士等）</td>
+          <td>保有資格加算（基本情報技術者・統計検定・社会保険労務士等）・システム開発貢献・ベンダー管理実績</td>
+        </tr>
+        <tr>
+          <td><strong>主な採用市場</strong></td>
+          <td>A型・B型事業所スタッフ（転換組を主力）・社会福祉系大学卒・就労支援経験者</td>
+          <td>行政DX経験者・民間IT出身者・統計系大学院卒・社会保険労務士事務所出身者</td>
+        </tr>
+        <tr style="background:#fafafa">
+          <td><strong>採用ルートの違い</strong></td>
+          <td>A型・B型施設の転換支援制度を活用。福祉系ハローワーク・社会福祉協議会経由</td>
+          <td><strong>第一課とは別ルートで採用</strong>。行政DX人材バンク・民間IT求人経路を活用。採用時期も別枠で設計</td>
+        </tr>
+        <tr>
+          <td><strong>キャリアパス</strong></td>
+          <td>一般コーディネーター（G1）→ 主任コーディネーター（G2）→ 拠点所長または第一課長（G3）→ 推進局長・都道府県支部長（G4）</td>
+          <td>データ担当（G1）→ データ主任（G2）→ 第二課長（G3）→ 推進局長補佐・都道府県支部長（G4）</td>
+        </tr>
+        <tr style="background:#fafafa">
+          <td><strong>ITスキルの要件</strong></td>
+          <td>基本的なPCスキル・業務システムの操作。高度なIT知識は不要</td>
+          <td><strong>ベンダーを管理・評価できるITリテラシーを必須とする。</strong>深いSEスキルは求めない。高度なシステム開発・AIシステムの構築は外部ベンダーへ委託し、第二課は発注管理・品質評価を担う</td>
+        </tr>
+        <tr>
+          <td><strong>外部委託の方針</strong></td>
+          <td>当事者との対人業務は外注不可。一部の事務補助（書類作成補助等）は委託可</td>
+          <td>閾値監視システム・GPSタイムスタンプ記録・AI診断照合・マイナンバー連携システムの開発・改修は民間ベンダーへ委託。JEEDや厚生労働省の既存システム開発体制を転用することで新規コストを抑制する</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout" style="margin-top:16px">
+      <strong>【両課の待遇差の設計思想】</strong><br><br>
+      第一課の業務は感情労働・対人労働の比重が高く、業務量も制度拡大とともに増加し続ける。この負荷を適正に評価しない給与設計は、担当者の消耗・離職を招き、準公務コーディネーターのノウハウ喪失という形で制度の現場品質が崩壊するリスクがある。これは本提言が第1章で論じた「担い手の適正化」問題の推進局内版である。<br><br>
+      待遇差は「第一課が上位・第二課が下位」という単純な序列ではなく、<strong>異なる軸での正当な評価</strong>として設計する。第一課は「対人負荷・業務量・突発対応」、第二課は「専門資格・技術貢献・ベンダー管理」をそれぞれの加算根拠とし、総合的な年収水準が大きく乖離しない設計を基本とする。
+    </div>
+
+    <h3>相互ヘルプの設計（欠員補完）</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>ヘルプ内容</th><th>第二課→第一課</th><th>第一課→第二課</th></tr></thead>
+      <tbody>
+        <tr><td>定型的な事務・書類処理</td><td style="color:#2C7A3A;font-weight:700">◎ 可能</td><td style="color:#2C7A3A;font-weight:700">◎ 可能</td></tr>
+        <tr style="background:#fafafa"><td>タスクのスケジュール調整・連絡対応</td><td style="color:#2C7A3A;font-weight:700">○ 研修で対応可</td><td style="color:#2C7A3A;font-weight:700">◎ 可能</td></tr>
+        <tr><td>データ入力・報告書作成</td><td style="color:#2C7A3A;font-weight:700">◎ 可能</td><td style="color:#2C7A3A;font-weight:700">◎ 可能</td></tr>
+        <tr style="background:#fafafa"><td>システム基本操作・閾値確認</td><td style="color:#B8421A;font-weight:700">△ 基本操作のみ</td><td>─</td></tr>
+        <tr><td>当事者との面談・相談対応</td><td style="color:#8B0000;font-weight:700">✕ 代替不可</td><td>─</td></tr>
+        <tr style="background:#fafafa"><td>現場同行・緊急対応</td><td style="color:#8B0000;font-weight:700">✕ 代替不可</td><td>─</td></tr>
+        <tr><td>システム障害対応</td><td>─</td><td style="color:#8B0000;font-weight:700">✕ 代替不可</td></tr>
+        <tr style="background:#fafafa"><td>高度なデータ解析・ベンダー交渉</td><td>─</td><td style="color:#8B0000;font-weight:700">✕ 代替不可</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout-light" style="margin-top:12px">
+      <strong>代替不可業務への欠員対応：</strong>近隣拠点または都道府県支部からの応援要請を発動する。「相互完全代替」は目指さず、「ヘルプできる範囲を明文化する」ことで現場の混乱を防ぐ。全職員は年2回の共通研修で相手課の基本業務を把握し、「互いの仕事を尊重する組織文化」を醸成する。
+    </div>
+
+
+    <!-- ════════════════════════════════════
+         Ⅳ 推進局人員設計表詳細
+         ════════════════════════════════════ -->
+    <div class="section-header" id="staff">
+      <h2>Ⅳ　推進局人員設計表詳細</h2>
+      <div class="section-src">元ページ：ch1.html「3-4 自治体規模別推進局設置モデル」／finance.html</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="ch1.html#bureau-setup" target="_blank">第1章 ─ 3-4 推進局の設置体制</a>
+      <a class="pub-link" href="finance.html#finance-breakdown" target="_blank">財源シミュレーション ─ 財源の構成</a>
+      <a class="pub-link" href="roadmap_gov.html#phase1" target="_blank">行政ロードマップ ─ フェーズ1</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      「第1期準公務コーディネーター約1,700名・管理職等6,300名＝合計8,000名」「967拠点」という具体的数値は、「そんな人員を調達できるのか」「コストが過大ではないか」という技術的批判の的になる。公開版では「全国一律ではなく自治体規模に応じた設置」という方針のみを示す。
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead>
+        <tr>
+          <th>区分</th>
+          <th>対象自治体</th>
+          <th>全国拠点数</th>
+          <th>準公務コーディネーター配置</th>
+          <th>人員設計の考え方</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fffdf0">
+          <td><strong>政令指定都市</strong></td>
+          <td>20市・行政区171区（2024年時点）</td>
+          <td><strong>191拠点</strong>（本局20＋分室171）</td>
+          <td>本局：10〜18名（所長1・コーディネーター専任8〜14・事務2・企業連携担当1）<br>分室（標準区）：5〜7名<br>分室（大規模区・人口10万超）：8〜12名</td>
+          <td>標準区はコーディネーター4〜6名で登録者最大150〜180名を担当できる規模。急病・研修・繁忙期に備え各分室は常に1名以上の余裕を確保する。</td>
+        </tr>
+        <tr>
+          <td><strong>中核市</strong></td>
+          <td>62市（人口20万人以上・2024年時点）</td>
+          <td><strong>約82拠点</strong>（本局62＋分室約20）</td>
+          <td>本局（人口20〜30万）：7〜10名<br>本局（人口30万超）：10〜14名<br>分室：4〜6名</td>
+          <td>コーディネーター1名＝最大30名担当を基準。人口30万超の市は分室を追加して対応し、本局の過負荷を防ぐ。</td>
+        </tr>
+        <tr>
+          <td><strong>一般市（大）</strong></td>
+          <td>人口5万人以上の一般市（約350市）</td>
+          <td><strong>約370拠点</strong>（本局350＋簡易分室約20）</td>
+          <td>本局（人口5〜10万）：4〜6名<br>本局（人口10万超）：6〜8名<br>簡易分室：2〜3名</td>
+          <td>最低4名（実働3名＋バッファ1名）を必須要件とし、これを下回る規模での単独設置は認めず広域連合へ移行させる。</td>
+        </tr>
+        <tr>
+          <td><strong>一般市（小）・町</strong></td>
+          <td>人口5万人未満の一般市（約360市）＋町743（計約1,103団体）</td>
+          <td><strong>約250拠点</strong>（1,103団体÷平均4.4団体/拠点）</td>
+          <td>広域連合型本部：5〜7名<br>単独設置型：4〜5名</td>
+          <td>広域連合型では1拠点が3〜5自治体を管轄するため定期巡回が発生し、移動時間を含めると実質的に5名以上が必要。</td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td><strong>村・極小自治体</strong></td>
+          <td>村183＋財政危機型・離島など（計約230団体）</td>
+          <td><strong>約27拠点</strong>＋都道府県支部47拠点（代行カバー）</td>
+          <td>共同推進局：5〜6名<br>都道府県支部：各支部4名以上</td>
+          <td>7〜10自治体で1局・約27拠点が現実的な数。都道府県47支部は「代行専任機能」を持ち、ゼロカバレッジを制度上防止する。</td>
+        </tr>
+        <tr style="background:#fffdf0;font-weight:700">
+          <td colspan="2">合計（全国）</td>
+          <td colspan="3">
+            <strong>約967拠点</strong>（本局・分室・簡易分室・広域共同局 約920拠点＋都道府県支部47拠点）<br>
+            全国準公務コーディネーター・管理職員総数（段階的増員）<br>
+            第1期（登録5万人）：約8,000名（コーディネーター約1,700名＋管理職・事務・巡回担当等約6,300名）<br>
+            第2期（登録30万人）：約15,000名（コーディネーター約10,000名＋管理職・事務等約5,000名）<br>
+            第3期（登録50万人）：約17,500名（コーディネーター約17,000名＋管理職・事務等約500名の純増）
+          </td>
+        </tr>
+      </tbody>
+    </table></div>
+
+
+    <!-- ════════════════════════════════════
+         Ⅴ 制度の終わらせ方設計
+         ════════════════════════════════════ -->
+    <div class="section-header" id="sunset">
+      <h2>Ⅴ　制度の終わらせ方設計（日没条項）</h2>
+      <div class="section-src">元ページ：ch4.html 全体</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="ch4.html#sunset-design" target="_blank">日没条項 ─ 設計思想</a>
+      <a class="pub-link" href="ch4.html#exit-indicators" target="_blank">日没条項 ─ Exit Indicators の構造</a>
+      <a class="pub-link" href="ch1.html#sunset-intro" target="_blank">第1章 ─ 3-5 日没条項の設計思想</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      「この制度を廃止する条件をあらかじめ設計している」という事実は、反対勢力に「提案者自身が制度の限界を認めている」と利用される。思想として持つことは正しく、誠実さの証明でもあるが、提言の入口段階で公開する必要はない。制度が議論のテーブルに乗り、信頼関係のある有識者・行政関係者と詳細設計に入った段階で共有する。
+    </div>
+
+    <div class="callout">制度は、作られた瞬間から老いはじめる。問題は老いること自体ではない。老いに気づかず、手放せないことである。本章は、本提言が提案する制度を「いつ、どのように終わらせるか」を設計する。それは制度への不信ではなく、<strong>制度への最大の誠実さ</strong>である。</div>
+
+    <h3>現行制度が証明した「終わりを設計しないことの代償」</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>時期</th><th>壁の内容</th><th>本来すべきだった対応</th><th>実際に行われたこと</th></tr></thead>
+      <tbody>
+        <tr><td>1973年頃（創設13年後）</td><td>オイルショック後、企業余力が縮小。形式的雇用が広がり始める</td><td>制度の設計思想を問い直す</td><td>放置</td></tr>
+        <tr><td>1987年（27年後）</td><td>知的障害者へ対象拡大。「人数カウント」のまま</td><td>枠組み自体の再設計</td><td>対象だけ拡大し設計思想は温存</td></tr>
+        <tr><td>1990年代（30年後）</td><td>バブル崩壊後のリストラで形骸化。特例子会社という「達成装置」が急増</td><td>制度の抜本的な見直し</td><td>特例子会社を黙認し数字だけ維持</td></tr>
+        <tr><td>2006年（46年後）</td><td>制度の限界が明白になる</td><td>制度の再設計</td><td>A型・B型という別制度で「穴埋め」</td></tr>
+        <tr><td>2018年（58年後）</td><td>精神障害者へ対象拡大</td><td>普遍的な就労支援への統合</td><td>対象拡大という同じ手法を繰り返す</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>制度が終わらせるべき4つのパターン</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>パターン</th><th>内容</th><th>終わりの形</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A：成功による終焉</strong></td><td>障害者が普通に働き、普通に生活し、特別な配慮を必要としない社会が訪れたとき</td><td>「障害者雇用」という独立した制度カテゴリを解消し、普遍的な社会参加モデルへ移行する</td></tr>
+        <tr><td><strong>B：技術変容による陳腐化</strong></td><td>AIと自動化の進展が「切り出してきたタスク」の一部を代替するとき</td><td>タスク型就労への依存を減らし、「所得保障の一層の強化」と「社会参加の意味の再定義」へ軸を移す</td></tr>
+        <tr><td><strong>C：社会構造変化による概念の溶解</strong></td><td>「障害のない人」という多数派概念が揺らぐとき</td><td>SCPポイント制度を「障害者との接点」から「多様性への配慮全般」を評価する制度へと発展させる</td></tr>
+        <tr><td><strong>D：制度の硬直化</strong></td><td>推進局・コーディネーターが「制度の自己保存」を当事者の自立より優先し始めた瞬間</td><td>日没条項を発動する</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Exit Indicators ── 17の早期警戒指標</h3>
+
+    <h4>グループ①　成功の指標（パターンA）</h4>
+    <div class="table-wrap"><table>
+      <thead><tr><th>指標</th><th>閾値</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>障害者の一般就労率</td><td>40%超（現在約18%）が10年間継続</td><td>特別制度の必要性が低下している</td></tr>
+        <tr><td>障害者の平均所得</td><td>全労働者平均の80%超が5年間継続</td><td>所得格差が実質的に解消された</td></tr>
+        <tr><td>SCPポイントAレーン活用率</td><td>Aレーン（直接雇用）が義務の90%超を占める</td><td>タスク型の「橋渡し」機能が不要になっている</td></tr>
+        <tr><td>障害者の「孤立スコア」</td><td>一般市民との孤立度差が統計的有意でなくなる</td><td>社会統合が達成されつつある</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4>グループ②　技術変容の指標（パターンB）</h4>
+    <div class="table-wrap"><table>
+      <thead><tr><th>指標</th><th>閾値</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>AIによる自動化率（タスク別）</td><td>準公務職員タスクの40%超がAIで代替可能になる</td><td>タスク型就労の意味が変容しつつある</td></tr>
+        <tr><td>「タスクゼロ月」の頻度</td><td>登録者の20%超が月間で業務割り当てゼロになる月が半年連続</td><td>需要消滅が始まっている</td></tr>
+        <tr><td>就労収入に占めるタスク収入比率</td><td>障害者全体の就労収入のうち準公務職員タスク収入の割合が10%未満に低下し5年間継続</td><td>タスク型が主要な就労手段でなくなっている</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4>グループ③　社会構造変化の指標（パターンC）</h4>
+    <div class="table-wrap"><table>
+      <thead><tr><th>指標</th><th>閾値</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>障害者手帳保有者の人口比</td><td>20%超（現在約8%）が継続</td><td>「障害者」が社会的少数派でなくなりつつある</td></tr>
+        <tr><td>グレーゾーン就労困難者の比率</td><td>手帳非保有の就労困難者が手帳保有者を上回る</td><td>現行の「障害者」定義が実態と乖離している</td></tr>
+        <tr><td>インクルーシブ就労の自然達成率</td><td>制度的配慮なしに多様な働き方を実現している企業が70%超</td><td>制度なしでも社会が機能するようになっている</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4>グループ④　制度硬直化の指標（パターンD）</h4>
+    <div class="table-wrap"><table>
+      <thead><tr><th>指標</th><th>閾値</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>準公務職員のタスク実態充足率</td><td>登録者の30%超が「実質的な仕事なし」状態</td><td>旧B型と同じ「居場所化」が始まっている</td></tr>
+        <tr><td>SCPポイントCレーン比率</td><td>Cレーン（拠出金）が義務の45%超を恒常的に占める</td><td>企業が「払えば済む」構造に逆戻りしている</td></tr>
+        <tr><td>推進局スタッフの内部告発件数</td><td>年間50件超が3年連続</td><td>組織内部で問題が隠蔽されている</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>日没条項の発動設計（2層）</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>層</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td><strong>第1層：定期レビュー型（10年ごと）</strong></td><td>制度開始から10年ごとに「制度存続の正当性審査」を義務化。審査は推進局ではなく独立した第三者機関（国会が任命）が担う。審査の結果は「継続」「縮小」「改革」「統合・廃止」の4択で勧告。国会はこの勧告を受け、1年以内に立法的対応を義務付ける。</td></tr>
+        <tr><td><strong>第2層：指標トリガー型（随時）</strong></td><td>17指標のうち、同一グループから3つ以上が閾値を超えた状態が2年以上継続した場合、自動的に「制度緊急見直しプロセス」が発動する。Step1（3か月以内）：独立評価委員会が「制度限界報告書」を作成・公開。Step2（6か月以内）：「次世代制度設計会議」を招集。Step3（1年以内）：「移行ロードマップ案」を国会に提出。Step4（2年以内）：法改正・制度移行の開始。Step5（5年以内）：旧制度の完全終了または新制度への統合完了。</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout">
+      本制度の最も望ましい終わり方は<strong>静かな終わりである。</strong><br><br>
+      準公務職員が「障害者として働いている」という意識なく、普通に仕事をしている。<br>
+      企業がSCPポイントを計算することなく、障害のある社員と普通に働いている。<br>
+      家族が「親亡き後」を心配することなく、子どもの将来を普通に考えている。<br><br>
+      そのような社会が訪れたとき、誰かが気づく。「そういえば、あの障害者雇用制度って、まだ必要なんだっけ？」と。<br>
+      その問いが自然に生まれた瞬間が、この制度の使命が終わった瞬間である。
+    </div>
+
+
+    <!-- ════════════════════════════════════
+         Ⅵ 不正悪用シナリオ詳細
+         ════════════════════════════════════ -->
+    <div class="section-header" id="fraud">
+      <h2>Ⅵ　不正悪用シナリオ詳細</h2>
+      <div class="section-src">元ページ：fraud.html 全体</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="fraud.html#fraud-overview" target="_blank">不正シナリオ ─ 4主体の概要</a>
+      <a class="pub-link" href="fraud.html#fraud-actor" target="_blank">不正シナリオ ─ 当事者側シナリオ</a>
+      <a class="pub-link" href="faq.html#faq-fraud" target="_blank">FAQ ─ 4. 公平性と不正防止</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      制度の穴を自分で列挙することは、制度設計の誠実さの証明であると同時に、反対勢力に「こんな欠陥がある」という攻撃材料を先回りして提供することになる。公開版では「不正防止の仕組みを設ける」という方針のみを示し、シナリオの詳細は本資料に留める。
+    </div>
+
+    <h3>4主体の概要</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>主体</th><th>主な悪用動機</th><th>最悪シナリオ</th><th>対策の方向性</th></tr></thead>
+      <tbody>
+        <tr><td>①当事者</td><td>時給の最大化・怠業</td><td>業務の形骸化・信頼失墜</td><td>就労実績ポイント＋上限時間設定</td></tr>
+        <tr><td>②自治体</td><td>負担の押しつけ・予算操作</td><td>過重・不当なタスク設計</td><td>タスク審査制度＋第三者監査</td></tr>
+        <tr><td>③企業</td><td>拠出金逃れ・形式的登録</td><td>制度の骨抜き・当事者搾取</td><td>登録要件＋実態確認義務</td></tr>
+        <tr><td>④コーディネーター</td><td>スコア操作・えこひいき</td><td>当事者の不当排除・優遇</td><td>二重確認＋異議申立制度</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>第1章　当事者側のシナリオと対策</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>シナリオ</th><th>検知方法</th><th>抑止設計</th><th>ペナルティ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>怠業・手抜き：</strong>タスクをこなしているように見せて実質的に手を抜く（報告書の虚偽記載・巡回未実施等）</td><td>コーディネーターの不定期抜き打ち同行・QRコード位置記録・完了写真の提出義務化・専門課担当者との週次確認</td><td>就労実績ポイントの即時引き下げ（虚偽報告は2段階降格）・スコアLv.1では業務選択肢を最低限に制限</td><td>初回：警告＋スコア降格。再犯：業務停止1か月。悪質：登録取消（再登録は1年後から審査）</td></tr>
+        <tr><td><strong>水増し請求：</strong>実際よりも長い作業時間を申告する</td><td>タスク開始・終了をGPSタイムスタンプで自動記録。申告時間との乖離が15分超の場合は自動フラグ</td><td>自動記録システムへの依存を高め、申告の余地を最小化</td><td>初回：差額返還＋スコア降格。再犯：業務停止。悪質：登録取消＋不当利得返還請求</td></tr>
+        <tr><td><strong>等級詐称：</strong>実態より重い障害として年金を受給し、軽労働に従事する</td><td>AIによる診断書データと就労実績の照合。年1回の定期再審査（抜き打ち）。医療機関への虚偽診断書発行に対するペナルティを医師法で規定</td><td>等級と就労可能業務の対応表を制度化し、逸脱が自動検知される仕組みを構築</td><td>不正受給額の全額返還＋加算金。刑事告発（詐欺罪）の適用も検討</td></tr>
+        <tr><td><strong>複数登録：</strong>複数の推進局に重複登録して不当に多くのタスクを受注する</td><td>マイナンバーベースの全国統合登録システムで二重登録を物理的に不可能にする</td><td>システム設計で防止（事後対応は不要）</td><td>—（システムで防止）</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>第2章　自治体側のシナリオと対策</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>シナリオ</th><th>検知方法</th><th>抑止設計</th><th>ペナルティ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>過重タスク設計：</strong>準公務職員の障害特性に不適切な重労働・精神的に過酷な業務を割り当てる</td><td>当事者からのタスク拒否申請・コーディネーターによる事前審査・医療機関との連携</td><td>全タスクは推進局の「タスク審査委員会」の事前承認を必須とする。障害種別ごとの業務可否一覧を法定化</td><td>初回：タスク設計の是正命令。再犯：推進局からの警告書送達。悪質：交付税算定上のペナルティ係数適用</td></tr>
+        <tr><td><strong>本来業務の押しつけ：</strong>正規職員がやるべき業務を準公務職員に丸投げし、タスクとして偽装する</td><td>コーディネーターが月次で「タスク内容の妥当性審査」を実施。当事者からの内部告発窓口を設置</td><td>タスク分類コードと対応業務の一覧を標準化し、コード外業務の割り当てを自動で弾くシステムを整備</td><td>是正命令＋再発防止計画の提出義務。悪質事例は議会への報告義務</td></tr>
+        <tr><td><strong>予算操作：</strong>推進局運営費を他の自治体事業に流用する</td><td>特別会計の決算報告を推進局本部・都道府県が独立してチェック。第三者監査を年1回義務化</td><td>推進局運営費は障害就労支援特別会計からの交付金とし、一般財源との混在を物理的に防ぐ</td><td>返還命令＋翌年度の交付税算定上の減算。首長・担当者への行政責任の追及</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>第3章　企業側のシナリオと対策</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>シナリオ</th><th>検知方法</th><th>抑止設計</th><th>ペナルティ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>形式的登録・ゴースト雇用：</strong>準企業職員を登録するが実態の業務を与えない</td><td>月次実働時間報告（準企業職員・企業の双方から提出）の照合。乖離が月20時間超の場合は自動フラグ</td><td>SCPポイントの算定を「登録人数」ではなく「実働時間」ベースにする（制度の根幹設計）</td><td>差分ポイントに相当する拠出金を遡及徴収。悪質な場合は企業名の公表</td></tr>
+        <tr><td><strong>タスク内容の搾取：</strong>本来Cレーン（拠出金）相当の状況なのにBレーン（タスク型）として処理し、不当に安い拠出負担とする</td><td>当事者からの業務内容ヒアリングを半期に1回実施（匿名保護）。内容とSCPポイント申告の整合性審査</td><td>「タスクの妥当性審査」を企業側にも適用。推進局の審査を経ないタスクはポイント算定から除外</td><td>不正ポイント分の拠出金徴収。3回以上の違反で推進局からの登録抹消（Cレーン強制移行）</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>第4章　コーディネーター側のシナリオと対策</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>シナリオ</th><th>検知方法</th><th>抑止設計</th><th>ペナルティ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>スコア恣意操作：</strong>個人的な好き嫌いでスコアを不当に上げ下げする</td><td>スコア変動の根拠ログを全件記録し推進局の上位管理者が月次レビュー。当事者からの異議申立を受け付ける専用窓口</td><td>スコアの変動幅は1回あたり最大1段階に制限。根拠なき変動は自動的にシステムが拒否</td><td>業務停止（調査期間中）。意図的と判定された場合は懲戒免職＋資格取消</td></tr>
+        <tr><td><strong>えこひいき配分：</strong>特定の当事者に良質なタスクを優先的に回す</td><td>タスク配分履歴の統計分析（特定当事者への偏りが3σ超の場合は自動フラグ）。当事者からの無記名アンケートを四半期に1回実施</td><td>タスクの優先配分ルールを明文化し、コーディネーターの裁量範囲を制限。「指名業務」は当事者の就労実績ポイントに基づく自動マッチングを優先</td><td>初回：是正指導。再犯：担当者変更。悪質：懲戒処分</td></tr>
+      </tbody>
+    </table></div>
+
+
+    <!-- ════════════════════════════════════
+         Ⅶ 交渉戦略・最低防衛ライン
+         ════════════════════════════════════ -->
+    <div class="section-header" id="negotiation">
+      <h2>Ⅶ　交渉戦略・最低防衛ライン</h2>
+      <div class="section-src">2026年5月 策定　─　反対勢力との協議・交渉に向けた内部整理</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版（関連）：</span>
+      <a class="pub-link" href="ch1.html#employment-reward" target="_blank">第1章 ─ 3-2 雇用・報酬・社会保障</a>
+      <a class="pub-link" href="ch2.html#point-system" target="_blank">タスク設計 ─ 就労実績ポイント制度</a>
+      <a class="pub-link" href="scp.html#scp-lanes" target="_blank">SCP制度 ─ 企業が選べる3レーン</a>
+      <a class="pub-link" href="ch3.html#final-answer" target="_blank">第3章 ─ 政治・行政への最終回答</a>
+      <a class="pub-link" href="faq.html#faq-meaning" target="_blank">FAQ ─ 8. 本制度の意義と問いかけ</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【本セクションの位置づけ】</strong>
+      本提言の内容が100%実現するのは困難であることを前提に、「ここまでは絶対に譲れない」という最低防衛ラインと、「ここまでなら交渉余地がある」という妥協許容範囲を明文化する。交渉テーブルに臨む前に内部で合意形成しておくべき戦略的判断材料である。
+    </div>
+
+    <h2>1. 絶対防衛ライン 7点</h2>
+    <p>以下の7点はいずれか一点でも失えば提言の骨格が崩れる。反対勢力からの圧力に対して一切後退してはならない。</p>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:4%">#</th><th style="width:26%">防衛ライン</th><th style="width:36%">失った場合の帰結</th><th style="width:34%">交渉上の妥協許容範囲</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">①</td>
+          <td><strong>年金水準の法定数値明記</strong><br><span style="font-size:13px;color:var(--text-muted)">等級別最低保障額を国民年金法第33条に数値として直接規定。政令委任を認めない。</span></td>
+          <td>行政裁量で「段階的引き上げ」「据え置き」が可能になり増額が形骸化する。制度全体の財政設計が宙に浮く。</td>
+          <td>引き上げ額の数字・引き上げ時期の段階設定は交渉余地あり。ただし「数値を法定化すること」自体は絶対に譲れない。</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">②</td>
+          <td><strong>拠出金収入の年金財源への法定直結</strong><br><span style="font-size:13px;color:var(--text-muted)">雇用代替拠出金を障害就労支援特別会計（新設）へ直結し、年金財源への充当経路を法定化する。</span></td>
+          <td>60年間と同じ「収益が当事者に届かない」構造が再現する。一般会計に吸収されれば別用途に流用される。</td>
+          <td>特別会計の名称・設計細部・拠出金単価の段階的引き上げは受け入れ可。「年金財源への法定直結ルート」の廃止は絶対に認めない。</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">③</td>
+          <td><strong>A型事業所の囲い込み廃止と代替の法的確約</strong><br><span style="font-size:13px;color:var(--text-muted)">廃止・統合・再編の法的根拠と職員の優先再雇用を附則に明記する。</span></td>
+          <td>「改革」の看板のもとで低賃金囲い込み構造が法的保護を得る。現行の搾取構造が温存される。</td>
+          <td>廃止の猶予期間（5年→7年程度）・選別基準の細部は調整可。B型の重度障害者向け最低限拠点存続は認める。「A型の全面存続容認」は絶対に認めない。</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">④</td>
+          <td><strong>就労実績を等級判断材料から除外する明文規定</strong><br><span style="font-size:13px;color:var(--text-muted)">障害状態確認届の再審査において就労実績・就労時間・就労収入を症状改善の根拠として使用することを法文上禁止する。</span></td>
+          <td>年金増額が事実上の「就労義務化」に転化する。「働くと等級が下がる」という現行の逆インセンティブ構造が継続し制度が機能しなくなる。</td>
+          <td>症状が実際に改善した場合の等級変更自体は認める（精神・発達障害は改善があり得るため）。禁止するのは「就労実績を根拠とすること」であり、医師診断・ADL指標等による変更は妥当な運用として認める。</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">⑤</td>
+          <td><strong>就労実績ポイントの全国統一・算出ロジック公開・不服申立の法定化</strong><br><span style="font-size:13px;color:var(--text-muted)">準公務職員の就労評価の算出基準を全国統一・公開とし、当事者が異議申し立てできる第三者審査を推進局に義務付ける。</span></td>
+          <td>スコア算出が自治体・推進局の裁量に委ねられ、評価の恣意的運用による新たな差別構造が生まれる。</td>
+          <td>不服申立の手続き細部（申立期間・審査委員の構成等）は交渉可。「不服申立制度の存在」と「全国統一の算出基準」は絶対に譲れない。</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">⑥</td>
+          <td><strong>就労資格と年金受給の完全分離</strong><br><span style="font-size:13px;color:var(--text-muted)">準公務職員資格を取り消された場合でも年金受給は継続されることを法文上明確にする。</span></td>
+          <td>「条件付き年金」として生活保障が就労規律の脅迫手段に転化する。「不正した者への年金継続はおかしい」という世論圧力で骨抜きにされやすい。</td>
+          <td>就労資格の取消条件の細部は交渉可。「資格取消＝年金停止」という連動は絶対に認めない。就労資格と生活保障は条文上も切り離す。</td>
+        </tr>
+        <tr style="background:#fff8f8">
+          <td style="font-weight:700;color:#8B0000;text-align:center;font-size:17px">⑦</td>
+          <td><strong>A型職員の優先再雇用の附則明記</strong>（攻め手兼防衛ライン）<br><span style="font-size:13px;color:var(--text-muted)">A型事業所廃止・統合にあたり職員を準公務コーディネーターとして推進局に優先再雇用する義務を附則に明文化する。</span></td>
+          <td>A型職員団体が「雇用を奪われる」という反論で法改正全体を頓挫させる。最大の反対勢力を中和できず国会審議で制度全体が潰される。</td>
+          <td>優先再雇用の条件細部（年収水準・研修期間等）は交渉可。「優先再雇用の法的義務そのもの」は絶対に確保する。<strong>これを早期に提示することで反対勢力を中立化・味方化できる可能性がある。戦略的に早めに出す。</strong></td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h2>2. 年金額の交渉ライン</h2>
+
+    <div class="callout-light">
+      <strong>【提言原案と交渉における最低防衛ラインの関係】</strong><br>
+      提言書に記載の年金額（1級15万・2級12万・3級9万円）は「理想値」である。反対勢力との交渉の末に妥協を迫られた場合の最低防衛ラインを以下に示す。この水準を下回る妥協は「改革の形だけ残して実質なし」となるため、受け入れてはならない。
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th>等級</th><th>現行（2026年度）</th><th>提言原案（理想値）</th><th>最低防衛ライン（妥協の下限）</th><th>下限の根拠・注意事項</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:700">1級</td>
+          <td>約8.8万円</td>
+          <td style="color:#2C7A3A;font-weight:700">15万円</td>
+          <td style="color:#8B0000;font-weight:700">12万円</td>
+          <td>住宅補助（月3〜5万円相当）とのセット設計で実質15万円水準に接近できる。<strong>12万円単独での妥結は住宅補助の確保を条件とする。</strong></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700">2級</td>
+          <td>約7.7万円</td>
+          <td style="color:#2C7A3A;font-weight:700">12万円</td>
+          <td style="color:#8B0000;font-weight:700">10万円</td>
+          <td>8万円では現行から0.9万円の増額に過ぎず実質改善が薄い。<strong>8万円は「勝ち取った」とは言えないため、交渉の下限を10万円と設定する。</strong></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700">3級（新設）</td>
+          <td>5〜6万円相当</td>
+          <td style="color:#2C7A3A;font-weight:700">9万円</td>
+          <td style="color:#8B0000;font-weight:700">7万円</td>
+          <td><strong>5万円での法定化は現状固定のリスクがあるため絶対に受け入れてはならない。</strong>7万円で初めて「新設による改善」が生まれる。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h2>3. 住宅補助・日常生活用具補助の要求</h2>
+
+    <div class="callout">
+      <strong>戦略的意義：年金額交渉と「抱き合わせ」で提示する</strong><br><br>
+      住宅補助と日常生活用具補助は、年金の数値を押し上げずに実質的な可処分所得を改善できる手段である。反対勢力も「現物給付の拡充」は「年金増額」より飲みやすい場合がある。「年金額はこちらが下げる、その代わり住宅補助を認めろ」という交換条件として機能させることが有効。
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th>要求項目</th><th>現行の問題</th><th>要求内容</th><th>交渉上の提示方法</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>住宅補助（家賃補助）</strong></td>
+          <td>家賃補助の明示的な仕組みがなく、都市部では家賃だけで年金の大半が消える。</td>
+          <td>障害基礎年金受給者を対象とした月3〜5万円の家賃補助制度を新設する。フランスAPL（個人住宅補助）の設計を参考に、家賃水準・所得水準に応じた段階的補助とする。</td>
+          <td>年金1級12万円＋家賃補助3〜5万円の組み合わせで実質15〜17万円相当となり提言原案（15万円）の効果をほぼ再現できる。「年金は12万円で妥協する代わりに住宅補助を確保する」という交換を提案する。</td>
+        </tr>
+        <tr>
+          <td><strong>日常生活用具補助</strong></td>
+          <td>補助対象品目が限定的・上限額が低く実態の需要に合っていない。</td>
+          <td>補助対象品目の包括化（限定列挙から「日常生活に必要なもの」への包括規定へ）および上限額の大幅引き上げ。</td>
+          <td>「無制限補助」という要求は反発を招くため、交渉テーブルでは「現行上限の大幅引き上げ」「対象品目の包括化」として提示する。実質的な効果は同等。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h2>4. SCP制度・就労実績ポイントの3層構造整理</h2>
+
+    <div class="callout-light">
+      交渉テーブルでの説明・内部合意形成のための整理。制度の関係構造を混同すると議論が錯綜するため、この整理を共通認識として確立しておく。
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th>層</th><th>当事者（誰と誰）</th><th>何を決める仕組みか</th><th>根拠法</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:700;color:#8B0000">第1層<br>SCP制度</td>
+          <td>国・自治体（推進局）<br>↔ <strong>民間企業</strong></td>
+          <td>法定雇用義務の充足基準。企業がA（直接雇用）・B（職場浸透）・C（拠出代替・上限50%）の3レーンを組み合わせてSCPポイントを積み上げ、雇用義務を満たす仕組み。「頭数カウント」から「業務量・質カウント」への転換。</td>
+          <td>障害者雇用促進法（改正）</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:#8B0000">第2層<br>就労実績ポイント</td>
+          <td>国・自治体（推進局）<br>↔ <strong>障害当事者</strong></td>
+          <td>準公務職員として就労する当事者個人の就労評価（タスク完遂率・遵守実績等）。ポイントに応じて受けられる業務の種類・難度が変わる。算出ロジックは全国統一・公開とし、不服申立制度を法定化する（絶対防衛ライン⑤）。</td>
+          <td>地方公務員法（準公務職員規定・新設）、障害者総合支援法（改正）</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700;color:#8B0000">第3層<br>個別雇用契約</td>
+          <td>民間企業<br>↔ <strong>障害当事者</strong></td>
+          <td>準企業職員として民間で働く場合の個別の雇用契約内容（業務種別・時給の上乗せ・就業規則の細部等）。国が定める最低基準（最低賃金・合理的配慮義務・労働基準法等）の枠内で各企業が設計する。「完全に委ねる」ではなく「最低基準の枠内での企業裁量」が正確な表現。</td>
+          <td>労働基準法・障害者差別解消法・最低賃金法（既存法が適用）</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="reason-box">
+      <strong>【交渉上の留意点】</strong>
+      反対勢力は「SCP制度が複雑すぎる」という論点で制度全体を潰しにかかる可能性がある。その場合は「3層構造のうち企業に新たに課すのは第1層（SCP）だけであり、第2層・第3層は現行制度の延長線上にある」という切り分けで応答する。企業が「SCPの管理が負担だ」と言う場合は「Cレーン（拠出金のみ）でも義務は充足できる。ただし上限50%のため最低限の接点は必要」と返す。
+    </div>
+
+    <h2>5. 当事者内の反対層──移行期間収入リスクの認識と対応方針</h2>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      当事者の一部が反対勢力化しうるという分析は、公開すると「提言者が当事者を信頼していない」という批判を招く。内部で認識・対策を持ちつつ、公開版では言及しない。
+    </div>
+
+    <h3>想定される反対層の構造</h3>
+    <p>現行制度において「実際の労働貢献度に対して高い賃金を受け取っている」当事者が一定数存在する。この層にとって本提言は以下の損得計算になる。</p>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th></th><th>現行制度</th><th>移行期間中</th><th>本稼働後</th></tr></thead>
+      <tbody>
+        <tr><td>障害年金（2級例）</td><td>約7.7万円</td><td>約12万円（増額後）</td><td>約12万円</td></tr>
+        <tr><td>賃金</td><td>月給15万円（拘束型）</td><td>休業補償（最低限）</td><td>実働分のみ（5〜8万円）</td></tr>
+        <tr><td>合計</td><td>約22〜23万円</td><td>約20万円</td><td>約17〜20万円</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout">
+      <strong>【重要な設計判断──移行期間収入の上限設計】</strong><br><br>
+      当初の設計では移行期間中に「年金増額＋休業補償（平均賃金の60%）」が重なり、現行より収入が大幅に増える層が発生する可能性があった（例：月27万円）。この「一時的高収入」が本稼働後の収入水準の心理的基準点になり、本稼働移行への不満・抵抗を生むリスクがある（損失回避バイアス）。<br><br>
+      この問題に対し、以下の方針を採用する。<br><br>
+      <strong>移行期間中の休業補償は「年金との合算で生活が成立する最低限の額」に設定し、合計収入が現行を大幅に上回らないよう設計する（目安：年金＋休業補償＝合計20万円程度）。</strong><br><br>
+      ただしこれは現行の労働基準法26条（休業補償＝平均賃金の60%以上）と矛盾する場合がある。この矛盾を解消するには「障害年金受給者のSCP移行期間における休業補償の特則」として法改正が必要になるが、法改正を一つ増やすことで制度全体の実現難易度が上がるリスクがある。<br><br>
+      <strong>したがって、移行期間の一時的収入増は「制度移行コスト」として受け入れ、現行設計のまま進む。</strong>その代わり、以下の書面合意の徹底により「基準点問題」を最小化する。
+    </div>
+
+    <h3>対応方針：書面合意の徹底（①強化）</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>対応</th><th>内容</th><th>実施タイミング</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>本稼働後収入の事前明示</strong></td>
+          <td>休業補償の協定書締結時に「本稼働後の想定月収（実働ベース）」を数字で明記し、当事者・家族・支援者の三者が署名する。「移行期間中の収入は限定的である」という認識を開始時点で固定する。</td>
+          <td>roadmap_corp.htmlフェーズ2の雇用条件変更合意書と同時</td>
+        </tr>
+        <tr>
+          <td><strong>支援者・家族への説明義務化</strong></td>
+          <td>当事者本人への説明に加え、支援者・家族にも同内容の説明の場を設ける。「代弁者」が誤った期待を持たないよう事前に封じる。</td>
+          <td>同上</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h3>この層が組織的反対勢力になりにくい理由</h3>
+    <p>「実際の貢献度より高い賃金を受け取っている」という実態を公言することは、当事者本人にとって自己に不利な暴露になる。表立った組織的反対は構造上起こりにくく、水面下での不満・不参加にとどまる可能性が高い。この層は「敵」ではなく「移行に時間がかかる層」として設計上吸収する。</p>
+
+    <h2>6. 安楽死・旧優生保護法への言及について</h2>
+
+    <div class="callout">
+      <strong>この部分は提言の「核」であり、交渉で削除することはできない。</strong><br><br>
+      反対勢力が「表現が過激すぎる」という理由でこの部分の削除を求めてきた場合は、以下の論理で対応する。<br><br>
+      「この問いかけを削除することは、問いに答える覚悟がないことの表明である。政治・行政がこの問いに正面から答えられるなら、答えによって削除の要否は自ずと決まる。答えられないから削除を求めているのであれば、それ自体が問いの正当性を証明している。」<br><br>
+      なお、FAQ（faq.html）に記載の通り、これらの表現は安楽死や命の選別を「支持・推奨」するものではなく、「現行制度の不作為の帰結として国家が何を選んでいることになるのか」を直視させるための論理的問いかけである。この位置づけを交渉テーブルで明確にした上で、削除要求には応じない。
+    </div>
+
+    <div class="section-header" id="successor">
+      <h2>Ⅷ　後続組対策・第二波戦略</h2>
+      <div class="section-src">対応する公開版：faq.html#faq-next（扉のみ公開・地図は本資料に温存）</div>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      後続組の動き方の予測・財源余白の詳細分析・共倒れリスクの構造を公開すると、二つの致命的な問題が生じる。①後続組に「どこを攻めれば本提言を揺さぶれるか」の地図を渡すことになる。②財政当局に「この提言の後にさらに要求が来る」と読まれ、本提言の審議段階で「将来の追加要求込みで却下」という口実を与える。公開版（FAQ第9章）には「扉があること」のみを示し、扉の鍵の設計図は本資料に留める。
+    </div>
+
+    <h2>1. 本提言後に動き出すと予測される後続層</h2>
+    <p>本提言が動き出した後、以下の層が「自分たちも」と主張し始める可能性が高い。動き出しやすい順に整理する。</p>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:5%">順位</th><th style="width:22%">層</th><th style="width:40%">主張すると予測される内容</th><th style="width:33%">本提言との関係・対処方針</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:#8B0000">①</td>
+          <td><strong>重度障害者の家族・ケアラー</strong><br><span style="font-size:13px;color:var(--text-muted)">数が多く感情的訴求力が高い。最も早く動く</span></td>
+          <td>「B型事業所が縮小されれば日中の居場所がなくなり家族が丸抱えになる」「ヤングケアラーの就学・就労機会の損失に対する補填を」「ケアラー自身への直接的経済補償を」</td>
+          <td>本提言のFAQ（対象範囲Q）で「B型の一部存続」「年金増額は全受給者対象」を明示済み。ケアラー支援は本提言の直接財源では賄えないが、本提言が生む税収増を将来財源として位置づける論理を準備しておく。感情的批判には「年金増額は今日から始まる」という事実で返す。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:#8B0000">②</td>
+          <td><strong>就労判定ボーダー層</strong><br><span style="font-size:13px;color:var(--text-muted)">本提言への直接的批判になる。制度審議中に噴出するリスク</span></td>
+          <td>「誰が就労可能を判定するのか」「精神・発達障害者は日によって状態が異なる。悪い日に判定されれば不当に除外される」「判定制度の透明性・不服申立の充実を」</td>
+          <td>これは財源問題ではなく制度設計の問題。推進局の判定基準の透明化・不服申立制度は本提言の絶対防衛ライン④⑤に組み込み済み。制度審議の場でこの批判が出た場合、「すでに設計済み」と条文案を示せる状態を維持する。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:#8B0000">③</td>
+          <td><strong>年金非受給の障害者</strong><br><span style="font-size:13px;color:var(--text-muted)">手帳はあるが年金受給資格がない層。共感を集めやすい</span></td>
+          <td>「障害者手帳を持っていても年金受給資格がない者はなぜ除外されるのか」「発達障害・軽度知的障害などのグレーゾーンは年金も取れず一般雇用にも適応できない」「年金非受給障害者への一律基礎給付を」</td>
+          <td>本提言の年金増額審議が国会に上程された段階で「では年金にそもそも届かない者はどうするのか」という問いが議員から出る可能性が高い。これは本提言の審議プロセスの中で自然に接続できる問いであり、認定基準の見直し・拡大で対応できる部分が大きい。追加財源は比較的小規模で済む可能性があるため、審議中の「追加修正案」として吸収できる余地がある。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:#8B0000">④</td>
+          <td><strong>厚生年金未加入の障害者</strong><br><span style="font-size:13px;color:var(--text-muted)">自営業・フリーランス・先天性障害者</span></td>
+          <td>「3級が新設されても厚生年金未加入者は対象外。自営業・フリーランス障害者はなぜ保護されないのか」「先天性障害で就労歴がなく年金等級すら持っていない者への対応を」</td>
+          <td>障害基礎年金の増額は本提言に含まれており、この層にも一定の恩恵は届く。「完全な平等ではないが改善は生じる」という事実を明示する。完全解決は別制度の問題であり、本提言の射程外であることを明言する。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:#8B0000">⑤</td>
+          <td><strong>難病・慢性疾患患者</strong><br><span style="font-size:13px;color:var(--text-muted)">団体組織力が高い。別制度の問題だが本提言に乗じやすい</span></td>
+          <td>「指定難病でも障害認定を受けられないケースが多数ある。そうした者はSCP制度にも年金増額にも無縁のまま」「難病・慢性疾患患者を障害福祉制度に正式に包含することを求める」</td>
+          <td>これは障害福祉制度と医療制度・難病制度の接続問題であり、本提言とは法体系が異なる別の問題。「本提言が障害認定基準の議論を活性化させる起爆剤になることは歓迎するが、本提言への直接の接続は制度設計上不可能」という立場を明確にする。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:#8B0000">⑥</td>
+          <td><strong>地方・過疎地在住の障害者</strong><br><span style="font-size:13px;color:var(--text-muted)">分散しており組織化が遅い。ただし地方議員を動かしやすい</span></td>
+          <td>「都市部には拠点が整備され地方には何も来ない」「ICTリテラシーが低い障害者・高齢障害者はリモートタスクにも乗れない」「地方への推進局整備の義務化とデジタル支援員の配置を」</td>
+          <td>推進局の地方整備義務化・リモートタスクの拡充は本提言の設計に追記可能。地方交付税の算定見直しで対応できる範囲。地方議員経由で圧力がかかる可能性があるが、地方整備を「義務→努力義務」に格下げする妥協余地はある。ただし格下げは地域間格差の固定化につながるため慎重に判断する。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h2>2. 財源余白の実態分析——後続組が使える資源と使えない資源</h2>
+
+    <div class="reason-box">
+      <strong>【核心的な認識】</strong>
+      本提言は「現行制度の非効率を組み替える」という手法をほぼ全て使い切る。後続組が同じ手法で財源を作ろうとしても、組み替える非効率がもう残っていない。これが後続組にとっての最大の制約である。
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:35%">リソース</th><th style="width:20%">後続組が使えるか</th><th style="width:45%">根拠・留意点</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A型・B型給付費の組み替え</strong>（年約1.2兆円）</td><td style="color:#B8421A;font-weight:700;text-align:center">❌ 使えない</td><td>本提言が先取りする。組み替え後の財源は推進局運営・年金増額に充当済み</td></tr>
+        <tr><td><strong>JEED調整金・報奨金の転用</strong>（約0.1兆円）</td><td style="color:#B8421A;font-weight:700;text-align:center">❌ 使えない</td><td>本提言が先取りする</td></tr>
+        <tr><td><strong>既存手当・扶助費の整理</strong>（約0.5兆円）</td><td style="color:#B8421A;font-weight:700;text-align:center">❌ 使えない</td><td>本提言が先取りする</td></tr>
+        <tr><td><strong>安定化基金の余剰</strong>（順調時・年2〜3兆円）</td><td style="color:#2C7A3A;font-weight:700;text-align:center">✅ 最大のチャンス</td><td>本提言では使途を「制度のバッファ」と定義しているが、第2期以降の三者協議体で使途変更の議論が可能。後続組にとって最大の議論の焦点になると予測する</td></tr>
+        <tr><td><strong>経済活性化による税収増</strong></td><td style="color:#2C7A3A;font-weight:700;text-align:center">✅ 未計上の果実</td><td>本提言の財源シミュレーションで「試算中」として計上していない間接効果。後続組がこれを根拠に主張することは数字の上で筋が通る</td></tr>
+        <tr><td><strong>推進局インフラ（967拠点）</strong></td><td style="color:#2C7A3A;font-weight:700;text-align:center">✅ 器として残る</td><td>本提言完了後もインフラとして存続。新たな拠点整備コストをかけずに後続機能を接続できる</td></tr>
+        <tr><td><strong>準公務コーディネーター人材</strong></td><td style="color:#D4AF37;font-weight:700;text-align:center">△ 兼務は可能</td><td>本提言が育成した人材の兼務・転用は可能だが、過負荷リスクあり。本提言が処遇改善を先行させてから初めて人材供給が改善するタイムラグに注意</td></tr>
+        <tr><td><strong>企業拠出金の単価引き上げ</strong></td><td style="color:#D4AF37;font-weight:700;text-align:center">△ 政治的困難</td><td>不可能ではないが、本提言実施後に企業負担をさらに引き上げる政治的ハードルは高い。10年後以降の議題として温存する</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>3. 共倒れリスクへの対処——「同時要求」を防ぐ設計</h2>
+
+    <p>後続組が本提言の審議と同時期に大型要求を提出した場合、財政当局が「障害福祉全体で天文学的予算」として合算処理し、両方とも棚上げされるリスクがある。これを防ぐための戦略的設計を以下に示す。</p>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:30%">リスク</th><th style="width:35%">対処設計</th><th style="width:35%">実施タイミング</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>財政当局による合算却下</strong><br>「合計すると10兆円超の要求」として処理される</td>
+          <td>本提言の財源設計が「新規支出ではなく組み替え」である論拠を財務省との交渉で最初に確立する。組み替え論拠が確立した後は、後続組の要求が来ても「これは別の問題」として分離処理する根拠になる</td>
+          <td>第1期・パイロット特区の段階から財務省との接触を開始。組み替え論拠の確立を最優先とする</td>
+        </tr>
+        <tr>
+          <td><strong>後続組が審議を荒らす</strong><br>「重度障害者を切り捨てた」という批判で審議が止まる</td>
+          <td>FAQ第9章（公開版）の「三者協議体」記述が先手になる。「最初から次の段階の場を用意していた」という事実で、「切り捨て」批判を論理的に無効化する</td>
+          <td>提言書公開時点から記述済みの状態にしておく（実施済み）</td>
+        </tr>
+        <tr>
+          <td><strong>時間的シーケンスの混乱</strong><br>後続組が「同時に動き出す」ことで本提言の審議が遅延する</td>
+          <td>「本提言を先行させ、軌道に乗せてから重度障害者支援の議論を接続する」という時間的シーケンスを、提言書内で公式に宣言しておく。「第一波」という表現がその宣言になる</td>
+          <td>FAQ第9章（実施済み）。さらに提言書本文（ch0またはindex）への追記を検討する</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h2>4. 驀進戦略の根拠——なぜ「摩擦を解消してから動く」が間違いか</h2>
+
+    <div class="callout">
+      <strong>【内部の覚悟として明文化する】</strong><br><br>
+      社会制度の改革において「全員の合意を待ってから動く」は事実上の永久停止と同義である。後続組との摩擦がゼロになる瞬間は永遠に来ない。摩擦を「解消してから動く」を選んだ瞬間、本提言は止まる。<br><br>
+      現行制度の不作為のコストは年間1.6〜2.2兆円と試算している。摩擦調整に1年使えば、その間に失われる社会的損失はこの金額である。後続組との感情的摩擦より、この不作為の継続のほうがはるかに罪深い——この認識を軸に、驀進する。<br><br>
+      <strong>摩擦は走りながら受け止める。止まって解消するものではない。</strong><br><br>
+      走りながら同時にできる摩擦対応は三つに限定する。①提言書への三者協議体の記述（実施済み）。②提言書の公開日・バージョン・提出先の記録管理（先駆者の証拠保全）。③後続組を「敵」ではなく「第二波」と公式に呼ぶこと（FAQ第9章で実施済み）。これ以上の摩擦対応に時間を使わない。
+    </div>
+
+    <h2>5. 先駆者の記録保全——「誰が先に動いたか」を残す</h2>
+
+    <p>20年後に誰が先駆者であったかは、記録が残るかどうかで決まる。以下を厳密に管理する。</p>
+    <ul>
+      <li><strong>提言書の初版公開日・バージョン番号・提出先・提出日時</strong>をすべて文書化して保存する</li>
+      <li><strong>財政当局・議員・有識者との接触記録</strong>（日時・参加者・議題・反応）を都度記録する</li>
+      <li><strong>本資料（内部資料）の作成日</strong>も証拠として機能する。「いつから何を考えていたか」が問われたとき、本資料がその証明になる</li>
+      <li>後続組が「同じことを考えていた」と主張した場合、<strong>「公開日と提出記録で判断する」</strong>という立場を一貫して維持する</li>
+    </ul>
+
+    <!-- ════════════════════════════════════
+         Ⅸ 行政機関の役割分担と分散配置モデル
+         ════════════════════════════════════ -->
+    <div class="section-header" id="hellowork">
+      <h2>Ⅸ　行政機関の役割分担と「分散配置モデル」【実装設計】</h2>
+      <div class="section-src">2026年5月 策定（推進局組織設計の見直しを反映・更新）　─　制度実装における機関別権限の明確化</div>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      行政機関の役割分担・内部組織設計は実装レベルの設計であり、法改正前の段階で公開すると「制度の未確定部分」として反対勢力に攻撃材料を与えるリスクがある。制度化の議論が具体化した段階で公開版に移行する。
+    </div>
+
+    <div class="callout" style="margin-bottom:24px">
+      <strong>【設計方針の転換：推進局への機能集中から「分散配置モデル」へ】</strong><br><br>
+      当初設計では、民間企業のSCP制度管理・指導・通報受理機能を推進局内の新設部門が担うことを想定していた。しかし制度設計の精査を経て、<strong>既存の行政機関が持つ法的権限・専門人材・インフラを最大活用する「分散配置モデル」</strong>の方が優れていることが明らかになった。<br><br>
+      理由は3点ある。①都道府県労働局はすでに障害者雇用促進法の執行権限・調査権限・是正勧告権限を持っており、新たな法的根拠の整備コストが最小化できる。②推進局がゼロから専門人材を採用・育成するより、既存の労働行政職員を専任化・増強する方が立ち上がりが速い。③推進局の肥大化を防ぎ、本来業務（準公務職員の管理・運営）への集中を維持できる。<br><br>
+      この設計転換は財源・人員規模には実質的な影響を与えない（詳細は後述）。
+    </div>
+
+    <h2>1. 分散配置モデルの全体像</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>機関</th><th>新設・拡充の内容</th><th>主な職務</th><th>法的根拠</th></tr></thead>
+      <tbody>
+        <tr style="background:#fffdf0">
+          <td><strong>都道府県労働局<br>SCP制度指導課（新設）</strong></td>
+          <td>既存職員の専任化＋障害者雇用促進法改正による権限付与。各都道府県労働局内に設置</td>
+          <td>・SCPポイントの審査・認定<br>・業務切り出しの事前審査<br>・月次報告の閾値監視・実態調査<br>・通報の一次受理・是正勧告<br>・労基署との連携協定運営</td>
+          <td>障害者雇用促進法改正（新設条文）。既存の行政調査権限・是正勧告権限を転用</td>
+        </tr>
+        <tr>
+          <td><strong>ハローワーク<br>SCP相談窓口（拡充）</strong></td>
+          <td>既存窓口の機能拡充。専任担当者の配置</td>
+          <td>・Bレーン月次レポートの受付・審査・通知<br>・企業の制度移行相談<br>・当事者の移行相談ワンストップ<br>・SCPポイント報告様式の受付</td>
+          <td>障害者雇用促進法43条。既存の設計を継承・拡充</td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td><strong>所轄労働基準監督署<br>（既存機能の適用拡大）</strong></td>
+          <td>既存の申告監督・臨検権限をSCP関連通報に明示的に適用</td>
+          <td>・当事者への賃金未払い・労働法違反の調査<br>・待機拘束・労基法違反の是正勧告<br>・悪質事案の書類送検<br>・労働局SCP制度指導課との連携調査</td>
+          <td>労働基準法・最低賃金法。既存権限の適用範囲明確化のみで対応可能</td>
+        </tr>
+        <tr>
+          <td><strong>推進局<br>（本来業務に集中）</strong></td>
+          <td>企業管理機能を持たない設計に整理。データ管理・通知に徹する</td>
+          <td>・準公務職員のタスク管理・マッチング<br>・就労実績ポイントの管理・運用<br>・段取りコストデータの集約・閾値監視<br>・閾値超過時の労働局への自動通知<br>・企業別業務提供実績のオープンデータ管理</td>
+          <td>地方自治法改正（推進局設置根拠）。企業への直接調査権限は持たない</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h2>2. 機能別・担当機関の確定版</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>手続き・機能</th><th>担当機関</th><th>根拠・備考</th></tr></thead>
+      <tbody>
+        <tr><td><strong>特例子会社の認定申請・認定取消・解散手続き</strong></td><td style="color:#B8421A;font-weight:600">都道府県労働局</td><td>障害者雇用促進法44条。法的権限を伴う根幹手続き。ハローワークは不可。</td></tr>
+        <tr><td><strong>SCPポイントの審査・認定・事前審査</strong></td><td style="color:#B8421A;font-weight:600">都道府県労働局<br>SCP制度指導課（新設）</td><td>障害者雇用促進法改正による新設権限。業務合理性の事前審査・月次報告の閾値監視・通報一次受理を担う。推進局からのデータ通知を受けて調査発動</td></tr>
+        <tr><td><strong>業務合理性の偽装・SCPポイント虚偽通報の受理</strong></td><td style="color:#B8421A;font-weight:600">都道府県労働局<br>SCP制度指導課（新設）</td><td>公益通報者保護法2号通報の受理機関として法定。通報者への報復は事業者側に立証責任</td></tr>
+        <tr><td><strong>企業の障害者雇用状況報告の変更届</strong></td><td>ハローワーク（所轄公共職業安定所）</td><td>障害者雇用促進法43条。SCPポイント制移行時の様式変更対応もここで受付。</td></tr>
+        <tr><td><strong>Bレーン月次取り組みレポートの受付・審査・通知</strong></td><td>ハローワーク SCP相談窓口</td><td>形式的な提出ではポイント不付与。実態確認を伴う審査。</td></tr>
+        <tr><td><strong>当事者の移行相談・移行手続きのワンストップ対応</strong></td><td>ハローワーク＋推進局（連携）</td><td>ハローワーク窓口で初回申請まで完結できる体制を整備。</td></tr>
+        <tr><td><strong>段取りコストの閾値超過通知・自動調査発動</strong></td><td>推進局（データ通知）→<br>都道府県労働局SCP制度指導課（調査発動）</td><td>推進局がデータを集約・閾値超過を検知・労働局に通知。実際の調査発動は労働局が担う。推進局は調査権限を持たない</td></tr>
+        <tr><td><strong>企業別業務提供実績の開示・オープンデータ管理</strong></td><td>推進局</td><td>当事者が転職・移行判断に使う情報基盤。ハローワーク窓口でも参照可能にする。</td></tr>
+        <tr><td><strong>当事者への賃金未払い・労働基準法違反の調査</strong></td><td>所轄労働基準監督署</td><td>労基法・最低賃金法。既存権限を適用。労働局SCP制度指導課と連携協定を締結</td></tr>
+        <tr><td><strong>整理解雇・解雇予告等の労働法手続き</strong></td><td>所轄労働基準監督署</td><td>労基法20条・89条。ハローワーク・都道府県労働局は不可。</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>3. 誤りやすい権限の境界線（更新版）</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>誤った理解</th><th>正しい理解</th></tr></thead>
+      <tbody>
+        <tr><td>特例子会社の解散手続きをハローワークで行う</td><td>都道府県労働局が担当。ハローワークは法的権限を持たない</td></tr>
+        <tr><td>整理解雇の手続きをハローワークで相談する</td><td>労働基準監督署が担当。ハローワークは求職登録・給付窓口</td></tr>
+        <tr><td>SCPポイントの審査・通報受理を推進局が行う</td><td>都道府県労働局SCP制度指導課が担当。推進局はデータ管理・通知に徹し、調査権限を持たない</td></tr>
+        <tr><td>業務合理性の偽装通報を推進局に行う</td><td>都道府県労働局SCP制度指導課（一次窓口）に通報する。推進局は通報受理機関ではない</td></tr>
+        <tr><td>推進局が企業に対して是正勧告を発出できる</td><td>是正勧告権限は都道府県労働局のみ。推進局はデータ提供・情報共有にとどまる</td></tr>
+        <tr><td>Bレーン月次レポートの審査を推進局が行う</td><td>ハローワークSCP相談窓口が担当。形式的な提出ではポイント不付与</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>4. 財源・人員規模への影響</h2>
+    <div class="callout-light">
+      <strong>この設計転換は財源・全体人員規模に実質的な影響を与えない。</strong><br><br>
+      推進局の新設部門として600〜700名を採用する代わりに、都道府県労働局内に既存職員の専任化・増強という形で同等の機能を整備する。人件費の総額は変わらないが、<strong>以下の点で分散配置モデルの方が優れている。</strong><br><br>
+      ①　既存の法的権限をそのまま使えるため、新たな立法コストがゼロ<br>
+      ②　内部異動・専任化のため採用・育成の時間が短縮される<br>
+      ③　推進局の人員・予算を本来業務（準公務職員管理）に集中できる<br>
+      ④　労働行政のノウハウ・企業との既存の信頼関係を引き継げる<br><br>
+      財源シミュレーション（annexセクションⅢ）の「推進局設置・運営費」の数値は変更不要。費目の内訳として「都道府県労働局SCP制度指導課の運営費」を含む形で再定義する。
+    </div>
+
+    <h2>5. 今後の整備事項（法改正後に対応）</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>整備事項</th><th>対応機関</th><th>整備時期</th></tr></thead>
+      <tbody>
+        <tr><td>SCPポイントベースの雇用率報告様式の新設</td><td>厚生労働省・ハローワーク</td><td>障害者雇用促進法改正後</td></tr>
+        <tr><td>準企業職員・準公務職員の求人票区分の新設</td><td>ハローワーク・厚生労働省</td><td>法定化と同時</td></tr>
+        <tr><td>都道府県労働局SCP制度指導課の設置・権限付与</td><td>厚生労働省・各都道府県労働局</td><td>障害者雇用促進法改正と同時。全47都道府県に設置</td></tr>
+        <tr><td>労働局SCP制度指導課と労基署の連携協定の締結</td><td>厚生労働省（標準協定モデルを策定・全国展開）</td><td>両機関設置後6ヶ月以内</td></tr>
+        <tr><td>閾値トリガー型通知システムの整備（推進局→労働局）</td><td>推進局・都道府県労働局・厚生労働省</td><td>ICT基盤整備期（第1期・第2期）</td></tr>
+        <tr><td>特例子会社認定返上に伴う従業員の求職者登録の優先処理フロー整備</td><td>都道府県労働局・ハローワーク</td><td>移行期（フェーズ2〜3）</td></tr>
+        <tr><td>公益通報者保護法2号通報の受理機関として労働局SCP課を法定</td><td>消費者庁・厚生労働省</td><td>公益通報者保護法施行規則改正</td></tr>
+        <tr><td>状況共有会の欠席者向け「確認済み報告」の具体的方法の設計（アプリ内既読ボタン・メール報告等）</td><td>推進局・ICTシステム担当</td><td>運用管理アプリ開発フェーズ（制度稼働後に現場の実態を踏まえて決定）</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- ════════════════════════════════════
+         Ⅹ 民間企業向け移行支援戦略
+         ════════════════════════════════════ -->
+    <div class="section-header" id="corp-transition">
+      <h2>Ⅹ　民間企業向け移行支援戦略　── 前向きな懸念への先手対応</h2>
+      <div class="section-src">2026年5月 策定　─　移行に積極的な企業が抱く実務的懸念と、制度側からの先手対応設計</div>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      本セクションは「制度に反対する勢力への対応」ではなく、「移行に前向きだが実務上の解決すべき問題を抱える企業」を対象とした協議テーブル用資料である。これらの懸念を公開版提言書に掲載することは、（a）制度の未確定部分を反対勢力に先行開示するリスク、（b）政治・行政への訴求に集中すべき提言書の読者ターゲットとのミスマッチ、という二つの理由から適切でない。経団連・業界団体・企業の障害者雇用担当者との協議テーブルが整った段階で、本セクションを選択的に共有する。
+    </div>
+
+    <div class="callout">
+      <strong>【本セクションの戦略的位置づけ】</strong><br><br>
+      本セクションの目的は、企業側から「懸念がある」と言われた後に答えることではない。<strong>「こちらがすでに懸念を把握・整理済みである」と先に示すこと</strong>にある。「問題を提起されてから答える」ではなく「答えを持って臨む」という姿勢が、企業の移行速度を最大化し、協議テーブルにおける主導権を確保する。
+    </div>
+
+    <h2>1. 移行に前向きな企業が抱く7つの実務的懸念</h2>
+    <p>以下はいずれも「移行に反対」ではなく、「移行したいが、どう動けばよいかわからない」という前向きな懸念に限定する。今まで障害者雇用整備に投資してきた資金やノウハウが無駄になるというような後ろ向きな理屈は、ここでは扱わない。</p>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:4%">#</th><th style="width:22%">懸念の名称</th><th style="width:37%">懸念の実態</th><th style="width:37%">企業が求めているもの</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">①</td>
+          <td><strong>SCPポイント算定の実務的不透明さ</strong></td>
+          <td>「Aレーンは実働1時間＝1P、義務総量は従業員数×3.24P/月」という算定式は理解できても、自社の既存業務をどう実働時間に分解しSCPポイント換算するか、事前に確認・申告する仕組みが制度確定前には見えない。Cレーン拠出金の金額が読めないと中期経営計画に組み込めない。</td>
+          <td>業種別・職種別のポイント算定ガイドライン、および事前照会窓口の早期設置。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">②</td>
+          <td><strong>移行期間中の「二重管理」コスト</strong></td>
+          <td>フェーズ3では現行の給与・社会保険・税務処理を継続しながら新制度の準備も並行して走る。中小・中堅企業では人事担当者が1〜2名のケースも多く、既存業務との並走期間に人的リソースが枯渇する懸念がある。</td>
+          <td>社労士・弁護士費用の一部補助、移行支援専門窓口（ハローワーク経由等）の整備。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">③</td>
+          <td><strong>準企業職員に割り当てる実在業務の特定難易度</strong></td>
+          <td>「業務を創出しない、実在する業務に限定する」という設計が、かえって「うちの会社に適切な業務があるかどうか」という不安を生む。製造業・建設業・飲食業など現場作業が中心の業種では特に、SCPポイントに換算できる業務を自社内で見つけにくいとの懸念が出る。<br><br>
+          <span style="color:#2C7A3A;font-weight:600">※「本業の効率化を目的とした業務分業化・切り出し」は本提言の理念に合致する（roadmap_corp.html フェーズ0補足参照）。この点の誤解が懸念を増幅させているケースが多い。</span></td>
+          <td>業種別の「実在業務マッピング事例集」、または業種横断型タスクの中間プラットフォーム整備。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">④</td>
+          <td><strong>意向確認プロセスにおける労務リスク</strong></td>
+          <td>フェーズ1の意向調査・フェーズ2の通達において、本人への選択確認が「選択強制」「不当な圧力」と受け取られるリスクがある。特に精神・発達障害のある社員に対し、どのような方法・期間・支援者の同席のもとで意向確認を行えば適法かつ倫理的かが不明確。</td>
+          <td>意向確認の標準的手順書（弁護士・社労士・障害者就業・生活支援センターの三者連携モデル）の国による提供。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">⑤</td>
+          <td><strong>ESG・開示基準との整合性</strong></td>
+          <td>現行のGRI・SASBや東証コーポレートガバナンス・コードでは「法定雇用率の達成率」が主要KPIとして使われている。新制度移行後にSCPポイントベースへ移行した場合、既存の開示フレームワークとの整合をどう取るかが不明確で、IRや統合報告書の書き方に迷いが生じる。</td>
+          <td>SCPポイントの国際開示フレームワーク（GRI等）への組み込みに向けた国・JEED主導の標準化作業。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">⑥</td>
+          <td><strong>特例子会社の存廃判断タイミング</strong></td>
+          <td>解散を選んだ場合の税務・労務・補助金返還の処理手順が現行法では未整備。特例子会社設立時に受けた補助金の扱い・子会社社員の雇用継承義務の範囲が不透明なため、判断を先送りしがちになる。</td>
+          <td>「解散・吸収・機能転換」それぞれの標準手順と税務上の取扱いを定めた通達・Q&A集。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">⑦</td>
+          <td><strong>拠出金水準と競争条件の公平性</strong></td>
+          <td>SCPポイント不足拠出金は月18万円/人相当（現行比3.6倍）という設計だが、同業他社が早期にAレーン雇用に移行した場合と自社がCレーン中心で動いた場合の競争条件の差が業界横断で可視化されにくい。「自社だけ割高になっているのでは」という感覚が移行の踏み出しを遅らせる。</td>
+          <td>業種別・企業規模別のSCP達成状況の集計公表（匿名集計）と、業界団体を通じたベンチマーキング支援。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h2>2. 各懸念の現段階での準備可能性</h2>
+    <p>制度の法整備完了を待たずに、<strong>企業側・制度側それぞれが今から動ける準備</strong>を整理する。「制度が確定してから考える」では遅く、制度確定前の現在が最も投資対効果の高い準備期間である。</p>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:4%">#</th><th style="width:14%">懸念</th><th style="width:41%">企業側が今から動けること</th><th style="width:41%">制度側が先手で整備すべきこと</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">①</td>
+          <td>SCP算定</td>
+          <td>自社の全職種・全部門の業務を「時間単位で分解する」業務棚卸しシートを先行導入し、「誰が・何を・週何時間」で可視化しておく。SCP換算への移行コストが大幅に下がる。</td>
+          <td>パブリックコメント段階での業種別ガイドライン要求を業界団体経由で受け付ける窓口を設置する。制度確定前でも「想定算定モデル」を試行版として業界団体に先行提供する。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">②</td>
+          <td>二重管理コスト</td>
+          <td>顧問社労士に「移行期の二重管理を想定した業務フロー設計」を今から相談しておく。社内の障害者雇用担当を専任1名に集約・強化しておく。中小企業は同業他社と合同で社労士を共有する「業界共同移行支援コンソーシアム」を業界団体に提案する。</td>
+          <td>JEEDに移行支援専門窓口を設け、移行期の二重管理コストを軽減する伴走支援（無料相談・チェックリスト提供）を制度化する。現行の「障害者雇用管理サポート事業」をそのまま移行期対応に転用できるよう拡充する。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">③</td>
+          <td>実在業務の特定</td>
+          <td>現場管理職と人事が「基幹社員が最も非本来的にやっていること」をリストアップしておく。業務合理性から出発した「分業化・切り出し」は本提言の理念に合致することを確認した上で（roadmap_corp.htmlフェーズ0補足参照）、候補業務の洗い出しを先行させる。</td>
+          <td>業種別の「実在業務マッピング事例集」をJEEDが収集・公開する。製造業・建設業・飲食業など現場作業主体の業種向けに「SCPポイント換算が可能な定型業務の例示リスト」を業界団体と共同作成する。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">④</td>
+          <td>意向確認の労務リスク</td>
+          <td>就業・生活支援センターとの平時の関係構築を今から始める。「重要な選択を求める面談は複数回に分ける・支援者同席を原則とする」という手順を人事マニュアルに先行整備しておく。判断能力に不安がある場合の成年後見・家族同席の取り扱いを顧問弁護士と事前確認しておく。</td>
+          <td>意向確認の標準手順書（弁護士・社労士・就業生活支援センターの三者連携モデル）をJEEDが策定・公開する。「フェーズ1意向確認チェックリスト」を厚労省が告示レベルで定め、これに従った手続きを行った企業には不当圧力の推定が覆ることを明文化する。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">⑤</td>
+          <td>ESG・開示整合性</td>
+          <td>IR担当・サステナビリティ担当と人事が連携し、「SCP移行後の開示フレームを今から設計しておく」。SCPポイントに相当する独自KPI（例：実業務従事時間ベースの障害者貢献指数）を統合報告書に先行掲載した企業が、制度確定後に「国際標準の先行設計者」として評価されるポジションを取れる。</td>
+          <td>GRI・SASBへのSCPポイント指標の組み込み提案をJEED・厚労省が主導する。東証のコーポレートガバナンス・コードのKPI例示に「SCPポイント達成率」を追加するよう金融庁・東証に働きかける。制度移行企業向けの「開示移行ガイドブック」を制度化の段階で公表する。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">⑥</td>
+          <td>特例子会社の存廃判断</td>
+          <td>顧問弁護士・税理士と「仮に解散を選んだ場合の税務・労務・補助金処理の影響試算」を今から先行シミュレーションしておく。「解散・吸収・機能転換」の三択それぞれの影響試算を持っておくことで、いざ判断を迫られた際の意思決定速度が上がる。</td>
+          <td>国税庁・厚労省の共同Q&A集を制度化のフェーズ1（法整備完了後12ヶ月以内）に公表する。特例子会社設立時補助金の返還免除要件・按分方式を政令レベルで明定する。解散・機能転換を選んだ企業が翌年度のESG評価で不利にならない扱いをガイドラインで明示する。</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--red)">⑦</td>
+          <td>競争条件の公平性</td>
+          <td>業界団体を通じて同業他社のSCP移行状況を匿名集計し共有するベンチマーキングの仕組みを自主的に先行整備する。拠出金の損金算入可否・損金算入時期を税務当局に早期照会し、中期経営計画の精度を上げておく。</td>
+          <td>業種別・企業規模別のSCP達成状況を匿名集計してJEEDが公表するベンチマーキング制度を整備する。拠出金の税務上の取扱い（損金算入可否・時期・科目）を国税庁が通達レベルで早期に明確化する。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h2>3. 協議テーブルでの使い方</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:28%">フェーズ</th><th style="width:20%">共有先</th><th style="width:52%">活用方法</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>制度議論の初期段階</strong><br>（有識者・行政との接触開始時）</td>
+          <td>厚労省・JEED担当者</td>
+          <td>「企業側の懸念はすでに整理済みであり、制度側が先手で整備すべき事項も明示してある」として制度設計の具体化を促す材料として提示する。「制度に穴がある」という批判を先回りして封じる。</td>
+        </tr>
+        <tr>
+          <td><strong>業界団体との協議段階</strong></td>
+          <td>経団連・業界団体の障害者雇用担当者</td>
+          <td>「企業側の懸念を制度側がすでに把握・整理している」という事実を示し、業界団体が制度推進の能動的な協力者になるよう促す。本セクションを業界団体の「移行準備ガイド」の素材として提供することも可能。</td>
+        </tr>
+        <tr>
+          <td><strong>個別企業との協議段階</strong></td>
+          <td>企業の人事・法務・IR担当者</td>
+          <td>「あなたの会社が感じている懸念はここに書いてあります。そしてその解決策もすでに設計されています」と示すことで、「検討を続ける」という先送りを「今から準備を始める」に変換する。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout">
+      <strong>【最重要の認識】</strong><br><br>
+      これら7つの懸念はいずれも、企業側が「移行しない理由」として持ち出せるものではない。<strong>「移行したいが、どこから手をつければいいかわからない」という前向きな困惑</strong>であり、制度側が先に答えを用意することで解消できる。<br><br>
+      逆に言えば、制度側がこれらの懸念に答えないまま移行を求めれば、企業の善意は「困惑」から「保留」に変わり、やがて「消極的抵抗」になる。本セクションが存在することの意味は、その転落を事前に防ぐことにある。
+    </div>
+
+    <!-- ════════════════════════════════════
+         Ⅺ 民間ノウハウ買い取り設計（金額詳細・非公開）
+         ════════════════════════════════════ -->
+    <div class="section-header" id="knowhow-price">
+      <h2>Ⅺ　民間障害者雇用ノウハウ買い取り設計【金額詳細・非公開】</h2>
+      <div class="section-src">公開版：roadmap_gov.html「1-3 民間ノウハウの収集・活用」／roadmap_corp.html「ノウハウ提供：制度への貢献と対価」</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="roadmap_gov.html#knowhow-acquisition" target="_blank">行政ロードマップ ─ 1-3 民間ノウハウの収集・活用</a>
+      <a class="pub-link" href="roadmap_corp.html#knowhow-transfer" target="_blank">民間ロードマップ ─ ノウハウ提供：制度への貢献と対価</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【非公開とした理由】</strong>
+      具体的な金額を公開すると、①査定の余地がなくなり相場が固定化される、②「税金でノウハウを○億円も買い取るのか」という切り取り批判を招く、③提供側がC級情報をS級として売り込む動機が生まれ査定の公正性が損なわれる。公開版では分類・査定の観点・知財処理の方針のみを示し、金額は本資料に限定する。
+    </div>
+
+    <h3>買い取り価格の設計（査定委員会基準値）</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>分類</th><th>基準単価</th><th>上限件数（目安）</th><th>査定で加算される要件</th><th>査定で減額される要件</th></tr></thead>
+      <tbody>
+        <tr style="background:#fffdf0">
+          <td><strong>S級</strong><br>必須ノウハウ（直接活用型）<br><span style="font-size:13px;color:var(--text-muted)">能動型公募限定</span></td>
+          <td><strong>300〜500万円/件</strong></td>
+          <td>全国10〜15件程度<br><span style="font-size:13px;color:var(--text-muted)">（厳格な定義に照らし件数を絞る）</span></td>
+          <td>複数障害種別に対応・実績5年以上・推進局の改修コストがほぼゼロと判定された場合は上限に近い額</td>
+          <td>一部の障害種別のみ対応・実績2年未満・推進局での改修コストが高いと判定された場合は下限寄り</td>
+        </tr>
+        <tr>
+          <td><strong>A級</strong><br>必須ノウハウ（アレンジ活用型）<br><span style="font-size:13px;color:var(--text-muted)">能動型・受動型両方対象</span></td>
+          <td><strong>100〜300万円/件</strong><br><span style="font-size:13px;color:var(--text-muted)">（上限を引き上げ。失敗・解決事例の格上げを反映）</span></td>
+          <td>全国50〜100件程度</td>
+          <td>アレンジ後の汎用性が高い・制度設計への直結度が明確・実績規模が大きい・失敗解決事例で推進局の設計コストを大幅削減できると判定された場合は上限寄り</td>
+          <td>ローカルすぎる内容・汎用化に多大な改修が必要・実績年数が短い</td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td><strong>B級</strong><br>予備ノウハウ（将来活用型）</td>
+          <td><strong>30〜50万円/件</strong></td>
+          <td>全国100〜200件程度</td>
+          <td>将来需要の蓋然性が高い・代替収集が困難な内容</td>
+          <td>既存の公開研究・文献で代替可能な内容・特定企業に特化しすぎている</td>
+        </tr>
+        <tr>
+          <td><strong>C級</strong><br>参考情報（事例蓄積型）<br><span style="font-size:13px;color:var(--text-muted)">※失敗・問題・解決事例は格上げ対象（後述）</span></td>
+          <td><strong>3〜10万円/件</strong><br><span style="font-size:13px;color:var(--text-muted)">（謝礼金水準）</span></td>
+          <td>年間200件程度を上限の目安とする<br><span style="font-size:13px;color:var(--text-muted)">（予算管理上のキャップ）</span></td>
+          <td>事例が具体的・再現可能性が高い・当事者の視点が含まれる</td>
+          <td>抽象的・一般論の域を出ない</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout-light">
+      <strong>【失敗・問題・解決事例の特別査定：C級に留めない】</strong><br><br>
+      失敗事例・問題事例・その解決プロセスの記録は、表面上は「参考情報」に見えるが、内容次第でA級・S級に相当する価値を持つ。理由は以下の3点である。<br><br>
+      ① <strong>希少性が極めて高い。</strong>成功事例はどの企業も広報・採用に活用するため表に出るが、失敗事例は社内でも共有されないことが多く、外部にはほぼ流通しない。入手できる機会が制度設計の初期に限られる。<br><br>
+      ② <strong>推進局が同じ失敗を繰り返さずに済む。</strong>「やってはいけないこと」が事前にわかれば、制度設計・コーディネーター研修・タスク設計の各工程で発生するはずだったコストと時間を丸ごと節約できる。この削減効果は成功事例のノウハウと同等かそれ以上になり得る。<br><br>
+      ③ <strong>コーディネーター育成の最良の教材になる。</strong>「なぜ問題が起き、どう対処し、何が変わったか」という一連のプロセスは、座学では作れないリアルなケーススタディである。<br><br>
+      <strong>格上げの判断基準：</strong>失敗・問題・解決事例であっても、以下を満たす場合はA級・S級として査定する。<br>
+      ・解決策が推進局の制度・研修・マニュアルにそのまま反映できる完成度を持つ → <strong>S級</strong><br>
+      ・問題の構造と対処の方向性が明確で、推進局がアレンジして活用できる → <strong>A級</strong><br>
+      ・問題の記録はあるが解決に至っていない、または解決策が未整理のもの → <strong>C級のまま</strong>（ただし将来的な活用余地があればB級）
+    </div>
+
+    <div class="callout-light">
+      <strong>【査定における優先順位：システムより運用・人的ノウハウを上位に置く】</strong><br><br>
+      在宅勤務のセキュリティシステム（VDI・クラウド仮想デスクトップ等）の技術仕様そのものは、NTT東日本・富士通・日立等のITベンダーが公共機関向けの導入実績を持っており、推進局は市場調達で入手できる。このため、民間企業からのノウハウ買い取りにおいてシステム仕様書の優先度は相対的に低い。<br><br>
+      推進局が民間企業からしか得られない、かつ最も価値が高いのは以下の順である。<br>
+      <strong>① 障害特性別の運用ノウハウ</strong>（どの障害特性にどのタスクが合うか・体調波への対応・コミュニケーション設計）<br>
+      <strong>② 失敗・問題・解決事例の記録</strong>（上記参照）<br>
+      <strong>③ 規則・研修の実際に機能した版</strong>（試行錯誤の末に現場で定着した運用規則・セキュリティ教育の手順書）<br>
+      <strong>④ システムの「使わせ方」のノウハウ</strong>（システム自体ではなく、障害者にどう習得させ・どう定着させたかのプロセス）<br><br>
+      査定委員会はこの優先順位を念頭に置き、「技術仕様書の提出＝高評価」とならないよう注意する。
+    </div>
+
+    <h3>全体予算規模の試算（修正版）</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>分類</th><th>想定件数（修正後）</th><th>想定単価（中央値）</th><th>小計</th><th>修正理由</th></tr></thead>
+      <tbody>
+        <tr><td>S級</td><td>12件</td><td>400万円</td><td>約4.8億円</td><td>件数を絞り質を担保（旧：25件・10億円）</td></tr>
+        <tr><td>A級</td><td>75件</td><td>200万円</td><td>約15億円</td><td>上限引き上げ分を中央値に反映（旧：150万円・11億円）</td></tr>
+        <tr><td>B級</td><td>150件</td><td>40万円</td><td>約6億円</td><td>変更なし</td></tr>
+        <tr><td>C級</td><td>200件（年間上限）</td><td>5万円</td><td>約1億円</td><td>件数上限設定（旧：500件・2.5億円）</td></tr>
+        <tr style="font-weight:700;background:#fffdf0"><td colspan="3">合計（フェーズ1予算内費目）</td><td>約26.8億円</td><td>旧試算（約30億円）から約3億円圧縮。質は向上</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout-light">
+      ICT基盤整備費（約80億円）の約33%に相当し、フェーズ1全体の予算規模から見て吸収可能な範囲。財源シミュレーション（finance.html）の修正は不要。フェーズ1「ICT基盤整備費」の内訳費目として「民間ノウハウ収集費」を追加記載する形で処理する。
+    </div>
+
+    <h3>査定委員会の構成（案）</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>委員区分</th><th>人数</th><th>選任基準</th></tr></thead>
+      <tbody>
+        <tr><td>推進局第二課（データ・情報管理課）代表</td><td>2名</td><td>推進局内からの指名。価格決定の主体</td></tr>
+        <tr><td>障害者就労支援の専門家</td><td>2名</td><td>就労移行支援・A型事業所の運営経験を持つ第三者</td></tr>
+        <tr><td>情報セキュリティ専門家</td><td>1名</td><td>在宅勤務セキュリティに知見を持つ外部専門家。IT系ノウハウの査定に限り参加</td></tr>
+        <tr><td>法務担当（弁護士）</td><td>1名</td><td>知的財産権・契約条件の確認に限り参加</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>ノウハウの使用範囲と第三者提供の禁止</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>使用主体</th><th>可否</th><th>根拠・備考</th></tr></thead>
+      <tbody>
+        <tr><td>提供企業（A社）による継続使用</td><td style="text-align:center;color:var(--green,#2C7A3A)"><strong>○</strong></td><td>提供後も当然に使い続けられる。知識・マニュアル・規則は渡しても手元に残る無形資産であり、「提供したら自社で使えなくなる」ことはない。これは条件ではなく原則である</td></tr>
+        <tr style="background:#fffdf0"><td>推進局本部・全国拠点・都道府県支部・推進局分室での内部共有</td><td style="text-align:center;color:var(--green,#2C7A3A)"><strong>○</strong></td><td>制度運営の目的範囲内。買い取りの対価として認められた使用範囲</td></tr>
+        <tr><td>推進局外の第三者企業・団体への提供</td><td style="text-align:center;color:var(--red,#c0392b)"><strong>×</strong></td><td>合意範囲外。提供企業の競合他社に渡るリスクがあり、提供インセンティブを根本から損なう。契約上の禁止事項として明文化する</td></tr>
+        <tr style="background:#fffdf0"><td>他の行政機関・自治体（推進局外）への提供</td><td style="text-align:center;color:var(--red,#c0392b)"><strong>×</strong></td><td>推進局外への流出は不可。推進局の制度運営目的を超えた使用にあたる</td></tr>
+        <tr><td>学術研究・公開論文・外部発表への転用</td><td style="text-align:center;color:var(--red,#c0392b)"><strong>×</strong></td><td>別途提供企業の書面同意が必要。推進局が単独で決定できない</td></tr>
+        <tr style="background:#fffdf0"><td>提供企業名・出所の対外公表</td><td style="text-align:center">△</td><td>原則非公開。提供企業が公表を希望する場合のみ協議の上で可</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout-light">
+      <strong>【第三者提供を禁止する理由】</strong><br>
+      推進局は制度運営のためにノウハウを収集する機関であり、ノウハウの再配布・転売を行う機関ではない。仮に推進局が第三者にノウハウを渡した場合、①提供時の合意を超えた使用となる、②渡した先が提供企業の競合であれば当該企業に競争上の不利益を与える、③誰も推進局にノウハウを提供しなくなる、という三重の問題が生じる。この禁止規定は買い取り契約の必須条項として法務担当弁護士が確認する。
+    </div>
+
+    <h3 id="knowhow-procurement">ノウハウ調達の2方式：能動型公募と受動型持ち込み</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>方式</th><th>主導</th><th>査定方法</th><th>同類情報が複数来た場合</th><th>向いているケース</th></tr></thead>
+      <tbody>
+        <tr style="background:#fffdf0">
+          <td><strong>能動型公募</strong></td>
+          <td>推進局主導<br>「これが欲しい」を先に定義して公募</td>
+          <td>一定期間の応募を受け付け、査定委員会が横並び比較・競争査定。最良の1件をS級で買い取る。次点が一定水準を超えていればA級に格下げして買い取ることができる</td>
+          <td>期間内は全て受け付け横並び比較。期間終了後は受け付けない</td>
+          <td>S級・A級の核心部分。推進局が最も必要なものを確実に取りにいく場合</td>
+        </tr>
+        <tr>
+          <td><strong>受動型持ち込み</strong></td>
+          <td>企業主導<br>企業が自発的に提案してくる</td>
+          <td>持ち込まれた時点で個別査定・先着評価</td>
+          <td>同類取得済みの場合は「取得済み」として以降受け付けない</td>
+          <td>推進局が想定していなかった知見。C級・B級に多い</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <div class="callout-light">
+      <strong>【能動型公募の優先テーマ（フェーズ1時点）】</strong><br>
+      ★★★ 障害特性別（発達・精神・身体・知的）の在宅タスク適性マップと実績データ<br>
+      ★★★ 在宅勤務導入時の失敗事例と解決プロセスの記録<br>
+      ★★★ 体調波・不調時の勤務管理規則と実際の運用手順<br>
+      ★★ 障害者向けセキュリティリテラシー研修の実際に機能した教材<br>
+      ★★ 在宅勤務者の孤立防止・メンタル管理の具体的な仕組み<br>
+      ★ 障害者が高評価を得たタスク設計の具体的な工程分解事例<br><br>
+      優先テーマは制度化のフェーズに応じて推進局が都度更新する。固定リストではない。<br><br>
+      <strong>【応募の最低基準】</strong>A4・1枚以上の文書として提出されていること。これを唯一の応募資格条件とする。内容の質は査定で評価するため、応募資格の段階で質を問わない。ただし同一企業が同一内容を複数回に分けて応募することは無効とする。
+    </div>
+
+    <h3>競争査定で落選した企業へのメリット設計</h3>
+    <div class="callout-light">
+      競争査定に応募した企業は、結果に関わらず推進局に対して自社の内部情報・運用規則・失敗事例を開示している。買い取られなくても情報は渡っており、「タダで情報を抜かれた」という感情が生まれると、次の公募に誰も応募しなくなる。この構造的リスクを事前に塞ぐために、落選企業へのメリットを制度として保証する。
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>メリット</th><th>対象</th><th>内容・設計上の注意</th></tr></thead>
+      <tbody>
+        <tr style="background:#fffdf0">
+          <td><strong>① 参加謝礼金</strong></td>
+          <td>全応募企業</td>
+          <td>3〜10万円（C級水準）。応募・査定プロセスへの参加に対する最低限の金銭的保証。金額より「対価が存在する」という事実が重要</td>
+        </tr>
+        <tr>
+          <td><strong>② 制度設計協力企業の認定証</strong></td>
+          <td>全応募企業</td>
+          <td>推進局発行の認定証・ロゴマーク。CSR報告書・統合報告書・採用広報に使用可。ESG重視の上場企業に特に有効。認定証は査定結果（S/A/B/C）に関わらず全応募企業に発行する</td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td><strong>③ フィードバックレポート</strong></td>
+          <td>全落選企業</td>
+          <td>「推進局がどの観点で評価したか」の概要通知。他社との比較情報は絶対に含めない。自社ノウハウの客観的評価として活用できる。無料のコンサル的価値がある</td>
+        </tr>
+        <tr>
+          <td><strong>④ 次回公募の優先案内</strong></td>
+          <td>全落選企業</td>
+          <td>次回の能動型公募テーマを一般公開より早く案内する。「次があるなら再挑戦しよう」という動機づけ</td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td><strong>⑤ SCP拠出金の割引</strong></td>
+          <td>全応募企業<br>（拠出金支払い企業のみ）</td>
+          <td>後述。財源への影響を考慮した設計</td>
+        </tr>
+        <tr>
+          <td><strong>⑥ A級格下げ買い取り</strong></td>
+          <td>次点企業のみ</td>
+          <td>S級落選でも次点水準を超えていればA級（100〜300万円）として買い取る。最も直接的な金銭的救済</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <h3>SCP拠出金割引の設計（財源への影響を考慮した修正版）</h3>
+    <div class="callout-light">
+      <strong>【財源リスクの認識】</strong><br>
+      企業拠出金（財源C）は第3期で年0.7〜0.9兆円規模（積算式の構造的上限・年約0.9〜1.2兆円の範囲内）と見込む。10%の一律割引は数百億円規模の減収リスクがあり、限られたC収入を損なう。このため割引率・期間・上限額を慎重に設定する。
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>対象</th><th>割引率</th><th>期間</th><th>年間上限額</th><th>設計の根拠</th></tr></thead>
+      <tbody>
+        <tr style="background:#fffdf0">
+          <td><strong>S級選定企業</strong></td>
+          <td>割引なし</td>
+          <td>—</td>
+          <td>—</td>
+          <td>買い取り金額（300〜500万円）で十分。割引との二重取りを防ぐ</td>
+        </tr>
+        <tr>
+          <td><strong>次点A級格下げ買い取り企業</strong></td>
+          <td>5%</td>
+          <td>6ヶ月</td>
+          <td>年間50万円</td>
+          <td>買い取り金額との二重取り感を残しつつ抑制。短期間で財源への影響を最小化</td>
+        </tr>
+        <tr style="background:#fffdf0">
+          <td><strong>落選企業（B・C級相当）</strong></td>
+          <td>5%</td>
+          <td>1年間</td>
+          <td>年間50万円</td>
+          <td>金銭的対価ゼロの補償として設計。「応募して損はなかった」という感情を担保する最低ライン。割引率を10%から5%に抑えることで財源リスクを半減</td>
+        </tr>
+        <tr>
+          <td><strong>拠出金なし企業（自社雇用のみ）</strong></td>
+          <td>割引なし</td>
+          <td>—</td>
+          <td>—</td>
+          <td>拠出金割引が意味をなさないため、SCPポイント算定で「制度設計協力加算」として+5ポイントを付与する代替措置とする</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <div class="callout-light">
+      <strong>【年間上限50万円キャップの意味】</strong><br>
+      拠出金が数億円規模の大企業が「大量の割引を得る」構造を防ぐ。年間50万円のキャップにより、制度全体での割引総額は応募企業数×50万円以下に収まる。仮に1,000社が応募しても最大50億円の減収であり、財源C（第3期で年0.7〜0.9兆円規模）と比較して吸収可能な範囲である。<br><br>
+      <strong>【「応募するだけで割引」という抜け穴防止】</strong><br>
+      査定委員会が「応募として認める最低基準（A4・1枚以上の文書）」を下回るものは応募無効として割引対象外とする。
+    </div>
+
+    <!-- ════════════════════════════════════
+         Ⅻ 独立行政法人・SCP推進機構（仮称）
+         ════════════════════════════════════ -->
+    <div class="section-header" id="scp-agency">
+      <h2>Ⅻ　独立行政法人・SCP推進機構（仮称）</h2>
+      <div class="section-src">関連ページ：roadmap_gov.html「1-0 SCP推進機構の設置」／scp.html「D&amp;I研修の義務」</div>
+    </div>
+    <div class="pub-links">
+      <span class="pub-links-label">公開版：</span>
+      <a class="pub-link" href="roadmap_gov.html#scp-agency" target="_blank">行政ロードマップ ─ 1-0 SCP推進機構</a>
+    </div>
+
+    <div class="reason-box">
+      <strong>【なぜこのセクションが内部資料に入るのか】</strong>
+      独立行政法人の新設は「新たな官僚組織の創設」として既存省庁・財務省・反対勢力から強い抵抗を受ける可能性が高い。設置の必然性・既存省庁との権限分担・財源設計を先に精緻化した上で、交渉テーブルに臨む必要がある。本セクションはその準備資料として位置づける。
+    </div>
+
+    <h3>なぜ独立行政法人でなければならないか</h3>
+    <div class="callout-light">
+      現在の提言書には、以下の機能がすでに設計として組み込まれている。しかし「誰がこれを動かすのか」という執行主体が空白のままである。<br><br>
+      <strong>【提言書に登場する執行機能の一覧】</strong><br>
+      ・全国967拠点の統治・監査・KPI管理<br>
+      ・SCPポイントの認定・不正検知・AI補助処理<br>
+      ・Cレーン100%の例外認定（3年ごと更新）<br>
+      ・業務合理性の事前審査書類の受理・管理<br>
+      ・閾値トリガー型の自動調査・都道府県労働局への通知<br>
+      ・障害等級再審査との情報連携<br>
+      ・業種別業務切り出し事例集の整備・公開<br>
+      ・タスクマッチングシステムの運営<br>
+      ・ESG開示データの集計・公開<br>
+      ・拠出金の徴収・年金原資へのスライド管理<br>
+      ・D&amp;I研修教材の認定審査・認定リスト管理・定期更新<br>
+      ・民間ノウハウの買い取り・査定・配布<br><br>
+      これを「厚生労働省の一部局」に担わせることは規模として不合理であり、本制度が複数省庁（厚労・財務・デジタル・総務）をまたぐ権限を必要とする以上、一省庁の傘下では構造的に動かせない。
+    </div>
+
+    <h3>既存の選択肢との比較</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>選択肢</th><th>問題点</th></tr></thead>
+      <tbody>
+        <tr class="priority-aaa"><td><strong>独立行政法人（推奨）</strong></td><td>省庁縦割りに縛られず複数省庁をまたいだ権限行使が可能。政治任命ではなく専門家理事長による安定運営。財源は法律で担保し政権交代の影響を最小化できる</td></tr>
+        <tr><td>厚生労働省の新設部局</td><td>本制度が改革しようとしている障害者雇用行政の既存論理（人数カウント・特例子会社優遇）に引っ張られるリスク。財務省・デジタル庁への調整コストが膨大になる</td></tr>
+        <tr><td>内閣府への設置</td><td>権威は高いが現場執行力が構造的に弱い。967拠点の日常運営には向かない</td></tr>
+        <tr><td>既存独法（高齢・障害・求職者雇用支援機構等）への統合</td><td>本制度の規模・複数省庁横断の権限・政治的独立性の要件は既存独法のいずれにも収まらない。財務省対策として持ち出される最も可能性が高い「対案」であるため、定量的な反論を準備しておく必要がある</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>政治的独立性の担保設計</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>リスク</th><th>対応設計</th></tr></thead>
+      <tbody>
+        <tr><td>政権交代による方針転換</td><td>設置法に「財源の安定的確保条項」を明記。拠出金の年金原資スライドを法律上の義務として規定し、政治判断で変更できない構造にする</td></tr>
+        <tr><td>理事長の政治任命による恣意的運営</td><td>理事長は有識者委員会の推薦に基づき内閣が任命。任期5年・再任1回まで。解任要件を「重大な法令違反」に限定し恣意的解任を防ぐ</td></tr>
+        <tr><td>既存省庁による実質的支配</td><td>厚労・財務・デジタル各省からの出向者は理事・幹部職への就任を制限。プロパー職員の育成を機構設立時から明示的に義務付ける</td></tr>
+        <tr><td>予算削減による機能縮小</td><td>拠出金収入の一定割合（設計上は2〜3%）を機構運営費として法定。拠出金が増えれば運営費も自動的に増える自律設計とする</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>設置のタイミングと法整備の順序</h3>
+    <div class="callout-light">
+      SCP推進機構の設置は、他の法整備と同時並行では動かせない。以下の順序が合理的である。<br><br>
+      <strong>第1優先（フェーズ0）：</strong>独立行政法人通則法の適用対象として「SCP推進機構設置法（仮称）」を制定。設置根拠・機能・財源・理事長選任要件・政治的独立性の担保規定を一括で法定する<br><br>
+      <strong>第2優先（フェーズ1）：</strong>機構の設立・初代理事長・幹部人事の確定。D&amp;I研修教材の認定基準策定・第1回認定審査の実施。全国拠点への統治ラインの確立<br><br>
+      <strong>第3優先（フェーズ2以降）：</strong>拠出金徴収システムの稼働・タスクマッチングシステムの移管・民間ノウハウ収集の本格開始<br><br>
+      <strong>【交渉上の注意点】</strong>「新たな独法の創設」は財務省から強い抵抗を受ける。既存の独法（高齢・障害・求職者雇用支援機構等）への機能統合案が対案として出てくることが予測される。しかし本制度の規模・複数省庁横断の権限・政治的独立性の要件は既存独法のいずれにも収まらない。「既存独法への統合では制度が動かない理由」を定量的に示す準備が必要である。
+    </div>
+
+    <div class="page-footer">
+      【内部資料・非公開】次世代型障害者雇用提言書 制度設計詳細　─　外部公開禁止
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

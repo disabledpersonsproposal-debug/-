@@ -249,4 +249,11 @@ const ALL_PAGES = [
   }
   buildPageNav();
 
+  /* ══ 内部資料アクセス（Ctrl+Shift+A） ══ */
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+      window.location.href = 'annex.html';
+    }
+  });
+
 })();
