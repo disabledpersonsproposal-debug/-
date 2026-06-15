@@ -8,20 +8,19 @@ const NAV_GROUPS = [
     section: '本編',
     items: [
       { href: 'summary.html',  label: 'エグゼクティブサマリー', sub: '提言の全体像・数字・構造' },
-      { href: 'origin.html',   label: '本提言の記録',  sub: '概念の初出・公開履歴' },
       { href: 'ch0.html',      label: '序章',          sub: '制度の歴史と善意の限界' },
       { href: 'ch1.html',      label: '第1章',          sub: '次世代型障害者雇用モデル' },
       { href: 'ch2.html',      label: '第2章',          sub: '準公務・準企業職員制度' },
       { href: 'ch3.html',      label: '第3章',          sub: '不作為のコストと社会契約' },
       { href: 'ch4.html',      label: '第4章',          sub: '制度の終わらせ方設計' },
       { href: 'appendix.html', label: '付録',          sub: '社会はすでに知っている' },
-      { href: 'scp.html',      label: 'SCP制度図解',   sub: '制度の全体像・3レーン・財源構造' },
     ]
   },
   {
     id: 'detail',
     section: '制度詳細',
     items: [
+      { href: 'scp.html',       label: 'SCP制度図解',              sub: '制度の全体像・3レーン・財源構造' },
       { href: 'timeline.html',     label: '全工程タイムライン',        sub: '3シナリオ・所要年数試算' },
       { href: 'roadmap_gov.html',  label: '準公務職員 移行ロードマップ', sub: 'タイムライン起算後' },
       { href: 'roadmap_corp.html', label: '民間企業 移行ロードマップ',   sub: 'タイムライン起算後' },
@@ -43,6 +42,7 @@ const NAV_GROUPS = [
     items: [
       { href: 'glossary.html', label: '用語集', sub: '制度用語・PPP・現行制度' },
       { href: 'faq.html',      label: 'FAQ',    sub: 'よくある質問と回答' },
+      { href: 'origin.html',   label: '本提言の記録',  sub: '概念の初出・公開履歴' },
     ]
   }
 ];
