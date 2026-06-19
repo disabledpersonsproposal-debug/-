@@ -541,3 +541,47 @@ tr:last-child td { border-bottom: none; }
   color: var(--text-mid);
 }
 .callout-warn strong { color: var(--accent-warn); }
+
+/* ── CAMP DIAGRAM（5陣営の構造的制約・図解） ── */
+.camp-diagram-wrap { margin: 28px 0 24px; }
+.camp-diagram-title {
+  font-size: 13px; color: var(--gold); letter-spacing: 0.18em; font-weight: 700;
+  margin-bottom: 6px; text-transform: uppercase;
+}
+.camp-diagram-caption { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.8; }
+.camps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px; background: var(--gold-border); align-items: stretch; }
+.camp { background: var(--content-bg); padding: 16px 16px 18px; display: flex; flex-direction: column; }
+.camp-name { font-size: 16px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
+.camp-sub { font-size: 13px; color: var(--text-muted); margin-top: 2px; margin-bottom: 10px; }
+.camp-row { border-top: 1px solid var(--gold-border); padding: 9px 0 10px; }
+.camp-row-label { font-size: 13px; letter-spacing: 0.04em; font-weight: 700; margin-bottom: 4px; }
+.camp-row--ok .camp-row-label { color: #2C7A3A; }
+.camp-row--block .camp-row-label { color: var(--accent-warn); }
+.camp-row-text { font-size: 15px; color: var(--text-mid); line-height: 1.55; }
+.camp-core { margin-top: auto; padding: 8px 0 0; border-top: 1px dashed var(--gold-border); }
+.camp-core-label { font-size: 13px; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 3px; }
+.camp-core-tag {
+  display: inline-block; font-size: 13px; font-weight: 700; color: var(--sidebar-bg);
+  background: var(--gold-light); padding: 2px 8px; border-radius: 2px;
+}
+
+/* 6枚目：本提言カード（5陣営とは逆の色調で「到達できた側」を視覚的に分離） */
+.camp--conclusion { background: var(--sidebar-bg); }
+.camp--conclusion .camp-name { color: var(--gold); }
+.camp--conclusion .camp-sub { color: rgba(255,255,255,0.6); }
+.camp--conclusion .camp-row { border-top-color: rgba(212,175,55,0.25); }
+.camp--conclusion .camp-row-text { color: rgba(255,255,255,0.85); }
+.camp--conclusion .camp-core { border-top-color: rgba(212,175,55,0.25); }
+.camp--conclusion .camp-core-label { color: rgba(255,255,255,0.5); }
+.camp-row--free .camp-row-label { color: var(--gold-light); }
+.camp-row--through .camp-row-label { color: var(--gold-light); }
+.camp-core-tag--gold { background: var(--gold); color: var(--sidebar-bg); }
+
+.camp-diagram-foot {
+  text-align: center; padding: 14px 20px 0; font-size: 15px; line-height: 1.85; color: var(--text-mid);
+}
+.camp-diagram-foot strong { color: var(--text-dark); }
+
+@media (max-width: 860px) {
+  .camps { grid-template-columns: 1fr; }
+}
