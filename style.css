@@ -298,8 +298,8 @@ tr:last-child td { border-bottom: none; }
   .content h3 { font-size: 15px; margin: 22px 0 8px; }
 
   /* ── 表 ── */
-  table { font-size: 14px; }
-  th, td { padding: 8px 10px; font-size: 14px; }
+  table { font-size: 15px; }
+  th, td { padding: 8px 10px; font-size: 15px; }
 
   /* ── カード ── */
   .card-grid { grid-template-columns: 1fr; }
@@ -325,23 +325,23 @@ tr:last-child td { border-bottom: none; }
   .section-rule { margin: 28px 0; }
 
   /* ── finance.html 固有（waterfallグラフ） ── */
-  .wf-row { font-size: 14px; }
-  .wf-head { font-size: 13px; }
-  .wf-num { font-size: 14px; }
-  .period-val { font-size: 14px; }
+  .wf-row { font-size: 15px; }
+  .wf-head { font-size: 14px; }
+  .wf-num { font-size: 15px; }
+  .period-val { font-size: 15px; }
 
   /* ── intl.html 固有（国際比較バー） ── */
-  .intl-bar-row { font-size: 14px; }
-  .intl-country, .intl-amount { font-size: 14px; }
-  .intl-amount-sub { font-size: 13px; }
+  .intl-bar-row { font-size: 15px; }
+  .intl-country, .intl-amount { font-size: 15px; }
+  .intl-amount-sub { font-size: 14px; }
 
   /* ── scp.html 固有（フロー・レーン） ── */
-  .lane-body { font-size: 14px; }
-  .cycle-box { font-size: 14px; }
+  .lane-body { font-size: 15px; }
+  .cycle-box { font-size: 15px; }
 
   /* ── callout 内の小表 ── */
   .callout-light table th,
-  .callout-light table td { font-size: 13px; padding: 5px 8px; }
+  .callout-light table td { font-size: 14px; padding: 5px 8px; }
 }
 
 /* ── CHAPTER SECTION DIVIDER ── */
@@ -406,7 +406,7 @@ tr:last-child td { border-bottom: none; }
     padding-top: 12px;
   }
   .system-label span {
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: .06em;
     padding: 3px 10px;
   }
