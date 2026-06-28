@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -30,13 +30,21 @@ body { font-family: var(--font); font-size: 16px; line-height: 1.9; color: var(-
   padding: 64px 24px 56px;
   position: relative; overflow: hidden;
 }
-.hero-inner { max-width: 700px; margin: 0 auto; position: relative; }
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg,  transparent, transparent 79px, rgba(200,150,12,.03) 79px, rgba(200,150,12,.03) 80px),
+    repeating-linear-gradient(  0deg, transparent, transparent 79px, rgba(200,150,12,.02) 79px, rgba(200,150,12,.02) 80px);
+  pointer-events: none;
+}
+.hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
 .hero-kicker {
   font-size: 13px; letter-spacing: .3em; color: var(--gold);
   font-weight: 700; margin-bottom: 22px;
   display: flex; align-items: center; gap: 10px;
 }
-.hero-kicker::before { content:''; width:24px; height:2px; background:var(--gold); display:inline-block; }
+.hero-kicker::before { content:''; width:20px; height:2px; background:var(--gold); display:inline-block; }
 .hero-title {
   font-size: clamp(24px, 5vw, 40px);
   font-weight: 900; color: #fff; line-height: 1.3;

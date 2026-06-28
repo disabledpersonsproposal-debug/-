@@ -7,6 +7,7 @@
   --sidebar-bg:   #2C2C2A;
   --sidebar-text: #ffffff;
   --gold:         #D4AF37;
+  --gold-text:    #7a5c0a;  /* 明背景上の金テキスト用（AA約6.3:1） */
   --gold-light:   #F0E4B0;
   --gold-dim:     rgba(212,175,55,0.15);
   --gold-border:  rgba(212,175,55,0.28);
@@ -128,7 +129,7 @@ body {
 }
 
 /* ── CHAPTER HEADER ── */
-.chapter-label { font-size: 13px; color: var(--gold); letter-spacing: 0.25em; font-weight: 700; margin-bottom: 10px; padding-top: 36px; display: flex; align-items: center; gap: 10px; }
+.chapter-label { font-size: 13px; color: var(--gold-text); letter-spacing: 0.25em; font-weight: 700; margin-bottom: 10px; padding-top: 36px; display: flex; align-items: center; gap: 10px; }
 .chapter-label::before { content: ''; width: 20px; height: 2px; background: var(--gold); flex-shrink: 0; }
 .chapter-title { font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: var(--text-dark); line-height: 1.45; margin-bottom: 10px; }
 .chapter-subtitle { font-size: 15px; color: var(--text-mid); margin-bottom: 24px; line-height: 1.65; }
@@ -201,11 +202,11 @@ tr:last-child td { border-bottom: none; }
 .card-label { font-size: 14px; font-weight: 700; color: var(--text-mid); letter-spacing: 0.06em; margin-bottom: 4px; text-transform: none; }
 /* card-valueがないカードではlabelがタイトル役を担う */
 .card-label--title { font-size: 16px; font-weight: 700; color: var(--text-dark); letter-spacing: 0; margin-bottom: 6px; }
-.card-value { font-size: 22px; font-weight: 700; color: var(--gold); line-height: 1.2; }
+.card-value { font-size: 22px; font-weight: 700; color: var(--gold-text); line-height: 1.2; }
 /* テキスト型カード（短い語句・状態説明）*/
 .card-value--text { font-size: 16px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
 /* 数値型カード（億円・万人など長い数値） */
-.card-value--num  { font-size: 18px; font-weight: 700; color: var(--gold); line-height: 1.3; }
+.card-value--num  { font-size: 18px; font-weight: 700; color: var(--gold-text); line-height: 1.3; }
 .card-desc { font-size: 15px; color: var(--text-mid); margin-top: 8px; line-height: 1.75; }
 
 /* ── BADGE ── */
@@ -426,14 +427,14 @@ tr:last-child td { border-bottom: none; }
 /* ── FATIGUE CARD（現状の疲弊を示すカード） ── */
 .fatigue-card { background: #fff; border: 1px solid var(--gold-border); border-top: 3px solid var(--sidebar-bg); padding: 16px; }
 .fatigue-card-label { font-size: 13px; font-weight: 700; color: var(--text-mid); letter-spacing: 0.06em; margin-bottom: 4px; }
-.fatigue-card-value { font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 6px; line-height: 1.2; }
+.fatigue-card-value { font-size: 20px; font-weight: 700; color: var(--gold-text); margin-bottom: 6px; line-height: 1.2; }
 .fatigue-card-sub { font-size: 15px; color: var(--text-mid); margin-bottom: 8px; }
 .fatigue-card-list { list-style: none; padding: 0; margin: 0; }
 .fatigue-card-list li { font-size: 15px; color: var(--text-mid); padding: 3px 0 3px 16px; position: relative; line-height: 1.65; }
 .fatigue-card-list li::before { content: "─"; position: absolute; left: 0; color: var(--gold); font-size: 15px; }
 
 /* ── PILLAR CARD（3本柱・政策ピラー） ── */
-.pillar-num { font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 4px; }
+.pillar-num { font-size: 13px; font-weight: 700; color: var(--gold-text); letter-spacing: 0.06em; margin-bottom: 4px; }
 .pillar-title { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; line-height: 1.4; }
 .pillar-desc { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
 
@@ -453,7 +454,7 @@ tr:last-child td { border-bottom: none; }
 .intl-fill { height: 14px; border-radius: 3px; background: var(--sidebar-bg); }
 .intl-row.hi .intl-fill { background: var(--gold); }
 .intl-amt { font-size: 15px; font-weight: 700; text-align: right; white-space: nowrap; }
-.intl-row.hi .intl-amt { color: var(--gold); }
+.intl-row.hi .intl-amt { color: var(--gold-text); }
 
 /* ── READ CARD（推奨読書順カード） ── */
 .read-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 8px; padding: 0 28px; }
@@ -547,7 +548,7 @@ tr:last-child td { border-bottom: none; }
 /* ── CAMP DIAGRAM（5陣営の構造的制約・図解） ── */
 .camp-diagram-wrap { margin: 28px 0 24px; }
 .camp-diagram-title {
-  font-size: 13px; color: var(--gold); letter-spacing: 0.18em; font-weight: 700;
+  font-size: 13px; color: var(--gold-text); letter-spacing: 0.18em; font-weight: 700;
   margin-bottom: 6px; text-transform: uppercase;
 }
 .camp-diagram-caption { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.8; }
@@ -595,4 +596,73 @@ tr:last-child td { border-bottom: none; }
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
   .camp--conclusion { border-color: rgba(212,175,55,0.4); }
+}
+
+/* ── SKIP LINK（A2） ── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 8px;
+  clip: auto;
+  overflow: visible;
+  background: var(--sidebar-bg);
+  color: var(--gold-light);
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 9999;
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ── VISUALLY HIDDEN（C・スクリーンリーダー専用テキスト） ── */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── FOCUS VISIBLE（A4） ── */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+/* チャコール背景内はより明るい色で上書き */
+.sidebar a:focus-visible,
+.sidebar button:focus-visible,
+.mobile-header a:focus-visible,
+.mobile-header button:focus-visible {
+  outline-color: var(--gold-light);
+}
+
+/* ── PREFERS-REDUCED-MOTION（A5） ── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sidebar,
+  .sidebar-overlay,
+  .mobile-hamburger span,
+  .nav-chevron,
+  .sidebar-top-link,
+  .sidebar-item,
+  .page-nav-item,
+  .card,
+  .read-card,
+  .deep-card,
+  .nav-group-header {
+    transition: none !important;
+    animation: none !important;
+  }
 }

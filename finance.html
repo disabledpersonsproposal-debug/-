@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -48,10 +48,22 @@
 .grade-val{font-size:16px;font-weight:700;color:var(--text-dark)}
 @media(max-width:680px){.scenario-inner{grid-template-columns:1fr}.scenario-head{border-right:none;border-bottom:1px solid var(--gold-border)}.scenario-body{grid-template-columns:1fr}.grade-grid{grid-template-columns:1fr 1fr}.wf-header,.wf-row{grid-template-columns:120px 1fr 60px 60px 60px}}
 @media(max-width:430px){.grade-grid{grid-template-columns:1fr}.wf-header{display:none}.wf-row{grid-template-columns:1fr;gap:2px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.07)}.wf-label{font-weight:600}.wf-bar-cell{height:12px;margin:4px 0}.wf-num{text-align:left;font-size:14px}}
+/* ── 真のウォーターフォール図解（新規） ── */
+.wf-fig{margin:10px 0 8px;display:block}
+.wf-periods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.wf-period-head{font-size:13px;font-weight:700;color:var(--text-muted);text-align:center;padding:4px 0;border-bottom:1px solid var(--gold-border);margin-bottom:5px;letter-spacing:.03em}
+.wf-period-svg{background:#fff;border:1px solid rgba(0,0,0,.07)}
+.wf-ref-row{font-size:13px;color:var(--text-muted);padding:7px 12px;background:#f9f8f4;border:1px dashed rgba(212,175,55,.35);margin-bottom:10px;line-height:1.65}
+.wf-detail-btn{background:none;border:1px solid var(--gold-border);padding:4px 12px;font-size:13px;color:var(--text-muted);cursor:pointer;margin:4px 0;font-family:var(--font)}
+.wf-detail-btn:hover{background:var(--gold-dim)}
+.wf-legend{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 6px;font-size:12px;color:var(--text-muted);align-items:center}
+.wf-legend-swatch{display:inline-block;width:14px;height:10px;border-radius:2px;vertical-align:middle;margin-right:3px}
+@media(max-width:680px){.wf-periods{grid-template-columns:1fr;gap:12px}}
+@media(prefers-reduced-motion:reduce){.wf-fig *{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="main">
+<main id="main-content" class="main">
   <div class="topbar">提言書 &rsaquo; <span class="current">財源シミュレーション</span></div>
   <div class="content">
     <div class="chapter-label">REFERENCE</div>
@@ -194,7 +206,7 @@
       <strong>② Cレーンの構造的上限：</strong>制度設計上、Cレーンは義務の50%（A+C型）〜70%（B+C型）までしか担えない。したがってC収入の構造的上限は<strong>年約0.9〜1.2兆円</strong>である。これを超えるC収入は、単価または義務係数を引き上げない限り構造的に発生しない。<br>
       <strong>③ 本試算のパラメータ：</strong>シナリオごとに「制度参加率」を変数として置く。C平均充足比率は全シナリオ共通で55%（A・Bレーンの充足が進むほど低下し、拠出金依存が強いほど上限の70%に近づく中間値）とする。
       <div class="table-wrap" style="margin:12px 0 0"><table style="margin:0">
-        <thead><tr><th>シナリオ</th><th>制度参加率（第2期→第3期）</th><th>C平均充足比率</th><th>C収入（第2期→第3期）</th></tr></thead>
+        <th scope="col"ead><tr><th scope="col">シナリオ</th><th scope="col">制度参加率（第2期→第3期）</th><th scope="col">C平均充足比率</th><th scope="col">C収入（第2期→第3期）</th></tr></thead>
         <tbody>
           <tr><td>✅ 順調</td><td>80% → 95%</td><td>55%</td><td><strong>約0.8 → 0.9兆円</strong></td></tr>
           <tr><td>🔵 現実的</td><td>60% → 75%</td><td>55%</td><td><strong>約0.6 → 0.7兆円</strong></td></tr>
@@ -211,6 +223,39 @@
       <strong>【表の読み方】</strong>　財源側のA（現行障害年金予算・約2.4〜2.5兆円）は、現行受給者への基礎保障の支払いに充てられる「継続原資」であり、新規費用との収支比較には算入しない（参考表示）。収支は<strong>「新規財源合計（B＋C＋D＋E）− 新規費用（年金増額分＋制度運営費）」</strong>で判定する。Eは「財政改善効果」（消費税誘発・社会保険料収入・生活保護費削減・間接税収の保守的計上。内訳は<a href="cost.html" style="color:var(--gold)">不作為のコスト試算④</a>と接続）である。
     </div>
 
+    <!-- 参考行A（収支比較の枠外） -->
+    <div class="wf-ref-row">（参考）<strong>A 現行障害年金予算</strong>（基礎保障の継続原資・収支比較の枠外）：第1期 2.4兆円 ／ 第2期 2.4兆円 ／ 第3期 2.5兆円</div>
+
+    <!-- 凡例 -->
+    <div class="wf-legend" aria-hidden="true">
+      <span><span class="wf-legend-swatch" style="background:rgba(44,122,58,.85)"></span>新規財源（B〜E 積み上げ）</span>
+      <span><span class="wf-legend-swatch" style="background:rgba(184,66,26,.72)"></span>新規費用（差し引き）</span>
+      <span><span class="wf-legend-swatch" style="background:rgba(184,66,26,.18);border:1px dashed rgba(184,66,26,.5)"></span>財源不足域（国債補完）</span>
+    </div>
+
+    <!-- ウォーターフォール図（真の累積型） -->
+    <figure class="wf-fig" data-wf-chart="ok"
+      role="img"
+      aria-label="順調シナリオ財源ウォーターフォール：第1期 新規財源0.4兆円・新規費用2.2兆円で▲1.8兆不足（国債補完）、第2期 新規財源2.3兆円・新規費用2.5兆円で▲0.2兆不足、第3期 新規財源3.1兆円・新規費用3.0兆円で＋0.1兆均衡圏">
+      <div class="wf-periods">
+        <div class="wf-period">
+          <div class="wf-period-head">第1期（1〜3年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+        <div class="wf-period">
+          <div class="wf-period-head">第2期（4〜6年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+        <div class="wf-period">
+          <div class="wf-period-head">第3期（7〜10年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- 数値の詳細（既存テーブル・折り畳み） -->
+    <button class="wf-detail-btn" onclick="var d=this.nextElementSibling;d.classList.toggle('hidden');this.textContent=d.classList.contains('hidden')?'▼ 数値の詳細を展開':'▲ 数値の詳細を閉じる'">▼ 数値の詳細を展開</button>
+    <div class="hidden">
     <div class="wf-header">
       <div></div><div></div>
       <div class="wf-head">第1期</div><div class="wf-head">第2期</div><div class="wf-head">第3期</div>
@@ -273,9 +318,43 @@
         <div class="wf-num" style="color:#2C7A3A">＋0.1兆円<br><span style="font-size:0.8em">均衡圏</span></div>
       </div>
     </div>
+    </div>
 
     <h2 id="finance-breakdown-realistic">財源の構成（年額推移）─ 現実的シナリオ</h2>
 
+    <!-- 参考行A（収支比較の枠外） -->
+    <div class="wf-ref-row">（参考）<strong>A 現行障害年金予算</strong>（基礎保障の継続原資・収支比較の枠外）：第1期 2.4兆円 ／ 第2期 2.4兆円 ／ 第3期 2.5兆円</div>
+
+    <!-- 凡例 -->
+    <div class="wf-legend" aria-hidden="true">
+      <span><span class="wf-legend-swatch" style="background:rgba(26,92,154,.85)"></span>新規財源（B〜E 積み上げ）</span>
+      <span><span class="wf-legend-swatch" style="background:rgba(184,66,26,.72)"></span>新規費用（差し引き）</span>
+      <span><span class="wf-legend-swatch" style="background:rgba(184,66,26,.18);border:1px dashed rgba(184,66,26,.5)"></span>財源不足域（国債補完）</span>
+    </div>
+
+    <!-- ウォーターフォール図（真の累積型） -->
+    <figure class="wf-fig" data-wf-chart="mid"
+      role="img"
+      aria-label="現実的シナリオ財源ウォーターフォール：第1期 新規財源0.3兆円・新規費用2.3兆円で▲2.0兆不足（国債補完）、第2期 新規財源1.7兆円・新規費用2.8兆円で▲1.1兆不足、第3期 新規財源2.5兆円・新規費用3.2兆円で▲0.7兆不足">
+      <div class="wf-periods">
+        <div class="wf-period">
+          <div class="wf-period-head">第1期（1〜3年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+        <div class="wf-period">
+          <div class="wf-period-head">第2期（4〜6年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+        <div class="wf-period">
+          <div class="wf-period-head">第3期（7〜10年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- 数値の詳細（既存テーブル・折り畳み） -->
+    <button class="wf-detail-btn" onclick="var d=this.nextElementSibling;d.classList.toggle('hidden');this.textContent=d.classList.contains('hidden')?'▼ 数値の詳細を展開':'▲ 数値の詳細を閉じる'">▼ 数値の詳細を展開</button>
+    <div class="hidden">
     <div class="wf-header">
       <div></div><div></div>
       <div class="wf-head">第1期</div><div class="wf-head">第2期</div><div class="wf-head">第3期</div>
@@ -338,6 +417,7 @@
         <div class="wf-num" style="color:#1a5c9a">▲0.7兆円</div>
       </div>
     </div>
+    </div>
 
     <h2 id="finance-breakdown-stagnant">財源の構成（年額推移）─ 停滞シナリオ</h2>
 
@@ -345,6 +425,39 @@
       <strong>【停滞シナリオにおける財源Cの特徴】</strong>　企業拠出金（C）は第2期に一定水準まで立ち上がるが、法整備の遅延と政治的抵抗により参加率が約50%で頭打ちとなり、当初参加した企業が義務軽減を求める動きも重なってC収入は年約0.5兆円で停滞する。停滞シナリオでは第3期になっても残余不足が▲2.0兆円規模で続き、不作為のコスト解消分（重複排除後・年約1.0〜1.5兆円）を上回る——<strong>すなわち停滞は、財政的にも現状維持より不利になり得る</strong>。これは「やるなら本気で、止まらずに」という本提言の主張を財政面から裏づける数字である。
     </div>
 
+    <!-- 参考行A（収支比較の枠外） -->
+    <div class="wf-ref-row">（参考）<strong>A 現行障害年金予算</strong>（基礎保障の継続原資・収支比較の枠外）：第1期 2.4兆円 ／ 第2期 2.4兆円 ／ 第3期 2.5兆円</div>
+
+    <!-- 凡例 -->
+    <div class="wf-legend" aria-hidden="true">
+      <span><span class="wf-legend-swatch" style="background:rgba(184,66,26,.6)"></span>新規財源（B〜E 積み上げ）</span>
+      <span><span class="wf-legend-swatch" style="background:rgba(184,66,26,.72)"></span>新規費用（差し引き）</span>
+      <span><span class="wf-legend-swatch" style="background:rgba(184,66,26,.18);border:1px dashed rgba(184,66,26,.5)"></span>財源不足域（恒常的）</span>
+    </div>
+
+    <!-- ウォーターフォール図（真の累積型） -->
+    <figure class="wf-fig" data-wf-chart="ng"
+      role="img"
+      aria-label="停滞シナリオ財源ウォーターフォール：第1期 新規財源0.2兆円・新規費用2.5兆円で▲2.3兆不足、第2期 新規財源1.2兆円・新規費用3.0兆円で▲1.8兆不足、第3期 新規財源1.4兆円・新規費用3.4兆円で▲2.0兆不足（均衡せず）">
+      <div class="wf-periods">
+        <div class="wf-period">
+          <div class="wf-period-head">第1期（1〜3年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+        <div class="wf-period">
+          <div class="wf-period-head">第2期（4〜6年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+        <div class="wf-period">
+          <div class="wf-period-head">第3期（7〜10年目）</div>
+          <div class="wf-period-svg"></div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- 数値の詳細（既存テーブル・折り畳み） -->
+    <button class="wf-detail-btn" onclick="var d=this.nextElementSibling;d.classList.toggle('hidden');this.textContent=d.classList.contains('hidden')?'▼ 数値の詳細を展開':'▲ 数値の詳細を閉じる'">▼ 数値の詳細を展開</button>
+    <div class="hidden">
     <div class="wf-header">
       <div></div><div></div>
       <div class="wf-head">第1期</div><div class="wf-head">第2期</div><div class="wf-head">第3期</div>
@@ -407,6 +520,7 @@
         <div class="wf-num" style="color:#B8421A">▲2.0兆円</div>
       </div>
     </div>
+    </div>
 
     <h2 id="finance-admin">財源確保における「行政接続」設計 ── 既存予算の組み替えロジック</h2>
     <p>本提言の財源設計が「机上の空論」に終わらないためには、既存の予算・制度との接続が不可欠である。「新たな財源を生む」のではなく「既存の非効率な財源の使い方を変える」という組み替えロジックが、財務省・財政審議会に対する最も有力な説得論拠となる。</p>
@@ -416,8 +530,8 @@
     </div>
 
     <div class="table-wrap"><table>
-      <thead>
-        <tr><th>既存予算・制度</th><th>現行の年間規模</th><th>本提言による組み替え方法</th><th>転換可能額の試算</th></tr>
+      <th scope="col"ead>
+        <tr><th scope="col">既存予算・制度</th><th scope="col">現行の年間規模</th><th scope="col">本提言による組み替え方法</th><th scope="col">転換可能額の試算</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -476,7 +590,7 @@
     <div class="callout-light" style="margin-bottom:24px">
       <strong>【感度分析：財源充足に直結する2つの主要変数】</strong>
       <div class="table-wrap" style="margin:12px 0 0"><table style="margin:0">
-        <thead><tr><th>変数</th><th>楽観ケース</th><th>基本ケース</th><th>悲観ケース</th><th>財源への影響</th></tr></thead>
+        <th scope="col"ead><tr><th scope="col">変数</th><th scope="col">楽観ケース</th><th scope="col">基本ケース</th><th scope="col">悲観ケース</th><th scope="col">財源への影響</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>①拠出金単価</strong><br>（制度設計で確定）</td>
@@ -508,6 +622,239 @@
 
     <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
   </div>
-</div>
+</main>
+<script>
+/* ── 真のウォーターフォール SVG レンダラー ── */
+(function(){
+'use strict';
+
+/* 各シナリオの3期データ（既存数値と完全一致） */
+var WF_DATA = {
+  ok: {
+    incomeColor: 'rgba(44,122,58,',
+    periods: [
+      {B:0.1,C:0.0,D:0.2,E:0.1, cost:2.2, bal:-1.8, balNote:'国債補完'},
+      {B:0.8,C:0.8,D:0.4,E:0.3, cost:2.5, bal:-0.2, balNote:''},
+      {B:1.2,C:0.9,D:0.5,E:0.5, cost:3.0, bal:0.1,  balNote:'均衡圏'}
+    ]
+  },
+  mid: {
+    incomeColor: 'rgba(26,92,154,',
+    periods: [
+      {B:0.1,C:0.0,D:0.1,E:0.1, cost:2.3, bal:-2.0, balNote:'国債補完'},
+      {B:0.6,C:0.6,D:0.3,E:0.2, cost:2.8, bal:-1.1, balNote:''},
+      {B:1.0,C:0.7,D:0.4,E:0.4, cost:3.2, bal:-0.7, balNote:''}
+    ]
+  },
+  ng: {
+    incomeColor: 'rgba(184,66,26,',
+    periods: [
+      {B:0.1,C:0.0,D:0.1,E:0.0, cost:2.5, bal:-2.3, balNote:''},
+      {B:0.4,C:0.5,D:0.2,E:0.1, cost:3.0, bal:-1.8, balNote:''},
+      {B:0.5,C:0.5,D:0.2,E:0.2, cost:3.4, bal:-2.0, balNote:''}
+    ]
+  }
+};
+
+/* SVG 座標定数 */
+var VW = 192, VH = 268;
+var BASELINE = 148;          /* y=0 の位置 */
+var TOP_PAD  = 14;           /* 上端余白 */
+var BOT_PAD  = 26;           /* 下端余白（ラベル用） */
+var MAX_T    = 3.5;          /* スケール最大値（兆円） */
+var PX_T     = (BASELINE - TOP_PAD) / MAX_T;   /* px per 兆円 ≈ 38.3 */
+var MAX_DEF  = (VH - BOT_PAD - BASELINE) / PX_T; /* 表示可能な最大赤字 ≈ 2.45兆 */
+var BW = 26;                 /* バー幅 */
+/* 収入バーの x 座標 */
+var IX = [6, 38, 70, 102];   /* B, C, D, E */
+var COST_X = 140;            /* 費用バー x */
+var NS = 'http://www.w3.org/2000/svg';
+
+function svgE(tag, a) {
+  var e = document.createElementNS(NS, tag);
+  if (a) Object.keys(a).forEach(function(k){ e.setAttribute(k, a[k]); });
+  return e;
+}
+function svgT(x, y, s, a) {
+  var t = svgE('text', Object.assign({x:x, y:y, 'font-family':'sans-serif', 'font-size':'8.5'}, a||{}));
+  t.textContent = s;
+  return t;
+}
+function fmt(v) {
+  return (v >= 0 ? '＋' : '▲') + Math.abs(v).toFixed(1) + '兆';
+}
+
+function buildSVG(pd, incBase) {
+  var svg = svgE('svg', {
+    viewBox: '0 0 ' + VW + ' ' + VH,
+    'aria-hidden': 'true',
+    style: 'width:100%;height:auto;display:block;overflow:visible'
+  });
+  var g = svgE('g');
+  svg.appendChild(g);
+
+  /* グリッド線（1・2・3兆） */
+  [1,2,3].forEach(function(t){
+    var gy = BASELINE - t * PX_T;
+    if (gy >= TOP_PAD) {
+      g.appendChild(svgE('line', {x1:4,y1:gy,x2:VW-2,y2:gy,
+        stroke:'rgba(0,0,0,0.07)','stroke-width':'0.5','stroke-dasharray':'3,3'}));
+      g.appendChild(svgT(2, gy - 2, t + '兆', {fill:'#ccc','font-size':'7.5'}));
+    }
+  });
+
+  /* ベースライン（0） */
+  g.appendChild(svgE('line', {x1:4,y1:BASELINE,x2:VW-2,y2:BASELINE,
+    stroke:'#bbb','stroke-width':'1'}));
+  g.appendChild(svgT(2, BASELINE + 9, '0', {fill:'#bbb','font-size':'7'}));
+
+  /* 収入バーを積み上げ */
+  var runY = BASELINE;
+  var keys = ['B','C','D','E'];
+  var alphas = [0.90, 0.72, 0.55, 0.38];
+
+  keys.forEach(function(k, i) {
+    var val = pd[k];
+    var h   = val * PX_T;
+    var bx  = IX[i];
+    var topY = runY - h;
+
+    /* 前バーとのコネクタ */
+    if (i > 0) {
+      g.appendChild(svgE('line', {
+        x1: IX[i-1] + BW, y1: runY,
+        x2: bx,           y2: runY,
+        stroke:'#bbb','stroke-width':'0.5','stroke-dasharray':'3,2'
+      }));
+    }
+
+    if (val >= 0.05) {
+      /* バー本体 */
+      g.appendChild(svgE('rect', {
+        x:bx, y:topY, width:BW, height:Math.max(h,1),
+        fill: incBase + alphas[i] + ')'
+      }));
+      /* キーラベル（バー内） */
+      if (h > 13) {
+        g.appendChild(svgT(bx + BW/2, topY + h/2 + 3.5, k, {
+          'text-anchor':'middle', fill:'#fff', 'font-weight':'bold', 'font-size':'9'
+        }));
+      }
+      /* 値ラベル（バー上） */
+      var valLy = Math.max(topY - 2, TOP_PAD + 8);
+      g.appendChild(svgT(bx + BW/2, valLy, '+' + val + '兆', {
+        'text-anchor':'middle', fill:'#2C7A3A', 'font-size':'7.5'
+      }));
+    } else {
+      /* ゼロ値 */
+      g.appendChild(svgT(bx + BW/2, runY - 2, k + ':0', {
+        'text-anchor':'middle', fill:'#ccc', 'font-size':'7'
+      }));
+    }
+    runY = topY;
+  });
+
+  var incomeTopY = runY;
+  var totalInc   = Math.round((pd.B + pd.C + pd.D + pd.E) * 10) / 10;
+
+  /* 収入合計の水平点線 */
+  g.appendChild(svgE('line', {
+    x1:4, y1:incomeTopY, x2:COST_X, y2:incomeTopY,
+    stroke:'#2C7A3A','stroke-width':'0.8','stroke-dasharray':'4,2',opacity:'0.55'
+  }));
+  g.appendChild(svgT(6, incomeTopY - 3, '財源 ' + totalInc + '兆', {
+    fill:'#2C7A3A','font-size':'7.5','font-weight':'bold'
+  }));
+
+  /* E→費用 コネクタ */
+  g.appendChild(svgE('line', {
+    x1: IX[3] + BW, y1: incomeTopY,
+    x2: COST_X,     y2: incomeTopY,
+    stroke:'#bbb','stroke-width':'0.5','stroke-dasharray':'3,2'
+  }));
+
+  /* 費用バー（incomeTopY から下向き） */
+  var costH = pd.cost * PX_T;
+  var rawCostBotY = incomeTopY + costH;
+  var clampBotY   = Math.min(rawCostBotY, VH - BOT_PAD);
+
+  g.appendChild(svgE('rect', {
+    x:COST_X, y:incomeTopY, width:BW,
+    height: Math.max(clampBotY - incomeTopY, 1),
+    fill:'rgba(184,66,26,0.72)'
+  }));
+
+  /* ベースライン以下の赤字エリア（ハッチ風の薄塗り） */
+  if (rawCostBotY > BASELINE) {
+    var defTop = BASELINE;
+    var defH   = Math.min(rawCostBotY, VH - BOT_PAD) - defTop;
+    if (defH > 0) {
+      g.appendChild(svgE('rect', {
+        x:COST_X, y:defTop, width:BW, height:defH,
+        fill:'rgba(184,66,26,0.18)',
+        stroke:'rgba(184,66,26,0.55)','stroke-width':'0.8','stroke-dasharray':'2,2'
+      }));
+    }
+  }
+
+  /* 費用バーラベル */
+  var costMidY = incomeTopY + Math.min(costH, clampBotY - incomeTopY) / 2;
+  if ((clampBotY - incomeTopY) > 20) {
+    g.appendChild(svgT(COST_X + BW/2, costMidY + 3.5, '費用', {
+      'text-anchor':'middle', fill:'#fff', 'font-size':'8.5'
+    }));
+  }
+  g.appendChild(svgT(COST_X + BW/2, incomeTopY - 3, '▲' + pd.cost + '兆', {
+    'text-anchor':'middle', fill:'#B8421A', 'font-size':'7.5'
+  }));
+
+  /* 収支ライン＆ラベル */
+  var balColor = pd.bal >= 0 ? '#2C7A3A' : '#B8421A';
+  var balLineY = Math.min(rawCostBotY, VH - BOT_PAD);
+  g.appendChild(svgE('line', {
+    x1:COST_X, y1:balLineY, x2:VW-2, y2:balLineY,
+    stroke:balColor,'stroke-width':'1.5'
+  }));
+  g.appendChild(svgT(VW - 4, balLineY - 3, fmt(pd.bal), {
+    'text-anchor':'end', fill:balColor, 'font-size':'10', 'font-weight':'bold'
+  }));
+  if (pd.balNote) {
+    g.appendChild(svgT(VW - 4, balLineY + 9, pd.balNote, {
+      'text-anchor':'end', fill:balColor, 'font-size':'7.5'
+    }));
+  }
+
+  /* X 軸ラベル */
+  keys.forEach(function(k, i){
+    g.appendChild(svgT(IX[i] + BW/2, VH - BOT_PAD + 11, k, {
+      'text-anchor':'middle', fill:'#666', 'font-size':'8.5'
+    }));
+  });
+  g.appendChild(svgT(COST_X + BW/2, VH - BOT_PAD + 11, '費用', {
+    'text-anchor':'middle', fill:'#B8421A', 'font-size':'8.5'
+  }));
+
+  return svg;
+}
+
+function init() {
+  Object.keys(WF_DATA).forEach(function(key) {
+    var fig = document.querySelector('figure[data-wf-chart="' + key + '"]');
+    if (!fig) return;
+    var cells = fig.querySelectorAll('.wf-period-svg');
+    var sc    = WF_DATA[key];
+    sc.periods.forEach(function(pd, i) {
+      if (cells[i]) cells[i].appendChild(buildSVG(pd, sc.incomeColor));
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+})();
+</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -10,13 +10,36 @@
 .intl-bar-row{display:grid;grid-template-columns:220px 1fr 150px;align-items:center;gap:12px;padding:8px 12px;background:#fff;border:1px solid rgba(0,0,0,.07);margin-bottom:6px;font-size:15px}
 .intl-bar-row.highlight{border:1px solid var(--gold);background:#fffdf0}
 .intl-country{font-weight:600;color:var(--text-dark);font-size:15px}
-.intl-bar-wrap{background:#e8e8e8;border-radius:3px;height:16px;position:relative}
-.intl-bar-fill{height:16px;border-radius:3px;background:var(--sidebar-bg)}
+/* バーラップ：グリッド線（25%・50%・75%）を背景で表現 */
+.intl-bar-wrap{
+  background-color:#e8e8e8;
+  background-image:
+    linear-gradient(to right,transparent 24.5%,rgba(0,0,0,0.09) 24.5%,rgba(0,0,0,0.09) 25.5%,transparent 25.5%),
+    linear-gradient(to right,transparent 49.5%,rgba(0,0,0,0.13) 49.5%,rgba(0,0,0,0.13) 50.5%,transparent 50.5%),
+    linear-gradient(to right,transparent 74.5%,rgba(0,0,0,0.09) 74.5%,rgba(0,0,0,0.09) 75.5%,transparent 75.5%);
+  border-radius:3px;height:16px;position:relative;overflow:visible}
+/* 非課税：塗り潰し */
+.intl-bar-fill{height:16px;border-radius:3px;background:var(--sidebar-bg);position:relative;z-index:1}
+/* 課税対象：斜線ハッチング（色だけに依存しない区別） */
+.intl-bar-fill.taxed{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0) 3px,rgba(255,255,255,0.38) 3px,rgba(255,255,255,0.38) 5px)}
 .intl-bar-row.highlight .intl-bar-fill{background:var(--gold)}
+/* レンジバー（金額が範囲の国：最小〜最大の帯） */
+.intl-bar-range{position:absolute;height:16px;top:0;border-radius:3px;background:var(--sidebar-bg);min-width:6px;z-index:1;
+  border-left:2px solid rgba(255,255,255,0.55);border-right:2px solid rgba(255,255,255,0.55)}
+.intl-bar-range.taxed{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0) 3px,rgba(255,255,255,0.38) 3px,rgba(255,255,255,0.38) 5px)}
+.intl-bar-row.highlight .intl-bar-range{background:var(--gold)}
+/* 日本参照ライン（縦線）：各行のバーラップ内に配置 */
+.intl-jp-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:rgba(212,175,55,0.85);z-index:2;pointer-events:none}
+.intl-jp-ref::before{content:'日本';position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  font-size:8px;font-family:sans-serif;font-weight:700;white-space:nowrap;color:var(--gold-text);background:#fff;padding:0 2px;line-height:1.3}
 .intl-amount{text-align:right;font-weight:700;font-size:15px;color:var(--text-mid)}
 .intl-amount-sub{display:block;font-size:14px;font-weight:400;color:#2C7A3A;margin-top:2px;text-align:right}
 .intl-amount-sub.nontax{color:#2C7A3A}
-.intl-bar-row.highlight .intl-amount{color:var(--gold)}
+/* 明背景上の金テキスト：--gold（明るい金）ではなく --gold-text（暗い金・AA約6.3:1）を使用 */
+.intl-bar-row.highlight .intl-amount{color:var(--gold-text)}
+/* 860px以下：バー非表示時の補足テキスト */
+.intl-mobile-note{display:none;font-size:12px;color:var(--text-muted);margin-top:2px;font-weight:400}
+@media(prefers-reduced-motion:reduce){.intl-bar-fill,.intl-bar-range{transition:none!important;animation:none!important}}
 .penalty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 24px}
 .penalty-card{background:#fff;border:1px solid var(--gold-border);padding:14px}
 .penalty-country{font-size:15px;color:var(--text-muted);margin-bottom:4px}
@@ -29,7 +52,7 @@
 .struct-box ul{list-style:none;padding:0}
 .struct-box li{font-size:15px;color:var(--text-mid);padding:4px 0 4px 14px;position:relative;line-height:1.6}
 .struct-box li::before{content:"─";position:absolute;left:0;color:var(--gold)}
-.lazy-table-btn{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:15px;color:var(--gold);cursor:pointer;margin:12px 24px;font-family:var(--font)}
+.lazy-table-btn{background:none;border:1px solid var(--gold-border);padding:6px 14px;font-size:15px;color:var(--gold-text);cursor:pointer;margin:12px 24px;font-family:var(--font)}
 .lazy-table-btn:hover{background:var(--gold-dim)}
 .hidden{display:none}
 
@@ -42,18 +65,18 @@
 .model-type-flag{font-size:20px;margin-bottom:6px}
 .model-type-label{font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:2px;line-height:1.4}
 .model-type-countries{font-size:13px;color:var(--text-muted);margin-bottom:8px}
-.model-type-core{font-size:14px;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:5px 8px;margin-bottom:10px;border-left:3px solid var(--gold)}
+.model-type-core{font-size:14px;font-weight:700;color:var(--gold-text);background:var(--gold-dim);padding:5px 8px;margin-bottom:10px;border-left:3px solid var(--gold)}
 .model-type-list{list-style:none;padding:0;margin:0 0 12px}
 .model-type-list li{font-size:14px;color:var(--text-mid);padding:3px 0 3px 12px;position:relative;line-height:1.6;border-bottom:1px solid rgba(0,0,0,0.05)}
 .model-type-list li::before{content:"─";position:absolute;left:0;color:var(--text-muted);font-size:13px}
 .model-type-limit{font-size:14px;color:var(--text-mid);background:#fff;border:1px solid var(--border);padding:8px 10px;line-height:1.6}
 .model-type-limit strong{color:#B8421A}
 
-@media(max-width:860px){.intl-bar-row{grid-template-columns:1fr auto}.intl-bar-wrap{display:none}.struct-grid{grid-template-columns:1fr}.model-type-grid{grid-template-columns:1fr}}
+@media(max-width:860px){.intl-bar-row{grid-template-columns:1fr auto}.intl-bar-wrap{display:none}.struct-grid{grid-template-columns:1fr}.model-type-grid{grid-template-columns:1fr}.intl-mobile-note{display:block}}
 </style>
 </head>
 <body>
-<div class="main">
+<main id="main-content" class="main">
   <div class="topbar">提言書 &rsaquo; <span class="current">国際比較データ集</span></div>
   <div class="content">
     <div class="chapter-label">REFERENCE</div>
@@ -79,35 +102,54 @@
       <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:48%"></div></div>
       <span class="intl-amount">約 9.5万円<span class="intl-amount-sub nontax">PPP実質（日本物価基準）</span></span>
     </div>
+    <!-- バー幅：最小〜最大レンジ（基準20万円=100%）。縦線＝日本9.5万円=48%の参照ライン。★非課税=塗り潰し・☆課税=斜線ハッチ -->
     <div class="intl-bar-row">
       <span class="intl-country">🇫🇷 フランス（AAH＋住宅補助APL等）<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:60%"></div></div>
-      <span class="intl-amount">約 11〜12万円<span class="intl-amount-sub nontax">PPP実質（日本物価基準）</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range" style="left:55%;width:5%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 11〜12万円<span class="intl-amount-sub nontax">PPP実質（日本物価基準）</span><span class="intl-mobile-note">★非課税　日本比 ＋1.5〜2.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇬🇧 イギリス（PIP最高＋UC）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">⚠️ 2026年〜給付削減改革実施中</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:53%"></div></div>
-      <span class="intl-amount">約 10〜11万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range" style="left:50%;width:5%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 10〜11万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span><span class="intl-mobile-note">★非課税（PIP）　日本比 ＋0.5〜1.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇩🇰 デンマーク（Førtidspension・基本＋補足含む最大）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象（実効38%）</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:53%"></div></div>
-      <span class="intl-amount">約 10〜11万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range taxed" style="left:50%;width:5%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 10〜11万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span><span class="intl-mobile-note">☆課税（実効38%）　日本比 ＋0.5〜1.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇩🇪 ドイツ（年金＋社会扶助・就労歴あり平均）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:69%"></div></div>
-      <span class="intl-amount">約 13〜14万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range taxed" style="left:65%;width:5%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 13〜14万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span><span class="intl-mobile-note">☆課税　日本比 ＋3.5〜4.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning＋住宅補助＋追加費用手当）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:60%"></div></div>
-      <span class="intl-amount">約 9〜15万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range taxed" style="left:45%;width:30%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 9〜15万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span><span class="intl-mobile-note">☆課税　範囲幅が大きい（制度参加状況による）</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇳🇴 ノルウェー（Uføretrygd＋介護・移動手当）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象（実効18〜22%）</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:100%"></div></div>
-      <span class="intl-amount">約 16〜20万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）<br>最低保障（単身）〜就労歴平均</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range taxed" style="left:80%;width:20%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 16〜20万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）<br>最低保障（単身）〜就労歴平均</span><span class="intl-mobile-note">☆課税　日本比 ＋6.5〜10.5万円</span></span>
     </div>
 
     <div class="callout-light" style="margin-top:16px">
@@ -147,10 +189,11 @@
       バー幅: 日本A=2.1/14.5=14% 日本B≈0〜1/14.5=0〜7% FR=9.6/14.5=66% UK=6.5/14.5=45% DK=9.1/14.5=63% DE=9.7/14.5=67% SE=9.7/14.5=67% NO=14.5/14.5=100%
     -->
 
+    <!-- バー幅：最小〜最大レンジ（基準ノルウェー14.5万=100%）。縦線＝日本2万円（公的制度フル活用時）=14%の参照ライン。★非課税=塗り潰し・☆課税=斜線ハッチ -->
     <div class="intl-bar-row highlight">
       <span class="intl-country">🇯🇵 日本（1級・現行）公的制度フル活用時<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税 ／ 自立支援医療＋障害福祉サービス利用</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:14%;background:#d4a000"></div></div>
-      <span class="intl-amount" style="color:#d4a000">約 2万円<span class="intl-amount-sub" style="color:#d4a000">医療0.5万＋家賃6万＋介護0.9万を自己負担後</span></span>
+      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:14%"></div></div>
+      <span class="intl-amount">約 2万円<span class="intl-amount-sub" style="color:var(--gold-text)">医療0.5万＋家賃6万＋介護0.9万を自己負担後</span></span>
     </div>
     <div class="intl-bar-row highlight" style="opacity:0.75">
       <span class="intl-country">🇯🇵 日本（1級・現行）公的制度未利用/都市部最悪ケース<br><span style="color:#B8421A;font-weight:700;font-size:14px;">★非課税 ／ 3割負担・助成なしの場合</span></span>
@@ -159,33 +202,51 @@
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇬🇧 イギリス（PIP＋UC）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">⚠️ 2026年〜給付削減改革実施中</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:45%"></div></div>
-      <span class="intl-amount">約 6〜7万円<span class="intl-amount-sub" style="color:var(--text-muted)">NHS・住宅給付後の残額</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range" style="left:41%;width:7%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 6〜7万円<span class="intl-amount-sub" style="color:var(--text-muted)">NHS・住宅給付後の残額</span><span class="intl-mobile-note">日本比（最良時）＋4〜5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇩🇪 ドイツ（年金＋社会扶助）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:67%"></div></div>
-      <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub" style="color:var(--text-muted)">公的医療・社会扶助後の残額</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range taxed" style="left:62%;width:7%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub" style="color:var(--text-muted)">公的医療・社会扶助後の残額</span><span class="intl-mobile-note">☆課税　日本比（最良時）＋7〜8万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇩🇰 デンマーク（Førtidspension）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象（実効38%・PPP指数143）</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:63%"></div></div>
-      <span class="intl-amount">約 9〜9.5万円<span class="intl-amount-sub" style="color:var(--text-muted)">医療無償・公共住宅後の残額</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range taxed" style="left:62%;width:4%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 9〜9.5万円<span class="intl-amount-sub" style="color:var(--text-muted)">医療無償・公共住宅後の残額</span><span class="intl-mobile-note">☆課税　日本比（最良時）＋7〜7.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇫🇷 フランス（AAH＋APL等）<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:72%"></div></div>
-      <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub nontax">住宅補助APL・医療補填後の残額</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range" style="left:62%;width:7%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub nontax">住宅補助APL・医療補填後の残額</span><span class="intl-mobile-note">★非課税　日本比（最良時）＋7〜8万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning＋住宅補助）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:76%"></div></div>
-      <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub" style="color:var(--text-muted)">住宅補助・医療無償後の残額</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range taxed" style="left:62%;width:7%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub" style="color:var(--text-muted)">住宅補助・医療無償後の残額</span><span class="intl-mobile-note">☆課税　日本比（最良時）＋7〜8万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇳🇴 ノルウェー（Uføretrygd＋各種手当）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象（実効18〜22%）</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:100%"></div></div>
-      <span class="intl-amount">約 14〜15万円<span class="intl-amount-sub" style="color:var(--text-muted)">医療無償・住宅支援後の残額（最低保障ベース）</span></span>
+      <div class="intl-bar-wrap">
+        <div class="intl-bar-range taxed" style="left:97%;width:3%" aria-hidden="true"></div>
+        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      </div>
+      <span class="intl-amount">約 14〜15万円<span class="intl-amount-sub" style="color:var(--text-muted)">医療無償・住宅支援後の残額（最低保障ベース）</span><span class="intl-mobile-note">☆課税　日本比（最良時）＋12〜13万円</span></span>
     </div>
 
     <div class="callout" style="margin-top:16px">
@@ -199,13 +260,13 @@
       上のグラフは先天性・就労歴なし障害者を含む「最低保障ベース」での比較です。しかし欧州主要国の多くは、<strong>就労歴がある人が障害を負った場合に前職収入の一定割合を保障する所得比例型給付</strong>を別途持っています。この概念は日本にほぼ存在せず、「働いていた期間の生活水準を障害後も一定程度維持させる」というセーフティネットの発想自体が、日本の制度設計には根本的に欠けています。
 
       <div style="margin-top:14px;overflow-x:auto"><table style="width:100%;border-collapse:collapse">
-        <thead>
+        <th scope="col"ead>
           <tr style="background:#2a1a5a;color:#fff">
-            <th style="padding:8px 10px;text-align:left;font-weight:700">国</th>
-            <th style="padding:8px 10px;text-align:left;font-weight:700">制度名</th>
-            <th style="padding:8px 10px;text-align:left;font-weight:700">前職収入代替率</th>
-            <th style="padding:8px 10px;text-align:left;font-weight:700">就労歴要件</th>
-            <th style="padding:8px 10px;text-align:left;font-weight:700">最低保障</th>
+            <th scope="col" style="padding:8px 10px;text-align:left;font-weight:700">国</th>
+            <th scope="col" style="padding:8px 10px;text-align:left;font-weight:700">制度名</th>
+            <th scope="col" style="padding:8px 10px;text-align:left;font-weight:700">前職収入代替率</th>
+            <th scope="col" style="padding:8px 10px;text-align:left;font-weight:700">就労歴要件</th>
+            <th scope="col" style="padding:8px 10px;text-align:left;font-weight:700">最低保障</th>
           </tr>
         </thead>
         <tbody>
@@ -303,7 +364,7 @@
     <h2>制度設計思想の比較</h2>
     <p>給付額の格差は単なる財政規模の差ではない。制度の「設計思想」の違いが、給付水準・雇用義務のあり方・家族負担の構造を決定している。</p>
     <div class="table-wrap"><table>
-      <thead><tr><th>比較軸</th><th>欧州主要国（デンマーク・ノルウェー・ドイツ・フランス等）</th><th>日本（現行）</th></tr></thead>
+      <th scope="col"ead><tr><th scope="col">比較軸</th><th scope="col">欧州主要国（デンマーク・ノルウェー・ドイツ・フランス等）</th><th scope="col">日本（現行）</th></tr></thead>
       <tbody>
         <tr><td><strong>①所得保障の基本設計</strong></td><td>「企業雇用」はあくまで付加的。生活の基盤は公的所得保障が先行して担う</td><td>障害年金（1級最高額でも月約9.5万円）が生活費を到底賄えず、企業雇用か家族が不足分を補填する構造</td></tr>
         <tr><td><strong>②企業への雇用義務と納付金</strong></td><td>ドイツ：20人以上の企業で5%の雇用義務。未達成企業への納付金は月最大€720（約12万円）と高水準</td><td>法定雇用率2.7%（2026年7月〜）。未達成納付金は月約5万円程度と低額。「払えば済む」構造</td></tr>
@@ -314,7 +375,7 @@
 
     <h2>日本が直面する3重の構造問題と本提言の対応</h2>
     <div class="table-wrap"><table>
-      <thead><tr><th>日本が抱える構造問題</th><th>欧州の解決アプローチ</th><th>本提言の解決策</th></tr></thead>
+      <th scope="col"ead><tr><th scope="col">日本が抱える構造問題</th><th scope="col">欧州の解決アプローチ</th><th scope="col">本提言の解決策</th></tr></thead>
       <tbody>
         <tr><td>障害年金（1級最高額でも月約9.5万円）が生活費を賄えず、企業雇用が「生活保障の代替」になっている</td><td>生活の基盤は国が担保。企業雇用は「社会参加の手段」に過ぎない</td><td>障害年金を月額9〜15万円に引き上げ。まず生活基盤を国が確立する</td></tr>
         <tr><td>企業が「福祉の肩代わり」を強いられ、本業の生産性が低下する</td><td>高い納付金設定（ドイツ：月最大€720）と、「払えば義務代替」を明確なルールとして認める設計</td><td>「準企業職員制度」でタスク型雇用へ移行。1ユニット月18万円の拠出金で義務代替可能</td></tr>
@@ -378,7 +439,7 @@
 
     <h3>ADAが達成したこと</h3>
     <div class="table-wrap"><table>
-      <thead><tr><th>分野</th><th>具体的な成果</th></tr></thead>
+      <th scope="col"ead><tr><th scope="col">分野</th><th scope="col">具体的な成果</th></tr></thead>
       <tbody>
         <tr><td><strong>物理的アクセシビリティ</strong></td><td>車いす用スロープ・点字ブロック・エレベーター設置が全国的に普及。公共交通機関のバリアフリー化が大きく進展</td></tr>
         <tr><td><strong>雇用差別の抑止</strong></td><td>障害を理由とした採用拒否・解雇・昇進差別が違法化。訴訟リスクが企業行動を変えた</td></tr>
@@ -389,7 +450,7 @@
 
     <h3>ADAが解決できなかったこと</h3>
     <div class="table-wrap"><table>
-      <thead><tr><th>問題</th><th>実態</th></tr></thead>
+      <th scope="col"ead><tr><th scope="col">問題</th><th scope="col">実態</th></tr></thead>
       <tbody>
         <tr><td><strong>所得保障の薄さ</strong></td><td>SSDI（社会保障障害保険）の平均受給額は月約1,360ドル（約20万円）。ただし就労歴が必要で、就労歴がない先天性・若年発症の障害者はSSI（補足的保障所得）のみで月約943ドル（約14万円）に限定される</td></tr>
         <tr><td><strong>医療費の自己負担</strong></td><td>公的医療保険（メディケア）加入には2年間の待機期間が必要。民間保険への依存が続き、医療費が生活を圧迫する</td></tr>
@@ -407,13 +468,13 @@
 
     <h2>3類型と本提言の比較マトリクス</h2>
     <div class="table-wrap"><table>
-      <thead>
+      <th scope="col"ead>
         <tr>
-          <th>比較軸</th>
-          <th>🇩🇰🇳🇴🇸🇪<br>北欧型</th>
-          <th>🇺🇸<br>米国型（ADA）</th>
-          <th>🇯🇵<br>日本型（現行）</th>
-          <th style="background:#1a3a1a;color:#D4AF37;">🇯🇵<br>本提言モデル</th>
+          <th scope="col">比較軸</th>
+          <th scope="col">🇩🇰🇳🇴🇸🇪<br>北欧型</th>
+          <th scope="col">🇺🇸<br>米国型（ADA）</th>
+          <th scope="col">🇯🇵<br>日本型（現行）</th>
+          <th scope="col" style="background:#1a3a1a;color:#D4AF37;">🇯🇵<br>本提言モデル</th>
         </tr>
       </thead>
       <tbody>
@@ -503,9 +564,9 @@
     <button class="lazy-table-btn" onclick="this.nextElementSibling.classList.toggle('hidden');this.textContent=this.textContent.includes('展開')?'▲ 折りたたむ':'▼ 詳細を展開する'">▼ 詳細を展開する</button>
     <div class="hidden">
     <div class="table-wrap"><table>
-      <thead><tr><th>国</th><th>課税区分</th><th>制度名</th><th>月額目安（単身者）</th><th>円換算（概算）</th><th>就労要件</th></tr></thead>
+      <th scope="col"ead><tr><th scope="col">国</th><th scope="col">課税区分</th><th scope="col">制度名</th><th scope="col">月額目安（単身者）</th><th scope="col">円換算（概算）</th><th scope="col">就労要件</th></tr></thead>
       <tbody>
-        <tr style="background:#fffdf0"><td><strong>🇯🇵 日本（現行1級・最高額）</strong></td><td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td><td>障害基礎年金【1級】</td><td>月額約95,285円（88,260円＋生活者支援給付金7,025円）</td><td><strong style="color:var(--gold)">約9.5万円</strong></td><td>所得制限あり</td></tr>
+        <tr style="background:#fffdf0"><td><strong>🇯🇵 日本（現行1級・最高額）</strong></td><td><span style="color:#2C7A3A;font-weight:700;">★ 非課税</span></td><td>障害基礎年金【1級】</td><td>月額約95,285円（88,260円＋生活者支援給付金7,025円）</td><td><strong style="color:var(--gold-text)">約9.5万円</strong></td><td>所得制限あり</td></tr>
         <tr><td>🇩🇰 デンマーク</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>Førtidspension（障害年金）</td><td>単身最大 約15,650 DKK/月（税引前・2026年）</td><td>約31.5万円（税引前）</td><td>就労不可と認定が必要</td></tr>
         <tr><td>🇳🇴 ノルウェー</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span><br><span style="font-size:14px">実効税率18〜22%<br>（標準控除・人的控除後）</span></td><td>Uføretrygd（障害給付）</td><td>最低保障（単身）：2.529G = 329,175 NOK/年 = <strong>27,431 NOK/月</strong>（G=130,160・2025年5月〜）。就労歴あり平均は前職66%が基準で大幅に高くなる</td><td>約32.9万円（最低保障・税引前）<br><span style="font-size:14px">手取り後：約26〜27万円<br>PPP実質：約16〜20万円</span></td><td>就労能力の喪失を要件とするが部分受給・就労との併用可</td></tr>
         <tr><td>🇸🇪 スウェーデン</td><td><span style="color:#B8421A;font-weight:700;">☆ 課税対象</span></td><td>Sjukersättning＋住宅補助＋追加費用手当</td><td>就労能力喪失率に応じ段階支給（税引前）。住宅補助・追加費用手当が重層加算</td><td>約19〜33万円（税引前）</td><td>25〜100%就労能力喪失で段階受給</td></tr>
@@ -521,8 +582,8 @@
     <p>本提言は既存の法制度を「破壊」するのではなく、その上に「上乗せ・接続・進化」させる形で設計されている。国際比較が示す通り、欧州各国も既存制度の全面廃止ではなく段階的な制度改正によって現在の姿に至った。本提言が既存の法体系にどう接続するかを以下に整理する。</p>
 
     <div class="table-wrap"><table>
-      <thead>
-        <tr><th>既存法制度</th><th>現行の問題点</th><th>本提言による接続・改正方向</th><th>実装フェーズ</th></tr>
+      <th scope="col"ead>
+        <tr><th scope="col">既存法制度</th><th scope="col">現行の問題点</th><th scope="col">本提言による接続・改正方向</th><th scope="col">実装フェーズ</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -572,8 +633,8 @@
 
     <h2>「特区→全国展開」の行政接続路線図</h2>
     <div class="table-wrap"><table>
-      <thead>
-        <tr><th>フェーズ</th><th>期間</th><th>実施形態</th><th>必要な法的根拠</th><th>主な実施主体</th><th>拡大の条件</th></tr>
+      <th scope="col"ead>
+        <tr><th scope="col">フェーズ</th><th scope="col">期間</th><th scope="col">実施形態</th><th scope="col">必要な法的根拠</th><th scope="col">主な実施主体</th><th scope="col">拡大の条件</th></tr>
       </thead>
       <tbody>
         <tr style="background:#fffdf0">
@@ -627,8 +688,8 @@
 
     <h3>2026年改革の経緯と実際の帰結（2026年6月時点）</h3>
     <div class="table-wrap"><table>
-      <thead>
-        <tr><th>改革項目</th><th>改革前（現行）</th><th>改革後（2026年〜）</th><th>影響規模</th></tr>
+      <th scope="col"ead>
+        <tr><th scope="col">改革項目</th><th scope="col">改革前（現行）</th><th scope="col">改革後（2026年〜）</th><th scope="col">影響規模</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -689,7 +750,7 @@
       <strong>Key Finding④</strong>　「ずるい・怠けだ」論争の規模は給付水準の高低と無関係である。最も激しく噴出したのは給付水準が低いイギリスであり（「Benefit scrounger（給付金たかり）」がメディアに定着）、給付水準が最も高いノルウェー・デンマークでは論争は限定的である。決定的な差は「審査の透明性」「段階的給付設計（就労すれば得をする構造）」「不正認定率の公開」の3点にある。本提言はAI判定・数値化審査・就労実績ポイント制によりこの3点を全て内包する。
     </div>
     <div class="table-wrap"><table>
-      <thead><tr><th>国</th><th>「怠け論争」の有無</th><th>世論の傾向</th><th>論争の帰結・制度的対応</th></tr></thead>
+      <th scope="col"ead><tr><th scope="col">国</th><th scope="col">「怠け論争」の有無</th><th scope="col">世論の傾向</th><th scope="col">論争の帰結・制度的対応</th></tr></thead>
       <tbody>
         <tr><td>🇬🇧 イギリス</td><td>★★★ 最も激しく噴出</td><td>障害者の83%が「給付金たかり報道が自分への社会的態度を悪化させた」と回答（Scope調査）</td><td>DWPへの不正通報のうち実際に不正と認定されたのは11%のみ。89%は行政コストだけが発生した無駄に終わった</td></tr>
         <tr><td>🇩🇰 デンマーク</td><td>★★ 一定程度存在</td><td>労働可能な受給者と障害者への議論は社会的に区別されている。障害者への給付そのものへの批判は限定的</td><td>就労優先原則を強化しつつも、障害認定を受けた者への保障は維持。審査の透明性が社会的信頼を担保</td></tr>
@@ -703,7 +764,7 @@
       通報・調査の仕組みそのものは不可欠であり、不正を見逃すことはあってはならない。イギリスの失敗の本質は「メディアによる感情的動員が入口になったこと」にある。その結果、主観的な通報が殺到し、調査の89%が「不正なし」に終わる行政コストの無駄を生んだ。<br><br>
       本提言はAIによる客観的基準（診断書・就労実績・定期更新の乖離等）を調査のトリガーとすることで、「不正を見逃さず、かつ行政コストの無駄を生まない」調査体制を実現する。<br><br>
       <div class="table-wrap"><table>
-        <thead><tr><th>比較軸</th><th>イギリス（失敗事例）</th><th>本提言の設計</th></tr></thead>
+        <th scope="col"ead><tr><th scope="col">比較軸</th><th scope="col">イギリス（失敗事例）</th><th scope="col">本提言の設計</th></tr></thead>
         <tbody>
           <tr><td>不正調査のトリガー</td><td>一般市民からの感情的通報（主観的）</td><td>AIによる客観的異常検知（診断書・就労実績・就労実績ポイントの乖離等）</td></tr>
           <tr><td>審査の透明性</td><td>低い。不正認定率が非公開だった時期あり</td><td>不正認定率・調査件数を全国公開。「ガラス張りの審査」を制度的に保証</td></tr>
@@ -715,6 +776,6 @@
 
     <div class="page-footer">次世代型障害者雇用モデルの創設 ─ 提言書</div>
   </div>
-</div>
+</main>
 </body>
 </html>

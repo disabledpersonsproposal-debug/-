@@ -60,9 +60,18 @@ const ALL_PAGES = [
     return group.items.some(i => i.href === current);
   }
 
+  /* ══ スキップリンク（A2）──body の最初のフォーカス要素 ══ */
+  const skipLink = document.createElement('a');
+  skipLink.href = '#main-content';
+  skipLink.className = 'skip-link';
+  skipLink.textContent = '本文へスキップ';
+  document.body.insertBefore(skipLink, document.body.firstChild);
+
   /* ══ サイドバー構築 ══ */
   const sidebar = document.createElement('aside');
   sidebar.className = 'sidebar';
+  sidebar.id = 'sidebar';
+  sidebar.setAttribute('aria-label', 'サイドバー');
 
   sidebar.innerHTML = `
     <div class="sidebar-logo">
@@ -137,7 +146,7 @@ const ALL_PAGES = [
   mobileHeader.className = 'mobile-header';
   mobileHeader.innerHTML = `
     <a href="index.html" class="mobile-header-title">提言書</a>
-    <button class="mobile-hamburger" aria-label="メニュー">
+    <button class="mobile-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="sidebar">
       <span></span><span></span><span></span>
     </button>`;
 
@@ -153,12 +162,29 @@ const ALL_PAGES = [
   const hamburger = mobileHeader.querySelector('.mobile-hamburger');
   function toggleMenu(open) {
     hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    hamburger.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
     sidebar.classList.toggle('open', open);
     overlay.classList.toggle('visible', open);
     document.body.style.overflow = open ? 'hidden' : '';
+
+    /* フォーカス管理（B） */
+    if (open) {
+      const firstLink = sidebar.querySelector('a, button');
+      if (firstLink) firstLink.focus();
+    } else {
+      hamburger.focus();
+    }
   }
   hamburger.addEventListener('click', () => toggleMenu(!sidebar.classList.contains('open')));
   overlay.addEventListener('click', () => toggleMenu(false));
+
+  /* Esc でメニューを閉じる（B） */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+      toggleMenu(false);
+    }
+  });
 
   /* ══ ページ内TOC自動生成 ══ */
   function buildTOC() {

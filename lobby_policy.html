@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -38,13 +38,13 @@ body { font-family: var(--font); font-size: 15px; line-height: 1.9; color: var(-
     repeating-linear-gradient(  0deg, transparent, transparent 79px, rgba(184,150,10,.02) 79px, rgba(184,150,10,.02) 80px);
   pointer-events: none;
 }
-.hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+.hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
 .hero-kicker {
   font-size: 13px; letter-spacing: .32em; color: var(--gold);
   font-weight: 700; margin-bottom: 24px;
   display: flex; align-items: center; gap: 12px;
 }
-.hero-kicker::before { content:''; width:32px; height:1px; background:var(--gold); display:inline-block; }
+.hero-kicker::before { content:''; width:20px; height:2px; background:var(--gold); display:inline-block; }
 .hero-eyebrow {
   font-size: 13px; color: rgba(255,255,255,.45);
   letter-spacing: .08em; margin-bottom: 12px;
@@ -358,11 +358,11 @@ p:last-child { margin-bottom: 0; }
   </p>
 
   <table class="cost-table">
-    <thead>
+    <th scope="col"ead>
       <tr>
-        <th>コスト項目</th>
-        <th>年間推計額</th>
-        <th>構造的原因</th>
+        <th scope="col">コスト項目</th>
+        <th scope="col">年間推計額</th>
+        <th scope="col">構造的原因</th>
       </tr>
     </thead>
     <tbody>
