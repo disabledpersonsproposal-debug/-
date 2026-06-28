@@ -30,12 +30,6 @@ body { font-family: var(--font); font-size: 16px; line-height: 1.9; color: var(-
   padding: 64px 24px 56px;
   position: relative; overflow: hidden;
 }
-.hero::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-  pointer-events: none;
-}
 .hero-inner { max-width: 700px; margin: 0 auto; position: relative; }
 .hero-kicker {
   font-size: 13px; letter-spacing: .3em; color: var(--gold);
@@ -206,7 +200,8 @@ body { font-family: var(--font); font-size: 16px; line-height: 1.9; color: var(-
   transition: background .15s, border-color .15s;
 }
 .link-card:hover { background: rgba(200,150,12,.12); border-color: var(--gold); }
-.link-card-icon { font-size: 22px; flex-shrink: 0; }
+.link-card-icon { color:var(--gold); flex-shrink:0; line-height:0; }
+.link-card-icon svg { width:22px; height:22px; display:block; }
 .link-card-body { flex: 1; min-width: 0; }
 .link-card-label { font-size: 13px; letter-spacing: .12em; color: var(--gold); margin-bottom: 3px; }
 .link-card-title { font-size: 14px; font-weight: 700; line-height: 1.4; }
@@ -573,7 +568,7 @@ p:last-child { margin-bottom: 0; }
     <strong>「現状維持」は「コストゼロ」ではない。</strong><br><br>
     国が何もしないことで、当事者が、家族が、そして現場のスタッフが——
     誰かが見えない形でそのコストを払い続けている。
-    「不作為のコスト」は年間2.2〜2.9兆円と試算されている。
+    「不作為のコスト」は年間1.6〜2.2兆円と試算されている。
     それは今も、誰かの時間と体力と精神力で払われている。
   </div>
 
@@ -599,7 +594,7 @@ p:last-child { margin-bottom: 0; }
     </p>
     <div class="link-cards">
       <a class="link-card" href="ch3.html">
-        <div class="link-card-icon">⚡</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">最初に読む ─ 本提言の核心</div>
           <div class="link-card-title">第3章：不作為のコストと社会契約への覚悟</div>
@@ -608,7 +603,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="summary.html">
-        <div class="link-card-icon">📋</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><path d="M12 11h4" /><path d="M12 16h4" /><path d="M8 11h.01" /><path d="M8 16h.01" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">次に読む ─ 全体像を把握する</div>
           <div class="link-card-title">エグゼクティブサマリー</div>
@@ -617,7 +612,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="faq.html">
-        <div class="link-card-icon">💬</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">疑問を解消する</div>
           <div class="link-card-title">FAQ ─ よくある質問と回答</div>
@@ -626,7 +621,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="intl.html">
-        <div class="link-card-icon">🌍</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">根拠を確認したい方へ</div>
           <div class="link-card-title">国際比較データ集</div>
@@ -635,7 +630,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="appendix.html">
-        <div class="link-card-icon">📰</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18h-5" /><path d="M18 14h-8" /><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /><rect width="8" height="4" x="10" y="6" rx="1" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">事実として確認したい方へ</div>
           <div class="link-card-title">巻末付録：社会はすでに知っている</div>

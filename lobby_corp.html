@@ -202,7 +202,8 @@ body { font-family: var(--font); font-size: 15px; line-height: 1.9; color: var(-
   transition:background .15s, border-color .15s;
 }
 .link-card:hover { background:rgba(184,150,10,.1); border-color:var(--gold); }
-.link-card-icon  { font-size:18px; flex-shrink:0; margin-top:2px; }
+.link-card-icon  { color:var(--gold); flex-shrink:0; margin-top:1px; line-height:0; }
+.link-card-icon svg { width:20px; height:20px; display:block; }
 .link-card-body  { flex:1; min-width:0; }
 .link-card-label { font-size:13px; letter-spacing:.12em; color:var(--gold); margin-bottom:3px; }
 .link-card-title { font-size:14px; font-weight:700; line-height:1.4; margin-bottom:3px; }
@@ -278,7 +279,7 @@ p:last-child { margin-bottom: 0; }
       <div class="cost-desc">現行の障害者雇用納付金。未達1名につき月5万円（中小特例あり）</div>
     </div>
     <div class="cost-card">
-      <div class="cost-label">新制度の拠出金<br>（義務未達1名分・年額）</div>
+      <div class="cost-label">新制度の拠出金<br>（義務未達1名分・月額）</div>
       <div class="cost-value dark">18万円</div>
       <div class="cost-desc">不足SCPポイント×1,500円。1名分相当（120P＝月120時間）で月18万円。拠出金のみに頼る場合、現行納付金（月5万円）の約3.6倍となる設計</div>
     </div>
@@ -412,13 +413,13 @@ p:last-child { margin-bottom: 0; }
       <tr>
         <td><span class="lane-badge badge-b">B 段階的受入</span></td>
         <td>インターン受け入れ・混合プロジェクト（20P/件）・月次レポート作成等。<br>D&amp;I研修はポイント対象外。初回インターン前に受け入れ部署全員受講（解禁条件）、以後は年2回＋予備各1回を年間固定義務として実施（障害種別ローテーション・部署単位全員受講必須）</td>
-        <td>義務の<br>上限30%</td>
+        <td>義務の<br>下限30%（Cと組む場合）</td>
         <td class="merit">「いきなり雇用」ではなく段階的な受け入れが可能。中小企業や業種的に常用雇用が難しい企業に現実的な選択肢を提供</td>
       </tr>
       <tr>
         <td><span class="lane-badge badge-c">C 拠出代替</span></td>
         <td>不足ポイント×1,500円を納付。<br>拠出金は障害者年金原資へ直接スライド</td>
-        <td>義務の<br>上限50%</td>
+        <td>義務の<br>上限50%（A+C）／70%（B+C）</td>
         <td class="merit">専門外の労務管理・業務創出コストから完全解放。ただし全義務を拠出金のみで完了することは不可。ESG開示で「拠出による社会貢献額」として肯定的に可視化される</td>
       </tr>
     </tbody>
@@ -575,7 +576,7 @@ p:last-child { margin-bottom: 0; }
     </p>
     <div class="link-grid">
       <a class="link-card" href="../scp.html">
-        <div class="link-card-icon">🧩</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">まず見る ─ 制度の全体像</div>
           <div class="link-card-title">SCP制度図解：3レーン・財源構造</div>
@@ -584,7 +585,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="../roadmap_corp.html">
-        <div class="link-card-icon">🏢</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /><path d="M10 8h4" /><path d="M14 21v-3a2 2 0 0 0-4 0v3" /><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">実務担当者向け</div>
           <div class="link-card-title">民間企業 移行ロードマップ</div>
@@ -593,7 +594,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="../ch2.html">
-        <div class="link-card-icon">👷</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" /><path d="M14 6a6 6 0 0 1 6 6v3" /><path d="M4 15v-3a6 6 0 0 1 6-6" /><rect x="2" y="15" width="20" height="4" rx="1" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">制度詳細</div>
           <div class="link-card-title">準企業職員制度の運用実務</div>
@@ -602,7 +603,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="../fraud.html">
-        <div class="link-card-icon">🔒</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">法務・コンプライアンス向け</div>
           <div class="link-card-title">不正悪用防止設計</div>
@@ -611,16 +612,16 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="../cost.html">
-        <div class="link-card-icon">📉</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 17h6v-6" /><path d="m22 17-8.5-8.5-5 5L2 7" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">経営企画向け</div>
           <div class="link-card-title">不作為のコスト試算</div>
-          <div class="link-card-desc">現行制度を維持することの社会的コスト年2.2〜2.9兆円の根拠。企業負担部分の詳細も含む</div>
+          <div class="link-card-desc">現行制度を維持することの社会的コスト年1.6〜2.2兆円の根拠。企業負担部分の詳細も含む</div>
         </div>
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="../summary.html">
-        <div class="link-card-icon">📋</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><path d="M12 11h4" /><path d="M12 16h4" /><path d="M8 11h.01" /><path d="M8 16h.01" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">全体像を把握する</div>
           <div class="link-card-title">エグゼクティブサマリー</div>
@@ -629,7 +630,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="../faq.html">
-        <div class="link-card-icon">💬</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">論点整理</div>
           <div class="link-card-title">FAQ（財源・運用・不正防止・思想的背景）</div>
@@ -638,7 +639,7 @@ p:last-child { margin-bottom: 0; }
         <div class="link-card-arrow">›</div>
       </a>
       <a class="link-card" href="../ch3.html">
-        <div class="link-card-icon">⚖️</div>
+        <div class="link-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18" /><path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /><path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /><path d="M7 21h10" /></svg></div>
         <div class="link-card-body">
           <div class="link-card-label">制度の背景・思想</div>
           <div class="link-card-title">第3章：不作為のコストと社会契約への覚悟</div>
