@@ -10,6 +10,8 @@
   --dark2:   #2a2a28;
   --navy:    #1a2640;
   --gold:    #B8960A;
+  --gold-text: #7a5c0a;   /* 明背景上の金テキスト用（AA約6.3:1） */
+  --gold-light: #F0E4B0;  /* 暗背景上のフォーカスリング用 */
   --gold-l:  rgba(184,150,10,0.13);
   --gold-b:  rgba(184,150,10,0.28);
   --red:     #7a1515;
@@ -76,7 +78,7 @@ body { font-family: var(--font); font-size: 15px; line-height: 1.9; color: var(-
 
 .sec-label {
   font-size: 13px; letter-spacing: .28em; font-weight: 700;
-  color: var(--gold); margin-bottom: 10px; text-transform: uppercase;
+  color: var(--gold-text); margin-bottom: 10px; text-transform: uppercase;
 }
 .sec-title {
   font-size: clamp(18px, 3vw, 24px); font-weight: 800;
@@ -124,7 +126,7 @@ body { font-family: var(--font); font-size: 15px; line-height: 1.9; color: var(-
   background: var(--white); border: 1px solid var(--gold-b);
   border-top: 3px solid var(--dark); padding: 18px 16px;
 }
-.diag-num  { font-size: 13px; letter-spacing: .14em; color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+.diag-num  { font-size: 13px; letter-spacing: .14em; color: var(--gold-text); font-weight: 700; margin-bottom: 6px; }
 .diag-title{ font-size: 14px; font-weight: 700; color: #1a1a18; margin-bottom: 8px; line-height: 1.4; }
 .diag-body { font-size: 14px; color: var(--muted); line-height: 1.75; }
 
@@ -185,7 +187,7 @@ body { font-family: var(--font); font-size: 15px; line-height: 1.9; color: var(-
   background: var(--white); border: 1px solid var(--gold-b);
   padding: 16px 16px;
 }
-.fin-card-label { font-size: 13px; letter-spacing:.1em; color:var(--gold); font-weight:700; margin-bottom:6px; }
+.fin-card-label { font-size: 13px; letter-spacing:.1em; color:var(--gold-text); font-weight:700; margin-bottom:6px; }
 .fin-card-title { font-size: 14px; font-weight:700; color:#1a1a18; margin-bottom:6px; line-height:1.4; }
 .fin-card-body  { font-size: 14px; color:var(--muted); line-height:1.7; }
 
@@ -281,9 +283,18 @@ p:last-child { margin-bottom: 0; }
   .intl-row { grid-template-columns:130px 1fr 80px; font-size:13px; }
   .reform-step { grid-template-columns:44px 1fr; }
 }
+
+/* ── アクセシビリティ・ベースライン ── */
+:focus-visible { outline: 2px solid var(--gold-text); outline-offset: 2px; }
+.hero :focus-visible, .cta-section :focus-visible, .callout-dark :focus-visible { outline-color: var(--gold-light); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
 </style>
 </head>
 <body>
+<main id="main-content">
 
 <!-- ══════════════════════ HERO ══════════════════════ -->
 <div class="hero">
@@ -761,5 +772,6 @@ p:last-child { margin-bottom: 0; }
   </div>
 </div>
 
+</main>
 </body>
 </html>

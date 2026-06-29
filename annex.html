@@ -10,6 +10,8 @@
   --red-light: rgba(139,0,0,0.08);
   --red-border:rgba(139,0,0,0.25);
   --gold:      #D4AF37;
+  --gold-text: #7a5c0a;   /* 明背景上の金テキスト用（AA約6.3:1） */
+  --gold-light:#F0E4B0;   /* 暗背景上のフォーカスリング用 */
   --gold-border:rgba(212,175,55,0.28);
   --gold-dim:  rgba(212,175,55,0.12);
   --sidebar-bg:#1e1e1c;
@@ -106,6 +108,14 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
   h2{font-size:17px}
   h3{font-size:15px}
   .stamp{font-size:18px}
+}
+
+/* ── アクセシビリティ・ベースライン ── */
+:focus-visible{outline:2px solid var(--gold-text);outline-offset:2px}
+.sidebar :focus-visible,.topbar :focus-visible,.section-header :focus-visible,.callout :focus-visible{outline-color:var(--gold-light)}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
 }
 </style>
 </head>
@@ -497,7 +507,7 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
       <thead><tr><th scope="col">グレード</th><th scope="col">役職</th><th scope="col">所属・人数</th><th scope="col">年収レンジ</th><th scope="col">根拠・備考</th></tr></thead>
       <tbody>
         <tr style="background:#1a1a18;color:#fff">
-          <td><strong style="color:var(--gold)">G5</strong></td>
+          <td><strong style="color:var(--gold-text)">G5</strong></td>
           <td>SCP推進機構　理事長<br>SCP推進機構　理事</td>
           <td>理事長1名<br>理事（複数・設置法で定める）</td>
           <td>理事長：1,200〜1,400万円<br>理事：900〜1,100万円</td>
@@ -1795,7 +1805,7 @@ tr.priority-a td:nth-child(2) span{color:#555;font-weight:700}
       【内部資料・非公開】次世代型障害者雇用提言書 制度設計詳細　─　外部公開禁止
     </div>
   </div>
-</div>
+</main>
 
 </body>
 </html>

@@ -9,6 +9,8 @@
   --dark:   #1a1a18;
   --dark2:  #2a2a28;
   --gold:   #C8960C;
+  --gold-text: #7a5c0a;   /* 明背景上の金テキスト用（AA約6.3:1） */
+  --gold-light: #F0E4B0;  /* 暗背景上のフォーカスリング用 */
   --gold-l: rgba(200,150,12,0.15);
   --gold-b: rgba(200,150,12,0.30);
   --green:  #1a5c2a;
@@ -69,7 +71,7 @@ body { font-family: var(--font); font-size: 16px; line-height: 1.9; color: var(-
 .sec { padding: 44px 0 40px; border-bottom: 1px solid rgba(0,0,0,.1); }
 .sec:last-of-type { border-bottom: none; }
 
-.sec-label { font-size: 13px; letter-spacing: .22em; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+.sec-label { font-size: 13px; letter-spacing: .22em; font-weight: 700; color: var(--gold-text); margin-bottom: 10px; }
 .sec-title {
   font-size: clamp(20px, 3.5vw, 26px); font-weight: 800;
   color: #1a1a18; line-height: 1.4; margin-bottom: 22px;
@@ -238,9 +240,18 @@ p:last-child { margin-bottom: 0; }
   .stat-row    { grid-template-columns: 1fr 1fr; }
   .cmp-row     { grid-template-columns: 120px 1fr 80px; font-size: 13px; }
 }
+
+/* ── アクセシビリティ・ベースライン ── */
+:focus-visible { outline: 2px solid var(--gold-text); outline-offset: 2px; }
+.hero :focus-visible, .cta-section :focus-visible, .contract-box :focus-visible, .callout-dark :focus-visible { outline-color: var(--gold-light); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
 </style>
 </head>
 <body>
+<main id="main-content">
 
 <!-- ══════════════ HERO ══════════════ -->
 <div class="hero">
@@ -664,5 +675,6 @@ p:last-child { margin-bottom: 0; }
   </p>
 </div>
 
+</main>
 </body>
 </html>

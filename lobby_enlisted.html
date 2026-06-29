@@ -8,6 +8,8 @@
 :root {
   --dark:   #1e1e1c;
   --gold:   #D4AF37;
+  --gold-text: #7a5c0a;   /* 明背景上の金テキスト用（AA約6.3:1） */
+  --gold-light: #F0E4B0;  /* 暗背景上のフォーカスリング用 */
   --gold-l: rgba(212,175,55,0.18);
   --gold-b: rgba(212,175,55,0.32);
   --red:    #8B1A1A;
@@ -71,7 +73,7 @@ body { font-family: var(--font); font-size: 16px; line-height: 1.85; color: var(
 
 .sec-label {
   font-size: 13px; letter-spacing: .22em; font-weight: 700;
-  color: var(--gold); margin-bottom: 10px; text-transform: uppercase;
+  color: var(--gold-text); margin-bottom: 10px; text-transform: uppercase;
 }
 .sec-title {
   font-size: clamp(18px, 3vw, 24px); font-weight: 800;
@@ -126,7 +128,7 @@ body { font-family: var(--font); font-size: 16px; line-height: 1.85; color: var(
   border-top: 3px solid var(--dark); padding: 18px 16px;
 }
 .stat-label { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
-.stat-value { font-size: 26px; font-weight: 900; color: var(--gold); line-height: 1.1; margin-bottom: 4px; }
+.stat-value { font-size: 26px; font-weight: 900; color: var(--gold-text); line-height: 1.1; margin-bottom: 4px; }
 .stat-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
 /* ── LIST ── */
@@ -221,9 +223,18 @@ p:last-child { margin-bottom: 0; }
   .stat-row { grid-template-columns: 1fr 1fr; }
   .hero { padding: 40px 18px 44px; }
 }
+
+/* ── アクセシビリティ・ベースライン ── */
+:focus-visible { outline: 2px solid var(--gold-text); outline-offset: 2px; }
+.hero :focus-visible, .cta-section :focus-visible, .callout :focus-visible { outline-color: var(--gold-light); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
 </style>
 </head>
 <body>
+<main id="main-content">
 
 <!-- ══════════════════ HERO ══════════════════ -->
 <div class="hero">
@@ -556,5 +567,6 @@ p:last-child { margin-bottom: 0; }
   </p>
 </div>
 
+</main>
 </body>
 </html>
