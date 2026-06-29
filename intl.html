@@ -73,6 +73,11 @@
 .model-type-limit strong{color:#B8421A}
 
 @media(max-width:860px){.intl-bar-row{grid-template-columns:1fr auto}.intl-bar-wrap{display:none}.struct-grid{grid-template-columns:1fr}.model-type-grid{grid-template-columns:1fr}.intl-mobile-note{display:block}}
+/* 目盛りスケール行 */
+.intl-scale-row{display:grid;grid-template-columns:220px 1fr 150px;margin:0 0 2px}
+.intl-scale-track{position:relative;height:14px}
+.intl-scale-tick{position:absolute;transform:translateX(-50%);font-size:11px;color:var(--text-muted);white-space:nowrap;line-height:1}
+@media(max-width:860px){.intl-scale-row{display:none}}
 </style>
 </head>
 <body>
@@ -97,60 +102,73 @@
     </div>
 
     <!-- バー幅：PPP実質値ベース・最大値ノルウェー就労歴あり平均20万円=100% 日本:9.5/20=48% FR:11.9/20=60% UK:10.6/20=53% DE:13.7/20=69% SE:12/20=60% DK:10.6/20=53% NO最低:16.5/20=83% NO平均:20/20=100% -->
+    <!-- 目盛りスケール：5万=25%・10万=50%・15万=75%（最大値20万円=100%基準） -->
+    <div class="intl-scale-row" aria-hidden="true">
+      <div></div>
+      <div class="intl-scale-track">
+        <span class="intl-scale-tick" style="left:25%">5万円</span>
+        <span class="intl-scale-tick" style="left:50%">10万円</span>
+        <span class="intl-scale-tick" style="left:75%">15万円</span>
+      </div>
+      <div></div>
+    </div>
+    <!-- バー群：role="img"でまとめてラベル付け、各バーは装飾（aria-hidden） -->
+    <div role="img" aria-label="障害年金月額の国際比較（PPP・日本物価基準の実質額）。最大値ノルウェー就労歴平均約20万円を100%として相対比較。日本の現行最高額（約9.5万円）を基準線とし、フランス約11〜12万円、イギリス約10〜11万円、デンマーク約10〜11万円、ドイツ約13〜14万円、スウェーデン約9〜15万円、ノルウェー約16〜20万円。">
     <div class="intl-bar-row highlight">
       <span class="intl-country">🇯🇵 日本（現行1級・最高額）<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:48%"></div></div>
+      <div class="intl-bar-wrap" aria-hidden="true"><div class="intl-bar-fill" style="width:48%"></div></div>
       <span class="intl-amount">約 9.5万円<span class="intl-amount-sub nontax">PPP実質（日本物価基準）</span></span>
     </div>
     <!-- バー幅：最小〜最大レンジ（基準20万円=100%）。縦線＝日本9.5万円=48%の参照ライン。★非課税=塗り潰し・☆課税=斜線ハッチ -->
     <div class="intl-bar-row">
       <span class="intl-country">🇫🇷 フランス（AAH＋住宅補助APL等）<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range" style="left:55%;width:5%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range" style="left:55%;width:5%"></div>
+        <div class="intl-jp-ref" style="left:48%"></div>
       </div>
       <span class="intl-amount">約 11〜12万円<span class="intl-amount-sub nontax">PPP実質（日本物価基準）</span><span class="intl-mobile-note">★非課税　日本比 ＋1.5〜2.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇬🇧 イギリス（PIP最高＋UC）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">⚠️ 2026年〜給付削減改革実施中</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range" style="left:50%;width:5%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range" style="left:50%;width:5%"></div>
+        <div class="intl-jp-ref" style="left:48%"></div>
       </div>
       <span class="intl-amount">約 10〜11万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span><span class="intl-mobile-note">★非課税（PIP）　日本比 ＋0.5〜1.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇩🇰 デンマーク（Førtidspension・基本＋補足含む最大）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象（実効38%）</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range taxed" style="left:50%;width:5%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range taxed" style="left:50%;width:5%"></div>
+        <div class="intl-jp-ref" style="left:48%"></div>
       </div>
       <span class="intl-amount">約 10〜11万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span><span class="intl-mobile-note">☆課税（実効38%）　日本比 ＋0.5〜1.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇩🇪 ドイツ（年金＋社会扶助・就労歴あり平均）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range taxed" style="left:65%;width:5%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range taxed" style="left:65%;width:5%"></div>
+        <div class="intl-jp-ref" style="left:48%"></div>
       </div>
       <span class="intl-amount">約 13〜14万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span><span class="intl-mobile-note">☆課税　日本比 ＋3.5〜4.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning＋住宅補助＋追加費用手当）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range taxed" style="left:45%;width:30%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range taxed" style="left:45%;width:30%"></div>
+        <div class="intl-jp-ref" style="left:48%"></div>
       </div>
       <span class="intl-amount">約 9〜15万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）</span><span class="intl-mobile-note">☆課税　範囲幅が大きい（制度参加状況による）</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇳🇴 ノルウェー（Uføretrygd＋介護・移動手当）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象（実効18〜22%）</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range taxed" style="left:80%;width:20%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:48%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range taxed" style="left:80%;width:20%"></div>
+        <div class="intl-jp-ref" style="left:48%"></div>
       </div>
       <span class="intl-amount">約 16〜20万円<span class="intl-amount-sub" style="color:var(--text-muted)">PPP実質（日本物価基準）<br>最低保障（単身）〜就労歴平均</span><span class="intl-mobile-note">☆課税　日本比 ＋6.5〜10.5万円</span></span>
     </div>
+    </div><!-- /role="img" PPP月額比較 -->
 
     <div class="callout-light" style="margin-top:16px">
       <strong>【物価補正（PPP換算②）の計算方法】</strong>　各国の全給付を合算し、課税補正（手取り換算）後、Eurostat家計消費物価指数2024年（EU27=100）を用いて「日本の物価水準に置き換えた実質額」に換算している。計算式：名目手取り額×（日本換算指数78÷各国指数）。使用した各国の物価指数：デンマーク<strong>143</strong>・ノルウェー<strong>127.2</strong>・スウェーデン<strong>117</strong>・ドイツ<strong>108.8</strong>・フランス<strong>111.2</strong>・イギリス≈<strong>117</strong>（OECD推計）・日本換算<strong>78</strong>（出典：Eurostat「Comparative price levels of consumer goods and services 2024」2025年6月公表・SSB）。<strong>各国の物価は日本より20〜80%高いため、欧州各国の名目額から大幅に圧縮される。</strong>日本は年金本体以外の別建て給付がほとんど存在しないため物価補正後も年金本体額（約9.5万円）とほぼ同額である点が、制度設計の根本的な差を示している。なおイギリスはEU圏外のため、Eurostat指数が直接提供されていない。ここではOECDのPPP統計に基づく推計値（≈117）を使用している。
@@ -190,64 +208,76 @@
     -->
 
     <!-- バー幅：最小〜最大レンジ（基準ノルウェー14.5万=100%）。縦線＝日本2万円（公的制度フル活用時）=14%の参照ライン。★非課税=塗り潰し・☆課税=斜線ハッチ -->
+    <!-- 目盛りスケール：5万≈34%・10万≈69%（最大値14.5万=100%基準） -->
+    <div class="intl-scale-row" aria-hidden="true">
+      <div></div>
+      <div class="intl-scale-track">
+        <span class="intl-scale-tick" style="left:34.5%">5万円</span>
+        <span class="intl-scale-tick" style="left:69%">10万円</span>
+      </div>
+      <div></div>
+    </div>
+    <!-- バー群：role="img"でまとめてラベル付け、各バーは装飾（aria-hidden） -->
+    <div role="img" aria-label="可処分所得の国際推計。現金給付から医療費・家賃・介護費を差し引いた手残り。最大値ノルウェー14.5万円を100%として比較。日本（公的制度フル活用時）約2万円、日本（最悪ケース）約0〜1万円、イギリス約6〜7万円、ドイツ約9〜10万円、デンマーク約9〜9.5万円、フランス約9〜10万円、スウェーデン約9〜10万円、ノルウェー約14〜15万円。">
     <div class="intl-bar-row highlight">
       <span class="intl-country">🇯🇵 日本（1級・現行）公的制度フル活用時<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税 ／ 自立支援医療＋障害福祉サービス利用</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:14%"></div></div>
+      <div class="intl-bar-wrap" aria-hidden="true"><div class="intl-bar-fill" style="width:14%"></div></div>
       <span class="intl-amount">約 2万円<span class="intl-amount-sub" style="color:var(--gold-text)">医療0.5万＋家賃6万＋介護0.9万を自己負担後</span></span>
     </div>
     <div class="intl-bar-row highlight" style="opacity:0.75">
       <span class="intl-country">🇯🇵 日本（1級・現行）公的制度未利用/都市部最悪ケース<br><span style="color:#B8421A;font-weight:700;font-size:14px;">★非課税 ／ 3割負担・助成なしの場合</span></span>
-      <div class="intl-bar-wrap"><div class="intl-bar-fill" style="width:5%;background:#B8421A"></div></div>
+      <div class="intl-bar-wrap" aria-hidden="true"><div class="intl-bar-fill" style="width:5%;background:#B8421A"></div></div>
       <span class="intl-amount" style="color:#B8421A">約 0〜1万円<span class="intl-amount-sub" style="color:#B8421A">医療2万＋家賃6万＋介護1.5万を自己負担後</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇬🇧 イギリス（PIP＋UC）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">⚠️ 2026年〜給付削減改革実施中</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range" style="left:41%;width:7%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range" style="left:41%;width:7%"></div>
+        <div class="intl-jp-ref" style="left:14%"></div>
       </div>
       <span class="intl-amount">約 6〜7万円<span class="intl-amount-sub" style="color:var(--text-muted)">NHS・住宅給付後の残額</span><span class="intl-mobile-note">日本比（最良時）＋4〜5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇩🇪 ドイツ（年金＋社会扶助）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range taxed" style="left:62%;width:7%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range taxed" style="left:62%;width:7%"></div>
+        <div class="intl-jp-ref" style="left:14%"></div>
       </div>
       <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub" style="color:var(--text-muted)">公的医療・社会扶助後の残額</span><span class="intl-mobile-note">☆課税　日本比（最良時）＋7〜8万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇩🇰 デンマーク（Førtidspension）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象（実効38%・PPP指数143）</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range taxed" style="left:62%;width:4%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range taxed" style="left:62%;width:4%"></div>
+        <div class="intl-jp-ref" style="left:14%"></div>
       </div>
       <span class="intl-amount">約 9〜9.5万円<span class="intl-amount-sub" style="color:var(--text-muted)">医療無償・公共住宅後の残額</span><span class="intl-mobile-note">☆課税　日本比（最良時）＋7〜7.5万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇫🇷 フランス（AAH＋APL等）<br><span style="color:#2C7A3A;font-weight:700;font-size:14px;">★非課税</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range" style="left:62%;width:7%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range" style="left:62%;width:7%"></div>
+        <div class="intl-jp-ref" style="left:14%"></div>
       </div>
       <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub nontax">住宅補助APL・医療補填後の残額</span><span class="intl-mobile-note">★非課税　日本比（最良時）＋7〜8万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇸🇪 スウェーデン（Sjukersättning＋住宅補助）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range taxed" style="left:62%;width:7%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range taxed" style="left:62%;width:7%"></div>
+        <div class="intl-jp-ref" style="left:14%"></div>
       </div>
       <span class="intl-amount">約 9〜10万円<span class="intl-amount-sub" style="color:var(--text-muted)">住宅補助・医療無償後の残額</span><span class="intl-mobile-note">☆課税　日本比（最良時）＋7〜8万円</span></span>
     </div>
     <div class="intl-bar-row">
       <span class="intl-country">🇳🇴 ノルウェー（Uføretrygd＋各種手当）<br><span style="color:#B8421A;font-weight:700;font-size:14px;">☆課税対象（実効18〜22%）</span></span>
-      <div class="intl-bar-wrap">
-        <div class="intl-bar-range taxed" style="left:97%;width:3%" aria-hidden="true"></div>
-        <div class="intl-jp-ref" style="left:14%" aria-hidden="true"></div>
+      <div class="intl-bar-wrap" aria-hidden="true">
+        <div class="intl-bar-range taxed" style="left:97%;width:3%"></div>
+        <div class="intl-jp-ref" style="left:14%"></div>
       </div>
       <span class="intl-amount">約 14〜15万円<span class="intl-amount-sub" style="color:var(--text-muted)">医療無償・住宅支援後の残額（最低保障ベース）</span><span class="intl-mobile-note">☆課税　日本比（最良時）＋12〜13万円</span></span>
     </div>
+    </div><!-- /role="img" 可処分所得推計 -->
 
     <div class="callout" style="margin-top:16px">
       <strong>Key Finding①-B　可処分所得で見ると格差は決定的</strong>　現金給付のPPP実質額では「日本（9.5万円）はノルウェー最低保障（16.5万円）の58%」だが、医療・家賃・介護の自己負担を差し引いた可処分所得では<strong>「公的制度フル活用時でも日本はノルウェーの約14%、制度未利用の最悪ケースではほぼゼロ」</strong>になる。日本では年金9.5万円から家賃・医療・介護を差し引いた残りが実際の生活費だが、<strong>自立支援医療（精神通院・上限5,000円）や障害福祉サービス（月上限9,300円）を利用すれば手残りは約2万円まで改善する</strong>。公的制度を最大限活用しても月2万円であり、欧州との差は歴然としている。欧州では「現金給付＝ほぼそのまま生活費」であるのに対し、日本では「現金給付＝支出の補填」という根本的な構造の違いがある。この差こそが「家族に頼らなければ生活できない」という現実の根拠である。<br><br>
